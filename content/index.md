@@ -1,18 +1,20 @@
 ---
-title: Your Blog Name
+title: Simen skriver
 hideReadingTime: true
 ---
 
-## Welcome to Your Digital Garden
+## Heisann 👋
 
-This is a Quartz-based digital garden template. Customize this page to introduce yourself and your space.
+Simen heter jeg, og jeg lager digitale greier som skal føles bra, være lett å forstå, og gjerne se fint ut i samme slengen. En UX-designer, med andre ord.
+
+I tillegg dypdykker jeg i ting som fascinerer meg, og det skriver jeg om her.
 
 > [minimal-tip]
-> Next to the Search field you will find a toggle for Dark and Light modes. You can also enable the Reader Mode (hiding the sidebar) by clicking on the book icon.
+> Ved siden av søkefeltet finner du en bryter for mørk og lys modus. Du kan også aktivere lesemodus (skjule sidepanelet) ved å klikke på bok-ikonet.
 
 ---
 
-## Content Structure
+## Hvordan denne sida funker
 
 This template organizes content into four main types:
 
@@ -22,13 +24,3 @@ This template organizes content into four main types:
 - **Writings** - Complete, coherent long-form pieces
 
 See the [Writing Guide](WRITING-GUIDE.md) for more information on how to use this structure.
-
----
-
-## Getting Started
-
-1. Update this file (`content/index.md`) with your own introduction
-2. Update `quartz.config.ts` with your domain name
-3. Start creating content in the appropriate folders
-4. Run `npm run build` to build your site
-

@@ -8,13 +8,13 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Wayward",
+    pageTitle: "Simen skriver",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
     // analytics: { provider: "plausible" },
-    locale: "en-US",
-    baseUrl: "your-domain.com",
+    locale: "nb-NO",
+    baseUrl: "none yet", // GitHub Pages URL - endre hvis du bruker custom domene
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
@@ -43,8 +43,8 @@ const config: QuartzConfig = {
           gray: "#8b7355", // Warm medium gray
           darkgray: "#d4c4b0", // Softer warm light text (softened from #e8dcc8)
           dark: "#e0d4c0", // Softer warm text (softened from #f5ede0 - less stark)
-          secondary: "#fb923c", // Warm orange for links (lighter for dark mode)
-          tertiary: "#fdba74", // Lighter warm orange for hover
+          secondary: "#37D9A3", // Mint for links (lighter for dark mode)
+          tertiary: "#ACF1D9", // Lighter Mint for hover
           highlight: "rgba(251,200,123)", // Warm orange highlight
           textHighlight: "rgba(184, 134, 11, 0.4)", // Darker warm yellow/orange highlight for dark mode (better contrast)
         },
