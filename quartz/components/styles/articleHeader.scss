@@ -1,0 +1,88 @@
+@use "../../styles/variables.scss" as *;
+
+.article-header {
+  max-width: 900px; // Matches expanded content width
+  margin: 0 auto;
+  padding: 0 2.5rem; // Matches content padding
+  margin-bottom: 4rem;
+  display: block !important;
+  width: 100%;
+  box-sizing: border-box;
+
+  .article-title {
+    font-size: var(--size-h1); // 3.5rem (using shared token)
+    line-height: var(--line-heading);
+    margin: 2rem 0 var(--space-lg) 0 !important; // Using shared spacing
+    padding: 0;
+    font-weight: 600;
+    letter-spacing: -0.01em; // Less negative for better spacing
+    word-spacing: 0.02em; // Added word spacing
+    color: var(--dark);
+    width: 100%;
+    display: block !important;
+    float: none !important;
+    clear: both;
+    font-family: var(--font-body); // Lora serif
+  }
+
+  .article-meta {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    gap: var(--space-md); // 16px
+    margin: 0 !important;
+    padding: 0;
+    font-size: var(--size-body-small); // 0.95rem (using shared token)
+    color: var(--color-muted); // Uses shared muted color
+    font-style: italic;
+    align-items: baseline;
+    width: 100%;
+    clear: both;
+    font-family: var(--font-body);
+
+    .meta-item {
+      display: inline-block;
+      white-space: nowrap;
+      margin: 0;
+      padding: 0;
+      
+      &.updated {
+        color: var(--color-text); // Uses shared text color
+      }
+      
+      &.tag-link {
+        background-color: transparent !important;
+        color: var(--color-accent-warm); // Warm amber for tags
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+        font-size: var(--size-body-small);
+        text-decoration: underline;
+        text-decoration-color: var(--color-accent-warm);
+        text-decoration-thickness: 1.5px;
+        text-underline-offset: 0.2em;
+        border: none;
+        font-style: normal;
+        line-height: normal;
+        
+        &:hover {
+          color: var(--color-accent); // Warm orange on hover
+          text-decoration-color: var(--color-accent); // Warm orange underline
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 800px) {
+  .article-header {
+    padding: 0 1.5rem;
+    margin-bottom: 3rem;
+    
+    .article-title {
+      font-size: 2.5rem;
+      margin: 2rem 0 2rem 0 !important;
+    }
+  }
+}
+

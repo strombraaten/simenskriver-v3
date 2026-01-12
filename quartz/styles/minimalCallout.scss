@@ -1,0 +1,171 @@
+@use "./variables.scss" as *;
+
+// Brand new minimal callout from scratch
+.minimal-callout {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin: 0.8rem 0;
+  padding: 0.3rem 0.5rem;
+  border-left: 2px solid #f59e0b;
+  background: rgba(245, 158, 11, 0.04);
+  border-radius: 0;
+  font-size: 0.9em;
+  line-height: 1.5;
+  max-width: 100%;
+
+  .minimal-callout-label {
+    display: inline-block;
+    font-size: 0.7em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #f59e0b;
+    flex-shrink: 0;
+    padding: 0.1rem 0.3rem;
+    background: rgba(245, 158, 11, 0.1);
+    border-radius: 2px;
+  }
+
+  .minimal-callout-text {
+    display: inline;
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+
+  // Tip variant
+  &.minimal-callout-tip {
+    border-left-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.04);
+
+    .minimal-callout-label {
+      color: #f59e0b;
+      background: rgba(245, 158, 11, 0.1);
+    }
+  }
+
+  // Warning variant
+  &.minimal-callout-warning {
+    border-left-color: #f87171;
+    background: rgba(248, 113, 113, 0.04);
+
+    .minimal-callout-label {
+      color: #f87171;
+      background: rgba(248, 113, 113, 0.1);
+    }
+  }
+
+  // Info variant
+  &.minimal-callout-info {
+    border-left-color: #ea580c;
+    background: rgba(234, 88, 12, 0.04);
+
+    .minimal-callout-label {
+      color: #ea580c;
+      background: rgba(234, 88, 12, 0.1);
+    }
+  }
+
+  // Quote variant - sleek and elegant with classic typographic quotes
+  &.minimal-callout-quote {
+    display: block !important;
+    border-left: 3px solid var(--gray) !important;
+    background: transparent !important;
+    padding: 0.5rem 0 0.5rem 1.2rem !important;
+    margin: 1rem 0 !important;
+    font-style: italic !important;
+    position: relative;
+    align-items: flex-start !important;
+
+    .minimal-callout-label {
+      display: none !important; // Hide label for quotes - cleaner look
+    }
+
+    .minimal-callout-text {
+      display: block !important;
+      color: var(--darkgray);
+      font-size: 1em;
+      line-height: 1.7;
+      position: relative;
+      padding-left: 0.8rem;
+      font-style: italic;
+
+      &::before {
+        content: '"'; // Opening curly quote
+        position: absolute;
+        left: -0.5rem;
+        top: -0.1rem;
+        font-size: 2em;
+        color: var(--gray);
+        opacity: 0.5;
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: normal;
+        line-height: 1;
+      }
+
+      &::after {
+        content: '"'; // Closing curly quote
+        font-size: 1.2em;
+        color: var(--gray);
+        opacity: 0.4;
+        font-family: Georgia, "Times New Roman", serif;
+        margin-left: 0.2em;
+      }
+    }
+  }
+}
+
+// Dark mode adjustments
+:root[saved-theme="dark"] {
+  .minimal-callout {
+    background: rgba(245, 158, 11, 0.06);
+
+    .minimal-callout-label {
+      background: rgba(245, 158, 11, 0.15);
+    }
+
+    &.minimal-callout-tip {
+      background: rgba(245, 158, 11, 0.06);
+
+      .minimal-callout-label {
+        background: rgba(245, 158, 11, 0.15);
+      }
+    }
+
+    &.minimal-callout-warning {
+      background: rgba(248, 113, 113, 0.06);
+
+      .minimal-callout-label {
+        background: rgba(248, 113, 113, 0.15);
+      }
+    }
+
+    &.minimal-callout-info {
+      background: rgba(234, 88, 12, 0.06);
+
+      .minimal-callout-label {
+        background: rgba(234, 88, 12, 0.15);
+      }
+    }
+
+    &.minimal-callout-quote {
+      background: transparent !important;
+      border-left-color: var(--gray) !important;
+
+      .minimal-callout-text {
+        color: var(--darkgray);
+
+        &::before {
+          color: var(--gray);
+          opacity: 0.6;
+        }
+
+        &::after {
+          color: var(--gray);
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+

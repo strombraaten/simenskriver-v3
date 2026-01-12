@@ -1,0 +1,1796 @@
+@use "./base.scss";
+@use "./sidebar.scss";
+
+// ============================================
+// SHARED DESIGN TOKENS - Unified Design System
+// ============================================
+// These tokens ensure main content and sidebar use the same design language
+
+:root {
+  // Font families
+  // Lora is primary, serif fallback
+  --font-body: "Lora", var(--bodyFont), serif;
+  --font-mono: var(--codeFont); // IBM Plex Mono
+  
+  // Type sizes - slightly reduced for wider content area
+  --size-body: 1.2rem; // Reduced from 1.375rem for better fit with wider content
+  --size-body-small: 1rem; // Sidebar links (proportionally smaller)
+  --size-label: 0.85rem; // Section labels
+  
+  // Heading sizes - reduced proportionally
+  --size-h1: 3rem; // Reduced from 3.5rem
+  --size-h2: 2rem; // Reduced from 2.5rem
+  --size-h3: 1.75rem; // Reduced from 2rem
+  --size-h4: 1.35rem; // Reduced from 1.5rem
+  
+  // Line heights - very generous like Maggie (line-height: 2)
+  --line-body: 2; // 2x font size - matches Maggie's 44px/22px ratio
+  --line-heading: 1.2; // Headings
+  
+  // Colors - unified warm palette
+  --color-text: var(--darkgray); // Main body text (content + sidebar links)
+  --color-muted: var(--gray); // Dates, labels, meta
+  --color-accent: var(--secondary); // Primary link color (warm orange)
+  --color-accent-soft: var(--tertiary); // Hover/underline color (brighter warm orange)
+  --color-accent-warm: #f59e0b; // Warm amber for some sections
+  --color-accent-coral: #f87171; // Warm coral for variety
+  --color-border-soft: var(--lightgray); // Subtle borders (warm beige)
+  
+  // Spacing scale (4, 8, 16, 24, 32px)
+  --space-xs: 0.25rem; // 4px
+  --space-sm: 0.5rem; // 8px
+  --space-md: 1rem; // 16px
+  --space-lg: 1.5rem; // 24px
+  --space-xl: 2rem; // 32px
+}
+
+// Maggie Appleton-inspired content page styling
+// Apply to ALL pages (including index) for unified typography
+
+// Center the entire content area
+// Fix: Prevent stretching that creates empty space at bottom on all pages
+.page > #quartz-body > .center {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; // Align to start instead of center to prevent stretching
+  width: 100%;
+  // CRITICAL: Allow floats to work inside flex children
+  min-height: auto; // Don't force minimum height - prevents empty space at bottom
+}
+
+// Fix: Prevent articles from stretching on all pages (not just index)
+.page > #quartz-body > .center > article {
+  align-self: flex-start !important; // Don't stretch article
+  flex: 0 0 auto !important; // Don't grow or shrink - prevents empty space
+}
+
+// Article content styling - applies to all pages EXCEPT thing-card articles
+.page > #quartz-body > .center > article.popover-hint:not(.thing-card),
+.page > #quartz-body > .center > article:not(.thing-card) {
+  // Wider content width - more space to breathe (expanded from 750px)
+  max-width: 900px; // Increased to use more available space
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2.5rem; // More horizontal padding
+  box-sizing: border-box;
+  
+  // CRITICAL: Article must establish block formatting context for floats
+  // Flex children can prevent floats - ensure article is a proper block
+  display: block !important; // Block display for float context
+  overflow: visible !important; // Allow floated children to extend beyond
+  position: relative !important; // Establish positioning context
+  flex: none !important; // Don't let article be a flex item that prevents floats
+  align-self: flex-start !important; // Don't stretch - prevents empty space at bottom
+  
+  // Typography using shared tokens - matching Maggie Appleton's style
+  font-size: var(--size-body); // 1.375rem (22px) - matches Maggie's base
+  line-height: var(--line-body); // 2.0 - very generous, matches Maggie's 44px/22px
+  letter-spacing: 0.02em; // Increased for better character spacing
+  word-spacing: 0.05em; // Added for better word spacing
+  font-family: var(--font-body); // Lora serif - elegant like Canela Text
+  color: var(--color-text);
+  
+  // Paragraph spacing - generous like Maggie (33px margin-bottom)
+  p {
+    margin: 0 0 2rem 0; // 32px bottom - generous spacing like Maggie's 33px
+    letter-spacing: 0.02em; // Generous character spacing
+    word-spacing: 0.05em; // Generous word spacing for breathing room
+  }
+  
+  // Override paragraph margin for image paragraphs to allow float margins to work
+  p.has-image {
+    margin: 0 !important; // Reset article p margin - float styles will add their own
+  }
+  
+  // Headings using shared tokens - elegant hierarchy
+  h1 {
+    font-size: var(--size-h1); // 3.5rem
+    line-height: var(--line-heading);
+    margin: 3rem 0 var(--space-lg) 0;
+    font-weight: 600;
+    letter-spacing: -0.01em; // Less negative for better spacing
+    word-spacing: 0.02em; // Added word spacing
+    color: var(--dark);
+    font-family: var(--font-body); // Lora serif
+  }
+  
+  h2 {
+    font-size: var(--size-h2); // 2.5rem
+    line-height: var(--line-heading);
+    margin: 2.5rem 0 var(--space-md) 0;
+    font-weight: 600;
+    letter-spacing: 0em; // Neutral spacing
+    word-spacing: 0.02em; // Added word spacing
+    color: var(--dark);
+    font-family: var(--font-body); // Lora serif
+  }
+  
+  h3 {
+    font-size: var(--size-h3); // 2rem
+    line-height: var(--line-heading);
+    margin: 2rem 0 var(--space-md) 0;
+    font-weight: 600;
+    letter-spacing: 0.01em; // Slight positive spacing
+    word-spacing: 0.02em; // Added word spacing
+    color: var(--dark);
+    font-family: var(--font-body); // Lora serif
+  }
+  
+  h4, h5, h6 {
+    font-size: var(--size-h4); // 1.5rem
+    line-height: 1.4;
+    margin: var(--space-lg) 0 var(--space-sm) 0;
+    font-weight: 600;
+    color: var(--dark);
+    font-family: var(--font-body); // Lora serif
+  }
+  
+  // Drop cap for first paragraph - elegant like Maggie
+  > p:first-of-type {
+    &::first-letter {
+      float: left;
+      font-size: 5rem; // Larger, more prominent
+      line-height: 0.8;
+      padding-top: 0.1em;
+      padding-right: 0.08em;
+      padding-bottom: 0.05em;
+      font-weight: 400;
+      color: var(--dark);
+      font-family: var(--font-body); // Lora serif
+    }
+  }
+  
+  // List styling using shared spacing - generous like Maggie
+  ul, ol {
+    margin: 0 0 var(--space-xl) 0; // 32px bottom
+    padding-left: var(--space-xl); // 32px
+    
+    li {
+      margin: 0.5rem 0; // Tighter item spacing
+      line-height: var(--line-body); // 2.0 - very generous
+    }
+  }
+  
+  // Blockquote styling
+  blockquote {
+    margin: var(--space-xl) 0; // 32px
+    padding: var(--space-md) var(--space-lg);
+    border-left: 4px solid var(--color-accent);
+    background-color: var(--color-border-soft);
+    font-style: italic;
+    border-radius: 0 4px 4px 0;
+  }
+  
+  // Sleek, minimal block reference (transclude) styling
+  blockquote.transclude {
+    margin: var(--space-lg) 0;
+    padding: 0;
+    border: none;
+    background: none;
+    font-style: normal;
+    border-radius: 0;
+    position: relative;
+    
+    // Subtle left accent line - thin and soft
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(
+        to bottom,
+        var(--color-accent) 0%,
+        color-mix(in srgb, var(--color-accent) 60%, transparent) 100%
+      );
+      opacity: 0.4;
+    }
+    
+    // Content wrapper with padding
+    > *:first-child {
+      padding-left: var(--space-lg);
+      padding-right: 0;
+      margin: 0;
+    }
+    
+    // Nested paragraphs and content
+    p {
+      margin: 0 0 var(--space-md) 0;
+      padding-left: var(--space-lg);
+      color: var(--color-text);
+      font-style: normal;
+      line-height: var(--line-body);
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    // Lists within transcludes
+    ul, ol {
+      padding-left: calc(var(--space-lg) + 1rem);
+      margin: var(--space-md) 0;
+    }
+    
+    // Headings within transcludes
+    h1, h2, h3, h4, h5, h6 {
+      padding-left: var(--space-lg);
+      margin-top: var(--space-md);
+      margin-bottom: var(--space-sm);
+      
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    
+    // Minimal source link - subtle and elegant
+    a.transclude-src {
+      display: inline-flex;
+      align-items: center;
+      margin-top: var(--space-sm);
+      padding-left: var(--space-lg);
+      font-size: 0.85rem;
+      color: var(--color-muted);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s ease;
+      font-family: var(--font-mono);
+      letter-spacing: 0.02em;
+      
+      // Subtle arrow/indicator
+      &::before {
+        content: "↗";
+        margin-right: 0.4em;
+        opacity: 0.5;
+        font-size: 0.9em;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+      
+      &:hover {
+        color: var(--color-accent);
+        
+        &::before {
+          opacity: 1;
+          transform: translate(-2px, -2px);
+        }
+      }
+    }
+    
+    // Remove default blockquote italic styling
+    em {
+      font-style: italic;
+    }
+  }
+  
+  // Links - unified styling
+  a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    text-underline-offset: 0.2em;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    
+    &:hover {
+      color: var(--tertiary);
+      text-decoration-color: var(--color-accent-soft);
+    }
+    
+    &.internal {
+      background-color: transparent !important;
+      padding: 0;
+      border-radius: 0;
+    }
+  }
+  
+  // Code blocks
+  pre {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    overflow-x: auto;
+  }
+  
+  code {
+    font-size: 0.9em;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    background-color: var(--lightgray);
+  }
+  
+  pre code {
+    background-color: transparent;
+    padding: 0;
+  }
+  
+  // Links with better accent colors
+  a.internal {
+    color: var(--secondary);
+    text-decoration: underline;
+    text-decoration-color: var(--secondary);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 0.2em;
+    transition: all 0.2s ease;
+    background-color: transparent !important;
+    padding: 0 !important;
+    
+    &:hover {
+      color: var(--tertiary);
+      text-decoration-color: var(--tertiary);
+    }
+    
+    // Inline backlinks (wikilinks with custom text) - subtle background only
+    // Must override the transparent background from parent selector
+    &.alias {
+      display: inline;
+      background-color: rgba(251,200,123, 0.15) !important; // Subtle warm orange background - override parent
+      padding: 0 !important; // No padding - just background
+      border-radius: 2px;
+      border: none; // No border
+      color: var(--color-text) !important; // Closer to normal text color
+      text-decoration: underline;
+      text-decoration-color: var(--color-text); // Match text color
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 0.2em;
+      font-weight: 400; // Normal weight, not bold
+      transition: all 0.2s ease;
+      line-height: inherit; // Match surrounding text line-height
+      margin: 0;
+      vertical-align: baseline;
+      
+      &:hover {
+        background-color: rgba(251,200,123, 0.22) !important; // Slightly more visible on hover
+        color: var(--color-text) !important; // Keep text color on hover
+        text-decoration-color: var(--color-text);
+      }
+    }
+  }
+  
+  a.external {
+    color: var(--secondary);
+    text-decoration: underline;
+    text-decoration-color: var(--secondary);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 0.2em;
+    
+    &:hover {
+      color: var(--tertiary);
+      text-decoration-color: var(--tertiary);
+    }
+  }
+  // Horizontal rules
+  hr {
+    margin: 3rem 0;
+    border: none;
+    border-top: 1px solid var(--lightgray);
+  }
+  
+  // Tables
+  table {
+    width: 100%;
+    margin: 2rem 0;
+    border-collapse: collapse;
+    
+    th, td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--lightgray);
+      text-align: left;
+    }
+    
+    th {
+      font-weight: 600;
+      background-color: var(--lightgray);
+    }
+  }
+}
+
+// ============================================
+// EDITORIAL-STYLE IMAGE LAYOUTS
+// Modern, creative integration of images with text
+// MUST be outside article block to avoid SCSS nesting issues
+// ============================================
+
+// CRITICAL: Float the lightbox-wrapper directly (it's a sibling of p.has-image, not a child)
+// Match Maggie Appleton's style: images float RIGHT, text wraps on LEFT
+// Only apply to standalone images, NOT gallery images
+.page > #quartz-body > .center > article:not(.thing-card) .lightbox-wrapper {
+  display: block !important;
+  float: right !important;
+  clear: right !important;
+  margin-left: 2rem !important; // Reduced from 2.5rem
+  margin-right: 0 !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 1.5rem !important;
+  width: 40% !important; // Reduced from 45%
+  max-width: 380px !important; // Reduced from 420px
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+// EXCLUDE gallery images from float rules - they use grid layout
+// This must come AFTER the float rules to override them
+.page > #quartz-body > .center > article:not(.thing-card) .image-gallery .lightbox-wrapper {
+  float: none !important;
+  clear: none !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  display: block !important;
+  box-sizing: border-box !important;
+}
+
+// Also handle when wrapper is inside p.has-image (if structure is different)
+.page > #quartz-body > .center > article:not(.thing-card) p.has-image {
+  float: right !important;
+  clear: right !important;
+  margin-left: 2rem !important; // Reduced from 2.5rem
+  margin-right: 0 !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 1.5rem !important;
+  width: 40% !important; // Reduced from 45%
+  max-width: 380px !important; // Reduced from 420px
+  padding: 0 !important;
+  display: block !important;
+  box-sizing: border-box !important;
+}
+
+// If wrapper is inside p.has-image, don't float it separately
+.page > #quartz-body > .center > article:not(.thing-card) p.has-image .lightbox-wrapper {
+  float: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+// Fallback using :has() for browsers that support it (if class isn't added)
+.page > #quartz-body > .center > article:not(.thing-card) p:has(> .lightbox-wrapper):not(.has-image) {
+  float: left !important;
+  clear: left !important;
+  margin-right: 2.5rem !important;
+  margin-left: -1rem !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 1.5rem !important;
+  width: 45% !important;
+  max-width: 420px !important;
+  padding: 0 !important;
+}
+
+// Lightbox wrapper inside floated paragraph
+.page > #quartz-body > .center > article:not(.thing-card) p.has-image .lightbox-wrapper,
+.page > #quartz-body > .center > article:not(.thing-card) p:has(> .lightbox-wrapper) .lightbox-wrapper {
+  width: 100% !important;
+  margin: 0 !important;
+  float: none !important; // Don't float the wrapper itself, just the paragraph
+}
+
+// Image styling inside floated paragraphs
+.page > #quartz-body > .center > article:not(.thing-card) p.has-image .lightbox-image,
+.page > #quartz-body > .center > article:not(.thing-card) p.has-image img,
+.page > #quartz-body > .center > article:not(.thing-card) p:has(> .lightbox-wrapper) .lightbox-image,
+.page > #quartz-body > .center > article:not(.thing-card) p:has(> .lightbox-wrapper) img {
+  max-width: 100% !important;
+  max-height: 70vh !important;
+  height: auto !important;
+  width: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+  transition: box-shadow 0.3s ease, transform 0.3s ease !important;
+  /* Prevent image rendering issues during scroll */
+  image-rendering: auto;
+  will-change: auto;
+}
+
+// Hover effect
+.page > #quartz-body > .center > article:not(.thing-card) p.has-image:hover img,
+.page > #quartz-body > .center > article:not(.thing-card) p:has(> .lightbox-wrapper):hover img {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(-3px) !important;
+}
+
+// Left-aligned variant - every 2nd standalone image (alternate for variety)
+// Target both p.has-image and direct .lightbox-wrapper siblings
+.page > #quartz-body > .center > article:not(.thing-card) p.has-image:nth-of-type(even),
+.page > #quartz-body > .center > article:not(.thing-card) p:has(> .lightbox-wrapper):nth-of-type(even),
+.page > #quartz-body > .center > article:not(.thing-card) .lightbox-wrapper:nth-of-type(even) {
+  float: left !important;
+  clear: left !important;
+  margin-left: 0 !important; // No left margin for left-floated images
+  margin-right: 2rem !important; // Right margin for text spacing
+  margin-top: 0.5rem !important;
+  margin-bottom: 1.5rem !important;
+  width: 40% !important; // Reduced from 45%
+  max-width: 380px !important; // Reduced from 420px
+}
+
+// EXCLUDE gallery images from alternating float rules
+.page > #quartz-body > .center > article:not(.thing-card) .image-gallery .lightbox-wrapper:nth-of-type(even) {
+  float: none !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+// Full-width images - when paragraph only contains image (no other content)
+.page > #quartz-body > .center > article:not(.thing-card) p.has-image:only-child,
+.page > #quartz-body > .center > article:not(.thing-card) p:has(> .lightbox-wrapper):only-child {
+  float: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 4rem 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: center !important;
+}
+
+// ============================================
+// EDITORIAL IMAGE STYLES
+// Allow per-image control via HTML classes
+// ============================================
+
+// Wide image: Full width, centered, with height limit (for landscape/wide images)
+.page > #quartz-body > .center > article:not(.thing-card) .lightbox-wrapper.image-wide,
+.page > #quartz-body > .center > article:not(.thing-card) p.has-image .lightbox-wrapper.image-wide {
+  float: none !important;
+  clear: both !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 3rem auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  display: block !important;
+}
+
+.page > #quartz-body > .center > article:not(.thing-card) .lightbox-wrapper.image-wide .lightbox-image,
+.page > #quartz-body > .center > article:not(.thing-card) .lightbox-wrapper.image-wide img {
+  width: 100% !important;
+  max-width: 100% !important;
+  max-height: 60vh !important;
+  height: auto !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+// Center image: Medium width (70%), centered (for balanced standalone images)
+.page > #quartz-body > .center > article:not(.thing-card) .lightbox-wrapper.image-center,
+.page > #quartz-body > .center > article:not(.thing-card) p.has-image .lightbox-wrapper.image-center {
+  float: none !important;
+  clear: both !important;
+  width: 70% !important;
+  max-width: 600px !important;
+  margin: 3rem auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  display: block !important;
+}
+
+.page > #quartz-body > .center > article:not(.thing-card) .lightbox-wrapper.image-center .lightbox-image,
+.page > #quartz-body > .center > article:not(.thing-card) .lightbox-wrapper.image-center img {
+  width: 100% !important;
+  max-height: 70vh !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+// Small image: Smaller floating image (30% width, for subtle integration)
+.page > #quartz-body > .center > article:not(.thing-card) .lightbox-wrapper.image-small,
+.page > #quartz-body > .center > article:not(.thing-card) p.has-image .lightbox-wrapper.image-small {
+  float: right !important;
+  clear: right !important;
+  width: 30% !important;
+  max-width: 280px !important;
+  margin-left: 2rem !important;
+  margin-right: 0 !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.page > #quartz-body > .center > article:not(.thing-card) .lightbox-wrapper.image-small:nth-of-type(even) {
+  float: left !important;
+  clear: left !important;
+  margin-left: 0 !important;
+  margin-right: 2rem !important;
+}
+
+// Full image: Full width, no float, centered (for maximum impact)
+.page > #quartz-body > .center > article:not(.thing-card) .lightbox-wrapper.image-full,
+.page > #quartz-body > .center > article:not(.thing-card) p.has-image .lightbox-wrapper.image-full {
+  float: none !important;
+  clear: both !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 4rem 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: center !important;
+  display: block !important;
+}
+
+.page > #quartz-body > .center > article:not(.thing-card) .lightbox-wrapper.image-full .lightbox-image,
+.page > #quartz-body > .center > article:not(.thing-card) .lightbox-wrapper.image-full img {
+  width: 100% !important;
+  max-width: 100% !important;
+  max-height: 80vh !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+// Ensure editorial images don't get affected by default float rules
+// (Handled by more specific rules below)
+
+// Ensure paragraphs containing editorial images don't float
+.page > #quartz-body > .center > article:not(.thing-card) p.has-image:has(.lightbox-wrapper.image-wide),
+.page > #quartz-body > .center > article:not(.thing-card) p.has-image:has(.lightbox-wrapper.image-center),
+.page > #quartz-body > .center > article:not(.thing-card) p.has-image:has(.lightbox-wrapper.image-full) {
+  float: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+.page > #quartz-body > .center > article:not(.thing-card) p.has-image:has(.lightbox-wrapper.image-small) {
+  float: right !important;
+  width: 30% !important;
+  max-width: 280px !important;
+  margin-left: 2rem !important;
+  margin-right: 0 !important;
+}
+
+.page > #quartz-body > .center > article:not(.thing-card) p.has-image:has(.lightbox-wrapper.image-small):nth-of-type(even) {
+  float: left !important;
+  margin-left: 0 !important;
+  margin-right: 2rem !important;
+}
+
+// Text flow - ensure paragraphs wrap around floated images
+// CRITICAL: Text must be able to flow around floats
+// Match Maggie Appleton's style - text naturally wraps around floated images
+.page > #quartz-body > .center > article:not(.thing-card) p:not(.has-image):not(:has(> .lightbox-wrapper)) {
+  text-align: left !important;
+  overflow: visible !important; // Allow text to wrap around floats
+  clear: none !important; // Don't clear floats - allow wrapping
+  // Ensure text flows naturally around floated images
+  display: block !important; // Block display for proper text flow
+}
+
+// Clear floats after image paragraphs
+.page > #quartz-body > .center > article:not(.thing-card) p.has-image::after,
+.page > #quartz-body > .center > article:not(.thing-card) p:has(> .lightbox-wrapper)::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+// Spacing after image paragraphs
+.page > #quartz-body > .center > article:not(.thing-card) p.has-image + p,
+.page > #quartz-body > .center > article:not(.thing-card) p:has(> .lightbox-wrapper) + p {
+  margin-top: 2rem !important;
+  clear: both !important;
+}
+
+// Fallback for images not in lightbox-wrapper (direct img tags)
+.page > #quartz-body > .center > article:not(.thing-card) p:has(> img:not(.lightbox-image)) {
+  float: left !important;
+  clear: left !important;
+  margin-right: 2.5rem !important;
+  margin-left: -1rem !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 1.5rem !important;
+  width: 45% !important;
+  max-width: 420px !important;
+}
+
+.page > #quartz-body > .center > article:not(.thing-card) p:has(> img:not(.lightbox-image)) img {
+  max-width: 100% !important;
+  max-height: 70vh !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+}
+
+// Exclude gallery images from all float rules
+.page > #quartz-body > .center > article:not(.thing-card) .image-gallery {
+  float: none !important;
+  clear: both !important;
+  width: 100% !important;
+  margin: 3rem 0 !important;
+}
+
+// Gallery images should NOT float - override all float rules
+.page > #quartz-body > .center > article:not(.thing-card) .image-gallery .lightbox-wrapper {
+  display: block !important;
+  float: none !important;
+  clear: none !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+// Mobile: Stack vertically
+@media (max-width: 768px) {
+  .page > #quartz-body > .center > article:not(.thing-card) p.has-image,
+  .page > #quartz-body > .center > article:not(.thing-card) p:has(> .lightbox-wrapper),
+  .page > #quartz-body > .center > article:not(.thing-card) p:has(> img) {
+    float: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 2.5rem 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: center !important;
+  }
+}
+
+// Dark mode adjustments for backlinks
+:root[saved-theme="dark"] {
+  .page > #quartz-body > .center > article.popover-hint a.internal.alias,
+  .page > #quartz-body > .center > article a.internal.alias,
+  article a.internal.alias {
+    background-color: rgba(251, 146, 60, 0.15) !important; // Subtle warm orange for dark mode - override
+    border: none; // No border
+    color: var(--color-text) !important; // Match normal text color in dark mode
+    
+    &:hover {
+      background-color: rgba(251, 146, 60, 0.22) !important; // Slightly more visible on hover
+      color: var(--color-text) !important; // Keep text color on hover
+    }
+  }
+}
+
+// Article header handles title, meta, and tags - see articleHeader.scss
+
+// Breadcrumbs - more subtle
+.breadcrumbs {
+  max-width: 900px; // Matches expanded content width
+  margin: 0 auto;
+  padding: 0 2.5rem; // Matches content padding
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+// Make sidebars more minimal on content pages
+.page > #quartz-body > .sidebar.right {
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// Center content area better
+// Note: align-items: flex-start prevents empty space at bottom (set in earlier definition)
+.page > #quartz-body > .center {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; // Prevent stretching that creates empty space
+}
+
+// Better spacing for page header
+.page-header {
+  width: 100%;
+  max-width: 900px; // Matches expanded content width
+  margin: 0 auto;
+  padding: 0 2.5rem; // Matches content padding
+  display: block !important;
+  
+  .popover-hint {
+    display: block !important;
+    width: 100%;
+  }
+}
+
+// Lora is loaded via Google Fonts in Head.tsx
+// No additional @font-face declarations needed
+
+
+@font-face {
+  font-family: "Charis SIL";
+  src: url("https://cdn.jsdelivr.net/gh/silnrsi/fonts@master/CharisSIL/web/CharisSIL-Regular.woff2") format("woff2"),
+       url("https://cdn.jsdelivr.net/gh/silnrsi/fonts@master/CharisSIL/web/CharisSIL-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Charis SIL";
+  src: url("https://cdn.jsdelivr.net/gh/silnrsi/fonts@master/CharisSIL/web/CharisSIL-Bold.woff2") format("woff2"),
+       url("https://cdn.jsdelivr.net/gh/silnrsi/fonts@master/CharisSIL/web/CharisSIL-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gentium Plus";
+  src: url("https://cdn.jsdelivr.net/gh/silnrsi/fonts@master/GentiumPlus/web/GentiumPlus-Regular.woff2") format("woff2"),
+       url("https://cdn.jsdelivr.net/gh/silnrsi/fonts@master/GentiumPlus/web/GentiumPlus-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gentium Plus";
+  src: url("https://cdn.jsdelivr.net/gh/silnrsi/fonts@master/GentiumPlus/web/GentiumPlus-Bold.woff2") format("woff2"),
+       url("https://cdn.jsdelivr.net/gh/silnrsi/fonts@master/GentiumPlus/web/GentiumPlus-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Linux Libertine";
+  src: url("https://cdn.jsdelivr.net/gh/LinuxLibertine/LinuxLibertine@master/LinuxLibertine/LinLibertine_R.woff2") format("woff2"),
+       url("https://cdn.jsdelivr.net/gh/LinuxLibertine/LinuxLibertine@master/LinuxLibertine/LinLibertine_R.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Linux Libertine";
+  src: url("https://cdn.jsdelivr.net/gh/LinuxLibertine/LinuxLibertine@master/LinuxLibertine/LinLibertine_RB.woff2") format("woff2"),
+       url("https://cdn.jsdelivr.net/gh/LinuxLibertine/LinuxLibertine@master/LinuxLibertine/LinLibertine_RB.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Liberation Serif";
+  src: url("https://cdn.jsdelivr.net/gh/liberationfonts/liberation-fonts@master/liberation-fonts-ttf/LiberationSerif-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Liberation Serif";
+  src: url("https://cdn.jsdelivr.net/gh/liberationfonts/liberation-fonts@master/liberation-fonts-ttf/LiberationSerif-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-test-charter {
+  h2, p {
+    font-family: "Charter", serif;
+  }
+}
+
+.font-test-charis-sil {
+  h2, p {
+    font-family: "Charis SIL", serif;
+  }
+}
+
+.font-test-gentium-plus {
+  h2, p {
+    font-family: "Gentium Plus", serif;
+  }
+}
+
+.font-test-linux-libertine {
+  h2, p {
+    font-family: "Linux Libertine", serif;
+  }
+}
+
+.font-test-liberation-serif {
+  h2, p {
+    font-family: "Liberation Serif", serif;
+  }
+}
+
+// Hybrid/slab serif fonts for second typography test
+.font-test-roboto-slab {
+  h2, p {
+    font-family: "Roboto Slab", serif;
+  }
+}
+
+.font-test-zilla-slab {
+  h2, p {
+    font-family: "Zilla Slab", serif;
+  }
+}
+
+.font-test-bitter {
+  h2, p {
+    font-family: "Bitter", serif;
+  }
+}
+
+.font-test-dm-serif {
+  h2, p {
+    font-family: "DM Serif Text", serif;
+  }
+}
+
+.font-test-crimson-text {
+  h2, p {
+    font-family: "Crimson Text", serif;
+  }
+}
+
+// Ensure article content is properly centered
+.popover-hint {
+  max-width: 900px; // Matches expanded content width
+  margin: 0 auto;
+  padding: 0 2.5rem; // Matches content padding
+  
+  // Override any conflicting styles
+  width: 100%;
+  box-sizing: border-box;
+}
+
+// Page header styling - ensure serif font is used
+.page-header {
+  .article-title,
+  h1 {
+    font-family: var(--font-body) !important; // Charter serif with Lora fallback
+    font-size: var(--size-h1) !important; // 3rem
+    line-height: var(--line-heading) !important;
+    color: var(--dark) !important;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    word-spacing: 0.02em;
+  }
+}
+
+// Mobile adjustments - maintain proportions
+@media all and (max-width: 800px) {
+  .page > #quartz-body > .center > article.popover-hint,
+  .page > #quartz-body > .center > article {
+    max-width: 100%;
+    padding: 0 1.5rem;
+    font-size: 1.2rem; // Still generous on mobile
+    line-height: var(--line-body); // Maintain 2.0 line-height
+    
+    h1 {
+      font-size: 2.5rem; // Proportionally scaled
+    }
+    
+    h2 {
+      font-size: 2rem;
+    }
+    
+    h3 {
+      font-size: 1.6rem;
+    }
+    
+    // Disable drop cap on mobile
+    > p:first-of-type::first-letter {
+      float: none;
+      font-size: inherit;
+      line-height: inherit;
+      padding: 0;
+    }
+  }
+  
+  .article-title {
+    font-size: 2.5rem; // Proportionally scaled
+    padding: 0 1.5rem;
+  }
+  
+  .content-meta,
+  .tags,
+  .breadcrumbs,
+  .page-header {
+    padding: 0 1.5rem;
+  }
+  
+  .page-header {
+    .article-title,
+    h1 {
+      font-size: 2.5rem !important; // Proportionally scaled for mobile
+    }
+  }
+}
+
+
+/* ============================================================
+   THINGS PAGE – MINIMAL FEED LAYOUT (Maggie-inspired)
+   Scope: only /Things (slug: Things/index)
+   ============================================================ */
+
+/* Remove old Things page CSS that was affecting .center container */
+/* The ThingsFeed component now handles its own styling */
+
+/* 2. Header (title + subtitle + filters) */
+
+body[data-slug="things/index"] .things-header {
+  margin-bottom: 3rem;
+}
+
+body[data-slug="things/index"] .things-header__inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+body[data-slug="things/index"] .things-title {
+  font-size: 2.2rem;
+  margin: 0 0 0.5rem 0;
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+body[data-slug="things/index"] .things-subtitle {
+  font-size: 1rem;
+  opacity: 0.7;
+  max-width: 32rem;
+  margin: 0;
+  color: var(--color-muted);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+body[data-slug="things/index"] .things-filter {
+  margin-top: 1rem;
+}
+
+body[data-slug="things/index"] .things-filter__select {
+  font-size: var(--size-body-small);
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: transparent;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  transition: all 150ms ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23a67c52' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 12px;
+  padding-right: 2.5rem;
+  min-width: 200px;
+  opacity: 0.8;
+}
+
+body[data-slug="things/index"] .things-filter__select:hover {
+  border-color: var(--color-accent-soft);
+  opacity: 1;
+}
+
+body[data-slug="things/index"] .things-filter__select:focus {
+  outline: none;
+  border-color: var(--color-accent-soft);
+  box-shadow: 0 0 0 1px rgba(251, 200, 123, 0.15);
+  opacity: 1;
+}
+
+/* Style the dropdown options - note: browser limitations apply */
+body[data-slug="things/index"] .things-filter__select {
+  /* Force styling on the select itself */
+  background-color: var(--light) !important;
+  color: var(--color-text) !important;
+}
+
+body[data-slug="things/index"] .things-filter__select option {
+  background: var(--light) !important;
+  color: var(--color-text) !important;
+  font-family: var(--font-body) !important;
+  padding: 0.5rem !important;
+}
+
+/* Style optgroups */
+body[data-slug="things/index"] .things-filter__select optgroup {
+  font-family: var(--font-body) !important;
+  font-size: var(--size-body-small) !important;
+  color: var(--color-muted) !important;
+  font-weight: 500 !important;
+  font-style: italic !important;
+  background: var(--light) !important;
+}
+
+body[data-slug="things/index"] .things-filter__select optgroup option {
+  font-style: normal !important;
+  font-weight: 400 !important;
+  padding-left: 1rem !important;
+  background: var(--light) !important;
+  color: var(--color-text) !important;
+}
+
+/* Dark mode adjustments for dropdown */
+:root[saved-theme="dark"] {
+  body[data-slug="things/index"] .things-filter__select {
+    background-color: var(--light) !important;
+    color: var(--darkgray) !important;
+  }
+
+  body[data-slug="things/index"] .things-filter__select option {
+    background: var(--light) !important;
+    color: var(--darkgray) !important;
+  }
+
+  body[data-slug="things/index"] .things-filter__select optgroup {
+    background: var(--light) !important;
+    color: var(--gray) !important;
+  }
+
+  body[data-slug="things/index"] .things-filter__select optgroup option {
+    background: var(--light) !important;
+    color: var(--darkgray) !important;
+  }
+}
+
+/* 3. Feed wrapper - minimal spacing, wider */
+
+body[data-slug="things/index"] .things-feed {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* 4. Thing cards - minimal, elegant, no heavy backgrounds */
+
+body[data-slug="things/index"] .thing-card {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  transition: none;
+}
+
+body[data-slug="things/index"] .thing-card:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+/* 5. Meta row (date left, why + tags right) - single line, subtle but visible */
+
+body[data-slug="things/index"] .thing-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border-soft);
+  flex-wrap: wrap;
+}
+
+body[data-slug="things/index"] .thing-card__meta-left {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+}
+
+body[data-slug="things/index"] .thing-card__date {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+  color: var(--color-muted);
+  font-family: var(--font-body);
+  margin: 0;
+}
+
+body[data-slug="things/index"] .thing-card__meta-right {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+body[data-slug="things/index"] .thing-card__why {
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  opacity: 0.7;
+  color: var(--color-muted);
+  font-family: var(--font-body);
+  margin: 0;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+body[data-slug="things/index"] .thing-card__why-value {
+  font-style: normal;
+  opacity: 0.9;
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+body[data-slug="things/index"] .thing-card__tags-wrapper {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+
+body[data-slug="things/index"] .thing-card__tags-intro {
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  opacity: 0.7;
+  color: var(--color-muted);
+  font-family: var(--font-body);
+  margin: 0;
+  font-style: italic;
+}
+
+body[data-slug="things/index"] .thing-card__tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline;
+}
+
+body[data-slug="things/index"] .thing-card__tags li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+body[data-slug="things/index"] .thing-card__tags li:not(:last-child)::after {
+  content: ", ";
+  opacity: 0.7;
+  color: var(--color-muted);
+}
+
+body[data-slug="things/index"] .thing-card__tag {
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  opacity: 0.85;
+  color: var(--color-text);
+  text-decoration: none;
+  font-family: var(--font-body);
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+body[data-slug="things/index"] .thing-card__tag:hover {
+  opacity: 1;
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent-soft);
+  text-underline-offset: 0.2em;
+}
+
+/* 6. Body text - generous spacing like Maggie */
+
+body[data-slug="things/index"] .thing-card__body {
+  font-size: var(--size-body);
+  line-height: var(--line-body);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+body[data-slug="things/index"] .thing-card__body p {
+  margin: 0 0 1.5rem 0;
+  letter-spacing: 0.02em;
+  word-spacing: 0.05em;
+}
+
+body[data-slug="things/index"] .thing-card__body p:last-child {
+  margin-bottom: 0;
+}
+
+/* 7. Images: elegant thumbnails with subtle styling */
+
+body[data-slug="things/index"] .thing-card__body img {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 1rem 0 1.5rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+body[data-slug="things/index"] .thing-card__body img:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* If the image is wrapped in a <p>, keep that tight too */
+body[data-slug="things/index"] .thing-card__body p:has(> img) {
+  margin: 1rem 0 1.5rem 0;
+  max-height: 240px;
+  overflow: hidden;
+}
+
+/* 8. Iframes (YouTube etc.) */
+
+body[data-slug="things/index"] .thing-card__body iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 8px;
+  margin: 1rem 0 1.5rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 9. Links - warm accent colors */
+
+body[data-slug="things/index"] .thing-card__body a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent-soft);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+body[data-slug="things/index"] .thing-card__body a:hover {
+  color: var(--color-accent-soft);
+  text-decoration-color: var(--color-accent);
+}
+
+/* 10. Dark mode adjustments */
+
+:root[saved-theme="dark"] {
+  body[data-slug="things/index"] .thing-card__meta {
+    border-bottom-color: var(--darkgray);
+  }
+
+  body[data-slug="things/index"] .thing-card__date {
+    color: var(--color-muted);
+  }
+
+  body[data-slug="things/index"] .thing-card__tags li {
+    border-color: var(--darkgray);
+    color: var(--color-muted);
+  }
+
+  body[data-slug="things/index"] .thing-card__body img {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  body[data-slug="things/index"] .thing-card__body img:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* 11. Mobile tweaks */
+
+@media (max-width: 700px) {
+  body[data-slug="things/index"] .center {
+    padding-inline: 1.1rem;
+  }
+
+  body[data-slug="things/index"] .things-header {
+    margin-bottom: 2rem;
+  }
+
+  body[data-slug="things/index"] .things-title {
+    font-size: 1.8rem;
+  }
+
+  body[data-slug="things/index"] .things-feed {
+    gap: 2.5rem;
+  }
+
+  body[data-slug="things/index"] .thing-card__body img {
+    margin: 0.75rem 0 1rem 0;
+  }
+}
+
+// ============================================
+// IMAGE GALLERY - Bento-style layout
+// ============================================
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: minmax(200px, auto);
+  grid-auto-flow: dense;
+  gap: 0.75rem;
+  margin: 2rem 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+// Smart column count based on image count
+// Default: 3 columns (for 11+ images)
+.image-gallery[data-image-count] {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+// 2-10 images → 2 columns (looks better with fewer images)
+// Even numbers (2, 4, 6, 8, 10) → 2 columns (perfectly divisible)
+.image-gallery[data-image-count="2"],
+.image-gallery[data-image-count="4"],
+.image-gallery[data-image-count="6"],
+.image-gallery[data-image-count="8"],
+.image-gallery[data-image-count="10"] {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+// Odd numbers (3, 5, 7, 9) → 2 columns (better than 3 with odd numbers)
+.image-gallery[data-image-count="3"],
+.image-gallery[data-image-count="5"],
+.image-gallery[data-image-count="7"],
+.image-gallery[data-image-count="9"] {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+// Gallery images are wrapped in lightbox-wrapper by ClickableImages plugin
+.image-gallery .lightbox-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  display: block;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.image-gallery .lightbox-wrapper img,
+.image-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.image-gallery .lightbox-wrapper:hover img,
+.image-gallery img:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+// Smart grid placement based on aspect ratio
+// Landscape images (wider) can span multiple columns if needed
+// Currently handled automatically by grid-auto-flow: dense
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .image-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-auto-rows: minmax(150px, auto);
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+  }
+  
+  // On mobile, always use 2 columns for better viewing
+  // Override the desktop column rules
+  .image-gallery[data-image-count] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .image-gallery img {
+    border-radius: 3px;
+  }
+}
+
+// Ensure galleries don't break article flow
+article .image-gallery {
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+// ============================================
+// SCROLLBAR STYLING - Option 4: Overlay (macOS-style)
+// ============================================
+// Thin overlay scrollbars that appear on scroll/hover
+// Don't take up layout space - overlay content
+// Applied to ALL scrollable areas (sidebar, main content, etc.)
+// Other options are commented below for easy switching
+
+// Option 4: Overlay scrollbars (macOS-style) (CURRENT)
+// Scroll-based fade: appear during scroll, fade out after, also show on hover
+// Apply to all elements - Firefox
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.3s ease;
+}
+
+// Show when scrollbars-visible class is added (via JavaScript)
+// Note: Removed *:hover to prevent showing on all hovers - only show on scroll or specific hover targets
+*.scrollbars-visible,
+*:focus-within {
+  scrollbar-color: var(--gray) transparent;
+}
+
+// Only show on hover for specific scrollable containers (not the entire page)
+.sidebar:hover,
+.sidebar.left:hover,
+.sidebar.right:hover,
+.center:hover,
+article:hover {
+  scrollbar-color: var(--gray) transparent;
+}
+
+// Chrome, Safari, Edge - overlay style for all elements
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: transparent;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+// Show when scrollbars-visible class is added (via JavaScript)
+*.scrollbars-visible::-webkit-scrollbar-thumb,
+*:focus-within::-webkit-scrollbar-thumb {
+  background-color: var(--gray);
+  opacity: 0.3;
+}
+
+*.scrollbars-visible::-webkit-scrollbar-thumb:hover,
+*:focus-within::-webkit-scrollbar-thumb:hover {
+  opacity: 0.5;
+  background-color: var(--darkgray);
+}
+
+// Only show on hover for specific scrollable containers (not the entire page)
+.sidebar:hover::-webkit-scrollbar-thumb,
+.sidebar.left:hover::-webkit-scrollbar-thumb,
+.sidebar.right:hover::-webkit-scrollbar-thumb,
+.center:hover::-webkit-scrollbar-thumb,
+article:hover::-webkit-scrollbar-thumb {
+  background-color: var(--gray);
+  opacity: 0.3;
+}
+
+.sidebar:hover::-webkit-scrollbar-thumb:hover,
+.sidebar.left:hover::-webkit-scrollbar-thumb:hover,
+.sidebar.right:hover::-webkit-scrollbar-thumb:hover,
+.center:hover::-webkit-scrollbar-thumb:hover,
+article:hover::-webkit-scrollbar-thumb:hover {
+  opacity: 0.5;
+  background-color: var(--darkgray);
+}
+
+// Ensure main content area also gets overlay scrollbars
+.page > #quartz-body > .center,
+.page > #quartz-body > .center > article,
+.sidebar,
+.sidebar.left,
+.sidebar.right {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.3s ease;
+}
+
+.page > #quartz-body > .center.scrollbars-visible,
+.page > #quartz-body > .center > article.scrollbars-visible,
+.sidebar.scrollbars-visible,
+.sidebar.left.scrollbars-visible,
+.sidebar.right.scrollbars-visible,
+.page > #quartz-body > .center:hover,
+.page > #quartz-body > .center > article:hover,
+.sidebar:hover,
+.sidebar.left:hover,
+.sidebar.right:hover {
+  scrollbar-color: var(--gray) transparent;
+}
+
+// Dark mode adjustments
+:root[saved-theme="dark"] {
+  *.scrollbars-visible,
+  *:focus-within {
+    scrollbar-color: var(--gray) transparent;
+  }
+  
+  .sidebar:hover,
+  .sidebar.left:hover,
+  .sidebar.right:hover,
+  .center:hover,
+  article:hover {
+    scrollbar-color: var(--gray) transparent;
+  }
+  
+  *.scrollbars-visible::-webkit-scrollbar-thumb,
+  *:focus-within::-webkit-scrollbar-thumb {
+    background-color: var(--gray);
+    opacity: 0.4;
+    
+    &:hover {
+      opacity: 0.6;
+      background-color: var(--darkgray);
+    }
+  }
+  
+  .sidebar:hover::-webkit-scrollbar-thumb,
+  .sidebar.left:hover::-webkit-scrollbar-thumb,
+  .sidebar.right:hover::-webkit-scrollbar-thumb,
+  .center:hover::-webkit-scrollbar-thumb,
+  article:hover::-webkit-scrollbar-thumb {
+    background-color: var(--gray);
+    opacity: 0.4;
+    
+    &:hover {
+      opacity: 0.6;
+      background-color: var(--darkgray);
+    }
+  }
+  
+  .page > #quartz-body > .center.scrollbars-visible,
+  .page > #quartz-body > .center > article.scrollbars-visible,
+  .sidebar.scrollbars-visible,
+  .sidebar.left.scrollbars-visible,
+  .sidebar.right.scrollbars-visible,
+  .page > #quartz-body > .center:hover,
+  .page > #quartz-body > .center > article:hover,
+  .sidebar:hover,
+  .sidebar.left:hover,
+  .sidebar.right:hover {
+    scrollbar-color: var(--gray) transparent;
+  }
+}
+
+// ============================================
+// ALTERNATIVE SCROLLBAR OPTIONS (commented)
+// ============================================
+// Uncomment one of these sections and comment out Option 2 above to switch
+
+/*
+// Option 1: Hide scrollbars completely
+* {
+  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none; // IE/Edge
+}
+
+*::-webkit-scrollbar {
+  display: none; // Chrome, Safari
+}
+*/
+
+/*
+// Option 2: Thin, styled scrollbars (always visible)
+// Firefox
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray) transparent;
+}
+
+// Chrome, Safari, Edge
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--gray);
+  border-radius: 4px;
+  opacity: 0.4;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+  
+  &:hover {
+    opacity: 0.6;
+    background-color: var(--darkgray);
+  }
+}
+
+// Dark mode adjustments
+:root[saved-theme="dark"] {
+  * {
+    scrollbar-color: var(--gray) transparent;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--gray);
+    opacity: 0.5;
+    
+    &:hover {
+      opacity: 0.7;
+      background-color: var(--darkgray);
+    }
+  }
+}
+*/
+
+/*
+// Option 3: Auto-hide scrollbars (show on hover/scroll)
+// Firefox - always thin but subtle
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.3s ease;
+}
+
+// Show scrollbar on hover (Firefox)
+*:hover {
+  scrollbar-color: var(--gray) transparent;
+}
+
+// Chrome, Safari, Edge
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+// Show scrollbar on hover
+*:hover::-webkit-scrollbar-thumb {
+  background-color: var(--gray);
+  opacity: 0.4;
+}
+
+*:hover::-webkit-scrollbar-thumb:hover {
+  opacity: 0.6;
+  background-color: var(--darkgray);
+}
+
+// Dark mode adjustments
+:root[saved-theme="dark"] {
+  *:hover {
+    scrollbar-color: var(--gray) transparent;
+  }
+  
+  *:hover::-webkit-scrollbar-thumb {
+    background-color: var(--gray);
+    opacity: 0.5;
+    
+    &:hover {
+      opacity: 0.7;
+      background-color: var(--darkgray);
+    }
+  }
+}
+*/
+

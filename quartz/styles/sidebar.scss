@@ -1,0 +1,281 @@
+@use "./variables.scss" as *;
+
+// ============================================
+// SIDEBAR - Using Shared Design Tokens
+// ============================================
+// All sizes, colors, and spacing use the unified design system
+
+// Main sidebar container
+.page > #quartz-body > .sidebar.left {
+  padding: $topSpacing var(--space-lg) var(--space-xl) var(--space-lg); // 24px horizontal, 32px bottom
+  gap: var(--space-lg); // 24px - matches content paragraph spacing
+  font-family: var(--font-body); // Crimson Pro
+  
+  // Page title
+  .page-title {
+    font-size: var(--size-body); // 1.375rem - matches content base
+    margin: 0 0 var(--space-md) 0; // 16px
+    font-weight: 400;
+    line-height: var(--line-body); // 2.0 - matches content
+    font-family: var(--font-body); // Lora serif
+    color: var(--color-text);
+    
+    a {
+      color: var(--color-text);
+      text-decoration: none;
+      transition: text-decoration 0.2s ease;
+      
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: var(--color-accent-soft);
+        text-underline-offset: 0.2em;
+      }
+    }
+  }
+  
+  // Search
+  .search {
+    margin-bottom: 0;
+    
+    .search-button {
+      height: var(--space-xl); // 32px
+      font-size: var(--size-body-small); // 1.05rem
+      border-radius: 4px;
+      border-color: var(--color-border-soft);
+      font-family: var(--font-body);
+    }
+  }
+}
+
+// Section headers - capitalized, more prominent, with warm accent colors
+.explorer button.desktop-explorer h2,
+.recent-notes > h3,
+.backlinks > h3,
+.toc button.toc-header h3,
+.graph > h3,
+.tag-list-wrapper > h3 {
+  font-size: var(--size-label); // 0.85rem
+  font-weight: 500; // Slightly bolder
+  font-family: var(--font-body); // Changed from mono to body font
+  text-transform: capitalize; // Proper capitalization (Explorer, Recent Writing)
+  letter-spacing: 0.03em;
+  margin: 0 0 var(--space-sm) 0; // 8px bottom
+  line-height: 1.4;
+}
+
+// Different warm colors for different sections
+.explorer button.desktop-explorer h2 {
+  color: var(--color-accent); // Warm orange
+}
+
+.recent-notes > h3 {
+  color: var(--color-accent-warm); // Warm amber
+}
+
+.backlinks > h3 {
+  color: var(--color-accent-coral); // Warm coral
+}
+
+.toc button.toc-header h3 {
+  color: var(--color-accent); // Warm orange
+}
+
+.graph > h3 {
+  color: var(--color-accent); // Warm orange for graph view
+}
+
+.tag-list-wrapper > h3 {
+  color: var(--color-accent-warm); // Warm amber for tags
+}
+
+// All sidebar links - cohesive with content but tighter line-height
+.explorer .explorer-content ul li > a,
+.explorer .folder-container div > a,
+.recent-notes .section .desc h3 > a,
+.backlinks ul li > a,
+.toc ul.toc-content li > a {
+  font-size: var(--size-body-small); // 1.1rem (proportionally smaller than content)
+  font-weight: 400;
+  line-height: 1.3; // Tighter for sidebar (not 2.0)
+  letter-spacing: 0.015em; // Slightly less than content but still generous
+  word-spacing: 0.03em; // Added word spacing for consistency
+  color: var(--color-text); // Uses shared text color (not var(--dark))
+  font-family: var(--font-body); // Lora serif - same as content
+  text-decoration: none;
+  transition: text-decoration 0.2s ease, border-color 0.2s ease;
+  display: block;
+  padding: var(--space-xs) 0; // 4px vertical
+  border-left: 2px solid transparent;
+  padding-left: var(--space-sm); // 8px - space for border
+  margin-left: calc(-1 * var(--space-sm)); // Offset padding
+  
+  // Same hover as content links
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent-soft); // Same as content
+    text-underline-offset: 0.2em;
+    border-left-color: var(--color-border-soft);
+  }
+  
+  // Active state
+  &.active {
+    border-left-color: var(--color-muted);
+    color: var(--color-text);
+    text-decoration: none;
+  }
+}
+
+// Explorer specific
+.explorer {
+  margin-bottom: 0;
+  
+  .explorer-content {
+    margin-top: var(--space-sm); // 8px
+    
+    // Folder names - same treatment as links
+    .folder-container div > a {
+      font-size: var(--size-body-small); // 1.1rem
+      font-weight: 400;
+      line-height: 1.3; // Tighter for sidebar
+      color: var(--color-text); // No blue - uses shared text color
+      font-family: var(--font-body);
+    }
+    
+    // Folder button text
+    .folder-container button span {
+      font-size: var(--size-body-small);
+      font-weight: 400;
+      line-height: 1.3; // Tighter for sidebar
+      color: var(--color-text);
+      font-family: var(--font-body);
+    }
+  }
+}
+
+// Recent Notes / Pinned
+.recent-notes {
+  margin-bottom: 0;
+  
+  & > ul.recent-ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & > li {
+      margin: var(--space-xs) 0; // 4px vertical (reduced from 8px for tighter rhythm)
+      
+      .section {
+        & > .desc {
+          & > h3 {
+            margin: 0;
+            // Link styles handled by base selector above
+          }
+        }
+
+        // Dates - using shared muted color and spacing
+        & > .meta {
+          margin: var(--space-xs) 0 0 0; // 4px (not 2px - uses spacing scale)
+          font-size: var(--size-label); // 0.8rem (increased)
+          color: var(--color-muted); // Uses shared muted color (not hardcoded)
+          font-weight: 400;
+          line-height: 1.4;
+          font-family: var(--font-body);
+          padding-left: var(--space-sm); // 8px - align with link text
+        }
+      }
+    }
+  }
+  
+  & > p {
+    margin: 0.75rem 0 0 0;
+    font-size: var(--size-body-small);
+    font-family: var(--font-body);
+    
+    & > a {
+      color: var(--color-text);
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: var(--color-accent-soft);
+        text-underline-offset: 0.2em;
+      }
+    }
+  }
+}
+
+// Right sidebar
+.page > #quartz-body > .sidebar.right {
+  padding: $topSpacing var(--space-md) var(--space-xl) var(--space-md);
+  gap: var(--space-lg); // 24px
+  font-family: var(--font-body); // Consistent font
+  
+  .graph {
+    margin-bottom: 0;
+    
+    h3 {
+      // Inherits section header styles above
+    }
+    
+    .graph-outer {
+      margin-top: var(--space-sm); // Consistent spacing
+    }
+  }
+  
+  .backlinks {
+    margin-bottom: 0;
+    
+    h3 {
+      // Inherits section header styles above
+    }
+    
+    ul li {
+      margin: var(--space-xs) 0; // 4px
+      
+      a {
+        // Inherits base link styles above
+      }
+    }
+  }
+  
+  .tag-list-wrapper {
+    margin-bottom: 0;
+    
+    h3 {
+      // Inherits section header styles above
+    }
+  }
+  
+  .toc {
+    button.toc-header h3 {
+      // Inherits section header styles above
+    }
+    
+    ul.toc-content li {
+      margin: var(--space-xs) 0; // 4px
+      
+      a {
+        // Inherits base link styles above
+      }
+    }
+  }
+}
+
+// Remove any boxed hover states - unified with content
+.sidebar a.internal {
+  background-color: transparent !important;
+  padding: var(--space-xs) var(--space-sm) !important;
+  border-radius: 0 !important;
+  border-left: 2px solid transparent;
+  margin-left: calc(-1 * var(--space-sm));
+  
+  &:hover {
+    background-color: transparent !important;
+  }
+}
+
+// Flex component spacing
+.flex-component {
+  margin-bottom: 0;
+  gap: var(--space-sm); // 8px
+}

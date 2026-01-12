@@ -1,0 +1,42 @@
+@use "../../styles/variables.scss" as *;
+
+.currently-in {
+  flex-direction: column;
+  background-color: var(--lightgray);
+  border: 1px solid var(--gray);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  & > h3 {
+    font-size: 1rem;
+    margin: 0;
+    margin-bottom: 0.75rem;
+    color: var(--dark);
+    font-weight: $semiBoldWeight;
+  }
+
+  & > .location {
+    font-size: 1.125rem;
+    color: var(--darkgray);
+    margin-bottom: 0.5rem;
+
+    &.next {
+      margin-bottom: 0;
+    }
+
+    & > strong {
+      color: var(--dark);
+      font-weight: $semiBoldWeight;
+    }
+  }
+
+  & > .next-label {
+    font-size: 0.875rem;
+    color: var(--gray);
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
+    font-weight: $normalWeight;
+  }
+}
+

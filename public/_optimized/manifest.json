@@ -1,0 +1,1444 @@
+{
+  "/r0000155.jpg": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/r0000155-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/r0000155-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435062507
+  },
+  "/r0001080.jpg": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/r0001080-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/r0001080-1200w.webp"
+      }
+    ],
+    "originalWidth": 4815,
+    "originalHeight": 3277,
+    "aspectRatio": 1.4693317058285016,
+    "processedAt": 1766435062360
+  },
+  "/stash/images/banh-mi.jpg": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/stash/images/banh-mi-800w.webp"
+      }
+    ],
+    "originalWidth": 900,
+    "originalHeight": 506,
+    "aspectRatio": 1.7786561264822134,
+    "processedAt": 1766435062250
+  },
+  "/stash/images/glogg.jpg": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/stash/images/glogg-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/stash/images/glogg-1200w.webp"
+      }
+    ],
+    "originalWidth": 1920,
+    "originalHeight": 1280,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435062455
+  },
+  "/stash/images/screenshot-gi7o3npm.png": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/stash/images/screenshot-gi7o3npm-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/stash/images/screenshot-gi7o3npm-1200w.webp"
+      }
+    ],
+    "originalWidth": 1784,
+    "originalHeight": 1026,
+    "aspectRatio": 1.7387914230019492,
+    "processedAt": 1766435062407
+  },
+  "/stash/images/screenshot-ket8fe4j.png": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/stash/images/screenshot-ket8fe4j-800w.webp"
+      }
+    ],
+    "originalWidth": 1012,
+    "originalHeight": 670,
+    "aspectRatio": 1.51044776119403,
+    "processedAt": 1766435062353
+  },
+  "/travel/athens/r0001769.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/athens/r0001769-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/travel/athens/r0001769-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435062603
+  },
+  "/travel/athens/r0001808.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/athens/r0001808-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/travel/athens/r0001808-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435062589
+  },
+  "/travel/athens/r0001836.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/athens/r0001836-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/travel/athens/r0001836-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435062627
+  },
+  "/travel/athens/r0001844.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/athens/r0001844-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/travel/athens/r0001844-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435062357
+  },
+  "/travel/athens/r0001887.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/athens/r0001887-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/travel/athens/r0001887-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435062997
+  },
+  "/travel/athens/r0001926.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/athens/r0001926-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/travel/athens/r0001926-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435063124
+  },
+  "/travel/athens/r0001930.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/athens/r0001930-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/travel/athens/r0001930-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435063087
+  },
+  "/travel/athens/r0001936.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/athens/r0001936-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/travel/athens/r0001936-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435063123
+  },
+  "/travel/athens/r0001989.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/athens/r0001989-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/travel/athens/r0001989-1200w.webp"
+      }
+    ],
+    "originalWidth": 3710,
+    "originalHeight": 5752,
+    "aspectRatio": 0.6449930458970793,
+    "processedAt": 1766435063186
+  },
+  "/travel/athens/r0002042.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/athens/r0002042-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/travel/athens/r0002042-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435063403
+  },
+  "/travel/athens/r0002045.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/athens/r0002045-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/travel/athens/r0002045-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435063225
+  },
+  "/travel/athens/r0002047.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/athens/r0002047-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/travel/athens/r0002047-1200w.webp"
+      }
+    ],
+    "originalWidth": 3654,
+    "originalHeight": 5117,
+    "aspectRatio": 0.7140902872777017,
+    "processedAt": 1766435063328
+  },
+  "/travel/athens/r0002055.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/athens/r0002055-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/travel/athens/r0002055-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435063325
+  },
+  "/travel/athens/r0002059.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/athens/r0002059-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/travel/athens/r0002059-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435063246
+  },
+  "/travel/thailand/0d7c394c-845d.jpeg": {
+    "sizes": [],
+    "originalWidth": 724,
+    "originalHeight": 1086,
+    "aspectRatio": 0.6666666666666666,
+    "processedAt": 1767344065634
+  },
+  "/travel/thailand/2eb48457-8825.jpeg": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/thailand/2eb48457-8825-800w.webp"
+      }
+    ],
+    "originalWidth": 1086,
+    "originalHeight": 724,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435063446
+  },
+  "/travel/thailand/3b3f55de-b4d3.jpeg": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/thailand/3b3f55de-b4d3-800w.webp"
+      }
+    ],
+    "originalWidth": 1086,
+    "originalHeight": 724,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435063440
+  },
+  "/travel/thailand/8dc2b228-3dd7.jpeg": {
+    "sizes": [],
+    "originalWidth": 724,
+    "originalHeight": 1086,
+    "aspectRatio": 0.6666666666666666,
+    "processedAt": 1767344065634
+  },
+  "/travel/thailand/r0000269.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/thailand/r0000269-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/travel/thailand/r0000269-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435063781
+  },
+  "/travel/thailand/r0000305.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/thailand/r0000305-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/travel/thailand/r0000305-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435063700
+  },
+  "/travel/thailand/r0000311.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/thailand/r0000311-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/travel/thailand/r0000311-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435063835
+  },
+  "/travel/thailand/r0000313.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/thailand/r0000313-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/travel/thailand/r0000313-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435063694
+  },
+  "/travel/thailand/r0000321.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/thailand/r0000321-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/travel/thailand/r0000321-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435063813
+  },
+  "/travel/thailand/r0001080.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/travel/thailand/r0001080-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/travel/thailand/r0001080-1200w.webp"
+      }
+    ],
+    "originalWidth": 4815,
+    "originalHeight": 3277,
+    "aspectRatio": 1.4693317058285016,
+    "processedAt": 1766435063854
+  },
+  "/writings/images/retrospect-2024/1f010b0f.jpeg": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/retrospect-2024/1f010b0f-800w.webp"
+      }
+    ],
+    "originalWidth": 1024,
+    "originalHeight": 768,
+    "aspectRatio": 1.3333333333333333,
+    "processedAt": 1766435063895
+  },
+  "/writings/images/retrospect-2024/2b3e4ff5.jpeg": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/retrospect-2024/2b3e4ff5-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/retrospect-2024/2b3e4ff5-1200w.webp"
+      }
+    ],
+    "originalWidth": 3024,
+    "originalHeight": 3734,
+    "aspectRatio": 0.8098553829673273,
+    "processedAt": 1766435064123
+  },
+  "/writings/images/retrospect-2024/2dc0fe16.jpeg": {
+    "sizes": [],
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "aspectRatio": 0.75,
+    "processedAt": 1767344065637
+  },
+  "/writings/images/retrospect-2024/3428abbf.jpeg": {
+    "sizes": [],
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "aspectRatio": 0.75,
+    "processedAt": 1767344065637
+  },
+  "/writings/images/retrospect-2024/359ed72a.jpeg": {
+    "sizes": [],
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "aspectRatio": 0.75,
+    "processedAt": 1767344065637
+  },
+  "/writings/images/retrospect-2024/43e4f6d1.jpeg": {
+    "sizes": [],
+    "originalWidth": 748,
+    "originalHeight": 1048,
+    "aspectRatio": 0.7137404580152672,
+    "processedAt": 1767344065637
+  },
+  "/writings/images/retrospect-2024/82a9a849.jpeg": {
+    "sizes": [],
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "aspectRatio": 0.75,
+    "processedAt": 1767344065637
+  },
+  "/writings/images/retrospect-2024/c0aaad85.jpeg": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/retrospect-2024/c0aaad85-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/retrospect-2024/c0aaad85-1200w.webp"
+      }
+    ],
+    "originalWidth": 3955,
+    "originalHeight": 2816,
+    "aspectRatio": 1.4044744318181819,
+    "processedAt": 1766435064091
+  },
+  "/writings/images/retrospect-2024/f99e2fe1.jpeg": {
+    "sizes": [],
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "aspectRatio": 0.75,
+    "processedAt": 1767344065637
+  },
+  "/writings/images/retrospect-2024/r0000068.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/retrospect-2024/r0000068-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/retrospect-2024/r0000068-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1766435064077
+  },
+  "/writings/images/screenshot-f3gasvlt402x.png": {
+    "sizes": [],
+    "originalWidth": 674,
+    "originalHeight": 2048,
+    "aspectRatio": 0.3291015625,
+    "processedAt": 1767344065637
+  },
+  "/writings/images/screenshot-ihj9yoob402x-1.png": {
+    "sizes": [],
+    "originalWidth": 766,
+    "originalHeight": 638,
+    "aspectRatio": 1.2006269592476488,
+    "processedAt": 1767344065637
+  },
+  "/writings/images/screenshot-rucpbogn402x.png": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/screenshot-rucpbogn402x-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/screenshot-rucpbogn402x-1200w.webp"
+      }
+    ],
+    "originalWidth": 1426,
+    "originalHeight": 2048,
+    "aspectRatio": 0.6962890625,
+    "processedAt": 1766435064263
+  },
+  "/writings/images/screenshot-wjsomm5k402x.png": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/screenshot-wjsomm5k402x-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/screenshot-wjsomm5k402x-1200w.webp"
+      }
+    ],
+    "originalWidth": 2045,
+    "originalHeight": 1134,
+    "aspectRatio": 1.8033509700176367,
+    "processedAt": 1766435064207
+  },
+  "/writings/images/screenshot-yfbk9ahv402x.png": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/screenshot-yfbk9ahv402x-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/screenshot-yfbk9ahv402x-1200w.webp"
+      }
+    ],
+    "originalWidth": 1312,
+    "originalHeight": 2046,
+    "aspectRatio": 0.6412512218963832,
+    "processedAt": 1766435064307
+  },
+  "/6a85dcdb-7756-4c8d-b4bc-bff2c8bade10_1_105_c.jpeg": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/6a85dcdb-7756-4c8d-b4bc-bff2c8bade10_1_105_c-800w.webp"
+      }
+    ],
+    "originalWidth": 1086,
+    "originalHeight": 724,
+    "aspectRatio": 1.5,
+    "processedAt": 1767283995045
+  },
+  "/writings/images/in-retrospect-2025/056bb2f0.jpeg": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/056bb2f0-800w.webp"
+      }
+    ],
+    "originalWidth": 1024,
+    "originalHeight": 768,
+    "aspectRatio": 1.3333333333333333,
+    "processedAt": 1767283995046
+  },
+  "/writings/images/in-retrospect-2025/0a8b4df1.jpeg": {
+    "sizes": [],
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "aspectRatio": 0.75,
+    "processedAt": 1767344065634
+  },
+  "/writings/images/in-retrospect-2025/1476cc28.jpeg": {
+    "sizes": [],
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "aspectRatio": 0.75,
+    "processedAt": 1767344065634
+  },
+  "/writings/images/in-retrospect-2025/17fa218c.jpeg": {
+    "sizes": [],
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "aspectRatio": 0.75,
+    "processedAt": 1767344065634
+  },
+  "/writings/images/in-retrospect-2025/63ef468d.jpeg": {
+    "sizes": [],
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "aspectRatio": 0.75,
+    "processedAt": 1767344065634
+  },
+  "/writings/images/in-retrospect-2025/66d3aa79.jpeg": {
+    "sizes": [],
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "aspectRatio": 0.75,
+    "processedAt": 1767344065635
+  },
+  "/writings/images/in-retrospect-2025/89755d37.jpeg": {
+    "sizes": [],
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "aspectRatio": 0.75,
+    "processedAt": 1767344065636
+  },
+  "/writings/images/in-retrospect-2025/95f2a414.jpeg": {
+    "sizes": [],
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "aspectRatio": 0.75,
+    "processedAt": 1767344065636
+  },
+  "/writings/images/in-retrospect-2025/973ee621.jpeg": {
+    "sizes": [],
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "aspectRatio": 0.75,
+    "processedAt": 1767344065636
+  },
+  "/writings/images/in-retrospect-2025/bf64d876.jpeg": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/bf64d876-800w.webp"
+      }
+    ],
+    "originalWidth": 1086,
+    "originalHeight": 724,
+    "aspectRatio": 1.5,
+    "processedAt": 1767283995107
+  },
+  "/writings/images/in-retrospect-2025/c4f4a8f0.jpeg": {
+    "sizes": [],
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "aspectRatio": 0.75,
+    "processedAt": 1767344065636
+  },
+  "/writings/images/in-retrospect-2025/ced835b4.jpeg": {
+    "sizes": [],
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "aspectRatio": 0.75,
+    "processedAt": 1767344065636
+  },
+  "/writings/images/in-retrospect-2025/df5cfb16.jpeg": {
+    "sizes": [],
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "aspectRatio": 0.75,
+    "processedAt": 1767344065636
+  },
+  "/writings/images/in-retrospect-2025/ef457805.jpeg": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/ef457805-800w.webp"
+      }
+    ],
+    "originalWidth": 1086,
+    "originalHeight": 724,
+    "aspectRatio": 1.5,
+    "processedAt": 1767283995112
+  },
+  "/writings/images/in-retrospect-2025/f09b7fff.jpeg": {
+    "sizes": [],
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "aspectRatio": 0.75,
+    "processedAt": 1767344065636
+  },
+  "/writings/images/in-retrospect-2025/fa4e4af5.jpeg": {
+    "sizes": [],
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "aspectRatio": 0.75,
+    "processedAt": 1767344065636
+  },
+  "/writings/images/in-retrospect-2025/r0000563.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0000563-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0000563-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767283995365
+  },
+  "/55e84cd4-67a2-47ec-b59b-3b47f19ba687_1_105_c.jpeg": {
+    "sizes": [],
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "aspectRatio": 0.75,
+    "processedAt": 1767344065634
+  },
+  "/writings/images/in-retrospect-2025/55e84cd4.jpeg": {
+    "sizes": [],
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "aspectRatio": 0.75,
+    "processedAt": 1767344065634
+  },
+  "/writings/images/in-retrospect-2025/78862b3b.jpeg": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/78862b3b-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/78862b3b-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767285383086
+  },
+  "/writings/images/in-retrospect-2025/b590a296.jpeg": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/b590a296-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/b590a296-1200w.webp"
+      }
+    ],
+    "originalWidth": 3024,
+    "originalHeight": 3780,
+    "aspectRatio": 0.8,
+    "processedAt": 1767285383486
+  },
+  "/writings/images/in-retrospect-2025/r0000798.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0000798-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0000798-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767297571977
+  },
+  "/writings/images/in-retrospect-2025/r0000819.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0000819-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0000819-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767297609885
+  },
+  "/writings/images/in-retrospect-2025/r0000868.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0000868-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0000868-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767298327273
+  },
+  "/r0000882.jpg": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/r0000882-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/r0000882-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767299710098
+  },
+  "/r0000916.jpg": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/r0000916-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/r0000916-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767299709978
+  },
+  "/writings/images/in-retrospect-2025/r0000882.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0000882-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0000882-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767299710640
+  },
+  "/writings/images/in-retrospect-2025/r0000899.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0000899-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0000899-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767299711034
+  },
+  "/writings/images/in-retrospect-2025/r0000914.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0000914-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0000914-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767299710971
+  },
+  "/writings/images/in-retrospect-2025/r0000916.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0000916-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0000916-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304958276
+  },
+  "/writings/images/in-retrospect-2025/r0000964.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0000964-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0000964-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767299711174
+  },
+  "/writings/images/in-retrospect-2025/r0001000.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001000-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001000-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767299711150
+  },
+  "/writings/images/in-retrospect-2025/r0001117.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001117-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001117-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767299917213
+  },
+  "/writings/images/in-retrospect-2025/r0001127.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001127-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001127-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767299995178
+  },
+  "/writings/images/in-retrospect-2025/r0001148.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001148-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001148-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767300049532
+  },
+  "/writings/images/in-retrospect-2025/r0001141.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001141-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001141-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767300072548
+  },
+  "/writings/images/in-retrospect-2025/r0001173.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001173-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001173-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767300390102
+  },
+  "/writings/images/in-retrospect-2025/r0001192.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001192-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001192-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304834834
+  },
+  "/writings/images/in-retrospect-2025/r0001197.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001197-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001197-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304834843
+  },
+  "/writings/images/in-retrospect-2025/r0001219.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001219-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001219-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304834913
+  },
+  "/writings/images/in-retrospect-2025/r0001286.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001286-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001286-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304835546
+  },
+  "/writings/images/in-retrospect-2025/r0001292.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001292-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001292-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304835563
+  },
+  "/writings/images/in-retrospect-2025/r0001297.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001297-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001297-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304835416
+  },
+  "/writings/images/in-retrospect-2025/r0001323.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001323-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001323-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304835754
+  },
+  "/writings/images/in-retrospect-2025/r0001335.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001335-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001335-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304835587
+  },
+  "/writings/images/in-retrospect-2025/r0001392.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001392-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001392-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304835616
+  },
+  "/writings/images/in-retrospect-2025/r0001420.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001420-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001420-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304835912
+  },
+  "/writings/images/in-retrospect-2025/r0001423.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001423-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001423-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304835777
+  },
+  "/writings/images/in-retrospect-2025/r0001431.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001431-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001431-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304835711
+  },
+  "/writings/images/in-retrospect-2025/r0001433.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001433-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001433-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304835752
+  },
+  "/writings/images/in-retrospect-2025/r0001436.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001436-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001436-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304836388
+  },
+  "/writings/images/in-retrospect-2025/r0001490.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001490-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001490-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304836516
+  },
+  "/writings/images/in-retrospect-2025/r0001492.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001492-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001492-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304836442
+  },
+  "/writings/images/in-retrospect-2025/r0001515.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001515-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001515-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304836582
+  },
+  "/writings/images/in-retrospect-2025/r0001530.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001530-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001530-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304836614
+  },
+  "/writings/images/in-retrospect-2025/r0001535.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001535-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001535-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304836719
+  },
+  "/writings/images/in-retrospect-2025/r0001600.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001600-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001600-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304836635
+  },
+  "/writings/images/in-retrospect-2025/r0001625.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001625-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001625-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304836730
+  },
+  "/writings/images/in-retrospect-2025/r0001641.JPG": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001641-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0001641-1200w.webp"
+      }
+    ],
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "aspectRatio": 1.5,
+    "processedAt": 1767304836826
+  },
+  "/writings/images/in-retrospect-2025/r0000916.jpeg": {
+    "sizes": [
+      {
+        "width": 800,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0000916-800w.webp"
+      },
+      {
+        "width": 1200,
+        "webp": "/_optimized/writings/images/in-retrospect-2025/r0000916-1200w.webp"
+      }
+    ],
+    "originalWidth": 4000,
+    "originalHeight": 6000,
+    "aspectRatio": 0.6666666666666666,
+    "processedAt": 1767305371976
+  },
+  "/writings/images/in-retrospect-2025/60b5519e.jpeg": {
+    "sizes": [],
+    "originalWidth": 724,
+    "originalHeight": 1086,
+    "aspectRatio": 0.6666666666666666,
+    "processedAt": 1767344065634
+  }
+}

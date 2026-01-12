@@ -1,0 +1,29 @@
+.hero-image-container {
+  width: 100%;
+  margin: 2rem 0 3rem 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+  max-height: 60vh;
+  object-position: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-image-container {
+    margin: 1.5rem 0 2rem 0;
+  }
+  
+  .hero-image {
+    max-height: 50vh;
+    border-radius: 6px;
+  }
+}
+

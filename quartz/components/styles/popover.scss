@@ -1,0 +1,193 @@
+@use "../../styles/variables.scss" as *;
+
+@keyframes dropin {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  1% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.popover {
+  z-index: 999;
+  position: fixed;
+  overflow: visible;
+  padding: 1rem;
+  left: 0;
+  top: 0;
+  will-change: transform;
+
+  & > .popover-inner {
+    position: relative;
+    width: 30rem;
+    max-height: 20rem;
+    padding: 0.75rem 1rem 1rem 1rem;
+    font-weight: initial;
+    font-style: initial;
+    line-height: 1.5; // Tighter line-height for compact display
+    font-size: 0.9rem; // Base font size - scaled down from main content
+    font-family: var(--bodyFont);
+    border: 1px solid var(--lightgray);
+    background-color: var(--light);
+    border-radius: 5px;
+    box-shadow: 6px 6px 36px 0 rgba(0, 0, 0, 0.25);
+    overflow: auto;
+    overscroll-behavior: contain;
+    white-space: normal;
+    user-select: none;
+    cursor: default;
+    color: var(--darkgray);
+  }
+
+  & > .popover-inner[data-content-type] {
+    &[data-content-type*="pdf"],
+    &[data-content-type*="image"] {
+      padding: 0;
+      max-height: 100%;
+    }
+
+    &[data-content-type*="image"] {
+      img {
+        margin: 0;
+        border-radius: 0;
+        display: block;
+      }
+    }
+
+    &[data-content-type*="pdf"] {
+      iframe {
+        width: 100%;
+      }
+    }
+  }
+
+  // Typography overrides - scaled down for compact popover
+  // Headings
+  h1 {
+    font-size: 1.2rem; // Reduced from 1.5rem
+    line-height: 1.3;
+    margin: 0.5rem 0 0.75rem 0;
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: 1rem; // Scaled down significantly
+    line-height: 1.3;
+    margin: 0.75rem 0 0.5rem 0;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 0.95rem;
+    line-height: 1.3;
+    margin: 0.75rem 0 0.5rem 0;
+    font-weight: 600;
+  }
+
+  h4, h5, h6 {
+    font-size: 0.9rem;
+    line-height: 1.3;
+    margin: 0.5rem 0 0.4rem 0;
+    font-weight: 600;
+  }
+
+  // Body text and paragraphs
+  p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0.5rem 0;
+  }
+
+  // Lists
+  ul, ol {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0.5rem 0;
+    padding-left: 1.25rem;
+  }
+
+  li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0.25rem 0;
+  }
+
+  // Article header elements (title, meta, tags)
+  .article-header {
+    margin-bottom: 0.75rem;
+  }
+
+  .article-title {
+    font-size: 1.2rem !important; // Override any inline styles
+    line-height: 1.3 !important;
+    margin: 0 0 0.5rem 0 !important;
+  }
+
+  .article-meta {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin: 0.5rem 0;
+  }
+
+  .meta-item {
+    font-size: 0.8rem;
+  }
+
+  .tag-link {
+    font-size: 0.8rem;
+  }
+
+  // Links
+  a {
+    font-size: 0.9rem;
+  }
+
+  // Blockquotes
+  blockquote {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0.5rem 0;
+    padding-left: 0.75rem;
+    border-left-width: 3px;
+  }
+
+  // Code
+  code {
+    font-size: 0.85rem;
+  }
+
+  pre {
+    font-size: 0.8rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+  }
+
+  // Reduce spacing for breadcrumbs if present
+  .breadcrumbs {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+
+  @media all and ($mobile) {
+    display: none !important;
+  }
+}
+
+.active-popover,
+.popover:hover {
+  animation: dropin 0.3s ease;
+  animation-fill-mode: forwards;
+  animation-delay: 0.2s;
+}

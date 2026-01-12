@@ -1,0 +1,65 @@
+@use "../../styles/variables.scss" as *;
+
+.tag-list-wrapper {
+  margin-top: var(--space-lg);
+  margin-bottom: 0;
+  
+  .tag-intro {
+    font-size: var(--size-body-small);
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    margin: 0 0 var(--space-xs) 0;
+    font-style: italic;
+  }
+}
+
+.tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline;
+  
+  > li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    
+    &:not(:last-child)::after {
+      content: ", ";
+      color: var(--color-text);
+    }
+  }
+  
+  a.internal.tag-link {
+    // Sidebar tag styling - simple underlined links, inline flow
+    display: inline;
+    font-size: var(--size-body-small);
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent-soft);
+    text-underline-offset: 0.2em;
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-family: var(--font-body);
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    
+    &:hover {
+      color: var(--tertiary);
+      text-decoration-color: var(--color-accent);
+      background-color: transparent !important;
+    }
+    
+    &::before {
+      content: none !important;
+      display: none !important;
+    }
+  }
+}
+
