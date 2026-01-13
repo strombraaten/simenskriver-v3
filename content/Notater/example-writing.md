@@ -1,5 +1,5 @@
 ---
-type: writing
+type: notat
 stage: forming
 why: share
 title: Example Writing

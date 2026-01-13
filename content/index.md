@@ -16,11 +16,11 @@ I tillegg dypdykker jeg i ting som fascinerer meg, og det skriver jeg om her.
 
 ## Hvordan denne sida funker
 
-This template organizes content into four main types:
+Denne siden organiserer innhold i fire hovedtyper:
 
-- **Things** - Quick, fleeting thoughts and observations
-- **Stash** - Reference material and building blocks  
-- **Notions** - Ideas in progress and exploratory thinking
-- **Writings** - Complete, coherent long-form pieces
+- **Tanker** - Korte, flyktige tanker og observasjoner
+- **<｜tool▁sep｜>** - Referansemateriale og byggeklosser  
+- **Utkast** - Ideer i utvikling og utforskende tenkning
+- **Notater** - Komplette, sammenhengende langformstekster
 
 See the [Writing Guide](WRITING-GUIDE.md) for more information on how to use this structure.

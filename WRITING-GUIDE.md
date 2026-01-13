@@ -24,25 +24,25 @@ Wayward organizes content into four main types, each serving a distinct purpose 
 
 ### Types
 
-1. **Things** (`content/things/`)
+1. **Tanker** (`content/tanker/`)
    - Quick, fleeting thoughts
    - Stream-like, chronological
    - Small observations, moments, links, quotes
    - Examples: "The neon reflection on the wet Shibuya street tonight...", "Hot take: modern trailers ruin movies"
 
-2. **Stash** (`content/stash/`)
+2. **Oppslagsverk** (`content/oppslagsverk/`)
    - Reference material, kept notes, summaries
    - Building blocks and inputs
    - Personal library of notes worth keeping
    - Examples: List of T&S papers, travel notes, analysis summaries
 
-3. **Notions** (`content/notions/`)
+3. **Utkast** (`content/utkast/`)
    - Ideas in progress, exploratory thinking
    - Writing-as-thinking
    - May or may not evolve into something more
    - Examples: "Do platforms over-index on safety at the cost of speech?", "Exploring how I want my Wayward Garden to function"
 
-4. **Writings** (`content/writings/`)
+4. **Notater** (`content/notater/`)
    - Complete, coherent long-form writing
    - Essays, guides, reflections, arguments
    - Intended to be finished (even if still forming)
@@ -66,10 +66,10 @@ Not all `why` values make sense for every `type`. Here's a guide to natural comb
 
 | Type | keep | remember | think | work-out | share |
 |------|------|----------|-------|----------|-------|
-| **thing** | ✔✔ | ✔✔ | ✔ | (rare) | ✔ |
-| **stash** | ✔✔✔ | ✔✔ | ✔✔ | ✔✔ | ✔ |
-| **notion** | (rare) | (rare) | ✔✔✔ | ✔✔✔ | ✔ |
-| **writing** | (no) | (rare) | ✔ | ✔✔ | ✔✔✔ |
+| **tanke** | ✔✔ | ✔✔ | ✔ | (rare) | ✔ |
+| **oppslagsverk** | ✔✔✔ | ✔✔ | ✔✔ | ✔✔ | ✔ |
+| **utkast** | (rare) | (rare) | ✔✔✔ | ✔✔✔ | ✔ |
+| **notat** | (no) | (rare) | ✔ | ✔✔ | ✔✔✔ |
 
 **Legend:**
 - ✔✔✔ = Very natural
@@ -79,10 +79,10 @@ Not all `why` values make sense for every `type`. Here's a guide to natural comb
 
 ### Examples by Type
 
-#### Things
+#### Tanker
 ```yaml
 ---
-type: thing
+type: tanke
 why: keep          # "Great article on digital gardens"
 why: remember      # "The neon reflection on the wet Shibuya street tonight..."
 why: think         # "Is moderation of AI content actually making policy more brittle?"
@@ -90,10 +90,10 @@ why: share         # "Hot take: modern trailers ruin movies"
 ---
 ```
 
-#### Stash
+#### Oppslagsverk
 ```yaml
 ---
-type: stash
+type: oppslagsverk
 why: keep          # "List of good T&S papers"
 why: remember      # "My impressions of Prague cafés (notes for myself)"
 why: think         # Analysis notes, like your deepfake policy summary
@@ -102,20 +102,20 @@ why: share         # "My Interrail checklist & planning notes"
 ---
 ```
 
-#### Notions
+#### Utkast
 ```yaml
 ---
-type: notion
+type: utkast
 why: think         # "Do platforms over-index on safety at the cost of speech?"
 why: work-out      # "Should deepfake sexual imagery require a complaint to action?"
 why: share         # "Exploring how I want my Wayward Garden to function"
 ---
 ```
 
-#### Writings
+#### Notater
 ```yaml
 ---
-type: writing
+type: notat
 stage: forming      # or: done
 why: share          # "How deepfake policy should evolve in 2026"
 why: work-out       # "Why reactive moderation fails creators"
@@ -125,10 +125,10 @@ why: think          # "Why I feel more comfortable writing about T&S than anythi
 
 ### Golden Rules
 
-1. **Things are for now** - Keep / remember / small think / small share
-2. **Stash is for reference and memory** - All five why values work
-3. **Notions are for developing thoughts** - Think heavily + work-out
-4. **Writings are for expressing thoughts** - Share primarily, sometimes work-out
+1. **Tanker er for nå** - Keep / remember / small think / small share
+2. **Oppslagsverk er for å referere til seinere** - All five why values work
+3. **Utkast er for utviklende tanker** - Think heavily + work-out
+4. **Notater er for å uttrykke tanker** - Share primarily, sometimes work-out
 
 ---
 
@@ -386,22 +386,22 @@ Even if you later move this file to `content/Travel/2024/thailand.md`, the URL w
 
 Frontmatter varies by content type. Here are the essential fields for each:
 
-### Things
+### Tanker
 
 ```yaml
 ---
-type: thing
+type: tanke
 why: keep          # or: remember, think, share
 date: 2025-02-20   # Date for chronological sorting
 title: Optional title (filename used if omitted)
 ---
 ```
 
-### Stash
+### Oppslagsverk
 
 ```yaml
 ---
-type: stash
+type: oppslagsverk
 why: remember      # or: keep, think, work-out, share
 title: Your Note Title
 published: 2025-02-20
@@ -411,11 +411,11 @@ tags:
 ---
 ```
 
-### Notions
+### Utkast
 
 ```yaml
 ---
-type: notion
+type: utkast
 why: think         # or: work-out, share
 title: Your Notion Title
 published: 2025-02-20
@@ -425,11 +425,11 @@ tags:
 ---
 ```
 
-### Writings
+### Notater
 
 ```yaml
 ---
-type: writing
+type: notat
 stage: forming     # or: done
 why: share         # or: work-out, think
 title: Your Writing Title
@@ -447,17 +447,17 @@ draft: false
 
 ### Common Fields (All Types)
 
-- **`type`**: Required - `thing`, `stash`, `notion`, or `writing`
+- **`type`**: Required - `tanke`, `oppslagsverk`, `utkast`, or `notat`
 - **`why`**: Required - `keep`, `remember`, `think`, `work-out`, or `share` (see matrix above)
 - **`title`**: Page title (if omitted, uses filename)
 - **`published`**: Publication date (YYYY-MM-DD)
 - **`modified`**: Last modified date (optional, for writings)
-- **`stage`**: Optional - Only for writings (`forming` or `done`)
+- **`stage`**: Optional - Only for notater (`forming` or `done`)
 - **`tags`**: List of tags for categorization
 - **`aliases`**: Alternative names for linking (see Wikilinks section)
-- **`permalink`**: Permanent URL (optional but recommended for writings)
+- **`permalink`**: Permanent URL (optional but recommended for notater)
 - **`draft: true`**: Keeps page private (won't be published)
-- **`date`**: For things - used for chronological sorting in stream view
+- **`date`**: For tanker - used for chronological sorting in stream view
 
 ---
 
@@ -637,16 +637,16 @@ This is part 1. See also [[Travel Series 2]] and [[Travel Series 3]].
 ## Quick Reference: Content Type Decision Tree
 
 **Is it a quick, fleeting thought?**
-- Yes → **Thing** (`why: keep` or `remember`)
+- Yes → **Tanke** (`why: keep` or `remember`)
 
 **Is it reference material or a building block?**
-- Yes → **Stash** (`why: keep`, `remember`, `think`, `work-out`, or `share`)
+- Yes → **Oppslagsverk** (`why: keep`, `remember`, `think`, `work-out`, or `share`)
 
 **Is it exploratory thinking that may never become finished?**
-- Yes → **Notion** (`why: think` or `work-out`)
+- Yes → **Utkast** (`why: think` or `work-out`)
 
 **Is it intended to be a complete, coherent piece?**
-- Yes → **Writing** (`why: share`, `stage: forming` or `done`)
+- Yes → **Notat** (`why: share`, `stage: forming` or `done`)
 
 ---
 

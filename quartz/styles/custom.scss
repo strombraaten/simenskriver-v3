@@ -1019,20 +1019,20 @@
 
 
 /* ============================================================
-   THINGS PAGE – MINIMAL FEED LAYOUT (Maggie-inspired)
-   Scope: only /Things (slug: Things/index)
+   TANKER PAGE – MINIMAL FEED LAYOUT (Maggie-inspired)
+   Scope: only /Tanker (slug: tanker/index)
    ============================================================ */
 
-/* Remove old Things page CSS that was affecting .center container */
+/* Remove old Tanker page CSS that was affecting .center container */
 /* The ThingsFeed component now handles its own styling */
 
 /* 2. Header (title + subtitle + filters) */
 
-body[data-slug="things/index"] .things-header {
+body[data-slug="tanker/index"] .things-header {
   margin-bottom: 3rem;
 }
 
-body[data-slug="things/index"] .things-header__inner {
+body[data-slug="tanker/index"] .things-header__inner {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -1041,7 +1041,7 @@ body[data-slug="things/index"] .things-header__inner {
   margin-bottom: 1.5rem;
 }
 
-body[data-slug="things/index"] .things-title {
+body[data-slug="tanker/index"] .things-title {
   font-size: 2.2rem;
   margin: 0 0 0.5rem 0;
   font-family: var(--font-body);
@@ -1050,7 +1050,7 @@ body[data-slug="things/index"] .things-title {
   letter-spacing: -0.01em;
 }
 
-body[data-slug="things/index"] .things-subtitle {
+body[data-slug="tanker/index"] .things-subtitle {
   font-size: 1rem;
   opacity: 0.7;
   max-width: 32rem;
@@ -1060,11 +1060,11 @@ body[data-slug="things/index"] .things-subtitle {
   line-height: 1.6;
 }
 
-body[data-slug="things/index"] .things-filter {
+body[data-slug="tanker/index"] .things-filter {
   margin-top: 1rem;
 }
 
-body[data-slug="things/index"] .things-filter__select {
+body[data-slug="tanker/index"] .things-filter__select {
   font-size: var(--size-body-small);
   font-family: var(--font-body);
   color: var(--color-text);
@@ -1084,12 +1084,12 @@ body[data-slug="things/index"] .things-filter__select {
   opacity: 0.8;
 }
 
-body[data-slug="things/index"] .things-filter__select:hover {
+body[data-slug="tanker/index"] .things-filter__select:hover {
   border-color: var(--color-accent-soft);
   opacity: 1;
 }
 
-body[data-slug="things/index"] .things-filter__select:focus {
+body[data-slug="tanker/index"] .things-filter__select:focus {
   outline: none;
   border-color: var(--color-accent-soft);
   box-shadow: 0 0 0 1px rgba(251, 200, 123, 0.15);
@@ -1097,13 +1097,13 @@ body[data-slug="things/index"] .things-filter__select:focus {
 }
 
 /* Style the dropdown options - note: browser limitations apply */
-body[data-slug="things/index"] .things-filter__select {
+body[data-slug="tanker/index"] .things-filter__select {
   /* Force styling on the select itself */
   background-color: var(--light) !important;
   color: var(--color-text) !important;
 }
 
-body[data-slug="things/index"] .things-filter__select option {
+body[data-slug="tanker/index"] .things-filter__select option {
   background: var(--light) !important;
   color: var(--color-text) !important;
   font-family: var(--font-body) !important;
@@ -1111,7 +1111,7 @@ body[data-slug="things/index"] .things-filter__select option {
 }
 
 /* Style optgroups */
-body[data-slug="things/index"] .things-filter__select optgroup {
+body[data-slug="tanker/index"] .things-filter__select optgroup {
   font-family: var(--font-body) !important;
   font-size: var(--size-body-small) !important;
   color: var(--color-muted) !important;
@@ -1120,7 +1120,7 @@ body[data-slug="things/index"] .things-filter__select optgroup {
   background: var(--light) !important;
 }
 
-body[data-slug="things/index"] .things-filter__select optgroup option {
+body[data-slug="tanker/index"] .things-filter__select optgroup option {
   font-style: normal !important;
   font-weight: 400 !important;
   padding-left: 1rem !important;
@@ -1130,22 +1130,22 @@ body[data-slug="things/index"] .things-filter__select optgroup option {
 
 /* Dark mode adjustments for dropdown */
 :root[saved-theme="dark"] {
-  body[data-slug="things/index"] .things-filter__select {
+  body[data-slug="tanker/index"] .things-filter__select {
     background-color: var(--light) !important;
     color: var(--darkgray) !important;
   }
 
-  body[data-slug="things/index"] .things-filter__select option {
+  body[data-slug="tanker/index"] .things-filter__select option {
     background: var(--light) !important;
     color: var(--darkgray) !important;
   }
 
-  body[data-slug="things/index"] .things-filter__select optgroup {
+  body[data-slug="tanker/index"] .things-filter__select optgroup {
     background: var(--light) !important;
     color: var(--gray) !important;
   }
 
-  body[data-slug="things/index"] .things-filter__select optgroup option {
+  body[data-slug="tanker/index"] .things-filter__select optgroup option {
     background: var(--light) !important;
     color: var(--darkgray) !important;
   }
@@ -1153,7 +1153,7 @@ body[data-slug="things/index"] .things-filter__select optgroup option {
 
 /* 3. Feed wrapper - minimal spacing, wider */
 
-body[data-slug="things/index"] .things-feed {
+body[data-slug="tanker/index"] .things-feed {
   max-width: 980px;
   margin: 0 auto;
   display: flex;
@@ -1163,7 +1163,7 @@ body[data-slug="things/index"] .things-feed {
 
 /* 4. Thing cards - minimal, elegant, no heavy backgrounds */
 
-body[data-slug="things/index"] .thing-card {
+body[data-slug="tanker/index"] .thing-card {
   border: none;
   background: transparent;
   padding: 0;
@@ -1171,7 +1171,7 @@ body[data-slug="things/index"] .thing-card {
   transition: none;
 }
 
-body[data-slug="things/index"] .thing-card:hover {
+body[data-slug="tanker/index"] .thing-card:hover {
   transform: none;
   box-shadow: none;
   border-color: transparent;
@@ -1179,7 +1179,7 @@ body[data-slug="things/index"] .thing-card:hover {
 
 /* 5. Meta row (date left, why + tags right) - single line, subtle but visible */
 
-body[data-slug="things/index"] .thing-card__meta {
+body[data-slug="tanker/index"] .thing-card__meta {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -1190,13 +1190,13 @@ body[data-slug="things/index"] .thing-card__meta {
   flex-wrap: wrap;
 }
 
-body[data-slug="things/index"] .thing-card__meta-left {
+body[data-slug="tanker/index"] .thing-card__meta-left {
   display: flex;
   align-items: baseline;
   gap: 0;
 }
 
-body[data-slug="things/index"] .thing-card__date {
+body[data-slug="tanker/index"] .thing-card__date {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1206,7 +1206,7 @@ body[data-slug="things/index"] .thing-card__date {
   margin: 0;
 }
 
-body[data-slug="things/index"] .thing-card__meta-right {
+body[data-slug="tanker/index"] .thing-card__meta-right {
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -1214,7 +1214,7 @@ body[data-slug="things/index"] .thing-card__meta-right {
   flex-wrap: wrap;
 }
 
-body[data-slug="things/index"] .thing-card__why {
+body[data-slug="tanker/index"] .thing-card__why {
   font-size: 0.8rem;
   font-weight: 400;
   line-height: 1.4;
@@ -1226,14 +1226,14 @@ body[data-slug="things/index"] .thing-card__why {
   white-space: nowrap;
 }
 
-body[data-slug="things/index"] .thing-card__why-value {
+body[data-slug="tanker/index"] .thing-card__why-value {
   font-style: normal;
   opacity: 0.9;
   color: var(--color-text);
   font-weight: 400;
 }
 
-body[data-slug="things/index"] .thing-card__tags-wrapper {
+body[data-slug="tanker/index"] .thing-card__tags-wrapper {
   display: inline-flex;
   align-items: baseline;
   gap: 0.25rem;
@@ -1242,7 +1242,7 @@ body[data-slug="things/index"] .thing-card__tags-wrapper {
   white-space: nowrap;
 }
 
-body[data-slug="things/index"] .thing-card__tags-intro {
+body[data-slug="tanker/index"] .thing-card__tags-intro {
   font-size: 0.8rem;
   font-weight: 400;
   line-height: 1.4;
@@ -1253,26 +1253,26 @@ body[data-slug="things/index"] .thing-card__tags-intro {
   font-style: italic;
 }
 
-body[data-slug="things/index"] .thing-card__tags {
+body[data-slug="tanker/index"] .thing-card__tags {
   list-style: none;
   padding: 0;
   margin: 0;
   display: inline;
 }
 
-body[data-slug="things/index"] .thing-card__tags li {
+body[data-slug="tanker/index"] .thing-card__tags li {
   display: inline;
   margin: 0;
   padding: 0;
 }
 
-body[data-slug="things/index"] .thing-card__tags li:not(:last-child)::after {
+body[data-slug="tanker/index"] .thing-card__tags li:not(:last-child)::after {
   content: ", ";
   opacity: 0.7;
   color: var(--color-muted);
 }
 
-body[data-slug="things/index"] .thing-card__tag {
+body[data-slug="tanker/index"] .thing-card__tag {
   font-size: 0.8rem;
   font-weight: 400;
   line-height: 1.4;
@@ -1283,7 +1283,7 @@ body[data-slug="things/index"] .thing-card__tag {
   transition: opacity 0.2s ease, color 0.2s ease;
 }
 
-body[data-slug="things/index"] .thing-card__tag:hover {
+body[data-slug="tanker/index"] .thing-card__tag:hover {
   opacity: 1;
   color: var(--color-accent);
   text-decoration: underline;
@@ -1293,26 +1293,26 @@ body[data-slug="things/index"] .thing-card__tag:hover {
 
 /* 6. Body text - generous spacing like Maggie */
 
-body[data-slug="things/index"] .thing-card__body {
+body[data-slug="tanker/index"] .thing-card__body {
   font-size: var(--size-body);
   line-height: var(--line-body);
   color: var(--color-text);
   font-family: var(--font-body);
 }
 
-body[data-slug="things/index"] .thing-card__body p {
+body[data-slug="tanker/index"] .thing-card__body p {
   margin: 0 0 1.5rem 0;
   letter-spacing: 0.02em;
   word-spacing: 0.05em;
 }
 
-body[data-slug="things/index"] .thing-card__body p:last-child {
+body[data-slug="tanker/index"] .thing-card__body p:last-child {
   margin-bottom: 0;
 }
 
 /* 7. Images: elegant thumbnails with subtle styling */
 
-body[data-slug="things/index"] .thing-card__body img {
+body[data-slug="tanker/index"] .thing-card__body img {
   display: block;
   width: 100%;
   height: 240px;
@@ -1323,12 +1323,12 @@ body[data-slug="things/index"] .thing-card__body img {
   transition: box-shadow 0.2s ease;
 }
 
-body[data-slug="things/index"] .thing-card__body img:hover {
+body[data-slug="tanker/index"] .thing-card__body img:hover {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 /* If the image is wrapped in a <p>, keep that tight too */
-body[data-slug="things/index"] .thing-card__body p:has(> img) {
+body[data-slug="tanker/index"] .thing-card__body p:has(> img) {
   margin: 1rem 0 1.5rem 0;
   max-height: 240px;
   overflow: hidden;
@@ -1336,7 +1336,7 @@ body[data-slug="things/index"] .thing-card__body p:has(> img) {
 
 /* 8. Iframes (YouTube etc.) */
 
-body[data-slug="things/index"] .thing-card__body iframe {
+body[data-slug="tanker/index"] .thing-card__body iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: none;
@@ -1347,7 +1347,7 @@ body[data-slug="things/index"] .thing-card__body iframe {
 
 /* 9. Links - warm accent colors */
 
-body[data-slug="things/index"] .thing-card__body a {
+body[data-slug="tanker/index"] .thing-card__body a {
   color: var(--color-accent);
   text-decoration: underline;
   text-decoration-color: var(--color-accent-soft);
@@ -1356,7 +1356,7 @@ body[data-slug="things/index"] .thing-card__body a {
   transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
-body[data-slug="things/index"] .thing-card__body a:hover {
+body[data-slug="tanker/index"] .thing-card__body a:hover {
   color: var(--color-accent-soft);
   text-decoration-color: var(--color-accent);
 }
@@ -1364,24 +1364,24 @@ body[data-slug="things/index"] .thing-card__body a:hover {
 /* 10. Dark mode adjustments */
 
 :root[saved-theme="dark"] {
-  body[data-slug="things/index"] .thing-card__meta {
+  body[data-slug="tanker/index"] .thing-card__meta {
     border-bottom-color: var(--darkgray);
   }
 
-  body[data-slug="things/index"] .thing-card__date {
+  body[data-slug="tanker/index"] .thing-card__date {
     color: var(--color-muted);
   }
 
-  body[data-slug="things/index"] .thing-card__tags li {
+  body[data-slug="tanker/index"] .thing-card__tags li {
     border-color: var(--darkgray);
     color: var(--color-muted);
   }
 
-  body[data-slug="things/index"] .thing-card__body img {
+  body[data-slug="tanker/index"] .thing-card__body img {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   }
 
-  body[data-slug="things/index"] .thing-card__body img:hover {
+  body[data-slug="tanker/index"] .thing-card__body img:hover {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
   }
 }
@@ -1389,23 +1389,23 @@ body[data-slug="things/index"] .thing-card__body a:hover {
 /* 11. Mobile tweaks */
 
 @media (max-width: 700px) {
-  body[data-slug="things/index"] .center {
+  body[data-slug="tanker/index"] .center {
     padding-inline: 1.1rem;
   }
 
-  body[data-slug="things/index"] .things-header {
+  body[data-slug="tanker/index"] .things-header {
     margin-bottom: 2rem;
   }
 
-  body[data-slug="things/index"] .things-title {
+  body[data-slug="tanker/index"] .things-title {
     font-size: 1.8rem;
   }
 
-  body[data-slug="things/index"] .things-feed {
+  body[data-slug="tanker/index"] .things-feed {
     gap: 2.5rem;
   }
 
-  body[data-slug="things/index"] .thing-card__body img {
+  body[data-slug="tanker/index"] .thing-card__body img {
     margin: 0.75rem 0 1rem 0;
   }
 }

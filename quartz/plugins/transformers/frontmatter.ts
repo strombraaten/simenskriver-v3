@@ -74,9 +74,9 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
             if (data.title != null && data.title.toString() !== "") {
               data.title = data.title.toString()
             } else {
-              // Auto-generate title for Things from first sentence
-              const isThing = data.type === "thing" || (file.data.slug && file.data.slug.startsWith("things/"))
-              if (isThing && content) {
+              // Auto-generate title for Tanker from first sentence
+              const isTanke = data.type === "tanke" || (file.data.slug && file.data.slug.startsWith("tanker/"))
+              if (isTanke && content) {
                 // Extract first sentence from content
                 // Remove markdown images and other syntax, get plain text
                 let plainText = content
@@ -135,10 +135,10 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
               data.tags = []
             }
             
-            // Automatically add "Things" tag to all Things for graph connectivity
-            const isThing = data.type === "thing" || (file.data.slug && file.data.slug.startsWith("things/"))
-            if (isThing && !data.tags.includes("Things")) {
-              data.tags.push("Things")
+            // Automatically add "Tanker" tag to all Tanker for graph connectivity
+            const isTanke = data.type === "tanke" || (file.data.slug && file.data.slug.startsWith("tanker/"))
+            if (isTanke && !data.tags.includes("Tanker")) {
+              data.tags.push("Tanker")
             }
 
             const aliases = coerceToArray(coalesceAliases(data, ["aliases", "alias"]))

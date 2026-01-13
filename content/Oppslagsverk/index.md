@@ -1,6 +1,6 @@
 ---
-title: Stash
-type: stash
+title: Oppslagsverk
+type: oppslagsverk
 excludeFromLists: true
 hideReadingTime: true
 hideDate: true

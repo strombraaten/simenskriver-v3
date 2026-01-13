@@ -40,8 +40,8 @@ export const defaultContentPageLayout: PageLayout = {
     Component.CategoryList({ 
       title: "Explorer",
       excludeFolders: ["Travel", "Writing"], // Hide old folders after migration
-      alwaysShowFolders: ["Things", "Notions", "Stash", "Writings"], // Always show these even if empty
-      folderOrder: ["Things", "Stash", "Notions", "Writings"], // Custom order for folders
+      alwaysShowFolders: ["Tanker", "Utkast", "oppslagsverk", "Notater"], // Always show these even if empty
+      folderOrder: ["Tanker", "<｜tool▁sep｜>", "Utkast", "Notater"], // Custom order for folders
     }),
     Component.DesktopOnly(Component.TableOfContents()),
   ],
@@ -96,8 +96,8 @@ export const indexPageLayout: PageLayout = {
     Component.CategoryList({ 
       title: "Explorer",
       excludeFolders: ["Travel", "Writing"], // Hide old folders after migration
-      alwaysShowFolders: ["Things", "Notions", "Stash", "Writings"], // Always show these even if empty
-      folderOrder: ["Things", "Stash", "Notions", "Writings"], // Custom order for folders
+      alwaysShowFolders: ["Tanker", "Utkast", "oppslagsverk", "Notater"], // Always show these even if empty
+      folderOrder: ["Tanker", "<｜tool▁sep｜>", "Utkast", "Notater"], // Custom order for folders
     }),
     Component.Pinned({
       title: "Pinned",
@@ -106,7 +106,7 @@ export const indexPageLayout: PageLayout = {
       showDate: false, // Hide dates for pinned items
     }),
     Component.RecentNotes({
-      title: "Recent Writings",
+      title: "Nylige notater",
       limit: 5,
       showTags: false,
       showDate: false, // Hide dates for writings
@@ -117,7 +117,7 @@ export const indexPageLayout: PageLayout = {
           return false
         }
         // Only show writings (slugs are now lowercase)
-        return slug.startsWith("writings/")
+        return slug.startsWith("notater/")
       },
       // Sort by published date (not modified) for writings
       sort: (f1, f2) => {
@@ -137,14 +137,14 @@ export const indexPageLayout: PageLayout = {
       },
     }),
     Component.RecentNotes({
-      title: "Recent Notes",
+      title: "Nylige notater",
       limit: 10,
       showTags: false,
       showUpdatedPrefix: true,
       filter: (f) => {
         const slug = f.slug ?? ""
         // Exclude Things (they're stream-only, never in lists)
-        if (f.frontmatter?.type === "thing") {
+        if (f.frontmatter?.type === "tanke") {
           return false
         }
         // Exclude files marked with excludeFromLists
@@ -152,7 +152,7 @@ export const indexPageLayout: PageLayout = {
           return false
         }
         // Include stash and notions (slugs are now lowercase)
-        return slug.startsWith("stash/") || slug.startsWith("notions/")
+        return slug.startsWith("oppslagsverk/") || slug.startsWith("utkast/")
       },
     }),
   ],
@@ -180,8 +180,8 @@ export const defaultListPageLayout: PageLayout = {
     Component.CategoryList({ 
       title: "Explorer",
       excludeFolders: ["Travel", "Writing"], // Hide old folders after migration
-      alwaysShowFolders: ["Things", "Notions", "Stash", "Writings"], // Always show these even if empty
-      folderOrder: ["Things", "Stash", "Notions", "Writings"], // Custom order for folders
+      alwaysShowFolders: ["Tanker", "Utkast", "oppslagsverk", "Notater"], // Always show these even if empty
+      folderOrder: ["Tanker", "<｜tool▁sep｜>", "Utkast", "Notater"], // Custom order for folders
     }),
   ],
   right: [],

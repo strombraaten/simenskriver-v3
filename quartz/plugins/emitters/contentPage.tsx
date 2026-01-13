@@ -105,7 +105,7 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
           continue
         }
 
-        if (slug === "things/index") {
+        if (slug === "tanker/index") {
           // Use ThingsFeed with standard folder page layout (Breadcrumbs + ArticleTitle)
           const thingsOpts: FullPageLayout = {
             ...sharedPageComponents,
@@ -173,7 +173,7 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
           continue
         }
 
-        if (slug === "things/index") {
+        if (slug === "tanker/index") {
           // Use ThingsFeed with standard folder page layout (Breadcrumbs + ArticleTitle)
           const thingsOpts: FullPageLayout = {
             ...sharedPageComponents,

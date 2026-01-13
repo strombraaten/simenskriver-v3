@@ -27,7 +27,7 @@ export default ((opts?: Partial<AllPostsContentOptions>) => {
     const allPosts = allFiles.filter((file) => {
       const slug = file.slug ?? ""
       // Exclude Things (they don't have titles and are stream-only)
-      if (file.frontmatter?.type === "thing") {
+      if (file.frontmatter?.type === "tanke") {
         return false
       }
       // Exclude files marked with excludeFromLists

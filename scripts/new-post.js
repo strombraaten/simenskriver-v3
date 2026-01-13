@@ -58,10 +58,10 @@ intro('Create a new post')
 const contentType = await select({
   message: 'What type of content is this?',
   options: [
-    { value: 'thing', label: 'Thing - Quick, fleeting thought (stream-like)' },
-    { value: 'stash', label: 'Stash - Reference material, kept notes' },
-    { value: 'notion', label: 'Notion - Exploratory thinking, idea in progress' },
-    { value: 'writing', label: 'Writing - Complete, coherent long-form piece' },
+    { value: 'tanke', label: 'Tanke - Kort, flyktig tanke (strøm-lignende)' },
+    { value: 'oppslagsverk', label: '<｜tool▁sep｜> - Oversikt over noe jeg lærer meg, eller referer til' },
+    { value: 'utkast', label: 'Utkast - tanker jeg utforsker, som er i utvikling' },
+    { value: 'notat', label: 'Notat - Mer gjennomtenkt og sammenhengende tekster' },
   ],
 })
 
@@ -72,7 +72,7 @@ if (isCancel(contentType)) {
 
 // Get title (optional for things - will auto-generate from first sentence if not provided)
 let title = ''
-if (contentType !== 'thing') {
+if (contentType !== 'tanke') {
   const titleInput = await text({
     message: 'What is the title of your post?',
     placeholder: 'My Amazing Post',
@@ -91,7 +91,7 @@ if (contentType !== 'thing') {
 
   title = titleInput
 } else {
-  // For things, title is optional - will auto-generate from first sentence if not provided
+  // For tanker, title is optional - will auto-generate from first sentence if not provided
   const titleInput = await text({
     message: 'Add a title? (optional - will auto-generate from first sentence if skipped)',
     placeholder: 'Press Enter to skip',
@@ -108,7 +108,7 @@ if (contentType !== 'thing') {
 
 // Get alias (optional, only for stash, notions, writings)
 let alias = ''
-if (contentType !== 'thing') {
+if (contentType !== 'tanke') {
   const aliasInput = await text({
     message: 'Add an alias for easier linking? (optional, press Enter to skip)',
     placeholder: 'Alternative Title',
@@ -125,10 +125,10 @@ if (contentType !== 'thing') {
 
 // Determine target folder based on type
 const typeFolders = {
-  thing: 'Things',
-  stash: 'Stash',
-  notion: 'Notions',
-  writing: 'Writings',
+  tanke: 'Tanker',
+  oppslagsverk: '<｜tool▁sep｜>',
+  utkast: 'Utkast',
+  notat: 'Notater',
 }
 
 const targetFolder = typeFolders[contentType]
@@ -142,25 +142,25 @@ if (!fs.existsSync(folderPath)) {
 
 // Get why value based on type
 const whyOptions = {
-  thing: [
+  tanke: [
     { value: 'keep', label: 'keep - Things you don\'t want to lose' },
     { value: 'remember', label: 'remember - A moment, mood, scene' },
     { value: 'think', label: 'think - Early seed thought, tiny pre-notion' },
     { value: 'share', label: 'share - Small thought you want others to see' },
   ],
-  stash: [
+  oppslagsverk: [
     { value: 'keep', label: 'keep - Resource lists, links, quotes' },
     { value: 'remember', label: 'remember - Travel notes, personal logs, memory anchors' },
     { value: 'think', label: 'think - Conceptual summaries' },
     { value: 'work-out', label: 'work-out - Early structured notes ahead of an argument' },
     { value: 'share', label: 'share - Public resource (e.g., travel tips)' },
   ],
-  notion: [
+  utkast: [
     { value: 'think', label: 'think - Exploring an idea (default)' },
     { value: 'work-out', label: 'work-out - Forming a position or constructing reasoning' },
     { value: 'share', label: 'share - Publicly exploring a developing idea' },
   ],
-  writing: [
+  notat: [
     { value: 'share', label: 'share - Writing meant for others (default)' },
     { value: 'work-out', label: 'work-out - Public-facing argument or opinion-forming piece' },
     { value: 'think', label: 'think - Exploratory but long-form' },
@@ -179,7 +179,7 @@ if (isCancel(whyValue)) {
 
 // For writings, ask about stage
 let stage = null
-if (contentType === 'writing') {
+if (contentType === 'notat') {
   const selectedStage = await select({
     message: 'What stage is this writing in?',
     options: [
@@ -198,7 +198,7 @@ if (contentType === 'writing') {
 
 // Ask if draft (only for stash, notions, writings - things are always published)
 let isDraft = false
-if (contentType !== 'thing') {
+if (contentType !== 'tanke') {
   const draftConfirm = await confirm({
     message: 'Should this be a draft? (won\'t be published)',
     initialValue: false,
@@ -214,7 +214,7 @@ if (contentType !== 'thing') {
 
 // Ask if should hide reading time (only for longer content)
 let hideReadingTime = false
-if (contentType === 'writing' || contentType === 'notion') {
+if (contentType === 'notat' || contentType === 'utkast') {
   const hideReading = await confirm({
     message: 'Should reading time be hidden?',
     initialValue: false,
@@ -230,7 +230,7 @@ if (contentType === 'writing' || contentType === 'notion') {
 
 // Ask if should exclude from lists (skip for things - they're always excluded)
 let excludeFromLists = false
-if (contentType !== 'thing') {
+if (contentType !== 'tanke') {
   const excludeInput = await confirm({
     message: 'Should this be excluded from Recent Notes and All Posts lists?',
     initialValue: false,
@@ -245,7 +245,7 @@ if (contentType !== 'thing') {
 }
 
 // Generate slug and date
-const slug = title && title.trim() ? slugify(title) : `thing-${Date.now()}`
+const slug = title && title.trim() ? slugify(title) : `tanke-${Date.now()}`
 const date = getCurrentDate()
 
 // Determine file path
@@ -280,14 +280,14 @@ let frontmatter = `---
 type: ${contentType}
 why: ${whyValue}
 `
-// Automatically add "Things" tag for Things (for graph connectivity)
-if (contentType === 'thing') {
+// Automatically add "Tanker" tag for Tanker (for graph connectivity)
+if (contentType === 'tanke') {
   frontmatter += `tags:
-  - Things
+  - Tanker
 `
 }
 
-if (contentType === 'thing') {
+if (contentType === 'tanke') {
   frontmatter += `date: ${date}
 `
   // Add title if provided (otherwise will auto-generate from first sentence)
@@ -301,7 +301,7 @@ if (contentType === 'thing') {
 published: ${date}
 `
   
-  if (contentType === 'writing' && stage) {
+  if (contentType === 'notat' && stage) {
     frontmatter += `stage: ${stage}
 `
   }
@@ -332,10 +332,10 @@ frontmatter += `---
 `
 
 // Add content template based on type
-if (contentType === 'thing') {
+if (contentType === 'tanke') {
   frontmatter += `Your quick thought, observation, or moment here.
 `
-} else if (contentType === 'stash') {
+} else if (contentType === 'oppslagsverk') {
   frontmatter += `# ${title}
 
 Your reference note, summary, or building block here.
@@ -349,7 +349,7 @@ Add your notes here.
 - Link 1
 - Link 2
 `
-} else if (contentType === 'notion') {
+} else if (contentType === 'utkast') {
   frontmatter += `# ${title}
 
 Your exploratory thinking, idea in progress, or conceptual sketch here.
@@ -403,18 +403,18 @@ fs.writeFileSync(filePath, frontmatter, 'utf8')
 // Success message
 const relativePath = path.relative(rootDir, filePath)
 const typeLabels = {
-  thing: '🪶 Thing',
-  stash: '📦 Stash',
-  notion: '💭 Notion',
-  writing: '✍️  Writing',
+  tanke: '🪶 Tanke',
+  oppslagsverk: '📚 Oppslagsverk',
+  utkast: '💭 Utkast',
+  notat: '✍️  Notat',
 }
 
 outro(`✅ Post created successfully!
 
 ${typeLabels[contentType]}
-${contentType !== 'thing' ? `📝 Title: ${title}\n` : ''}📅 ${contentType === 'thing' ? 'Date' : 'Published'}: ${date}
+${contentType !== 'tanke' ? `📝 Title: ${title}\n` : ''}📅 ${contentType === 'tanke' ? 'Date' : 'Published'}: ${date}
 📂 Folder: ${targetFolder}
 🎯 Why: ${whyValue}
-${stage ? `📊 Stage: ${stage}\n` : ''}${alias && alias.trim() ? `🏷️  Alias: ${alias.trim()}\n` : ''}${isDraft ? '⚠️  Status: Draft (will not be published)\n' : ''}${hideReadingTime ? '⏱️  Reading time: Hidden\n' : ''}${excludeFromLists ? '🚫 Excluded from lists\n' : ''}${contentType === 'thing' ? '🚫 Things are excluded from lists by default\n' : ''}
+${stage ? `📊 Stage: ${stage}\n` : ''}${alias && alias.trim() ? `🏷️  Alias: ${alias.trim()}\n` : ''}${isDraft ? '⚠️  Status: Draft (will not be published)\n' : ''}${hideReadingTime ? '⏱️  Reading time: Hidden\n' : ''}${excludeFromLists ? '🚫 Excluded from lists\n' : ''}${contentType === 'tanke' ? '🚫 Tanker er ekskludert fra lister som standard\n' : ''}
 💡 Open ${relativePath} to start editing!
 `)

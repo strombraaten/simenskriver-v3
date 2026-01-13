@@ -1,9 +1,9 @@
 ---
-type: thing
+type: tanke
 why: remember
 date: 2025-01-15
 tags:
-  - Things
+  - Tanker
 ---
 
 A quick thought, observation, or moment. Things are stream-like and chronological - the kind of thoughts that might otherwise be lost.

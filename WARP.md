@@ -4,20 +4,20 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 
 ## Project Overview
 
-This is a Quartz-based digital garden called "Wayward" that organizes content into four distinct types: **Things** (fleeting thoughts), **Stash** (reference material), **Notions** (exploratory thinking), and **Writings** (long-form pieces). Each piece has a `why` value (keep, remember, think, work-out, share) that captures its purpose.
+This is a Quartz-based digital garden called "Wayward" that organizes content into four distinct types: **Tanker** (fleeting thoughts), **<｜tool▁sep｜>** (reference material), **Utkast** (exploratory thinking), and **Notater** (long-form pieces). Each piece has a `why` value (keep, remember, think, work-out, share) that captures its purpose.
 
 ### Content Type Philosophy
-- **Things** - Quick, fleeting thoughts and observations. Stream-like, chronological. Title is optional (auto-generated from first sentence if omitted)
-- **Stash** - Reference material, building blocks, summaries. Personal library of notes worth keeping
-- **Notions** - Ideas in progress, exploratory thinking. May or may not evolve into something more
-- **Writings** - Complete, coherent long-form pieces. Intended to be finished (have a `stage` field: forming or done)
+- **Tanker** - Quick, fleeting thoughts and observations. Stream-like, chronological. Title is optional (auto-generated from first sentence if omitted)
+- **<｜tool▁sep｜>** - Reference material, building blocks, summaries. Personal library of notes worth keeping
+- **Utkast** - Ideas in progress, exploratory thinking. May or may not evolve into something more
+- **Notater** - Complete, coherent long-form pieces. Intended to be finished (have a `stage` field: forming or done)
 
 ### Type & Why Matrix
 Not all `why` values make sense for every `type`:
-- **thing**: `keep` ✔✔ | `remember` ✔✔ | `think` ✔ | `share` ✔
-- **stash**: `keep` ✔✔✔ | `remember` ✔✔ | `think` ✔✔ | `work-out` ✔✔ | `share` ✔
-- **notion**: `think` ✔✔✔ | `work-out` ✔✔✔ | `share` ✔
-- **writing**: `share` ✔✔✔ | `work-out` ✔✔ | `think` ✔
+- **tanke**: `keep` ✔✔ | `remember` ✔✔ | `think` ✔ | `share` ✔
+- **oppslagsverk**: `keep` ✔✔✔ | `remember` ✔✔ | `think` ✔✔ | `work-out` ✔✔ | `share` ✔
+- **utkast**: `think` ✔✔✔ | `work-out` ✔✔✔ | `share` ✔
+- **notat**: `share` ✔✔✔ | `work-out` ✔✔ | `think` ✔
 
 ## Common Commands
 
@@ -67,10 +67,10 @@ npm run sync-template
 
 ### Content Structure
 - `content/` - All markdown content organized by type
-  - `Things/` - Quick, fleeting thoughts (stream-like, chronological)
-  - `Stash/` - Reference material and building blocks
-  - `Notions/` - Ideas in progress, exploratory thinking
-  - `Writings/` - Complete, coherent long-form pieces
+  - `Tanker/` - Quick, fleeting thoughts (stream-like, chronological)
+  - `<｜tool▁sep｜>/` - Reference material and building blocks
+  - `Utkast/` - Ideas in progress, exploratory thinking
+  - `Notater/` - Complete, coherent long-form pieces
   - `index.md` - Homepage
 
 ### Quartz Core (`quartz/`)
@@ -93,7 +93,7 @@ npm run sync-template
 - `quartz.layout.ts` - Page layouts (index, content pages, list pages)
   - `sharedPageComponents` - Components on every page (head, footer)
   - `defaultContentPageLayout` - Individual post pages
-  - `indexPageLayout` - Homepage with Things, Stash, Notions, Writings sections
+  - `indexPageLayout` - Homepage with Tanker, Oppslagsverk, Utkast, Notater sections
   - `defaultListPageLayout` - Tag/folder listing pages
 - `tsconfig.json` - TypeScript configuration (uses Preact for JSX)
 - `package.json` - Dependencies and scripts
@@ -112,11 +112,11 @@ npm run sync-template
 
 ### Frontmatter System
 Each content type has required fields:
-- `type` - `thing`, `stash`, `notion`, or `writing`
+- `type` - `tanke`, `oppslagsverk`, `utkast`, or `notat`
 - `why` - `keep`, `remember`, `think`, `work-out`, or `share`
-- `title` - Page title (optional for things - auto-generated if omitted)
+- `title` - Page title (optional for tanker - auto-generated if omitted)
 - `published` or `date` - Publication/creation date
-- Optional: `stage` (writings only), `tags`, `aliases`, `permalink`, `draft`
+- Optional: `stage` (notater only), `tags`, `aliases`, `permalink`, `draft`
 
 ### Image Handling
 - Images are optimized during build by `imageOptimizer.ts`
@@ -126,9 +126,9 @@ Each content type has required fields:
 - Hero images: Set `heroImage`, `hero`, or `coverImage` in frontmatter
 
 ### Content Filtering & Display
-- Things: Stream-like display (chronological, by `date` field)
-- Stash/Notions: List display on index page (Recent Notes)
-- Writings: Special section on index (Recent Writings)
+- Tanker: Stream-like display (chronological, by `date` field)
+- Oppslagsverk/Utkast: List display on index page (Recent Notes)
+- Notater: Special section on index (Nylige notater)
 - Use `excludeFromLists: true` in frontmatter to hide from index lists
 
 ## TypeScript & Build System
@@ -196,9 +196,9 @@ Custom explorer showing content folders with:
 
 - Content folder names are case-sensitive in the file system but slugified to lowercase in URLs
 - Wikilinks use shortest path resolution: `[[example-post]]` instead of full paths when unique
-- Permalinks are recommended for writings to maintain stable URLs
+- Permalinks are recommended for notater to maintain stable URLs
 - Draft posts (`draft: true`) are filtered out during build
-- The `CategoryList` component uses folder index pages for titles (e.g., `Things/index.md`)
+- The `CategoryList` component uses folder index pages for titles (e.g., `Tanker/index.md`)
 - Images in `public/` are served as-is; images in `content/` are optimized during build
 - Always use co-author attribution when committing: `Co-Authored-By: Warp <agent@warp.dev>`
 

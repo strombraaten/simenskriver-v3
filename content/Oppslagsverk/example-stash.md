@@ -1,5 +1,5 @@
 ---
-type: stash
+type: oppslagsverk
 why: keep
 title: Example Stash Note
 published: 2025-01-15

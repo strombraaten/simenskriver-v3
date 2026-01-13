@@ -1,5 +1,5 @@
 ---
-type: notion
+type: utkast
 why: think
 title: Example Notion
 published: 2025-01-15

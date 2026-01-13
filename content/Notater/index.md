@@ -1,6 +1,6 @@
 ---
-title: Writings
-type: writing
+title: Notater
+type: notat
 excludeFromLists: true
 hideReadingTime: true
 hideDate: true

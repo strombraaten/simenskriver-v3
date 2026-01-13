@@ -24,7 +24,7 @@ const templateDir = path.join(rootDir, '..', 'blog-template')
 
 // Files and folders to completely remove
 const filesToRemove = [
-  'THINGS-PAGE-DEBUG.md',
+  'TANKER-PAGE-DEBUG.md',
   'content/ada.md',
   'content/wayward.md',
   'content/this-place.md',
@@ -33,10 +33,10 @@ const filesToRemove = [
 
 // Folders to clean (remove all .md files except index.md)
 const foldersToClean = [
-  'content/Writings',
-  'content/Things',
-  'content/Notions',
-  'content/Stash',
+  'content/Notater',
+  'content/Tanker',
+  'content/Utkast',
+  'content/Oppslagsverk',
   'content/Travel',
 ]
 
@@ -176,10 +176,10 @@ This is a Quartz-based digital garden template. Customize this page to introduce
 
 This template organizes content into four main types:
 
-- **Things** - Quick, fleeting thoughts and observations
-- **Stash** - Reference material and building blocks  
-- **Notions** - Ideas in progress and exploratory thinking
-- **Writings** - Complete, coherent long-form pieces
+- **Tanker** - Quick, fleeting thoughts and observations
+- **<｜tool▁sep｜>** - Reference material and building blocks  
+- **Utkast** - Ideas in progress and exploratory thinking
+- **Notater** - Complete, coherent long-form pieces
 
 See the [Writing Guide](WRITING-GUIDE.md) for more information on how to use this structure.
 
@@ -201,37 +201,37 @@ See the [Writing Guide](WRITING-GUIDE.md) for more information on how to use thi
 // Create example files
 function createExampleFiles() {
   const examples = {
-    'content/Things/example-thing.md': `---
-type: thing
+    'content/Tanker/example-tanke.md': `---
+type: tanke
 why: remember
 date: 2025-01-15
 tags:
-  - Things
+  - Tanker
 ---
 
-A quick thought, observation, or moment. Things are stream-like and chronological - the kind of thoughts that might otherwise be lost.
+A quick thought, observation, or moment. Tanker are stream-like and chronological - the kind of thoughts that might otherwise be lost.
 
 You can include images:
 
 ![[example-image.jpg]]
 
-Or just text. Things don't need to become anything bigger; they're valid as they are.
+Or just text. Tanker don't need to become anything bigger; they're valid as they are.
 `,
-    'content/Stash/example-stash.md': `---
-type: stash
+    'content/Oppslagsverk/example-oppslagsverk.md': `---
+type: oppslagsverk
 why: keep
-title: Example Stash Note
+title: Example Oppslagsverk Note
 published: 2025-01-15
 tags:
   - Reference
   - Resources
-permalink: example-stash
+permalink: example-oppslagsverk
 draft: false
 ---
 
-# Example Stash Note
+# Example Oppslagsverk Note
 
-Stash is where you hold reference material, summaries, building blocks and more. It's your personal library of things worth keeping.
+Oppslagsverk is where you hold reference material, summaries, building blocks and more. It's your personal library of things worth keeping.
 
 ## Notes
 
@@ -242,20 +242,20 @@ Add your reference notes here.
 - [Link 1](https://example.com)
 - [Link 2](https://example.com)
 `,
-    'content/Notions/example-notion.md': `---
-type: notion
+    'content/Utkast/example-utkast.md': `---
+type: utkast
 why: think
-title: Example Notion
+title: Example Utkast
 published: 2025-01-15
 tags:
   - Exploration
-permalink: example-notion
+permalink: example-utkast
 draft: false
 ---
 
-# Example Notion
+# Example Utkast
 
-Notions are ideas in progress, partially exploratory thinking, half-formed arguments, and thoughts you're working through.
+Utkast are ideas in progress, partially exploratory thinking, half-formed arguments, and thoughts you're working through.
 
 ## The Idea
 
@@ -269,21 +269,21 @@ Your developing thoughts here.
 
 What questions does this raise?
 `,
-    'content/Writings/example-writing.md': `---
-type: writing
+    'content/Notater/example-notat.md': `---
+type: notat
 stage: forming
 why: share
-title: Example Writing
+title: Example Notat
 published: 2025-01-15
 tags:
   - Example
-permalink: example-writing
+permalink: example-notat
 draft: false
 ---
 
-# Example Writing
+# Example Notat
 
-Writings are the longer and more coherent pieces: guides, reflections, arguments. These are intended to be complete, even if they're still forming.
+Notater are the longer and more coherent pieces: guides, reflections, arguments. These are intended to be complete, even if they're still forming.
 
 ## Introduction
 
@@ -300,7 +300,7 @@ Use callouts for important information:
 > [!tip] Pro Tip
 > This is a helpful tip!
 
-Link to other posts using wikilinks: [[example-stash]]
+Link to other posts using wikilinks: [[example-oppslagsverk]]
 
 Use highlights for ==important text==.
 
@@ -384,7 +384,7 @@ function updatePackageJson() {
   if (!fs.existsSync(packagePath)) return
   
   const pkg = JSON.parse(fs.readFileSync(packagePath, 'utf-8'))
-  pkg.description = "🌱 A Quartz-based digital garden template with Things, Stash, Notions, and Writings structure"
+  pkg.description = "🌱 A Quartz-based digital garden template with Tanker, Oppslagsverk, Utkast, and Notater structure"
   pkg.name = "quartz-digital-garden-template"
   
   // Add build script if it doesn't exist

@@ -5,9 +5,9 @@ import style from "./styles/tagList.scss"
 
 const TagList: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProps) => {
   const tags = fileData.frontmatter?.tags
-  // Filter out "Things" tag when displaying Things pages (it's only for graph connectivity)
-  const isThing = fileData.frontmatter?.type === "thing"
-  const displayTags = tags?.filter((tag) => !(isThing && tag === "Things")) ?? []
+  // Filter out "Tanker" tag when displaying Tanker pages (it's only for graph connectivity)
+  const isTanke = fileData.frontmatter?.type === "tanke"
+  const displayTags = tags?.filter((tag) => !(isTanke && tag === "Tanker")) ?? []
   
   if (displayTags.length > 0) {
     return (

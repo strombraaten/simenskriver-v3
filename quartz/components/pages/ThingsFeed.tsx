@@ -18,9 +18,9 @@ export default (() => {
       const slug = file.slug ?? ""
       const fm = file.frontmatter ?? {}
       return (
-        slug.startsWith("things/") &&
+        slug.startsWith("tanker/") &&
         !slug.endsWith("/index") &&
-        fm.type === "thing"
+        fm.type === "tanke"
       )
     })
     .sort((a, b) => {
@@ -44,8 +44,8 @@ export default (() => {
     })
   })
 
-  // Filter out "Things" tag since we're already on the Things page - it's redundant
-  const sortedTags = Array.from(allTags).filter(tag => tag !== "Things").sort()
+  // Filter out "Tanker" tag since we're already on the Tanker page - it's redundant
+  const sortedTags = Array.from(allTags).filter(tag => tag !== "Tanker").sort()
   const sortedWhy = Array.from(allWhyValues).sort()
 
   // Get rendered content from index.md (the subline)

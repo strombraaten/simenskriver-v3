@@ -1,6 +1,6 @@
 ---
-title: Things
-type: thing
+title: Tanker
+type: tanke
 excludeFromLists: true
 hideReadingTime: true
 hideDate: true

@@ -1,6 +1,6 @@
 ---
-title: Notions
-type: notion
+title: Utkast
+type: utkast
 excludeFromLists: true
 hideReadingTime: true
 hideDate: true
