@@ -1,4 +1,6 @@
 ---
+type: utkast
+why: think
 date: 2024-09-22
 lastmod: 2024-09-22
 tags:

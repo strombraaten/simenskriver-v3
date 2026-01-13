@@ -1,4 +1,6 @@
 ---
+type: tanke
+why: remember
 date: 2023-03-05
 lastmod: 2024-03-07
 tags:
