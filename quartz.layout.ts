@@ -41,7 +41,7 @@ export const defaultContentPageLayout: PageLayout = {
       title: "Explorer",
       excludeFolders: ["Travel", "Writing"], // Hide old folders after migration
       alwaysShowFolders: ["Tanker", "Utkast", "oppslagsverk", "Notater"], // Always show these even if empty
-      folderOrder: ["Tanker", "<｜tool▁sep｜>", "Utkast", "Notater"], // Custom order for folders
+      folderOrder: ["Tanker", " Oppslagsverk", "Utkast", "Notater"], // Custom order for folders
     }),
     Component.DesktopOnly(Component.TableOfContents()),
   ],
@@ -97,7 +97,7 @@ export const indexPageLayout: PageLayout = {
       title: "Explorer",
       excludeFolders: ["Travel", "Writing"], // Hide old folders after migration
       alwaysShowFolders: ["Tanker", "Utkast", "oppslagsverk", "Notater"], // Always show these even if empty
-      folderOrder: ["Tanker", "<｜tool▁sep｜>", "Utkast", "Notater"], // Custom order for folders
+      folderOrder: ["Tanker", " Oppslagsverk", "Utkast", "Notater"], // Custom order for folders
     }),
     Component.Pinned({
       title: "Pinned",
@@ -180,8 +180,8 @@ export const defaultListPageLayout: PageLayout = {
     Component.CategoryList({ 
       title: "Explorer",
       excludeFolders: ["Travel", "Writing"], // Hide old folders after migration
-      alwaysShowFolders: ["Tanker", "Utkast", "oppslagsverk", "Notater"], // Always show these even if empty
-      folderOrder: ["Tanker", "<｜tool▁sep｜>", "Utkast", "Notater"], // Custom order for folders
+      alwaysShowFolders: ["Tanker", "Utkast", "Oppslagsverk", "Notater"], // Always show these even if empty
+      folderOrder: ["Tanker", "Oppslagsverk", "Utkast", "Notater"], // Custom order for folders
     }),
   ],
   right: [],

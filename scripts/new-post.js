@@ -59,7 +59,7 @@ const contentType = await select({
   message: 'What type of content is this?',
   options: [
     { value: 'tanke', label: 'Tanke - Kort, flyktig tanke (strøm-lignende)' },
-    { value: 'oppslagsverk', label: '<｜tool▁sep｜> - Oversikt over noe jeg lærer meg, eller referer til' },
+    { value: 'oppslagsverk', label: ' oppslagsverk - Oversikt over noe jeg lærer meg, eller referer til' },
     { value: 'utkast', label: 'Utkast - tanker jeg utforsker, som er i utvikling' },
     { value: 'notat', label: 'Notat - Mer gjennomtenkt og sammenhengende tekster' },
   ],
@@ -126,7 +126,7 @@ if (contentType !== 'tanke') {
 // Determine target folder based on type
 const typeFolders = {
   tanke: 'Tanker',
-  oppslagsverk: '<｜tool▁sep｜>',
+  oppslagsverk: ' Oppslagsverk',
   utkast: 'Utkast',
   notat: 'Notater',
 }
