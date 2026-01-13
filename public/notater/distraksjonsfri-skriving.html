@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr"><head><title>Distraksjonsfri skriving</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&amp;family=Lora:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Simen skriver"/><meta property="og:title" content="Distraksjonsfri skriving"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Distraksjonsfri skriving"/><meta name="twitter:description" content="Her om dagen blei jeg tipsa om et produkt som jeg faktisk drømte om for 8 år siden."/><meta property="og:description" content="Her om dagen blei jeg tipsa om et produkt som jeg faktisk drømte om for 8 år siden."/><meta property="og:image:alt" content="Her om dagen blei jeg tipsa om et produkt som jeg faktisk drømte om for 8 år siden."/><meta property="twitter:domain" content="localhost:8080"/><meta property="og:url" content="https://localhost:8080/notater/distraksjonsfri-skriving"/><meta property="twitter:url" content="https://localhost:8080/notater/distraksjonsfri-skriving"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Her om dagen blei jeg tipsa om et produkt som jeg faktisk drømte om for 8 år siden."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL1VzZXJzL3NpbWVuc3Ryb21icmFhdGVuL2Rldi9ibG9nL3NpbWVuc2tyaXZlci12My9xdWFydHovY29tcG9uZW50cy9zdHlsZXMiLCJzb3VyY2VzIjpbIm1lcm1haWQuaW5saW5lLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUdGO0VBQ0U7OztBQUtGO0VBQ0U7RUFDQTs7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7O0FBSUY7RUFDRTtFQUNBO0VBQ0EiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhwYW5kLWJ1dHRvbiB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxvYXQ6IHJpZ2h0O1xuICBwYWRkaW5nOiAwLjRyZW07XG4gIG1hcmdpbjogMC4zcmVtO1xuICByaWdodDogMDsgLy8gTk9URTogcmlnaHQgd2lsbCBiZSBzZXQgaW4gbWVybWFpZC5pbmxpbmUudHNcbiAgY29sb3I6IHZhcigtLWdyYXkpO1xuICBib3JkZXItY29sb3I6IHZhcigtLWRhcmspO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gIGJvcmRlcjogMXB4IHNvbGlkO1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG4gIG9wYWNpdHk6IDA7XG4gIHRyYW5zaXRpb246IDAuMnM7XG5cbiAgJiA+IHN2ZyB7XG4gICAgZmlsbDogdmFyKC0tbGlnaHQpO1xuICAgIGZpbHRlcjogY29udHJhc3QoMC4zKTtcbiAgfVxuXG4gICY6aG92ZXIge1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBib3JkZXItY29sb3I6IHZhcigtLXNlY29uZGFyeSk7XG4gIH1cblxuICAmOmZvY3VzIHtcbiAgICBvdXRsaW5lOiAwO1xuICB9XG59XG5cbnByZSB7XG4gICY6aG92ZXIgPiAuZXhwYW5kLWJ1dHRvbiB7XG4gICAgb3BhY2l0eTogMTtcbiAgICB0cmFuc2l0aW9uOiAwLjJzO1xuICB9XG59XG5cbiNtZXJtYWlkLWNvbnRhaW5lciB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgY29udGFpbjogbGF5b3V0O1xuICB6LWluZGV4OiA5OTk7XG4gIGxlZnQ6IDA7XG4gIHRvcDogMDtcbiAgd2lkdGg6IDEwMHZ3O1xuICBoZWlnaHQ6IDEwMHZoO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBkaXNwbGF5OiBub25lO1xuICBiYWNrZHJvcC1maWx0ZXI6IGJsdXIoNHB4KTtcbiAgYmFja2dyb3VuZDogcmdiYSgwLCAwLCAwLCAwLjUpO1xuXG4gICYuYWN0aXZlIHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIH1cblxuICAmID4gI21lcm1haWQtc3BhY2Uge1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgdG9wOiA1MCU7XG4gICAgbGVmdDogNTAlO1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xuICAgIGhlaWdodDogODB2aDtcbiAgICB3aWR0aDogODB2dztcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRlbnQge1xuICAgICAgcGFkZGluZzogMnJlbTtcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDAgMDtcbiAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjFzIGVhc2U7XG4gICAgICBvdmVyZmxvdzogdmlzaWJsZTtcbiAgICAgIG1pbi1oZWlnaHQ6IDIwMHB4O1xuICAgICAgbWluLXdpZHRoOiAyMDBweDtcblxuICAgICAgcHJlIHtcbiAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICB9XG5cbiAgICAgIHN2ZyB7XG4gICAgICAgIG1heC13aWR0aDogbm9uZTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgfVxuICAgIH1cblxuICAgICYgPiAubWVybWFpZC1jb250cm9scyB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICBib3R0b206IDIwcHg7XG4gICAgICByaWdodDogMjBweDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBnYXA6IDhweDtcbiAgICAgIHBhZGRpbmc6IDhweDtcbiAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgICBib3gtc2hhZG93OiAwIDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgICAgei1pbmRleDogMjtcblxuICAgICAgLm1lcm1haWQtY29udHJvbC1idXR0b24ge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgd2lkdGg6IDMycHg7XG4gICAgICAgIGhlaWdodDogMzJweDtcbiAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgICBjb2xvcjogdmFyKC0tZGFyayk7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIGZvbnQtZmFtaWx5OiB2YXIoLS1ib2R5Rm9udCk7XG4gICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjJzIGVhc2U7XG5cbiAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTtcbiAgICAgICAgfVxuXG4gICAgICAgIC8vIFN0eWxlIHRoZSByZXNldCBidXR0b24gZGlmZmVyZW50bHlcbiAgICAgICAgJjpudGgtY2hpbGQoMikge1xuICAgICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTJweDtcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdfQ== */</style><style>
+/* Lightbox Image Styles */
+.lightbox-wrapper {
+  display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin: 0;
+  /* Prevent layout shift by reserving space */
+  min-height: 200px;
+  position: relative;
+}
+
+.lightbox-wrapper:hover {
+  transform: scale(1.02);
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 70vh;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+  /* Preserve aspect ratio to prevent layout shift */
+  display: block;
+  /* Ensure crisp image rendering during scroll */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  /* Fallback to high quality for photos */
+  image-rendering: auto;
+  /* Prevent blur placeholder from showing through */
+  background: transparent;
+}
+
+/* If image has width/height attributes, use them to prevent layout shift */
+.lightbox-image[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* Fallback: use inline style aspect-ratio if set */
+.lightbox-image[style*=&quot;aspect-ratio&quot;] {
+  /* Inline style takes precedence */
+}
+
+/* Exclude gallery images from max-height constraint (they're handled by grid) */
+.image-gallery .lightbox-image {
+  max-height: none;
+}
+
+.lightbox-image:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal/Lightbox Overlay */
+.lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-modal img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.lightbox-modal.active img {
+  transform: scale(1);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Prevent body scroll when modal is open */
+body.lightbox-open {
+  overflow: hidden;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .lightbox-modal img {
+    max-width: 95%;
+    max-height: 95%;
+  }
+
+  .lightbox-close {
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    width: 35px;
+    height: 35px;
+  }
+}
+            </style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://localhost:8080/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://localhost:8080/notater/distraksjonsfri-skriving-og-image.webp"/><meta property="og:image:url" content="https://localhost:8080/notater/distraksjonsfri-skriving-og-image.webp"/><meta name="twitter:image" content="https://localhost:8080/notater/distraksjonsfri-skriving-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="notater/distraksjonsfri-skriving"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">Simen skriver</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Søk</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Søk etter noe" placeholder="Søk etter noe"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Mørk modus"><title>Mørk modus</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Lys modus"><title>Lys modus</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Læsemodus"><title>Læsemodus</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="category-list"><h2>Explorer</h2><ul class="category-ul"><li><a href="../all-posts" class="internal category-link" data-no-popover="true">All Posts</a></li><li><a href="../tanker/" class="internal category-link" data-no-popover="true">Tanker</a></li><li><a href="../utkast/" class="internal category-link" data-no-popover="true">Utkast</a></li><li><a href="../notater/" class="internal category-link" data-no-popover="true">Notater</a></li><li><a href="../oppslagsverk/" class="internal category-link" data-no-popover="true">Oppslagsverk</a></li></ul></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-3963" aria-expanded="true"><h3>Oversikt</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#fasene-av-å-skrive" data-for="fasene-av-å-skrive">Fasene av å skrive</a></li><li class="depth-0"><a href="#skap-rom-for-kladden" data-for="skap-rom-for-kladden">Skap rom for kladden</a></li><li class="depth-0"><a href="#distraksjonsfri-skriving" data-for="distraksjonsfri-skriving">Distraksjonsfri skriving</a></li><li class="depth-1"><a href="#fysiske-distraksjoner" data-for="fysiske-distraksjoner">Fysiske distraksjoner</a></li><li class="depth-1"><a href="#digitale-distraksjoner" data-for="digitale-distraksjoner">Digitale distraksjoner</a></li><li class="depth-0"><a href="#hybrid-mellom-fortid-og-nåtid" data-for="hybrid-mellom-fortid-og-nåtid">Hybrid mellom fortid og nåtid</a></li><li class="depth-1"><a href="#moderne-skrivemaskiner" data-for="moderne-skrivemaskiner">Moderne skrivemaskiner</a></li><li class="depth-1"><a href="#ulike-typer" data-for="ulike-typer">Ulike typer</a></li><li class="depth-1"><a href="#prisen" data-for="prisen">Prisen</a></li><li class="depth-1"><a href="#kjente-utfordringer" data-for="kjente-utfordringer">Kjente utfordringer</a></li><li class="depth-0"><a href="#alternative-måter-for-å-skrive-distraksjonsfritt" data-for="alternative-måter-for-å-skrive-distraksjonsfritt">Alternative måter for å skrive distraksjonsfritt</a></li><li class="depth-1"><a href="#det-opplagte-alternativet" data-for="det-opplagte-alternativet">Det opplagte alternativet</a></li><li class="depth-1"><a href="#de-mer-alternative-alternativene" data-for="de-mer-alternative-alternativene">De mer alternative alternativene</a></li><li class="depth-0"><a href="#konklusjon" data-for="konklusjon">Konklusjon</a></li><li class="overflow-end"></li></ul></div></div><div class="center"><div class="page-header"><div class="popover-hint"><header class="article-header"><h1 class="article-title">Distraksjonsfri skriving</h1><div class="article-meta"><time datetime="2024-03-28T23:00:00.000Z" class="meta-item">29. mars 2024</time><span class="meta-item">13 min lesning</span></div></header></div></div><article class="popover-hint"><p>Her om dagen blei jeg tipsa om et produkt som jeg faktisk drømte om for 8 år siden. Det høres flåsete ut, men grunnen til at jeg husker det er at <a href="https://medium.com/@Strombraaten/write-blind-edit-later-d0bbfc0ca330" class="external">jeg publiserte en artikkel på Medium<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, hvor jeg skreiv:</p>
+<blockquote>
+<p>Being able to type on a keyboard without having a screen to disturb you, but at the same time, knowing that it’ll all end up in Google Docs, Evernote, or Dropbox would be super helpful. It allows you to focus on the writing, and nothing but the writing.</p>
+</blockquote>
+<p>Den siste setningen der vil jeg utforske først – <em>Focus on the writing, and nothing but the writing</em>. Også kommer jeg tilbake til den delen om å skrive uten en skjerm mot siste halvdel av det som blei et realt dypdykk i distraksjonsfri skriving.</p>
+<h2 id="fasene-av-å-skrive">Fasene av å skrive<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fasene-av-å-skrive" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Før vi kan se nærmere på selve skrivinga må vi være enige om hva skriving ofte innebærer. Sånn jeg ser det er det hovedsakelig tre ulike faser:</p>
+<ol>
+<li><strong>Kladden</strong> – Hvor du rabler ned tankene dine</li>
+<li><strong>Research</strong> – Hvor du finner informasjon som støtter opp poenget du vil få fram.</li>
+<li><strong>Redigering</strong> – Hvor du fjerner fyllord, strammer opp språket, og får fram poenget ditt på en tydeligere måte</li>
+</ol>
+<p>I en perfekt verden hadde du gjort deg ferdig med det ene før du begynner med det andre.</p>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/redigering-kladd-research-linear.png" alt="de tre fasene av skriving i en perfekt verden" class="lightbox-image" loading="eager" fetchpriority="high" decoding="sync" data-src="/images/redigering-kladd-research-linear.png" data-alt="de tre fasene av skriving i en perfekt verden" data-first-image="true"/></div></p>
+<p>En av de største utfordringene med å skrive derimot er at disse fasene overlapper, med mindre du er bevisst på dem. I stedet for en lineær prosess, hvor du går fra det ene steget til det andre, er det heller et virrvarr hvor du konstant hopper fram og tilbake mellom de ulike fasene.</p>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/redigering-kladd-research-hultertilbulter.png" alt="de tre fasene av skriving sånn de virkelig oppleves" class="lightbox-image" loading="eager" fetchpriority="auto" decoding="sync" data-src="/images/redigering-kladd-research-hultertilbulter.png" data-alt="de tre fasene av skriving sånn de virkelig oppleves"/></div></p>
+<h2 id="skap-rom-for-kladden">Skap rom for kladden<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#skap-rom-for-kladden" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>For å kunne fokusere på skrivinga, og ikke noe annet enn skrivinga bør du derfor streve etter å holde deg i én fase om gangen. Å konsentrere seg om én ting om gangen, i en verden av distraksjoner, er såklart vanskelig. Samtidig er det mange grep du kan ta for å <a href="../oppmerksomhet" data-slug="oppmerksomhet" class="internal alias">beskytte oppmerksomheten din</a> fra alle mulige distraksjoner.</p>
+<p>For å unngå fristelsen av å <em>researche</em>, når du egentlig holder på å skrive, kan du bruke <a href="../tk-trikset" data-slug="tk-trikset" class="internal alias">TK-trikset</a>. For å gjøre <em>redigeringsjobben</em> lettere må du først få setningen ut av hodet ditt. Du kan ikke redigere noe før du har produsert det. Som jeg nevnte i <a href="../notater/25-artikler-23-dager" data-slug="notater/25-artikler-23-dager" class="internal alias">hva jeg lærte av å skrive 25 artikler på 23 dager</a>:</p>
+<blockquote>
+<p>Det er lettere å redigere en setning når den er ute av hodet ditt. Derfor må du bare fortsette å skrive. Da kan du reflektere over hva som burde komme før, hva som burde komme etter. Kanskje du kan se på den fra ulike vinkler. Så lenge tanken kun er i hodet ditt blir den jobben mye vanskeligere.</p>
+<p>En god indikator er når du arresterer deg sjøl i å begynne på samme setning tre-fire ganger, uten å fullføre mer enn fem ord. Det er et tegn på at du prøver å redigere den i hodet ditt. Få tanken ut av hodet ditt først og se over i etterkant. Når setningen er en del av en større sammenheng.</p>
+</blockquote>
+<p>I den samme artikkelen deler jeg flere tips om hvordan du får tankene ut av hodet ditt, men en ting jeg <em>ikke</em> gikk inn på er det her med å tilrettelegge for distraksjonsfri skriving.</p>
+<h2 id="distraksjonsfri-skriving">Distraksjonsfri skriving<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#distraksjonsfri-skriving" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Sånn jeg ser det har vi distraksjoner fra den fysiske og den digitale verden.</p>
+<h3 id="fysiske-distraksjoner">Fysiske distraksjoner<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fysiske-distraksjoner" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>De fysiske distraksjonene er typisk sett:</p>
+<ul>
+<li>Støy fra verden rundt deg, lyder fra både nært og langt unna</li>
+<li>Folka rundt deg (selv om det også kan være koselig)</li>
+<li>Barn som krever oppmerksomhet</li>
+<li>At det er rotete rundt deg (visuelt støy)</li>
+<li>Plikter du skal gjøre (indre støy)</li>
+<li>Telefonen som ringer</li>
+</ul>
+<p>For å adressere fysiske distraksjoner handler det kanskje om å sette seg et sted hvor det er rolig, stenge ute uønskede lyder ved å bruke støykansellerende hodetelefoner, eller sette forventningene med andre om at “nå blir jeg opptatt i x antall minutter eller timer, og vil helst ikke bli forstyrra”. Ikke at det nødvendigvis er så lett alltid, men du skjønner hva jeg mener.</p>
+<h3 id="digitale-distraksjoner">Digitale distraksjoner<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#digitale-distraksjoner" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>De digitale distraksjonene derimot deler jeg i to:</p>
+<ol>
+<li>Eksterne distraksjoner – Varslinger som kommer fra andre folk (meldinger, epost osv.), men også apper og tjenester du bruker (spotify, dagbok-forslag, huskelister, kalenderen osv.)</li>
+<li>Interne distraksjoner – Alle impulsene <em>du</em> har om å sjekke det ene eller andre (nyhetene, youtube, google et eller annet tema, finne den rette musikken osv.)</li>
+</ol>
+<p>Med digitale distraksjoner handler det om å sette grenser for seg sjøl. For hvis du gjør det vanskeligere for deg sjøl å bli distrahert, eller oppsøke distraksjoner, vil du også gjøre det lettere å skrive.</p>
+<p>Og da kommer vi tilbake til det produktet jeg drømte om for 8 år siden.</p>
+<blockquote>
+<p>Being able to type on a keyboard without having a screen to disturb you, but at the same time, knowing that it’ll all end up in Google Docs, Evernote, or Dropbox would be super helpful.</p>
+</blockquote>
+<h2 id="hybrid-mellom-fortid-og-nåtid">Hybrid mellom fortid og nåtid<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hybrid-mellom-fortid-og-nåtid" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>For hvis du <em>ikke</em> hadde skjermen til å distrahere deg så må det da bli lettere å fokusere på skrivinga? Om du skriver med penn og papir f. eks så hender det kanskje at du tegner en liten krusedull, men det er jo ikke så mye annet å distrahere deg med på det blanke arket.</p>
+<p>Samtidig så skal du jo være temmelig trygg på dataskrivinga di for å kunne klare deg <em>uten</em> en skjerm. Men hva med en slags hybrid mellom en gammeldags skrivemaskin og en data? Hva får du da? Jo, da får du den her:</p>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/freewrite-smart-typewriter.jpg" alt class="lightbox-image" loading="eager" fetchpriority="auto" decoding="sync" data-src="/images/freewrite-smart-typewriter.jpg" data-alt/></div></p>
+<p>En såkalt “Smart typewriter” fra FreeWrite.</p>
+<h3 id="moderne-skrivemaskiner">Moderne skrivemaskiner<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#moderne-skrivemaskiner" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Produktnavnet “Smart typewriter” beskriver godt hva de lager, nemlig moderne skrivemaskiner som laster opp det du skriver til en skybasert tjeneste (som google docs eller dropbox, i tillegg til deres egen tjeneste <em>Postbox</em>) uten å distrahere deg.</p>
+<p>Det er akkurat det som fascinerer meg. At de lager et produkt som gjør én ting, og det er kun å skrive. Som er det komplett motsatte fra telefonene og dataene våres som kan gjøre altfor mye. I stedet for multitasking fokuserer de utelukkende på kladdefasen av skriveprosessen, som kan sees på som unitasking eller monotasking.</p>
+<p>Du skal ikke en gang kunne redigere, eller virkelig vurdere det du har skrevet, som forøvrig var én av grunnene til at jeg dykka ned i <a href="../notater/vim" data-slug="notater/vim" class="internal alias">verden av Vim</a>, men bare å skrive. Uten å bli distrahert av alt annet.</p>
+<h3 id="ulike-typer">Ulike typer<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ulike-typer" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Hovedsakelig lager FreeWrite-selskapet tre typer “moderne skrivemaskiner”. Du kan finne anmeldelser og demonstrasjoner av alle typene på <a href="https://www.youtube.com/@getfreewrite" class="external">youtuben til FreeWrite<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, men la meg kort oppsummere hovedtrekkene for deg.</p>
+<h4 id="smart-typewriter">Smart Typewriter<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#smart-typewriter" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><a href="https://getfreewrite.com/products/freewrite-smart-typewriter-3rd-gen" class="external">Smart Typewriter<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> finnes i ulike farger og versjoner, fra den stilrene versjonen du så over, til mer fargerike versjoner som den under. Det finnes også <a href="https://getfreewrite.com/products/hemingwrite" class="external">en egen Hemingway-versjon<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> for de som virkelig vil svi av noen kronasjer.</p>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/freewrite-lemon.jpg" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/freewrite-lemon.jpg" data-alt/></div></p>
+<p>Den kombinerer et mekanisk tastatur med en såkalt “e-ink”-skjerm som også har innebygd lys for å øke synligheten til teksten din. Hvis du har dykka ned i verden av mekaniske tastatur fra før, er du kanskje interessert i å vite at bryterne som er brukt under knappene er Kailh Box Browns.</p>
+<p>Kort fortalt, de er gode å trykke på, men kan ikke byttes ut med andre brytere <a href="https://imgur.com/gallery/WYQWPhx" class="external">med mindre du “avlodder” dem<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, som såklart noen har gjort fra før.</p>
+<h4 id="alpha">Alpha<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#alpha" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><a href="https://getfreewrite.com/products/alpha" class="external">Alpha<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> er den siste modellen de kom ut med (2024). Basert på 70 anmeldelser så langt har den fått 4 av 5 stjerner, og har en batteritid på 100 timer 🤯</p>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/freewrite-alpha.jpg" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/freewrite-alpha.jpg" data-alt/></div></p>
+<p>Den har et mekanisk tastatur med knapper i lav profil (med Kailh Choc V2-brytere), og er <a href="https://www.youtube.com/watch?v=PAGlXcU40Xk" class="external">mer lydløs å skrive på enn Smart Typewriter<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I motsetning til de to andre typene har den en LCD-skjerm som teoretisk sett skal gi deg en kjappere “refresh-rate”, sammenligna med hva du får med en e-ink-skjerm.</p>
+<p>På den negative sida derimot er <a href="https://www.youtube.com/watch?v=4k0142ICi1w" class="external">skjermen til Alphaen vesentlig mørkere<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> enn Smart Typewriter, og kan være vanskelig å lese, selv i dagslys, siden skjermen ikke er opplyst. Jeg har faktisk sett flere som har kjøpt en liten leselampe som klypes på sida for å kompensere. Flere av de som har anmeldt produktet oppsummerer det sånn her:</p>
+<blockquote>
+<p>Overall, I’m happy with my purchase but, as always with Freewrite products, I’m left feeling like they could have gone just a couple of steps farther and made something truly special instead of merely very good.</p>
+</blockquote>
+<h4 id="traveler">Traveler<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#traveler" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Til slutt har vi <a href="https://getfreewrite.com/products/freewrite-traveler" class="external">Traveler<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> (5400 kr) som er den mest portable av dem, som du kan lukke igjen og slenge i sekken.</p>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/freewrite-traveller.jpeg" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/freewrite-traveller.jpeg" data-alt/></div>
+(Bildet er lånt fra <a href="https://techcrunch.com/2020/10/27/the-freewrite-traveler-is-an-outstanding-but-expensive-dedicated-portable-writing-laptop/?guccounter=1&amp;guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&amp;guce_referrer_sig=AQAAAN0SutbJDNsWsXinRNk6pZ_Ly0yFyUJFbV3G1wA4_93tmLau7XSO3HeKjJxU5-SX7W4Fhya_4Z7e1_aePjafVMRMiZO13OCT8V0xbtFP_EEvNZV5XDpWqv0FVgqHCUZ1hAgDmQUEN8RTa1c0CpK2P2mI1vAKpYDSfnqPvWL7XvYV" class="external">TechCrunch<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>)</p>
+<p>Av alle de tre typene virker det som det er denne som sliter mest med forsinkelser når du skriver. Her er <a href="https://www.youtube.com/watch?v=tvUOkad2r8w" class="external">en anmeldelse av Traveler-versjonen på youtube<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, om du vil lære mer om hvordan den er i bruk. Basert på over 400 anmeldelser på hjemmesida til Freewrite har Traveler fått 4,65 av 5 stjerner, hvor denne oppsummerer de fleste på en fin måte:</p>
+<blockquote>
+<p>The positives have been mentioned in plenty of reviews: Mobility, battery life, e-ink display, keyboard… Only 2 minor improvements, mentioned often enough already, and it would be perfect: Lit display and keyboard. The display could be wider, but it’s fine the way it is.</p>
+</blockquote>
+<h3 id="prisen">Prisen<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#prisen" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Vi må snakke om pris et øyeblikk. Og bare så det er sagt, så er alle prisene konvertert direkte fra dollar på hjemmesida deres, uten at jeg har sett noe nærmere på frakt og eventuelt tollavgifter.</p>
+<p>En Smart Typewriter (som er selve flaggskipet deres) koster <strong>7000 kr</strong>, i utgangspunktet, men om du vil ha den i en spenstig gul- eller mint-farge, må du ut med hele 8100 kr.</p>
+<p>Alphaen – den nyeste skrivemaskinen de lanserte – koster <strong>3800 kr</strong>, og Traveler, den portable reisekompanjongen ligger på <strong>5400 kr</strong>.</p>
+<p>De er altså <em>dyre</em>. Med det sagt, rettferdiggjør jeg gjerne en høy pris dersom du bruker det <em>ofte</em>. For da er det plutselig en <em>lav pris per bruk</em> (<a href="https://stephango.com/buy-wisely" class="external">som Stephan Ango har skrevet om<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>). Og folk virker genuint fornøyde! Av 131 anmeldelser på Smart Typewriter (3. generasjon) har de en vurdering på <code>4.71 av 5 stjerner</code>. Med flere som deler det samme budskapet:</p>
+<blockquote>
+<p>It genuinely helps me stay focused to write more regularly and pursue my dream of publishing a novel. The price is high, but different solutions fit different problems. For me, it’s the right tool for the job.</p>
+</blockquote>
+<p>Selv om folk virker fornøyde, og byggekvaliteten tilsynelatende er bra, har jeg fremdeles følelsen av at de krever en høy pris for å oppfattes som en premiumvare. I tillegg til at de <em>egentlig</em> ikke har noen konkurrenter, så de kan sette prisen der de vil.</p>
+<h3 id="kjente-utfordringer">Kjente utfordringer<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#kjente-utfordringer" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Teksten kan “lægge” litt etter du skriver. Det er altså en forsinkelse fra du trykker ned knappen til bokstavene dukker opp på skjermen. Spesielt på Traveler-versjonen skal det være en mer merkverdig forsinkelse. Du kan se en <a href="https://youtu.be/Hx0OZ9zG4m0?si=CWkufEdnKlOuN6zE&amp;t=315" class="external">sammenligning på dette mellom Traveler og Smart Typewriter på youtube.<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Jeg tror riktignok ikke det ville vært så ille når du faktisk skriver, men dersom du prøver å redigere i teksten derimot vil det nok være mer frustrerende.</p>
+<p>Grunnen til det er rett og slett skjermteknologien de har valgt, som er av typen “e-ink”. Det er det samme som en <a href="https://www.amazon.com/Amazon-Kindle-Ereader-Family/b/?node=6669702011" class="external">Kindle<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> eller <a href="https://remarkable.com/" class="external">Remarkable<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. Det har tydeligvis blitt bedre med oppdateringer til programvaren over tid, men det kan være noe å ha i bakhodet dersom du blir gira.</p>
+<p>Det er nok en av grunnene til at de bytt fra e-ink til en LCD-skjerm på Alpha-modellen.</p>
+<p>Sist, men ikke minst har jeg sett at noen også opplever problemer med synkronisering, fryst skjerm osv., men basert på vurderingene virker det som at majoriteten ser ut til å klare seg uten problemer.</p>
+<h2 id="alternative-måter-for-å-skrive-distraksjonsfritt">Alternative måter for å skrive distraksjonsfritt<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#alternative-måter-for-å-skrive-distraksjonsfritt" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="det-opplagte-alternativet">Det opplagte alternativet<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#det-opplagte-alternativet" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>I stedet for å bruke det som føles som en halv månedslønn på en gadget som gjør én ting er det fristende å foreslå penn og papir i stedet. Som oppsummert i en kommentar på en av de mange youtube-videoene jeg har sett de siste dagene:</p>
+<blockquote>
+<p>As a professional writer, I made my best decision a few years ago. I went back to writing most of my rough drafts with pen and paper. And my productivity grew by leaps and bounds. For me this is the best solution: It’s distraction free. Fully portable. And keeps you away from screens for hours every day.</p>
+</blockquote>
+<p>Det er riktignok ikke den eneste lavthengende tilnærminga du kan ta.</p>
+<h3 id="de-mer-alternative-alternativene">De mer <em>alternative</em> alternativene<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#de-mer-alternative-alternativene" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="skriv-i-blinde">Skriv i blinde<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#skriv-i-blinde" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>I artikkelen jeg skreiv for 8 år siden eksperimenterte jeg med å <strong>skrive i blinde</strong>, og heller fikse opp i skrivefeil i etterkant. Hvor jeg rett og slett skrudde lysstyrken på skjermen ned til null, så jeg ikke kunne se ordene foran meg. For folk flest vil nok det være litt ekstremt, det skjønner jeg, men med formålet om å sette ord på tankene dine er det overraskende effektivt. Så det er absolutt verdt et forsøk. Og ikke minst, det er helt gratis.</p>
+<h4 id="sett-det-sammen-sjøl">Sett det sammen sjøl<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#sett-det-sammen-sjøl" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Samtidig er det noe fristende med en maskin som gjør én ting, og er utelukkende dedikert til kun én oppgave. Som noen på youtube sa:</p>
+<blockquote>
+<p>You pick it up and know exactly what you’re going to be doing. And then you just do it. No distractions no excuses.</p>
+</blockquote>
+<p>Med det i tankene er det såklart noen som har lagd sine egne versjoner av en moderne skrivemaskin.</p>
+<p>Én mulighet er å kombinere et nettbrett med en e-ink-skjerm (som <a href="https://shop.boox.com/collections/eink-tablet/products/palma" class="external">Boox Palma<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>), og koble det til <a href="https://www.amazon.com/dp/B0C7VY5G5C?th=1&amp;linkId=8be684589ca4ff382dfc422ce5e7fe97&amp;language=en_US" class="external">et bluetooth-tastatur<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, som du kan se i <a href="https://www.youtube.com/watch?v=AkZrlsByNm0" class="external">denne videoen fra Work From Hype<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</p>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/work-from-hype-boox-palma.png" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/work-from-hype-boox-palma.png" data-alt/></div></p>
+<p>Om du virkelig vil få litt møkk under fingra kan du <a href="https://www.youtube.com/watch?v=j6u9zybHUFc" class="external">sjekke ut ZeroWriter-konseptet<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, hvor noen har kombinert en <a href="https://hackaday.io/project/193902-zerowriter" class="external">raspberryPi med en e-ink-skjerm og 3d-printing<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, for å gjenskape en temmelig lik opplevelse som Traveler-maskina til Freewrite.</p>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/zerowriter.jpeg" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/zerowriter.jpeg" data-alt/></div></p>
+<h4 id="andre-lignende-løsninger">Andre lignende løsninger<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#andre-lignende-løsninger" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Om du vil grave ned i bruktmarkeder kan du også finne de originale, moderne skrivemaskinene – nemlig <a href="https://en.wikipedia.org/wiki/AlphaSmart" class="external">AlphaSmart-produktene<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> som blei lansert på 90- og tidlig 2000-tallet. Spesielt <a href="https://youtu.be/4k0142ICi1w?si=nptG0ofWe2IFD3x_&amp;t=356" class="external">AlphaSmart Neo konkurrerer med FreeWrite-produktene<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> den dag i dag, selv om den blei lansert i 2005. Den ser ut som en gammel kalkulator da, det skal sies.</p>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/alphasmart-neo.jpeg" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/alphasmart-neo.jpeg" data-alt/></div></p>
+<p>For rundt 5000 kr kan du også finne deg <a href="https://www.finn.no/bap/forsale/search.html?product_category=2.93.3215.48&amp;q=remarkable+2" class="external">en brukt Remarkable 2 på Finn<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, med tastatur (“type folio”, som det heter).</p>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/remarkable-finn.jpeg" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/remarkable-finn.jpeg" data-alt/></div></p>
+<h2 id="konklusjon">Konklusjon<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#konklusjon" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Original-artikkelen jeg publiserte for 8 år siden – <a href="../notater/write-blind" data-slug="notater/write-blind" class="internal alias">Write blind, edit later</a> – finner du nå på Simenskriver-sida. Og som jeg nevnte da:</p>
+<blockquote>
+<p>If you’re writing you need to write, and nothing else. You don’t need to edit straight away. Save that for later. Focus on the thoughts you need to get out.</p>
+</blockquote>
+<p>Det enkleste grepet du kan ta for å tilrettelegge for distraksjonsfri skriving er bare å skru av internett-tilkoblinga altså. Det er forbausende hvor få distraksjoner som er igjen etter du har skrudd av internettet. Men hei, om du har noen kroner å svi av, og du vil begrense distraksjonene til et minimum vil jeg gjerne høre om opplevelsene dine med en moderne skrivemaskin 🤓</p>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/skru-av-internett.gif" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/skru-av-internett.gif" data-alt/></div></p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graf-visning</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="tag-list-wrapper"><p class="tag-intro">This relates to:</p><ul class="tags"><li><a href="../tags/skriving" class="internal tag-link">skriving</a></li><li><a href="../tags/teknologi" class="internal tag-link">teknologi</a></li></ul></div></div><footer class><p>Laget med <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://github.com/strombraaten/simenskriver-v3">GitHub</a></li><li><a href="https://discord.gg/f2ZrnPVbYC">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script type="application/javascript" data-persist="true">
+              // Lightbox functionality
+              function initLightbox() {
+                // Remove existing modal if it exists
+                const existingModal = document.querySelector('.lightbox-modal');
+                if (existingModal) {
+                  existingModal.remove();
+                }
+
+                // Create modal elements
+                const modal = document.createElement('div');
+                modal.className = 'lightbox-modal';
+                
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'lightbox-close';
+                closeBtn.innerHTML = '×';
+                closeBtn.setAttribute('aria-label', 'Close lightbox');
+                
+                const img = document.createElement('img');
+                img.style.display = 'none';
+                
+                modal.appendChild(closeBtn);
+                modal.appendChild(img);
+                document.body.appendChild(modal);
+
+                // Function to open lightbox
+                function openLightbox(imageSrc, imageAlt, originalImg) {
+                  img.src = imageSrc;
+                  img.alt = imageAlt || '';
+                  img.style.display = 'block';
+                  modal.classList.add('active');
+                  document.body.classList.add('lightbox-open');
+                  
+                  // Preload the image and set appropriate size
+                  const preloadImg = new Image();
+                  preloadImg.onload = () => {
+                    img.src = imageSrc;
+                    
+                    // Get original image size on page
+                    const originalRect = originalImg ? originalImg.getBoundingClientRect() : null;
+                    const originalDisplayWidth = originalRect ? originalRect.width : 0;
+                    const originalDisplayHeight = originalRect ? originalRect.height : 0;
+                    
+                    // Smart scaling based on image size
+                    const viewportWidth = window.innerWidth;
+                    const viewportHeight = window.innerHeight;
+                    const imageWidth = preloadImg.naturalWidth;
+                    const imageHeight = preloadImg.naturalHeight;
+                    
+                    // Calculate appropriate display size
+                    let targetWidth, targetHeight;
+                    
+                    // Ensure lightbox image is at least 1.5x the size it appears on page
+                    const minDisplayWidth = Math.max(
+                      originalDisplayWidth * 1.5,
+                      Math.min(500, viewportWidth * 0.7)
+                    );
+                    const minDisplayHeight = Math.max(
+                      originalDisplayHeight * 1.5,
+                      Math.min(400, viewportHeight * 0.7)
+                    );
+                    
+                    // Calculate scale to meet minimum size requirements
+                    const scaleForWidth = minDisplayWidth / imageWidth;
+                    const scaleForHeight = minDisplayHeight / imageHeight;
+                    const minScale = Math.max(scaleForWidth, scaleForHeight, 1); // At least 1x (never smaller than original)
+                    
+                    // Limit maximum scale to prevent pixelation
+                    const maxScale = Math.min(3, viewportWidth * 0.9 / imageWidth, viewportHeight * 0.9 / imageHeight);
+                    const finalScale = Math.min(minScale, maxScale);
+                    
+                    targetWidth = Math.min(imageWidth * finalScale, viewportWidth * 0.9);
+                    targetHeight = Math.min(imageHeight * finalScale, viewportHeight * 0.9);
+                    img.style.width = targetWidth + 'px';
+                    img.style.height = 'auto';
+                  };
+                  preloadImg.src = imageSrc;
+                }
+
+                // Function to close lightbox
+                function closeLightbox() {
+                  modal.classList.remove('active');
+                  document.body.classList.remove('lightbox-open');
+                  setTimeout(() => {
+                    img.style.display = 'none';
+                    img.src = '';
+                  }, 300);
+                }
+
+                // Event listeners
+                closeBtn.addEventListener('click', closeLightbox);
+                
+                modal.addEventListener('click', (e) => {
+                  if (e.target === modal) {
+                    closeLightbox();
+                  }
+                });
+
+                // Keyboard support
+                document.addEventListener('keydown', (e) => {
+                  if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeLightbox();
+                  }
+                });
+
+                // Add click handlers to all lightbox images
+                const lightboxWrappers = document.querySelectorAll('.lightbox-wrapper');
+                lightboxWrappers.forEach(wrapper => {
+                  wrapper.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const img = wrapper.querySelector('.lightbox-image');
+                    if (img) {
+                      // Use img.src (browser-resolved URL) instead of data-src
+                      // img.src is already normalized by CrawlLinks and works correctly
+                      // data-src may have wrong case/path from original markdown
+                      const src = img.src || img.getAttribute('data-src');
+                      const alt = img.getAttribute('data-alt') || img.alt;
+                      openLightbox(src, alt, img);
+                    }
+                  });
+                });
+
+                // Clean up function
+                if (window.addCleanup) {
+                  window.addCleanup(() => {
+                    if (modal && modal.parentNode) {
+                      modal.parentNode.removeChild(modal);
+                    }
+                    document.body.classList.remove('lightbox-open');
+                  });
+                }
+              }
+
+              // Initialize on page load and navigation
+              document.addEventListener('nav', initLightbox);
+              
+              // Initialize immediately if DOM is already ready
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initLightbox);
+              } else {
+                initLightbox();
+              }
+            </script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">
+        const socket = new WebSocket('ws://localhost:3001')
+        // reload(true) ensures resources like images and scripts are fetched again in firefox
+        socket.addEventListener('message', () => document.location.reload(true))
+      </script><script src="../postscript.js" type="module" data-persist="true"></script></html>

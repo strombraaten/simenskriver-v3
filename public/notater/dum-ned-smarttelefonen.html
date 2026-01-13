@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr"><head><title>Dum ned smarttelefonen</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&amp;family=Lora:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Simen skriver"/><meta property="og:title" content="Dum ned smarttelefonen"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Dum ned smarttelefonen"/><meta name="twitter:description" content="Dum ned smarttelefonen For øyeblikket ser telefonen min sånn her ut: Eller."/><meta property="og:description" content="Dum ned smarttelefonen For øyeblikket ser telefonen min sånn her ut: Eller."/><meta property="og:image:alt" content="Dum ned smarttelefonen For øyeblikket ser telefonen min sånn her ut: Eller."/><meta property="twitter:domain" content="localhost:8080"/><meta property="og:url" content="https://localhost:8080/notater/dum-ned-smarttelefonen"/><meta property="twitter:url" content="https://localhost:8080/notater/dum-ned-smarttelefonen"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Dum ned smarttelefonen For øyeblikket ser telefonen min sånn her ut: Eller."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL1VzZXJzL3NpbWVuc3Ryb21icmFhdGVuL2Rldi9ibG9nL3NpbWVuc2tyaXZlci12My9xdWFydHovY29tcG9uZW50cy9zdHlsZXMiLCJzb3VyY2VzIjpbIm1lcm1haWQuaW5saW5lLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUdGO0VBQ0U7OztBQUtGO0VBQ0U7RUFDQTs7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7O0FBSUY7RUFDRTtFQUNBO0VBQ0EiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhwYW5kLWJ1dHRvbiB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxvYXQ6IHJpZ2h0O1xuICBwYWRkaW5nOiAwLjRyZW07XG4gIG1hcmdpbjogMC4zcmVtO1xuICByaWdodDogMDsgLy8gTk9URTogcmlnaHQgd2lsbCBiZSBzZXQgaW4gbWVybWFpZC5pbmxpbmUudHNcbiAgY29sb3I6IHZhcigtLWdyYXkpO1xuICBib3JkZXItY29sb3I6IHZhcigtLWRhcmspO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gIGJvcmRlcjogMXB4IHNvbGlkO1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG4gIG9wYWNpdHk6IDA7XG4gIHRyYW5zaXRpb246IDAuMnM7XG5cbiAgJiA+IHN2ZyB7XG4gICAgZmlsbDogdmFyKC0tbGlnaHQpO1xuICAgIGZpbHRlcjogY29udHJhc3QoMC4zKTtcbiAgfVxuXG4gICY6aG92ZXIge1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBib3JkZXItY29sb3I6IHZhcigtLXNlY29uZGFyeSk7XG4gIH1cblxuICAmOmZvY3VzIHtcbiAgICBvdXRsaW5lOiAwO1xuICB9XG59XG5cbnByZSB7XG4gICY6aG92ZXIgPiAuZXhwYW5kLWJ1dHRvbiB7XG4gICAgb3BhY2l0eTogMTtcbiAgICB0cmFuc2l0aW9uOiAwLjJzO1xuICB9XG59XG5cbiNtZXJtYWlkLWNvbnRhaW5lciB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgY29udGFpbjogbGF5b3V0O1xuICB6LWluZGV4OiA5OTk7XG4gIGxlZnQ6IDA7XG4gIHRvcDogMDtcbiAgd2lkdGg6IDEwMHZ3O1xuICBoZWlnaHQ6IDEwMHZoO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBkaXNwbGF5OiBub25lO1xuICBiYWNrZHJvcC1maWx0ZXI6IGJsdXIoNHB4KTtcbiAgYmFja2dyb3VuZDogcmdiYSgwLCAwLCAwLCAwLjUpO1xuXG4gICYuYWN0aXZlIHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIH1cblxuICAmID4gI21lcm1haWQtc3BhY2Uge1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgdG9wOiA1MCU7XG4gICAgbGVmdDogNTAlO1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xuICAgIGhlaWdodDogODB2aDtcbiAgICB3aWR0aDogODB2dztcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRlbnQge1xuICAgICAgcGFkZGluZzogMnJlbTtcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDAgMDtcbiAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjFzIGVhc2U7XG4gICAgICBvdmVyZmxvdzogdmlzaWJsZTtcbiAgICAgIG1pbi1oZWlnaHQ6IDIwMHB4O1xuICAgICAgbWluLXdpZHRoOiAyMDBweDtcblxuICAgICAgcHJlIHtcbiAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICB9XG5cbiAgICAgIHN2ZyB7XG4gICAgICAgIG1heC13aWR0aDogbm9uZTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgfVxuICAgIH1cblxuICAgICYgPiAubWVybWFpZC1jb250cm9scyB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICBib3R0b206IDIwcHg7XG4gICAgICByaWdodDogMjBweDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBnYXA6IDhweDtcbiAgICAgIHBhZGRpbmc6IDhweDtcbiAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgICBib3gtc2hhZG93OiAwIDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgICAgei1pbmRleDogMjtcblxuICAgICAgLm1lcm1haWQtY29udHJvbC1idXR0b24ge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgd2lkdGg6IDMycHg7XG4gICAgICAgIGhlaWdodDogMzJweDtcbiAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgICBjb2xvcjogdmFyKC0tZGFyayk7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIGZvbnQtZmFtaWx5OiB2YXIoLS1ib2R5Rm9udCk7XG4gICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjJzIGVhc2U7XG5cbiAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTtcbiAgICAgICAgfVxuXG4gICAgICAgIC8vIFN0eWxlIHRoZSByZXNldCBidXR0b24gZGlmZmVyZW50bHlcbiAgICAgICAgJjpudGgtY2hpbGQoMikge1xuICAgICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTJweDtcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdfQ== */</style><style>
+/* Lightbox Image Styles */
+.lightbox-wrapper {
+  display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin: 0;
+  /* Prevent layout shift by reserving space */
+  min-height: 200px;
+  position: relative;
+}
+
+.lightbox-wrapper:hover {
+  transform: scale(1.02);
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 70vh;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+  /* Preserve aspect ratio to prevent layout shift */
+  display: block;
+  /* Ensure crisp image rendering during scroll */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  /* Fallback to high quality for photos */
+  image-rendering: auto;
+  /* Prevent blur placeholder from showing through */
+  background: transparent;
+}
+
+/* If image has width/height attributes, use them to prevent layout shift */
+.lightbox-image[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* Fallback: use inline style aspect-ratio if set */
+.lightbox-image[style*=&quot;aspect-ratio&quot;] {
+  /* Inline style takes precedence */
+}
+
+/* Exclude gallery images from max-height constraint (they're handled by grid) */
+.image-gallery .lightbox-image {
+  max-height: none;
+}
+
+.lightbox-image:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal/Lightbox Overlay */
+.lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-modal img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.lightbox-modal.active img {
+  transform: scale(1);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Prevent body scroll when modal is open */
+body.lightbox-open {
+  overflow: hidden;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .lightbox-modal img {
+    max-width: 95%;
+    max-height: 95%;
+  }
+
+  .lightbox-close {
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    width: 35px;
+    height: 35px;
+  }
+}
+            </style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://localhost:8080/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://localhost:8080/notater/dum-ned-smarttelefonen-og-image.webp"/><meta property="og:image:url" content="https://localhost:8080/notater/dum-ned-smarttelefonen-og-image.webp"/><meta name="twitter:image" content="https://localhost:8080/notater/dum-ned-smarttelefonen-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="notater/dum-ned-smarttelefonen"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">Simen skriver</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Søk</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Søk etter noe" placeholder="Søk etter noe"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Mørk modus"><title>Mørk modus</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Lys modus"><title>Lys modus</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Læsemodus"><title>Læsemodus</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="category-list"><h2>Explorer</h2><ul class="category-ul"><li><a href="../all-posts" class="internal category-link" data-no-popover="true">All Posts</a></li><li><a href="../tanker/" class="internal category-link" data-no-popover="true">Tanker</a></li><li><a href="../utkast/" class="internal category-link" data-no-popover="true">Utkast</a></li><li><a href="../notater/" class="internal category-link" data-no-popover="true">Notater</a></li><li><a href="../oppslagsverk/" class="internal category-link" data-no-popover="true">Oppslagsverk</a></li></ul></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-3966" aria-expanded="true"><h3>Oversikt</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#dum-ned-smarttelefonen" data-for="dum-ned-smarttelefonen">Dum ned smarttelefonen</a></li><li class="depth-0"><a href="#bakgrunnen-for-det-hele" data-for="bakgrunnen-for-det-hele">Bakgrunnen for det hele</a></li><li class="depth-0"><a href="#kindle-opplevelsen-blant-smarttelefoner" data-for="kindle-opplevelsen-blant-smarttelefoner">Kindle-opplevelsen blant smarttelefoner</a></li><li class="depth-0"><a href="#hvordan-jeg-gjorde-det" data-for="hvordan-jeg-gjorde-det">Hvordan jeg gjorde det</a></li><li class="depth-1"><a href="#advarsel-dypt-farvann" data-for="advarsel-dypt-farvann">Advarsel: Dypt farvann</a></li><li class="depth-1"><a href="#oversikt" data-for="oversikt">Oversikt</a></li><li class="depth-0"><a href="#hvordan-gå-fra-ikonvisning-av-appene-dine-til-enkle-ord-som-snarveier" data-for="hvordan-gå-fra-ikonvisning-av-appene-dine-til-enkle-ord-som-snarveier">Hvordan gå fra ikonvisning av appene dine til enkle ord som snarveier</a></li><li class="depth-1"><a href="#minimalistiske-app-åpnere" data-for="minimalistiske-app-åpnere">Minimalistiske app-åpnere</a></li><li class="depth-1"><a href="#hvordan-gjør-du-det" data-for="hvordan-gjør-du-det">Hvordan gjør du det?</a></li><li class="depth-1"><a href="#disclaimer-og-nørd-alert" data-for="disclaimer-og-nørd-alert">Disclaimer og nørd-alert</a></li><li class="depth-1"><a href="#widgets-widgets-og-mer-widgets" data-for="widgets-widgets-og-mer-widgets">Widgets, widgets, og mer widgets</a></li><li class="depth-1"><a href="#så-hva-mer-kan-du-gjøre-med-widgets" data-for="så-hva-mer-kan-du-gjøre-med-widgets">Så hva mer kan du gjøre med widgets?</a></li><li class="depth-0"><a href="#matt-skjermbeskytter" data-for="matt-skjermbeskytter">Matt skjermbeskytter</a></li><li class="depth-0"><a href="#svart-hvitt-modus" data-for="svart-hvitt-modus">Svart-hvitt-modus</a></li><li class="depth-1"><a href="#hvordan-gjør-du-det-1" data-for="hvordan-gjør-du-det-1">Hvordan gjør du det?</a></li><li class="depth-0"><a href="#prioritering-og-søkefunksjonen" data-for="prioritering-og-søkefunksjonen">Prioritering og søkefunksjonen</a></li><li class="depth-1"><a href="#ekspert-tips" data-for="ekspert-tips">Ekspert-tips</a></li><li class="depth-1"><a href="#mine-egne-prioriteringer" data-for="mine-egne-prioriteringer">Mine egne prioriteringer</a></li><li class="depth-1"><a href="#forslag-på-søk" data-for="forslag-på-søk">Forslag på søk</a></li><li class="depth-0"><a href="#men-hvorfor" data-for="men-hvorfor">Men.. hvorfor?</a></li><li class="depth-0"><a href="#bonus" data-for="bonus">Bonus</a></li><li class="depth-1"><a href="#tips-nr-1" data-for="tips-nr-1">Tips nr. 1</a></li><li class="depth-1"><a href="#tips-nr-2" data-for="tips-nr-2">Tips nr. 2</a></li><li class="overflow-end"></li></ul></div></div><div class="center"><div class="page-header"><div class="popover-hint"><header class="article-header"><h1 class="article-title">Dum ned smarttelefonen</h1><div class="article-meta"><time datetime="2024-08-10T22:00:00.000Z" class="meta-item">11. aug. 2024</time><span class="meta-item">15 min lesning</span></div></header></div></div><article class="popover-hint"><h2 id="dum-ned-smarttelefonen">Dum ned smarttelefonen<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#dum-ned-smarttelefonen" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>For øyeblikket ser telefonen min sånn her ut:</p>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/dum-telefon1.jpg" alt class="lightbox-image" loading="eager" fetchpriority="high" decoding="sync" data-src="/images/dum-telefon1.jpg" data-alt data-first-image="true"/></div></p>
+<p>Eller.. teknisk sett har jeg to andre hjem-skjermer som jeg også hopper mellom:</p>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/dum-smarttelefon.jpg" alt class="lightbox-image" loading="eager" fetchpriority="auto" decoding="sync" data-src="/images/dum-smarttelefon.jpg" data-alt/></div></p>
+<p>Nå lurer du kanskje på – hvorfor er alt svart-hvitt? Og hvor er app-ikonene? La meg spole tilbake, så skal jeg fortelle deg om hvordan jeg havna her. Og hvordan du kan gjøre det samme. Før vi runder av med å se på hvorfor jeg har gjort det i det hele tatt.</p>
+<h2 id="bakgrunnen-for-det-hele">Bakgrunnen for det hele<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#bakgrunnen-for-det-hele" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Du skjønner, Kindle er en av mine favoritt-duppeditter noensinne. Av to grunner:</p>
+<ol>
+<li>Den symboliserer en enkeltstående handling – nemlig å lese</li>
+<li>Samtidig er det noe med skjermen som jeg liker veldig godt (antakeligvis at den er <a href="https://en.wikipedia.org/wiki/E_Ink" class="external">av typen “e-ink”<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>), men skjermen er altså matt, så den gir ikke noe gjenskinn</li>
+</ol>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/kindle-highlight-compressed.jpg" alt class="lightbox-image" loading="eager" fetchpriority="auto" decoding="sync" data-src="/images/kindle-highlight-compressed.jpg" data-alt/></div></p>
+<p>En tredje grunn er også at selve brukergrensesnittet bærer ikke preg av at det skal være så fancy, eller rope etter oppmerksomheten din. Det er ikke noe “bells and whistles”, som man sier. Det er bare ord på en skjerm.</p>
+<p>Folk er jo forskjellige, så jeg veit at “bare ord på en skjerm” ikke appellerer til alle og enhver, men for meg er det akkurat sånn jeg liker det.</p>
+<p>Sammenligna med det meste av teknologi nå til dags har den også holdt det gående forbausende lenge! Jeg har hatt min <a href="https://www.amazon.com/dp/B09TMN58KL" class="external">Kindle Paperwhite<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> nå i sikkert 10-11 år, og i teknologiverden er jo det en evighet.</p>
+<p>Her tror jeg selve bruksområdet spiller en viktig rolle, når det kommer til det å bruke en teknologisk duppeditt over såpass lang tid. For når du leser en bok trenger ikke grensesnittet være like snappy og responsivt som når du står i køen på matbutikken, og må overføre penger fra én konto til en annen, for å kunne betale akkurat der og da.</p>
+<h2 id="kindle-opplevelsen-blant-smarttelefoner">Kindle-opplevelsen blant smarttelefoner<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#kindle-opplevelsen-blant-smarttelefoner" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Det er nettopp de positive sidene der – den matte skjermen, og at det ikke er så fancy – som gjør konseptet bak en “dum” smarttelefon så spennende. Noen av dere har kanskje hørt om <a href="https://www.thelightphone.com/lightiii" class="external">Light-phone<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, som har eksistert i noen år nå, så konseptet er jo ikke nytt. Samtidig så virker det ikke som det har helt funka sånn som du <em>vil</em> at det skal funke.</p>
+<p>Ut i fra anmeldelsene jeg har sett fra <a href="https://www.youtube.com/watch?v=C7G1pWYVtBg" class="external">folk som har prøvd Light-phone<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> så handler det nok en gang om bruksområdet. At du går inn i brukeropplevelsen med forventningene du har bygd opp over tid, av å bruke en moderne smarttelefon. I praksis vil de forventningene være vanskelige, om ikke umulige, å leve opp til. Samtidig vil en smarttelefon, <em>smart</em> som den er, ikke representere én enkeltstående handling, på samme måte som en kindle.</p>
+<p>Men hva om du kunne dumme ned smarttelefonen du allerede har? Til et punkt hvor den er et enklere verktøy, og ikke en alt-mulig-maskin.</p>
+<p>Det viser seg at det er fullt mulig, og det skal jeg vise deg nå. Etter “bruksanvisninga” for å gjøre telefonen din dummere skal du også få høre <em>hvorfor</em> jeg har valgt å gjøre det.</p>
+<h2 id="hvordan-jeg-gjorde-det">Hvordan jeg gjorde det<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hvordan-jeg-gjorde-det" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="advarsel-dypt-farvann">Advarsel: Dypt farvann<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#advarsel-dypt-farvann" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Først vil jeg bare anbefale deg å ikke gjøre alt på én gang, for det blir nok overveldende. Gå heller gjennom ett av tiltakene under, også kan du komme tilbake seinere når du har fått litt mestringsfølelse.</p>
+<p>Jeg innser nemlig at det er ganske mange steg jeg har gjort, både bevisst og ubevisst, som nå har resultert i noe jeg har skikkelig troa på. For å gjøre det lett for deg å gjenskape kommer jeg til å dele skjermbilder og detaljerte beskrivelser. Så får du heller hoppe over det som ikke virker like relevant for deg.</p>
+<p>Skal sies at denne guiden er basert på iPhone, siden det er det jeg bruker sjøl (iPhone 13 mini), men jeg veit du kan gjøre mye av det samme på Android og.</p>
+<h3 id="oversikt">Oversikt<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#oversikt" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>De ulike tiltakene vi skal dykke ned i er:</p>
+<ol>
+<li>Hvordan gå fra ikonvisning av appene dine til enkle ord som snarveier</li>
+<li>Matt skjermbeskytter</li>
+<li>Svart-hvitt-modus</li>
+<li>Prioritering og søkefunksjonen</li>
+</ol>
+<h2 id="hvordan-gå-fra-ikonvisning-av-appene-dine-til-enkle-ord-som-snarveier">Hvordan gå fra ikonvisning av appene dine til enkle ord som snarveier<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hvordan-gå-fra-ikonvisning-av-appene-dine-til-enkle-ord-som-snarveier" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Når du åpner opp telefonen din og ser på alle appene så ser du altså på det som kalles hjemskjermen din. Og der er det som regel mye som skriker om oppmerksomheten.</p>
+<p>Ett enkelt grep vil jo være å slå av varslinger på alle appene dine, så du ikke får de små, rød rundingene, som indikerer at noe nytt har skjedd.</p>
+<p>Om du er blant de overmenneskene som klarer å overse de 732 uleste epostene, de tre meldingene på Messenger, de fem oppgavene du skulle ha gjort i går, og det ene ubesvarte anropet du ikke har tatt stilling til, i tillegg til den systemoppdateringa du sikkert burde gjort for en stund sida, så all ære til deg altså 🙌</p>
+<p>Personlig ville jeg riktignok ta det lenger enn som så, og blei dermed skikkelig gira da jeg fant ut om kategorien av “Minimalist app launchers”.</p>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/dumbphone_device_combo.png" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/dumbphone_device_combo.png" data-alt/></div></p>
+<h3 id="minimalistiske-app-åpnere">Minimalistiske app-åpnere<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#minimalistiske-app-åpnere" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Her er det flere apper som tilsynelatende gjør samma greia. Den jeg valgte heter <a href="https://apps.apple.com/us/app/dumb-phone/id6504743503" class="external">Dumb Phone<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, men du kan også bruke en som heter <a href="https://apps.apple.com/us/app/blank-spaces-app-launcher/id1570856853" class="external">Blank Spaces<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</p>
+<p>Ser ut som at alle appene har en prøveperiode, så du kan teste det ut en ukes tid. Hvis du vil bruke det videre derimot må du betale for det. Med Dumb Phone-appen f. eks står valget mellom å betale en gang i måneden (39 kr), en gang i året (129 kr), eller en engangssum for “livstid-bruk” (299 kr) som de kaller det.</p>
+<p>Resultatet jeg kom fram til var da det her:</p>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/dum-telefon1.jpg" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/dum-telefon1.jpg" data-alt/></div></p>
+<h3 id="hvordan-gjør-du-det">Hvordan gjør du det?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hvordan-gjør-du-det" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Utvikleren av Dumb Phone-appen har lagd <a href="https://michaeltigas.notion.site/Dumb-Phone-FAQ-0c2334cd28ca40a2a3a57691358623b5" class="external">en grundig gjennomgang av hvordan du setter det opp<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, så jeg anbefaler å heller lese gjennom den enn at jeg skal prøve å gjengi det her. Jeg kan riktignok gi deg en liten forsmak på det første steget (etter du har lasta ned appen) så du kan se hva det går i:</p>
+<p><video src="../images/dumb-phone-installation-step-1.mp4" controls></video></p>
+<h3 id="disclaimer-og-nørd-alert">Disclaimer og nørd-alert<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#disclaimer-og-nørd-alert" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Bare så du veit om det så er ikke den tilnærmingen her heeelt feilfri, men nesten! Det er nemlig ikke uten grunn at Kjartan slutta å bruke det. Måten de snarveiene fungerer på er at utvikleren bruker <a href="https://apps.apple.com/us/app/shortcuts/id915249334" class="external">Snarveier-appen til Apple<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. Og det er nyttig å vite fordi i blant kan det se ut som at du hopper innom én app før du blir sendt videre dit du vil. Og det er <em>nettopp</em> det som skjer.</p>
+<p>Når du trykker på ett av ordene på hjemskjermen din aktiverer du Snarveier-appen, som deretter omdirigerer deg dit du ville.</p>
+<p>Du skjønner, alle apper, såvidt jeg forstår, har en slags link (URL scheme, som det kalles). For eksempel så går <code>sms://phonenumber</code> til meldings-appen, mens <code>photos-redirect://</code> går til Bilder-appen. På samme måte kan du også spesifisere i linken hvor brukeren skal ende opp – så <code>tel://phonenumber</code> åpner opp telefon-appen, og plasserer deg rett i tekstfeltet hvor du fyller inn telefonnummeret til den du vil ringe.</p>
+<p>Og det er akkurat de linkene som gjemmer seg bak ordene på hjemskjermen din.</p>
+<p>Personlig prøvde jeg å oppdatere telefonen min til betaversjonen av iOS 18, som kommer ut i september, tror jeg. Og da blei faktisk den overgangen mellom appene merkbart mindre. Altså, det er såpass sjeldent at jeg ser at det hoppes innom Snarveier-appen nå, at jeg er strålende fornøyd rett og slett.</p>
+<p>Hadde jeg ikke oppdatert telefonen min derimot så kan det hende jeg hadde droppa den tilnærminga her, og heller prøvd meg på noe annet. Uansett, så er det verdt et forsøk, bare for å kjenne på hvordan det kan fungere.</p>
+<h3 id="widgets-widgets-og-mer-widgets">Widgets, widgets, og mer widgets<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#widgets-widgets-og-mer-widgets" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Snarveier-appen er én del av det, mens “widgets” er den andre delen som får det hele til å fungere. Om du ikke er kjent med widgets fra før kan du se på det som at du trekker ut én enkelt funksjon av en app, og pakker det inn i en liten boks du kan plassere lett tilgjengelig på hjem-skjermen din.</p>
+<p>Det er måten Dumb-phone-appen fungerer, og det samme gjelder også Blank Spaces-appen. Jeg tipper også det er samme tilnærming på de andre alternativene der ute.</p>
+<p>Nå viste det seg faktisk at min gode venn, Kjartan, hadde prøvd det her før meg, og gjort seg noen erfaringer. En ting han påpekte var:</p>
+<blockquote>
+<p><em>For meg er en «dummere» telefon en som du ikke trenger å åpne apper på, alt det viktigste er der bare i plain sight</em></p>
+<p>Sitat, Kjartan Hovde</p>
+</blockquote>
+<h3 id="så-hva-mer-kan-du-gjøre-med-widgets">Så hva mer kan du gjøre med widgets?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#så-hva-mer-kan-du-gjøre-med-widgets" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Jo, du kan lage snarveier til de handlingene du utfører oftest. For min del er det:</p>
+<ul>
+<li>Kjøpe billett til toget gjennom Ruter</li>
+<li>Se en oversikt over kalenderen de neste dagene
+<ul>
+<li>Her bruker jeg <a href="https://minical.app/en/" class="external">en app som heter MiniCal<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, for å få en helhetlig visning på hjemskjermen</li>
+</ul>
+</li>
+<li>Kjapt skrive ned en tanke om noe jeg har lyst til å skrive mer om seinere (som deretter havner i et dedikert notat i Obsidian)
+<ul>
+<li>Her bruker jeg <a href="https://apps.apple.com/us/app/funnel-quick-capture/id6466168248" class="external">en app som heter Funnel<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> som er den store firkanten hvor det står “Skriving”</li>
+</ul>
+</li>
+<li>Se en oversikt over hvilke oppgaver jeg burde gjøre i dag, i tillegg til å lage en ny oppgave som jeg må huske å gjøre seinere
+<ul>
+<li>Her bruker jeg <a href="https://apps.apple.com/us/app/things-3/id904237743" class="external">Things<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>Sjekke hvor mye penger jeg har på én spesifikk konto i nettbanken hos Bulder (den jeg bruker med Apple Pay)</li>
+<li>Sjekke været for dagen gjennom Yr</li>
+</ul>
+<p>Resultatet av det kan du se på de to skjermbildene nedenfor. Den minimalistiske snarvei-sida blir da den primære hjem-skjermen som jeg bruker mest, men dersom jeg blar til sida får jeg en oversikt over alt annet jeg har bruk for.</p>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/dum-smarttelefon.jpg" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/dum-smarttelefon.jpg" data-alt/></div></p>
+<p>Det er såklart bare et knippe muligheter så her bør du heller utforske hva som kan være relevant for deg.</p>
+<h2 id="matt-skjermbeskytter">Matt skjermbeskytter<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#matt-skjermbeskytter" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Jeg kjøpte telefonen min brukt (på Finn), og da hadde selgeren allerede satt på den matte skjermbeskytteren, så den skal jeg ha null ære for. Men i ettertid har jeg satt veldig pris på det. For da blir skjermen rett og slett mer behagelig å se på. Litt nærmere e-ink-skjermen til Kindle, som jeg liker så godt.</p>
+<p>Den eneste jeg kan finne nå som ligner er <a href="https://www.amazon.com/Mothca-Protector-Anti-Glare-Anti-Fingerprint-Tempered/dp/B09F5Y5LC8" class="external">denne fra Mothco<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. Den er tilpasset iPhone 13 mini, som er det jeg har, men de har andre størrelser og modeller også.</p>
+<p>Dessverre finner jeg ingen som selger det i Norge, men om du vil se en demonstrasjon av produktet kan du se på <a href="https://youtu.be/gU4qY231Z1o" class="external">denne filmen av en som tar på skjermbeskytteren<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> for første gang.</p>
+<h2 id="svart-hvitt-modus">Svart-hvitt-modus<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#svart-hvitt-modus" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>For å gjøre telefonen mindre spennende å bruke har jeg også fjerna fargene, og gjort alt svart-hvitt.</p>
+<p>Det høres drastisk ut, men vær litt tålmodig nå. For takket være tilgjengelighets-innstillingene så kan jeg trykke to ganger på baksida av telefonen for å aktivere det som heter “fargefiltre”. Som betyr at jeg kan dobbel-tæppe bakpå telefonen for å aktivere eller deaktivere svart-hvitt-modusen. Lett som bare det!</p>
+<h3 id="hvordan-gjør-du-det-1">Hvordan gjør du det?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hvordan-gjør-du-det-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Vi tar det steg-for-steg:</p>
+<ol>
+<li>Først går du inn på innstillinger.</li>
+<li>Velg “Tilgjengelighet”</li>
+</ol>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/img_1327.jpg" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/img_1327.jpg" data-alt/></div></p>
+<ol start="3">
+<li>Gå videre til “Berøring”, under “Fysikk og motorikk”</li>
+</ol>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/img_1328.jpg" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/img_1328.jpg" data-alt/></div></p>
+<ol start="4">
+<li>Helt i bunnen finner du et punkt som heter “Trykk på baksiden”</li>
+</ol>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/img_1329.jpg" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/img_1329.jpg" data-alt/></div></p>
+<ol start="5">
+<li>Velg “Dobbelttrykk”</li>
+</ol>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/img_1330.jpg" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/img_1330.jpg" data-alt/></div></p>
+<ol start="6">
+<li>Bla ned til du ser “Fargefiltre”, og velg den</li>
+</ol>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/img_1331.jpg" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/img_1331.jpg" data-alt/></div></p>
+<ol start="7">
+<li>Voilá! Nå kan du prøv å trykke to ganger bakpå telefonen din for å se om det blir aktivert.</li>
+</ol>
+<p>Som regel vil det ta deg noen forsøk på å treffe riktig på rytmen foråsirresånn, så man må som regel prøve noen ganger for å aktivere/deaktivere det, men det er uansett raskere enn å leite seg fram til det menypunktet igjen for å skru det av eller på.</p>
+<h2 id="prioritering-og-søkefunksjonen">Prioritering og søkefunksjonen<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#prioritering-og-søkefunksjonen" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Det som er veldig spennende med den minimalistiske tilnærminga er at du er nødt til å prioritere. Hva du bruker sjeldent, og hva du bruker ofte. Når du tar vekk den ene ene appen etter den andre blir du riktignok mer avhengig av søkefunksjonen. I alle fall i den første perioden, når du fremdeles ikke er sikker på hva som er de mest essensielle appene for deg.</p>
+<h3 id="ekspert-tips">Ekspert-tips<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ekspert-tips" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Apropos søkefunksjonen. Visste du at du kan dra ned fra midten av skjermen for å komme kjapt i gang med søket? Når du ser på hjemskjermen din tar du altså å plasserer fingeren midt på skjermen, og trekker den nedover, så vil den nok dukke opp. Om du ikke har oppdatert telefonen din på evigheter derimot kan det nok hende at det ikke er tilgjengelig dessverre.</p>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="https://cdsassets.apple.com/live/7WUAS350/images/ios/ios-17-iphone-14-pro-search-animation.gif" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="https://cdsassets.apple.com/live/7WUAS350/images/ios/ios-17-iphone-14-pro-search-animation.gif" data-alt/></div></p>
+<h3 id="mine-egne-prioriteringer">Mine egne prioriteringer<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#mine-egne-prioriteringer" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>På hovedskjermen min nå sitter jeg igjen med Safari (internett), Spotify (musikk), og <a href="https://readwise.io/simenleser/" class="external">Reader (artikler)<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, i tillegg til de mer “vanlige” appene som Meldinger, Telefon, og Bilder. Hittil har det vært de jeg har hatt oftest bruk for i løpet av dagen.</p>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/img_1333.jpg" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/img_1333.jpg" data-alt/></div></p>
+<p>I tillegg til at Artikkel-snarveien er et forsøk på å lure meg sjøl til å velge å lese en artikkel jeg har spart til seinere, framfor å se på youtube. Det er ofte mer fristende å se på youtube, men jeg føler meg som regel mer inspirert av å ha lest en artikkel, så derfor har jeg gjort den lett tilgjengelig.</p>
+<p>Personlig har jeg eksperimentert fram og tilbake med ulike valg i løpet av de siste ukene, og jeg antar at det samme vil gjelde for deg og. Bruk mine valg som et utgangspunkt, også kan du heller prøve og feile litt etter det for å finne noe som funker for deg.</p>
+<h3 id="forslag-på-søk">Forslag på søk<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#forslag-på-søk" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>En annen ting Kjartan tipsa meg om var å skru av de automatiske forslagene som dukker opp i søket, på hvilke apper du sannsynligvis vil bruke der og da. Og jeg hadde ærlig talt ikke trodd at jeg skulle like det så godt.</p>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/img_1348.jpg" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/img_1348.jpg" data-alt/></div></p>
+<p>For de “forslagene fra Siri”, som det står, er da ganske nyttig, er de ikke det? Det er jo tross alt basert på hvordan <em>du</em> bruker telefonen din. Fremdeles. Bare gi det et forsøk. Bare <em>prøv</em> å skru det av i noen dager. Hvert søk blir plutselig mer bevisst, med en tydeligere intensjon enn før.</p>
+<p>For det er vel ikke bare jeg som har tatt fram telefonen, med en klar og tydelig tanke om hva jeg skal gjøre, for så å bli distrahert av noe tilfeldig, og så totalt glemme hva jeg dreiv med 2 sekunder seinere?</p>
+<p>Ved å skru av Siri-forslag begrenser du i alle fall at det skjer.</p>
+<h4 id="hvordan-skru-av-søkeforslagene">Hvordan skru av søkeforslagene<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hvordan-skru-av-søkeforslagene" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>Gå inn på Innstillinger, og scroll deg ned til du ser “Siri”. Velg den.</li>
+</ol>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/img_1346.jpg" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/img_1346.jpg" data-alt/></div></p>
+<ol start="2">
+<li>Huk av “Foreslå apper før søk”</li>
+</ol>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/img_1347.jpg" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/img_1347.jpg" data-alt/></div></p>
+<p>Voilà! Du kan nå søke etter det du <em>faktisk</em> skulle gjøre, ikke det Apple foreslår at du skal gjøre.</p>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/s-percentc3-percentb8keforslag.jpg" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/s-percentc3-percentb8keforslag.jpg" data-alt/></div></p>
+<h2 id="men-hvorfor">Men.. hvorfor?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#men-hvorfor" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Noen av dere husker kanskje at jeg har fortalt om hvordan jeg prøver å <a href="../oppmerksomhet" data-slug="oppmerksomhet" class="internal alias">ta vare på oppmerksomheten min</a>? Hvis det ikke høres kjent ut kan jeg nevne at jeg f. eks har en 30-minutters youtube-grense på meg sjøl, på daglig basis, hvor jeg faktisk må spørre kona mi dersom jeg vil se mer. For det er hu som har koden.</p>
+<p>Jeg er nemlig smertelig klar over hvor avhengig jeg kan være av telefonen min i blant. Og det prøver jeg å motarbeide så godt jeg kan. Enten om det er ved å slette instagram-appen (ikke kontoen riktignok), sette telefonen i flymodus også videre. Så jeg blei såklart gira da jeg så Brandon Shaw snakke om <a href="https://youtu.be/_L-WUrZ7tJM?si=6nwoh3ykGaCowZp1&amp;t=139" class="external">hvordan han hadde dumma ned telefonen sin<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> for å gjøre den mindre spennende å bruke.</p>
+<p>Utvikleren av Dumb-phone-appen, <a href="https://bento.me/michaeltigas" class="external">Michael Tigas<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, sa det egentlig på en veldig fin måte:</p>
+<blockquote>
+<p>I wanted to permanently reduce the amount of visual distractions when I pick up and use my phone, such as colorful app icons and wallpapers, since I would always naturally be drawn towards them.</p>
+<p>After creating Dumb Phone and using it every day for over a month, my screen time has nosedived. I notice I’m only opening apps if I really need to use them, since I no longer see their icon and associate it with the dopamine rush I’d get when tapping it.</p>
+</blockquote>
+<p>Personlig så elsker jeg internett altså, men jeg vil gjøre det jeg kan for å være en mindre passiv forbruker. Og heller tilrettelegge for å skape mer – enten det er nyhetsbrev, artikler, eller generelt nye tanker jeg ikke har tenkt på før. Eller nye minner. For selv om jeg kan kose meg med å se på youtube en kveld så leder det sjeldent til et minneverdig øyeblikk, som jeg ser tilbake på når uka eller året er omme.</p>
+<p>Om du gir det her et forsøk vil jeg veldig gjerne høre fra deg. Send meg en mail på <a href="mailto:strombraaten@gmail.com" class="external">strombraaten@gmail.com<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, eller bli med i <a href="https://discord.gg/f2ZrnPVbYC" class="external">discord-gjengen<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, også får du bare spørre hvis jeg kan hjelpe deg med noe.</p>
+<h2 id="bonus">Bonus<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#bonus" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="tips-nr-1">Tips nr. 1<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#tips-nr-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>I <a href="https://www.youtube.com/watch?v=10iUIoVBRI8" class="external">denne filmen<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> kan du se en type som har gjort nøyaktig det samma som meg, bare at han har brukt Blank Spaces-appen i stedet for Dumb Phone. Der får du også se forskjellen på telefonen med og uten den matte skjermbeskytteren.</p>
+<h3 id="tips-nr-2">Tips nr. 2<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#tips-nr-2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Brandon Shaw som jeg nevnte tidligere, tok det prosjektet her så mye, mye lenger enn jeg har tenkt til. Hele veien til å modifisere en gammel iPod, og bruke en skrivemaskin i stedet for dataen. Kun i en 30-dagers periode riktignok, men <a href="https://www.youtube.com/watch?v=VzKr-tMr8qQ" class="external">refleksjonene hans rundt det hele<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> er virkelig verdt å ta en kikk på. Kontoen hans heter forresten Digging the Greats (ordspill på <a href="https://www.urbandictionary.com/define.php?term=Diggin'%20in%20the%20Crates" class="external">“digging in the crates”<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>), hvor han vanligvis analyserer og forklarer hvordan ulike hiphop- og soul-låter er snekra sammen. Det er helt fantastisk 👌</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graf-visning</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="backlinks"><h3>Tilbakekoblinger</h3><ul id="list-1" class="overflow"><li><a href="../notater/del-med-alle" class="internal">Skriv til en, del med alle</a></li><li><a href="../notater/ipodens-comeback" class="internal">iPodens comeback</a></li><li><a href="../notater/minste-telefonen" class="internal">Den minste telefonen</a></li><li class="overflow-end"></li></ul></div><div class="tag-list-wrapper"><p class="tag-intro">This relates to:</p><ul class="tags"><li><a href="../tags/tankemat" class="internal tag-link">tankemat</a></li><li><a href="../tags/apper" class="internal tag-link">apper</a></li><li><a href="../tags/teknologi" class="internal tag-link">teknologi</a></li><li><a href="../tags/produktivitet" class="internal tag-link">produktivitet</a></li><li><a href="../tags/nyhetsbrev" class="internal tag-link">nyhetsbrev</a></li></ul></div></div><footer class><p>Laget med <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://github.com/strombraaten/simenskriver-v3">GitHub</a></li><li><a href="https://discord.gg/f2ZrnPVbYC">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script type="application/javascript" data-persist="true">
+              // Lightbox functionality
+              function initLightbox() {
+                // Remove existing modal if it exists
+                const existingModal = document.querySelector('.lightbox-modal');
+                if (existingModal) {
+                  existingModal.remove();
+                }
+
+                // Create modal elements
+                const modal = document.createElement('div');
+                modal.className = 'lightbox-modal';
+                
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'lightbox-close';
+                closeBtn.innerHTML = '×';
+                closeBtn.setAttribute('aria-label', 'Close lightbox');
+                
+                const img = document.createElement('img');
+                img.style.display = 'none';
+                
+                modal.appendChild(closeBtn);
+                modal.appendChild(img);
+                document.body.appendChild(modal);
+
+                // Function to open lightbox
+                function openLightbox(imageSrc, imageAlt, originalImg) {
+                  img.src = imageSrc;
+                  img.alt = imageAlt || '';
+                  img.style.display = 'block';
+                  modal.classList.add('active');
+                  document.body.classList.add('lightbox-open');
+                  
+                  // Preload the image and set appropriate size
+                  const preloadImg = new Image();
+                  preloadImg.onload = () => {
+                    img.src = imageSrc;
+                    
+                    // Get original image size on page
+                    const originalRect = originalImg ? originalImg.getBoundingClientRect() : null;
+                    const originalDisplayWidth = originalRect ? originalRect.width : 0;
+                    const originalDisplayHeight = originalRect ? originalRect.height : 0;
+                    
+                    // Smart scaling based on image size
+                    const viewportWidth = window.innerWidth;
+                    const viewportHeight = window.innerHeight;
+                    const imageWidth = preloadImg.naturalWidth;
+                    const imageHeight = preloadImg.naturalHeight;
+                    
+                    // Calculate appropriate display size
+                    let targetWidth, targetHeight;
+                    
+                    // Ensure lightbox image is at least 1.5x the size it appears on page
+                    const minDisplayWidth = Math.max(
+                      originalDisplayWidth * 1.5,
+                      Math.min(500, viewportWidth * 0.7)
+                    );
+                    const minDisplayHeight = Math.max(
+                      originalDisplayHeight * 1.5,
+                      Math.min(400, viewportHeight * 0.7)
+                    );
+                    
+                    // Calculate scale to meet minimum size requirements
+                    const scaleForWidth = minDisplayWidth / imageWidth;
+                    const scaleForHeight = minDisplayHeight / imageHeight;
+                    const minScale = Math.max(scaleForWidth, scaleForHeight, 1); // At least 1x (never smaller than original)
+                    
+                    // Limit maximum scale to prevent pixelation
+                    const maxScale = Math.min(3, viewportWidth * 0.9 / imageWidth, viewportHeight * 0.9 / imageHeight);
+                    const finalScale = Math.min(minScale, maxScale);
+                    
+                    targetWidth = Math.min(imageWidth * finalScale, viewportWidth * 0.9);
+                    targetHeight = Math.min(imageHeight * finalScale, viewportHeight * 0.9);
+                    img.style.width = targetWidth + 'px';
+                    img.style.height = 'auto';
+                  };
+                  preloadImg.src = imageSrc;
+                }
+
+                // Function to close lightbox
+                function closeLightbox() {
+                  modal.classList.remove('active');
+                  document.body.classList.remove('lightbox-open');
+                  setTimeout(() => {
+                    img.style.display = 'none';
+                    img.src = '';
+                  }, 300);
+                }
+
+                // Event listeners
+                closeBtn.addEventListener('click', closeLightbox);
+                
+                modal.addEventListener('click', (e) => {
+                  if (e.target === modal) {
+                    closeLightbox();
+                  }
+                });
+
+                // Keyboard support
+                document.addEventListener('keydown', (e) => {
+                  if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeLightbox();
+                  }
+                });
+
+                // Add click handlers to all lightbox images
+                const lightboxWrappers = document.querySelectorAll('.lightbox-wrapper');
+                lightboxWrappers.forEach(wrapper => {
+                  wrapper.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const img = wrapper.querySelector('.lightbox-image');
+                    if (img) {
+                      // Use img.src (browser-resolved URL) instead of data-src
+                      // img.src is already normalized by CrawlLinks and works correctly
+                      // data-src may have wrong case/path from original markdown
+                      const src = img.src || img.getAttribute('data-src');
+                      const alt = img.getAttribute('data-alt') || img.alt;
+                      openLightbox(src, alt, img);
+                    }
+                  });
+                });
+
+                // Clean up function
+                if (window.addCleanup) {
+                  window.addCleanup(() => {
+                    if (modal && modal.parentNode) {
+                      modal.parentNode.removeChild(modal);
+                    }
+                    document.body.classList.remove('lightbox-open');
+                  });
+                }
+              }
+
+              // Initialize on page load and navigation
+              document.addEventListener('nav', initLightbox);
+              
+              // Initialize immediately if DOM is already ready
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initLightbox);
+              } else {
+                initLightbox();
+              }
+            </script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">
+        const socket = new WebSocket('ws://localhost:3001')
+        // reload(true) ensures resources like images and scripts are fetched again in firefox
+        socket.addEventListener('message', () => document.location.reload(true))
+      </script><script src="../postscript.js" type="module" data-persist="true"></script></html>

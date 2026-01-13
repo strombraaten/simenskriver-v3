@@ -19,7 +19,7 @@ I tillegg dypdykker jeg i ting som fascinerer meg, og det skriver jeg om her.
 Denne siden organiserer innhold i fire hovedtyper:
 
 - **Tanker** - Korte, flyktige tanker og observasjoner
-- **<｜tool▁sep｜>** - Referansemateriale og byggeklosser  
+- **Oppslagsverk** - Referansemateriale og byggeklosser  
 - **Utkast** - Ideer i utvikling og utforskende tenkning
 - **Notater** - Komplette, sammenhengende langformstekster
 

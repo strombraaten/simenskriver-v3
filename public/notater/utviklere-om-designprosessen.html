@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr"><head><title>Hva jeg har lært av utviklere om designprosessen</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&amp;family=Lora:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Simen skriver"/><meta property="og:title" content="Hva jeg har lært av utviklere om designprosessen"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Hva jeg har lært av utviklere om designprosessen"/><meta name="twitter:description" content="Hva jeg har lært av utviklere om designprosessen Når vi snakker om det å bli bedre innafor faget ditt så er det lett å tro at du lærer mest av de som jobber med det samma som deg."/><meta property="og:description" content="Hva jeg har lært av utviklere om designprosessen Når vi snakker om det å bli bedre innafor faget ditt så er det lett å tro at du lærer mest av de som jobber med det samma som deg."/><meta property="og:image:alt" content="Hva jeg har lært av utviklere om designprosessen Når vi snakker om det å bli bedre innafor faget ditt så er det lett å tro at du lærer mest av de som jobber med det samma som deg."/><meta property="twitter:domain" content="localhost:8080"/><meta property="og:url" content="https://localhost:8080/notater/utviklere-om-designprosessen"/><meta property="twitter:url" content="https://localhost:8080/notater/utviklere-om-designprosessen"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Hva jeg har lært av utviklere om designprosessen Når vi snakker om det å bli bedre innafor faget ditt så er det lett å tro at du lærer mest av de som jobber med det samma som deg."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL1VzZXJzL3NpbWVuc3Ryb21icmFhdGVuL2Rldi9ibG9nL3NpbWVuc2tyaXZlci12My9xdWFydHovY29tcG9uZW50cy9zdHlsZXMiLCJzb3VyY2VzIjpbIm1lcm1haWQuaW5saW5lLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUdGO0VBQ0U7OztBQUtGO0VBQ0U7RUFDQTs7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7O0FBSUY7RUFDRTtFQUNBO0VBQ0EiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhwYW5kLWJ1dHRvbiB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxvYXQ6IHJpZ2h0O1xuICBwYWRkaW5nOiAwLjRyZW07XG4gIG1hcmdpbjogMC4zcmVtO1xuICByaWdodDogMDsgLy8gTk9URTogcmlnaHQgd2lsbCBiZSBzZXQgaW4gbWVybWFpZC5pbmxpbmUudHNcbiAgY29sb3I6IHZhcigtLWdyYXkpO1xuICBib3JkZXItY29sb3I6IHZhcigtLWRhcmspO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gIGJvcmRlcjogMXB4IHNvbGlkO1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG4gIG9wYWNpdHk6IDA7XG4gIHRyYW5zaXRpb246IDAuMnM7XG5cbiAgJiA+IHN2ZyB7XG4gICAgZmlsbDogdmFyKC0tbGlnaHQpO1xuICAgIGZpbHRlcjogY29udHJhc3QoMC4zKTtcbiAgfVxuXG4gICY6aG92ZXIge1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBib3JkZXItY29sb3I6IHZhcigtLXNlY29uZGFyeSk7XG4gIH1cblxuICAmOmZvY3VzIHtcbiAgICBvdXRsaW5lOiAwO1xuICB9XG59XG5cbnByZSB7XG4gICY6aG92ZXIgPiAuZXhwYW5kLWJ1dHRvbiB7XG4gICAgb3BhY2l0eTogMTtcbiAgICB0cmFuc2l0aW9uOiAwLjJzO1xuICB9XG59XG5cbiNtZXJtYWlkLWNvbnRhaW5lciB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgY29udGFpbjogbGF5b3V0O1xuICB6LWluZGV4OiA5OTk7XG4gIGxlZnQ6IDA7XG4gIHRvcDogMDtcbiAgd2lkdGg6IDEwMHZ3O1xuICBoZWlnaHQ6IDEwMHZoO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBkaXNwbGF5OiBub25lO1xuICBiYWNrZHJvcC1maWx0ZXI6IGJsdXIoNHB4KTtcbiAgYmFja2dyb3VuZDogcmdiYSgwLCAwLCAwLCAwLjUpO1xuXG4gICYuYWN0aXZlIHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIH1cblxuICAmID4gI21lcm1haWQtc3BhY2Uge1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgdG9wOiA1MCU7XG4gICAgbGVmdDogNTAlO1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xuICAgIGhlaWdodDogODB2aDtcbiAgICB3aWR0aDogODB2dztcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRlbnQge1xuICAgICAgcGFkZGluZzogMnJlbTtcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDAgMDtcbiAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjFzIGVhc2U7XG4gICAgICBvdmVyZmxvdzogdmlzaWJsZTtcbiAgICAgIG1pbi1oZWlnaHQ6IDIwMHB4O1xuICAgICAgbWluLXdpZHRoOiAyMDBweDtcblxuICAgICAgcHJlIHtcbiAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICB9XG5cbiAgICAgIHN2ZyB7XG4gICAgICAgIG1heC13aWR0aDogbm9uZTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgfVxuICAgIH1cblxuICAgICYgPiAubWVybWFpZC1jb250cm9scyB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICBib3R0b206IDIwcHg7XG4gICAgICByaWdodDogMjBweDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBnYXA6IDhweDtcbiAgICAgIHBhZGRpbmc6IDhweDtcbiAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgICBib3gtc2hhZG93OiAwIDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgICAgei1pbmRleDogMjtcblxuICAgICAgLm1lcm1haWQtY29udHJvbC1idXR0b24ge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgd2lkdGg6IDMycHg7XG4gICAgICAgIGhlaWdodDogMzJweDtcbiAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgICBjb2xvcjogdmFyKC0tZGFyayk7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIGZvbnQtZmFtaWx5OiB2YXIoLS1ib2R5Rm9udCk7XG4gICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjJzIGVhc2U7XG5cbiAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTtcbiAgICAgICAgfVxuXG4gICAgICAgIC8vIFN0eWxlIHRoZSByZXNldCBidXR0b24gZGlmZmVyZW50bHlcbiAgICAgICAgJjpudGgtY2hpbGQoMikge1xuICAgICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTJweDtcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdfQ== */</style><style>
+/* Lightbox Image Styles */
+.lightbox-wrapper {
+  display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin: 0;
+  /* Prevent layout shift by reserving space */
+  min-height: 200px;
+  position: relative;
+}
+
+.lightbox-wrapper:hover {
+  transform: scale(1.02);
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 70vh;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+  /* Preserve aspect ratio to prevent layout shift */
+  display: block;
+  /* Ensure crisp image rendering during scroll */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  /* Fallback to high quality for photos */
+  image-rendering: auto;
+  /* Prevent blur placeholder from showing through */
+  background: transparent;
+}
+
+/* If image has width/height attributes, use them to prevent layout shift */
+.lightbox-image[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* Fallback: use inline style aspect-ratio if set */
+.lightbox-image[style*=&quot;aspect-ratio&quot;] {
+  /* Inline style takes precedence */
+}
+
+/* Exclude gallery images from max-height constraint (they're handled by grid) */
+.image-gallery .lightbox-image {
+  max-height: none;
+}
+
+.lightbox-image:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal/Lightbox Overlay */
+.lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-modal img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.lightbox-modal.active img {
+  transform: scale(1);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Prevent body scroll when modal is open */
+body.lightbox-open {
+  overflow: hidden;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .lightbox-modal img {
+    max-width: 95%;
+    max-height: 95%;
+  }
+
+  .lightbox-close {
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    width: 35px;
+    height: 35px;
+  }
+}
+            </style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://localhost:8080/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://localhost:8080/notater/utviklere-om-designprosessen-og-image.webp"/><meta property="og:image:url" content="https://localhost:8080/notater/utviklere-om-designprosessen-og-image.webp"/><meta name="twitter:image" content="https://localhost:8080/notater/utviklere-om-designprosessen-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="notater/utviklere-om-designprosessen"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">Simen skriver</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Søk</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Søk etter noe" placeholder="Søk etter noe"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Mørk modus"><title>Mørk modus</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Lys modus"><title>Lys modus</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Læsemodus"><title>Læsemodus</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="category-list"><h2>Explorer</h2><ul class="category-ul"><li><a href="../all-posts" class="internal category-link" data-no-popover="true">All Posts</a></li><li><a href="../tanker/" class="internal category-link" data-no-popover="true">Tanker</a></li><li><a href="../utkast/" class="internal category-link" data-no-popover="true">Utkast</a></li><li><a href="../notater/" class="internal category-link" data-no-popover="true">Notater</a></li><li><a href="../oppslagsverk/" class="internal category-link" data-no-popover="true">Oppslagsverk</a></li></ul></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-4009" aria-expanded="true"><h3>Oversikt</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#hva-jeg-har-lært-av-utviklere-om-designprosessen" data-for="hva-jeg-har-lært-av-utviklere-om-designprosessen">Hva jeg har lært av utviklere om designprosessen</a></li><li class="depth-1"><a href="#en-hyllest-til-utviklerne" data-for="en-hyllest-til-utviklerne">En hyllest til utviklerne</a></li><li class="depth-2"><a href="#1-du-blir-ikke-ferdig-med-designet-ditt-men-du-kan-bli-ferdig-med-en-versjon-av-det" data-for="1-du-blir-ikke-ferdig-med-designet-ditt-men-du-kan-bli-ferdig-med-en-versjon-av-det">1. Du blir ikke ferdig med designet ditt, men du kan bli ferdig med en versjon av det</a></li><li class="depth-2"><a href="#2-ikke-overtenk-arbeidet-ditt-bare-snakk-sammen-i-stedet" data-for="2-ikke-overtenk-arbeidet-ditt-bare-snakk-sammen-i-stedet">2. Ikke overtenk arbeidet ditt, bare snakk sammen i stedet</a></li><li class="depth-2"><a href="#3-testing-i-et-qa-miljø-gir-deg-mye-mer-enn-å-stirre-på-skisser-i-figma" data-for="3-testing-i-et-qa-miljø-gir-deg-mye-mer-enn-å-stirre-på-skisser-i-figma">3. Testing i et QA-miljø gir deg mye mer enn å stirre på skisser i Figma</a></li><li class="depth-2"><a href="#4-verdien-av-hvis-det-skjer-hva-skjer-da" data-for="4-verdien-av-hvis-det-skjer-hva-skjer-da">4. Verdien av “Hvis det skjer, hva skjer da?”</a></li><li class="depth-2"><a href="#5-inkluder-utviklere-tidlig-og-fortløpende-for-å-korrigere-kursen-din-underveis" data-for="5-inkluder-utviklere-tidlig-og-fortløpende-for-å-korrigere-kursen-din-underveis">5. Inkluder utviklere tidlig og fortløpende for å korrigere kursen din underveis</a></li><li class="depth-2"><a href="#6-du-må-ikke-lage-et-helt-designsystem-men-du-bør-lage-noen-enkle-regler" data-for="6-du-må-ikke-lage-et-helt-designsystem-men-du-bør-lage-noen-enkle-regler">6. Du må ikke lage et helt designsystem, men du bør lage noen enkle regler</a></li><li class="depth-2"><a href="#7-estetikk-er-langt-mer-enn-bare-det-visuelle" data-for="7-estetikk-er-langt-mer-enn-bare-det-visuelle">7. Estetikk er langt mer enn bare det visuelle</a></li><li class="depth-2"><a href="#8-alt-er-mulig-kommer-bare-an-på-hva-hvor-mye-tid-vi-har" data-for="8-alt-er-mulig-kommer-bare-an-på-hva-hvor-mye-tid-vi-har">8. Alt er mulig, kommer bare an på hva hvor mye tid vi har</a></li><li class="depth-1"><a href="#konklusjon" data-for="konklusjon">Konklusjon</a></li><li class="overflow-end"></li></ul></div></div><div class="center"><div class="page-header"><div class="popover-hint"><header class="article-header"><h1 class="article-title">Hva jeg har lært av utviklere om designprosessen</h1><div class="article-meta"><time datetime="2023-10-07T22:00:00.000Z" class="meta-item">08. okt. 2023</time><span class="meta-item">15 min lesning</span><span class="meta-item updated">Updated 27. mars 2024</span></div></header></div></div><article class="popover-hint"><h1 id="hva-jeg-har-lært-av-utviklere-om-designprosessen">Hva jeg har lært av utviklere om designprosessen<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hva-jeg-har-lært-av-utviklere-om-designprosessen" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Når vi snakker om det å bli bedre innafor faget ditt så er det lett å tro at du lærer mest av de som jobber med det samma som deg. Og helst de som har mer erfaring enn deg sjøl.</p>
+<p>For all del, jeg har lært massevis av designerkollegaene mine i Variant, både de mindre- og de mer erfarne, men det er <em>utviklerne</em> som har gjort meg til en mer fullkommen UX designer. Nøyaktig hva jeg har lært av dem (og hva du også kan lære) skal jeg utdype for deg nå.</p>
+<p>Skal sies at det her starta som en presentasjon som jeg holdt for noen dager siden, som jeg gjerne vil forbedre. Publikummet da bestod av utviklere og designere for det meste, og derfor er det nok mer stammespråk fra min side enn det pleier å være, men jeg er spent på å høre om du fremdeles henger med, og om det er interessant å lese. Eller om det blir for teknisk og du ikke gidder å lese mer. For det er en ærlig sak.</p>
+<p>Uansett vil jeg gjerne vite om det er noe jeg kan gjøre tydeligere, eller nyansere på en bedre måte, for at poengene skal komme tydeligere fram.</p>
+<h2 id="en-hyllest-til-utviklerne">En hyllest til utviklerne<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#en-hyllest-til-utviklerne" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Det er altså utviklerne jeg kan takke for at jeg nå kan levere en bedre brukeropplevelse enn det jeg kunne før. Rett og slett fordi jeg veit mer om hva som kreves i de ulike delene av prosessen. Hvordan jeg kan gjøre jobben lettere for andre. At jeg har en bedre forståelse for hva som kan være tidkrevende å implementere, og hvilke små grep som kan utgjøre en stor forskjell (på selve opplevelsen av å bruke appen, nettsida, eller systemet vi lager).</p>
+<p>Dette blir derfor en slags <em>homage</em> til utviklerne jeg har jobba med (fancy ord for hyllest) – fra de ferskeste av de ferske til de mest erfarne ringrevene – og hva de har lært meg om designprosessen.</p>
+<p>Så, hva har jeg lært? For at du kan vurdere hva som er av interesse for deg får du en oppsummering med en gang. Jeg har nemlig lært at:</p>
+<ol>
+<li>Du blir ikke <em>ferdig</em> med designet ditt, men du kan bli ferdig med en versjon av det.</li>
+<li>Ikke overtenk arbeidet ditt, bare snakk sammen i stedet</li>
+<li>Testing i et QA-miljø gir deg mye mer enn å stirre på skisser i Figma</li>
+<li>Verdien av “Hvis det skjer, hva skjer da?”</li>
+<li>Inkluder utviklere tidlig og fortløpende for å korrigere kursen din underveis</li>
+<li>Du må ikke lage et helt designsystem, men du bør lage noen enkle regler</li>
+<li>Estetikk er langt mer enn bare det visuelle</li>
+<li>Alt er mulig, kommer bare an på hva hvor mye tid vi har</li>
+</ol>
+<h3 id="1-du-blir-ikke-ferdig-med-designet-ditt-men-du-kan-bli-ferdig-med-en-versjon-av-det">1. Du blir ikke <em>ferdig</em> med designet ditt, men du kan bli ferdig med en versjon av det<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-du-blir-ikke-ferdig-med-designet-ditt-men-du-kan-bli-ferdig-med-en-versjon-av-det" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Når det kommer til et produkt eller en tjeneste i sin helhet så er jeg veldig vant til at man forbedrer det bit for bit, at man “jobber iterativt”, og har innstillinga om at det blir bedre versjon for versjon. Samtidig, av en eller annen grunn, så tenker jeg at det <em>jeg</em> lager, altså designet, det skal være “ferdig-ferdig”, før det utvikles. Men hva er grunnen til det egentlig? Hvorfor tenker jeg at designet skal være dønn ferdig før man kan begynne å jobbe med det?</p>
+<p>Sannsynligvis er det en kombinasjon av to årsaker. For det første:</p>
+<h4 id="egoet-mitt-kommer-i-veien">Egoet mitt kommer i veien<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#egoet-mitt-kommer-i-veien" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Her har jeg et konkret eksempel, hvor jeg og utvikleren Trym jobba på et nettsideprosjekt sammen. Da lagde jeg nemlig en dedikert side i Figma som het “Ferdig”, hvor jeg skulle legge alle de delene av nettsida som var ferdig-designa. Tanken var da at det ville være tydelig for han å se hva han kunne begynne med, også slapp han å spørre meg hva som var klart.</p>
+<p>Problemet her var jo bare at den sida var mer eller mindre tom. I lang, lang tid (relativt til den tida vi hadde på prosjektet riktignok)</p>
+<p>For jeg jobba på mange ulike deler av designet samtidig. Og klarte aldri å si meg helt ferdig med én del av det, siden alt hang sammen, og valgene jeg gjorde på ett område påvirka valgene jeg tok på det neste området. Konsekvensen av det derimot var at Trym bare måtte “trå vann” på en måte, for jeg hadde ikke noe klart som han kunne jobbe på.</p>
+<p>Hva med den andre grunnen da? Den andre grunnen til hvorfor jeg tror at designet skal være helt ferdig før man kan begynne å jobbe med det? Jo, for det andre:</p>
+<h4 id="jeg-blir-overvelda-av-at-det-er-mye-å-ta-hensyn-til-så-jeg-klarer-ikke-å-dele-det-opp-i-mindre-leveranser">Jeg blir overvelda av at det er mye å ta hensyn til, så jeg klarer ikke å dele det opp i mindre leveranser.<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#jeg-blir-overvelda-av-at-det-er-mye-å-ta-hensyn-til-så-jeg-klarer-ikke-å-dele-det-opp-i-mindre-leveranser" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Her kan jeg riktignok trekke inn noe jeg har lært av utvikler-Tore. Og det er verdien av å starte med noe smått, og bare bygge videre derfra. Å starte med “strikk og binders” som han kaller det.</p>
+<p>For det trenger virkelig ikke se fint ut på “baksida” (i prosjektfila mi i dette tilfellet) så lenge vi får noe ut i verden, og ser at det funker. Da skaper vi nemlig momentum for vårs sjøl, for teamet vi jobber i, og ofte kunden vi jobber for. Også kan vi rydde opp i prosjektfiler seinere (selv om det såklart er en fordel å rydde mens du jobber, nettopp for å unngå å alltid dytte det foran deg).</p>
+<h4 id="så-hva-legger-jeg-egentlig-i-den-lærdommen">Så hva legger jeg egentlig i den lærdommen?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#så-hva-legger-jeg-egentlig-i-den-lærdommen" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Som jeg innleda med – Du blir ikke <em>ferdig</em> med designet ditt, men du kan bli ferdig med <em>en versjon</em> av det. For min del betyr det at jeg er ikke låst til designet jeg lager. Ikke bare er det lov til å endre det seinere, men det er også forventa at jeg gjør det. Nettopp for å kunne forbedre det. Det er jo akkurat derfor vi snakker om å <em>jobbe iterativt</em>, at du lager én versjon nå for å kunne lære av hva som kunne vært bedre, for så å lage en bedre versjon av det i neste omgang.</p>
+<p>Samtidig syns jeg det er viktig å få fram at vi designere må bli bedre til å arrestere vårs sjøl når egoet vårt kommer i veien for framdrifta. For dette gjelder nok ikke bare meg.</p>
+<p>Det leder meg inn på lærdom nummer to:</p>
+<h3 id="2-ikke-overtenk-arbeidet-ditt-bare-snakk-sammen-i-stedet">2. Ikke overtenk arbeidet ditt, bare snakk sammen i stedet<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-ikke-overtenk-arbeidet-ditt-bare-snakk-sammen-i-stedet" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Det er lett å tenke at du må lage såkalte hover- og active-states av alle knapper i en prototype, føøør du skal dele skissene dine med andre. Eller at du må ha tenkt ut alle feilmeldinger som skal dukke opp hvis brukeren gjør det ene eller andre. Og spesielt når det kommer til å dele designskissene med utviklere. For mange av vårs designere har nok erfaringer med noen “triggerhappy” utviklere, som gyver løs på implementeringa av noe som ikke var helt “ferdig” i våre øyne.</p>
+<p>Men.. utviklere trenger egentlig ikke perfekte skisser for å komme i gang med jobben sin. Så lenge man snakker sammen, og finner ut av hva som trengs for å kunne jobbe videre.</p>
+<p>Det var sånn jeg og Trym løste det eksempelet jeg nevnte tidligere. For den “Ferdig”-sida som jeg lagde i Figma, den var jo mer eller mindre tom. Men han tok tak i det, og spørte meg om det var noe han kunne komme i gang med, som sannsynligvis ikke kom til å endre seg i så stor grad, og DET var det jo!</p>
+<p>Så da fant vi fram de delene av designet som var mer eller mindre “stabile”, men hvor det mangla noen små avgjørelser. Også blei vi heller enige om at han skulle spørre meg dersom det var noe han trengte en avgjørelse på.</p>
+<h4 id="så-hva-legger-jeg-egentlig-i-den-lærdommen-1">Så hva legger jeg egentlig i den lærdommen?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#så-hva-legger-jeg-egentlig-i-den-lærdommen-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Rett og slett at jeg må drite i at ting skal bli ferdig, og heller tenke at designet må leve, og utvikle seg over tid, i iterasjoner som alt annet. Nettopp for at vi skal kunne lære mer om hvordan det faktisk er i bruk.</p>
+<p>Som leder meg videre til lærdom nummer tre.</p>
+<h3 id="3-testing-i-et-qa-miljø-gir-deg-mye-mer-enn-å-stirre-på-skisser-i-figma">3. Testing i et QA-miljø gir deg mye mer enn å stirre på skisser i Figma<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-testing-i-et-qa-miljø-gir-deg-mye-mer-enn-å-stirre-på-skisser-i-figma" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Når jeg sier QA-miljø så betyr det bare en liksom-versjon av det vi lager, som vi kan bruke for å finne feil, og teste vårs fram før vi faktisk lanserer noe til offentligheten.</p>
+<p>For utenom å faktisk brukerteste prototyper, så er det lite du egentlig lærer av å bare se på statiske skisser i Figma. Det er som et “best case scenario”, hvor ingenting går feil. Hvor alle har samme skjermstørrelse som deg, ikke en eneste funksjonsnedsettelse, perfekt belysning, og aldri dårlig tid. Det er optimale forhold.</p>
+<p>Problemet med det er at dersom jeg vurderer designet mitt ut utelukkende gjennom en iPhone 15 pro-”frame” i Figma, så designer jeg for eliten, som det kalles. Og i stor grad så er det teknologifolk som vårs (som lager appene og nettsidene vi bruker) som nettopp utgjør den eliten.</p>
+<p>Eliten er vi som har et dedikert “<a href="https://handbook.variant.no/information#Gadgets" class="external">gadgetbudsjett<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>” å kose vårs med, som får dataen gjennom jobben, og som faktisk har oppdatert telefonen de siste fem årene.</p>
+<p>Ikke bare føles det mye mer “ekte” å interagere med designet jeg har lagd i et såkalt QA-miljø (Quality Assurance), men det kan gi meg en bedre forståelse for folk som har ulike begrensninger eller bare et annet utgangspunkt enn meg sjøl. Og når vi tilrettelegger for dem så vil også løsningene våres treffe bedre for alle andre og.</p>
+<h3 id="4-verdien-av-hvis-det-skjer-hva-skjer-da">4. Verdien av “Hvis det skjer, hva skjer da?”<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-verdien-av-hvis-det-skjer-hva-skjer-da" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Vi UX-designere fokuserer alt for mye på det som kalles “The Happy Path”.</p>
+<p>Og “The Happy Path” er altså den optimale brukeropplevelsen, hvor alt fungerer nøyaktig som det skal, uten problemer eller misforståelser underveis. Det er altså solskinnsdager og enhjørninger bæsjer gull.</p>
+<p>Men så er det en utvikler som spør:</p>
+<blockquote>
+<p>Duuu, hvis du gjør <em>sånn</em> og <em>sånn</em>.. Hva skjer da egentlig?</p>
+</blockquote>
+<p>Eller som jeg fikk høre her om dagen, om hvordan systemet skulle oppføre seg basert på en handling brukeren gjør:</p>
+<blockquote>
+<p>Om du kan fjerne den infoboksen der, skal den da være borte for alltid? Eller skal den komme tilbake igjen?</p>
+</blockquote>
+<p>Den type tilbakemeldinger er både gull verdt, men også rimelig frustrerende, for jeg har sjeldent noe godt svar sånn på stående fot. Problemet med å fokusere på “The Happy Path” som jeg nevnte, er nettopp at det at er veldig få brukeropplevelser som er sømløse fra starten av.</p>
+<p>La vårs si at du tester på en person i 60-åra som har begynt å se dårligere, og som derfor har forstørra all tekst på dataen sin til 110%. Da kan det være nok til at det kødder med den fine layouten din. Eller kanskje du ikke hadde tenkt over at det fremdeles finnes de der ute som eier en iPhone SE i 2023 (jeg ser på deg, Oda). Eller at noen bare trykker feil rett og slett, og alt de vil er angre på den handlinga de nettopp gjorde.</p>
+<p>Det er derfor det er så utrolig nyttig med utviklere som spør “<em>Okei, men hvis man gjør sånn og sånn, hva skjer da?</em>“. For vi må rett og slett tilrettelegge for at folk gjør rare ting, også må vi lære av det. Selv om det er sykt frustrerende å få den kommentaren slengt i trynet når jeg som designer trodde at jeg hadde tenkt på alt.</p>
+<p>Ikke bare er det nyttig for brukeropplevelsen i sin helhet, men det vil også gi vårs et mer realistisk syn på hvor lang tid det tar å gjøre jobben. Siden vi får definert omfanget på en bedre måte.</p>
+<p>Mye av det UX-ugrasset der, som jeg skal begynne å kalle det, det kan vi som designere også luke vekk tidligere enn vi tror.</p>
+<h3 id="5-inkluder-utviklere-tidlig-og-fortløpende-for-å-korrigere-kursen-din-underveis">5. Inkluder utviklere tidlig og fortløpende for å korrigere kursen din underveis<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5-inkluder-utviklere-tidlig-og-fortløpende-for-å-korrigere-kursen-din-underveis" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Jeg holder på å videreutvikle en app nå (hos den kunden jeg jobber for) hvor det skal være info som oppdaterer seg basert på bruken, i tillegg til små endringer på noe som har sett dønn likt ut de siste 5-10 årene ca. Og underveis har jeg spørt utvikleren jeg jobber med om ting som:</p>
+<blockquote>
+<p>Du, jeg tenker å gjøre sånn <em>her</em>, hva tenker du om det? Blir det tidkrevende å implementere, eller er det en smal sak? Har det noen konsekvenser som jeg ikke tenker over, sånn som du oppfatter det?</p>
+</blockquote>
+<p>Ved å kaste ut sånne spørsmål i ny og ne, og sparre på konseptet på en fortløpende basis så klarer jeg å unngå åpenbare feil som jeg ikke ville plukka opp før jeg hadde testa det.</p>
+<p>Samtidig er det neimen ikke alle utviklere som er like åpne for møter hvor du foreslår “abstrakt idémyldring og utforsking”, men de fleste derimot er åpne for å komme med en mening. Samtidig som folk flest liker jo følelsen av å kunne hjelpe. Du trenger bare ikke vinkle det som et faktisk møte eller en workshop 😉</p>
+<p>Du kan altså spare mye tid på å inkludere en utvikler allerede i konseptfasen.</p>
+<h3 id="6-du-må-ikke-lage-et-helt-designsystem-men-du-bør-lage-noen-enkle-regler">6. Du må ikke lage et helt designsystem, men du bør lage noen enkle regler<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#6-du-må-ikke-lage-et-helt-designsystem-men-du-bør-lage-noen-enkle-regler" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Måten jeg lærte det her på var at jeg rett og slett dreit meg ut, og tenkte altfor kortsiktig. Jeg jobba på et prosjekt hvor vi skulle lage en nettside på kort tid, og da vi nærma vårs slutten så sa utvikleren jeg jobba med noe sånt som:</p>
+<blockquote>
+<p>Det hadde vært så mye lettere å lage det her hvis jeg visste at det var noen regler for spacinga mellom tekstelementer som er like.</p>
+</blockquote>
+<p>Og det høres jo opplagt ut når jeg sier det nå, men der og da så hadde jeg ikke tenkt på det. Jeg var altfor fokusert med å lage designet på én og én side – isolert fra hverandre. Jeg tenkte rett og slett ikke på helheten.</p>
+<p>Jeg fikk riktignok rumpa i gir foråsirresånn og slang sammen noe den samma dagen (som ligner på eksempelet under), som viste seg å være til stor hjelp for vårs begge. For det fikk meg til å tenke mer systematisk på layouten og, som førte til færre “unntakstilfeller” i designet, og langt mer struktur.</p>
+<p class="has-image"><div class="lightbox-wrapper" data-lightbox="true"><img src="../images/pasted-image-20231002111812.png" alt class="lightbox-image" loading="eager" fetchpriority="high" decoding="sync" data-src="/images/pasted-image-20231002111812.png" data-alt data-first-image="true"/></div></p>
+<p>Det jeg lærte er altså at du kan ta noen <em>få</em> store avgjørelser som fjerner behovet for å svare på mange spørsmål underveis.</p>
+<p>Samtidig så må du virkelig ikke lage et helt designsystem, men du bør virkelig lage noen enkle regler. For da tilrettelegger du for at det er mønster som kan gjentas gjennom hele løsningen.</p>
+<p>Hvis du ikke veit noe bedre så anbefaler jeg også bare bruke 8-gangen for å definere størrelser. Sånn at alt av spacing og typografi kan deles på 8. Som da gir deg størrelser som 16, 24, 32, 56 også videre. Det overlapper også perfekt med måleenheten REM, som jeg lærte om i samma slengen 🤓</p>
+<h3 id="7-estetikk-er-langt-mer-enn-bare-det-visuelle">7. Estetikk er langt mer enn bare det visuelle<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#7-estetikk-er-langt-mer-enn-bare-det-visuelle" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Vi designere bruker mye tid på å lage et grensesnitt som <em>ser</em> veldig fint ut. Og det dokumenteres grundig med kommentarer og piler i Figma, for å forklare nøyaktig hvordan spacinga skal være, eller hvor avrunda kantene skal være, med fargekoda seksjoner for både det ene og det andre.</p>
+<p>Én ting vi glemmer bort riktignok, er at vi også må samarbeide med utvikleren om at grensesnittet også skal <em>føles</em> bra i produksjon. Ikke bare hvordan det ser ut. Da snakker vi om de små animasjonene f. eks når du går fra én side til en annen, du åpner en dialogboks, eller hvordan det er å swipe gjennom en app.</p>
+<p>Og det er stor forskjell fra utvikler til utvikler på hvor mye “ekstra krydder” (i form av smude “transitions”, som det kalles) som man drysser på utenom at du som designer spesifiserer det. Det er såklart et samarbeid, hvor alle parter har et delt ansvar, men det er altfor lett å nedprioritere i prosessen.</p>
+<h3 id="8-alt-er-mulig-kommer-bare-an-på-hva-hvor-mye-tid-vi-har">8. Alt er mulig, kommer bare an på hva hvor mye tid vi har<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#8-alt-er-mulig-kommer-bare-an-på-hva-hvor-mye-tid-vi-har" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Jeg husker at utviklerne, Mikael og Christian, sa det der til meg flere ganger – “Alt er mulig, kommer bare an på hvor mye tid vi har”, da vi var innleid hos AtB. Og den setningen trengte jeg egentlig å høre. Fordi som designere kan vi være veldig forsiktige i blant, å tenke “<em>Å nei, det blir sikkert vanskelig hvis vi skal gjøre sånn og sånn</em>”, som gjør vårs alt for forsiktige. At vi ikke <em>tør</em> å foreslå det til utviklerne, men alt er jo mulig. Man må bare ha tida til å finne ut av hvordan. Og hvis det ikke er tid til det så må du vurdere om det er verdt å prioritere det over noe annet.</p>
+<h2 id="konklusjon">Konklusjon<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#konklusjon" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>I teorien har jeg visst lenge at det er viktig å ha et tett forhold mellom designere og utviklere. Samtidig er det først nå, etter å ha jobba med en god del utviklere i løpet av de siste tre årene, at jeg virkelig har lært <em>hvordan</em> jeg kan gjøre min rolle så godt jeg kan, for at det samarbeidet skal bli så bra som mulig.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graf-visning</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="backlinks"><h3>Tilbakekoblinger</h3><ul id="list-1" class="overflow"><li><a href="../notater/det-ene-leder-til-det-andre" class="internal">Det ene leder til det andre</a></li><li class="overflow-end"></li></ul></div><div class="tag-list-wrapper"><p class="tag-intro">This relates to:</p><ul class="tags"><li><a href="../tags/kode" class="internal tag-link">kode</a></li><li><a href="../tags/design" class="internal tag-link">design</a></li></ul></div></div><footer class><p>Laget med <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://github.com/strombraaten/simenskriver-v3">GitHub</a></li><li><a href="https://discord.gg/f2ZrnPVbYC">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script type="application/javascript" data-persist="true">
+              // Lightbox functionality
+              function initLightbox() {
+                // Remove existing modal if it exists
+                const existingModal = document.querySelector('.lightbox-modal');
+                if (existingModal) {
+                  existingModal.remove();
+                }
+
+                // Create modal elements
+                const modal = document.createElement('div');
+                modal.className = 'lightbox-modal';
+                
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'lightbox-close';
+                closeBtn.innerHTML = '×';
+                closeBtn.setAttribute('aria-label', 'Close lightbox');
+                
+                const img = document.createElement('img');
+                img.style.display = 'none';
+                
+                modal.appendChild(closeBtn);
+                modal.appendChild(img);
+                document.body.appendChild(modal);
+
+                // Function to open lightbox
+                function openLightbox(imageSrc, imageAlt, originalImg) {
+                  img.src = imageSrc;
+                  img.alt = imageAlt || '';
+                  img.style.display = 'block';
+                  modal.classList.add('active');
+                  document.body.classList.add('lightbox-open');
+                  
+                  // Preload the image and set appropriate size
+                  const preloadImg = new Image();
+                  preloadImg.onload = () => {
+                    img.src = imageSrc;
+                    
+                    // Get original image size on page
+                    const originalRect = originalImg ? originalImg.getBoundingClientRect() : null;
+                    const originalDisplayWidth = originalRect ? originalRect.width : 0;
+                    const originalDisplayHeight = originalRect ? originalRect.height : 0;
+                    
+                    // Smart scaling based on image size
+                    const viewportWidth = window.innerWidth;
+                    const viewportHeight = window.innerHeight;
+                    const imageWidth = preloadImg.naturalWidth;
+                    const imageHeight = preloadImg.naturalHeight;
+                    
+                    // Calculate appropriate display size
+                    let targetWidth, targetHeight;
+                    
+                    // Ensure lightbox image is at least 1.5x the size it appears on page
+                    const minDisplayWidth = Math.max(
+                      originalDisplayWidth * 1.5,
+                      Math.min(500, viewportWidth * 0.7)
+                    );
+                    const minDisplayHeight = Math.max(
+                      originalDisplayHeight * 1.5,
+                      Math.min(400, viewportHeight * 0.7)
+                    );
+                    
+                    // Calculate scale to meet minimum size requirements
+                    const scaleForWidth = minDisplayWidth / imageWidth;
+                    const scaleForHeight = minDisplayHeight / imageHeight;
+                    const minScale = Math.max(scaleForWidth, scaleForHeight, 1); // At least 1x (never smaller than original)
+                    
+                    // Limit maximum scale to prevent pixelation
+                    const maxScale = Math.min(3, viewportWidth * 0.9 / imageWidth, viewportHeight * 0.9 / imageHeight);
+                    const finalScale = Math.min(minScale, maxScale);
+                    
+                    targetWidth = Math.min(imageWidth * finalScale, viewportWidth * 0.9);
+                    targetHeight = Math.min(imageHeight * finalScale, viewportHeight * 0.9);
+                    img.style.width = targetWidth + 'px';
+                    img.style.height = 'auto';
+                  };
+                  preloadImg.src = imageSrc;
+                }
+
+                // Function to close lightbox
+                function closeLightbox() {
+                  modal.classList.remove('active');
+                  document.body.classList.remove('lightbox-open');
+                  setTimeout(() => {
+                    img.style.display = 'none';
+                    img.src = '';
+                  }, 300);
+                }
+
+                // Event listeners
+                closeBtn.addEventListener('click', closeLightbox);
+                
+                modal.addEventListener('click', (e) => {
+                  if (e.target === modal) {
+                    closeLightbox();
+                  }
+                });
+
+                // Keyboard support
+                document.addEventListener('keydown', (e) => {
+                  if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeLightbox();
+                  }
+                });
+
+                // Add click handlers to all lightbox images
+                const lightboxWrappers = document.querySelectorAll('.lightbox-wrapper');
+                lightboxWrappers.forEach(wrapper => {
+                  wrapper.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const img = wrapper.querySelector('.lightbox-image');
+                    if (img) {
+                      // Use img.src (browser-resolved URL) instead of data-src
+                      // img.src is already normalized by CrawlLinks and works correctly
+                      // data-src may have wrong case/path from original markdown
+                      const src = img.src || img.getAttribute('data-src');
+                      const alt = img.getAttribute('data-alt') || img.alt;
+                      openLightbox(src, alt, img);
+                    }
+                  });
+                });
+
+                // Clean up function
+                if (window.addCleanup) {
+                  window.addCleanup(() => {
+                    if (modal && modal.parentNode) {
+                      modal.parentNode.removeChild(modal);
+                    }
+                    document.body.classList.remove('lightbox-open');
+                  });
+                }
+              }
+
+              // Initialize on page load and navigation
+              document.addEventListener('nav', initLightbox);
+              
+              // Initialize immediately if DOM is already ready
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initLightbox);
+              } else {
+                initLightbox();
+              }
+            </script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">
+        const socket = new WebSocket('ws://localhost:3001')
+        // reload(true) ensures resources like images and scripts are fetched again in firefox
+        socket.addEventListener('message', () => document.location.reload(true))
+      </script><script src="../postscript.js" type="module" data-persist="true"></script></html>
