@@ -6,28 +6,28 @@
       <description>Siste 10 notat on Simen skriver</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>Surdeig for nybegynnere</title>
+    <link>https://localhost:8080/oppslagsverk/surdeig</link>
+    <guid>https://localhost:8080/oppslagsverk/surdeig</guid>
+    <description><![CDATA[ Etter også de ulike bruksområdene for tale til tekst, er det bare å sette ord på noen kjappe tanker. ]]></description>
+    <pubDate>Sat, 12 Dec 2026 23:00:00 GMT</pubDate>
+  </item><item>
     <title>Simen skriver</title>
     <link>https://localhost:8080/</link>
     <guid>https://localhost:8080/</guid>
     <description><![CDATA[ Heisann 👋 Simen heter jeg, og jeg lager digitale greier som skal føles bra, være lett å forstå, og gjerne se fint ut i samme slengen. ]]></description>
     <pubDate>Tue, 13 Jan 2026 21:03:15 GMT</pubDate>
   </item><item>
-    <title>Example Writing</title>
-    <link>https://localhost:8080/notater/example-writing</link>
-    <guid>https://localhost:8080/notater/example-writing</guid>
-    <description><![CDATA[ Example Writing Writings are the longer and more coherent pieces: guides, reflections, arguments. ]]></description>
+    <title>Tanker</title>
+    <link>https://localhost:8080/tanker/</link>
+    <guid>https://localhost:8080/tanker/</guid>
+    <description><![CDATA[ A stream of quick thoughts, observations, and fleeting moments. ]]></description>
     <pubDate>Tue, 13 Jan 2026 20:00:00 GMT</pubDate>
   </item><item>
-    <title>Notater</title>
-    <link>https://localhost:8080/notater/</link>
-    <guid>https://localhost:8080/notater/</guid>
-    <description><![CDATA[ Complete, coherent long-form pieces: essays, guides, reflections, and arguments intended to be shared. ]]></description>
-    <pubDate>Tue, 13 Jan 2026 20:00:00 GMT</pubDate>
-  </item><item>
-    <title>Example Stash Note</title>
-    <link>https://localhost:8080/oppslagsverk/example-stash</link>
-    <guid>https://localhost:8080/oppslagsverk/example-stash</guid>
-    <description><![CDATA[ Example Stash Note Stash is where you hold reference material, summaries, building blocks and more. ]]></description>
+    <title>Utkast</title>
+    <link>https://localhost:8080/utkast/</link>
+    <guid>https://localhost:8080/utkast/</guid>
+    <description><![CDATA[ Ideas in progress, exploratory thinking, and writing-as-thinking. These may evolve into something more, or they may not. ]]></description>
     <pubDate>Tue, 13 Jan 2026 20:00:00 GMT</pubDate>
   </item><item>
     <title>Oppslagsverk</title>
@@ -36,22 +36,10 @@
     <description><![CDATA[ A personal library of reference material, building blocks, and notes worth keeping. ]]></description>
     <pubDate>Tue, 13 Jan 2026 20:00:00 GMT</pubDate>
   </item><item>
-    <title>Tanker</title>
-    <link>https://localhost:8080/tanker/</link>
-    <guid>https://localhost:8080/tanker/</guid>
-    <description><![CDATA[ A stream of quick thoughts, observations, and fleeting moments. ]]></description>
-    <pubDate>Tue, 13 Jan 2026 20:00:00 GMT</pubDate>
-  </item><item>
-    <title>Example Notion</title>
-    <link>https://localhost:8080/utkast/example-notion</link>
-    <guid>https://localhost:8080/utkast/example-notion</guid>
-    <description><![CDATA[ Example Notion Notions are ideas in progress, partially exploratory thinking, half-formed arguments, and thoughts you’re working through. ]]></description>
-    <pubDate>Tue, 13 Jan 2026 20:00:00 GMT</pubDate>
-  </item><item>
-    <title>Utkast</title>
-    <link>https://localhost:8080/utkast/</link>
-    <guid>https://localhost:8080/utkast/</guid>
-    <description><![CDATA[ Ideas in progress, exploratory thinking, and writing-as-thinking. These may evolve into something more, or they may not. ]]></description>
+    <title>Notater</title>
+    <link>https://localhost:8080/notater/</link>
+    <guid>https://localhost:8080/notater/</guid>
+    <description><![CDATA[ Complete, coherent long-form pieces: essays, guides, reflections, and arguments intended to be shared. ]]></description>
     <pubDate>Tue, 13 Jan 2026 20:00:00 GMT</pubDate>
   </item><item>
     <title>Ta ansvar for egen skjermtid</title>
@@ -65,6 +53,18 @@
     <guid>https://localhost:8080/notater/minste-telefonen</guid>
     <description><![CDATA[ Det er noe spennende med å prøve noe nytt. Samtidig er det ikke alltid like lett. I det siste har jeg gått over til en kjedelig smarttelefon-løsning. ]]></description>
     <pubDate>Fri, 24 Oct 2025 22:00:00 GMT</pubDate>
+  </item><item>
+    <title>Hvorfor 3D-printing plutselig er så spennende</title>
+    <link>https://localhost:8080/oppslagsverk/3d-print</link>
+    <guid>https://localhost:8080/oppslagsverk/3d-print</guid>
+    <description><![CDATA[ Jeg liker å forbedre ting. Forbedre arbeidsflyter og prosesser. ]]></description>
+    <pubDate>Mon, 07 Jul 2025 22:00:00 GMT</pubDate>
+  </item><item>
+    <title>Skriv til en, del med alle</title>
+    <link>https://localhost:8080/notater/del-med-alle</link>
+    <guid>https://localhost:8080/notater/del-med-alle</guid>
+    <description><![CDATA[ Når nysgjerrigheten overlapper Å nerde ut om det ene og andre temaet er jo i stor grad det jeg gjør her. ]]></description>
+    <pubDate>Tue, 20 May 2025 22:00:00 GMT</pubDate>
   </item>
     </channel>
   </rss>
