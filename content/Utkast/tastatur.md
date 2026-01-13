@@ -16,7 +16,7 @@ slug: tastatur
 
 > [!tip]- Vil utdype mer her seinere
 > For eksempel om ortholineære tastatur. Hva det er. Hvordan man kan trekke det enda litt lengre med en "columnar" layout. Og ikke minst hvorfor alle egentlig burde bytte over til Colemak.
-> 
+>
 
 ### Betydningen av at noe er enkelt
 
