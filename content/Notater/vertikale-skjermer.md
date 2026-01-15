@@ -61,7 +61,7 @@ Med "total immersion" så snakker vi altså om å fordype seg i en opplevelse, s
 
 Det gir mening med tanke på hva som vises i synsfeltet ditt. Spill som Super Mario 64, Zelda, og Red Dead Redemption er gode eksempler på det, hvor fokuset alltid er på karakteren du spiller med, som er plassert dønn i midten.
 
-![[images/Simens-skjermbilder-22-10-2023-kl19.26 1.jpg]]
+![[simens-skjermbilder-22-10-2023-kl19.26-1.jpg]]
 
 Når du opplever handlinga gjennom ved å observere hva som skjer med hovedkarakteren så kalles det "third person point of view". I tillegg har du en hel sjanger av *first person shooter*-spill, som f. eks Call of Duty, hvor du inntar hele identiteten til hovedkarakteren.
 
@@ -69,7 +69,7 @@ Når du opplever handlinga gjennom ved å observere hva som skjer med hovedkarak
 
 Gjennom førstepersonsperspektivet vil du i større grad oppleve handlinga gjennom dine "egne" øyne sammenligna med det å fjernstyre Super Mario f. eks, og bare observere det som skjer med han på avstand. Parkour-spillet Mirror's Edge er et annet bra eksempel på det.
 
-![[images/Simens-skjermbilder-22-10-2023-kl19.27 1.jpg]]
+![[simens-skjermbilder-22-10-2023-kl19.27-1.jpg]]
 
 Poenget mitt er at i de situasjonene så gir en horisontal skjerm, og gjerne en en ekstra brei en, det gir mer mening. Det er ikke nødvendigvis noe viktig som skjer helt ytterst på høyre- og venstresida av synsfeltet, men det forsterker opplevelsen din. Spillene framhever altså der fokuset ditt er – nemlig i midten.
 
@@ -86,7 +86,7 @@ For på en daglig basis så er det hovedsakelig tre ulike "digitale miljøer" je
 
 To av de tre er vertikale av natur, eller av standard iallefall. I og med at de aller, aller fleste nettsider scrolles fra topp til bunn, og det samme gjør du med et dokument og. Unntaket er egentlig når jeg jobber på en "tavle", som jeg nevnte (også kjent som et *infinity canvas* siden det ikke er noen tydelige grenser å forholde seg til). Som da jeg samla researchen min rundt det temaet her på et canvas i Obsidian:
 
-![[images/Simens-skjermbilder-22-10-2023-kl07.06 1.png]]
+![[simens-skjermbilder-22-10-2023-kl07.06-1.png]]
 
 Når jeg tenker ut noe i Figjam, eller jobber med et grensesnitt i Figma er det også noenlunde likt, bare langt flere verktøy.
 
@@ -100,7 +100,7 @@ Synsfeltet vårt dekker nemlig 180 grader horisontalt og 120 grader vertikalt. S
 
 Ut i fra det jeg kunne finne ut så er det en snevrere vinkel hvor synet er mest fokusert. Horisontal er det omtrent 60 grader, og vertikalt er det også rundt 50-60 grader (riktignok dobbelt så mye nedover, enn det vi ser oppover).
 
-![[images/Simens-skjermbilder-22-10-2023-kl19.28 1.jpg]]
+![[simens-skjermbilder-22-10-2023-kl19.28-1.jpg]]
 
 (Kilde: https://www.extron.fr/article/environconhumanfact)
 
@@ -122,7 +122,7 @@ På den veldig brede skjermen så ser du at det er mye som overlates til sidesyn
 
 På DualUp-skjermen som er så og si kvadratisk derimot så havner innholdet på skjermen innenfor fokusområdet ditt.
 
-![[images/Simens-skjermbilder-22-10-2023-kl07.38 1.jpg]]
+![[simens-skjermbilder-22-10-2023-kl07.38-1.jpg]]
 
 Det samme gjelder også i høyden, selv om det kan virke som at skjermen i så fall burde vært høyere opp enn han [youtube-karen her har den](https://www.youtube.com/watch?v=o0ptqKw1QD8&ab_channel=minimalistik).
 

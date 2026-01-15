@@ -44,3 +44,5 @@ slug: figma-variabler
 	- `Conditionals`
 		- Lar deg lage reglerfor det som skal skje. Conditionals skrives med if/else-logikk
 - Disse to kan brukes i samme handling og rekkefølgen er viktig. Handlingene vises når prototypen spilles av.
+
+![[variabler-figma.jpeg]]

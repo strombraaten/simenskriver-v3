@@ -28,13 +28,13 @@ Du lager på en måte en knagg som du kan henge flere tanker på. Som igjen gjø
 
 Se for deg at du har 15-20 klesplagg liggende på gulvet. Klærne er ikke dine egne, men det er fra noen av de nærmeste vennene dine, så sjansen er stor for at du har sett dem før. Det ser kanskje litt sånn ut:
 
-![[images/skap en felles forståelse ved å visualisere-1688324470735.jpeg]]
+![[skap-en-felles-forståelse-ved-å-visualisere-1688324470735.jpeg]]
 
 Du legger kanskje merke til de fire øverste, siden de er mest synlig. Også kan det hende du kjenner igjen et spesifikt mønster eller en farge som ligger lenger ned, men for å kjenne igjen hvem de tilhører må du nok se nærmere på dem.
 
 Om du derimot henger opp klærne på hver sin individuelle krok blir det mye lettere å skaffe deg en oversikt.
 
-![[images/skap en felles forståelse ved å visualisere-1688324453006.jpeg]]
+![[skap-en-felles-forståelse-ved-å-visualisere-1688324453006.jpeg]]
 
 Du kjenner sikkert ikke igjen alle, men langt flere enn du gjorde istad, nå som du kan separere det ene plagget fra alle de andre. Akkurat det samme gjelder for tanker og konsepter også.
 

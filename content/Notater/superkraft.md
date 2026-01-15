@@ -35,7 +35,7 @@ Hva er poenget mitt her, lurer du kanskje på. Jo, for en stund siden så jobba 
 
 Prosessen gikk bare så utrolig treigt, og jeg fikk den fæle følelsen av "[[imposter-syndrome|imposter-syndrome]]" om at det her burde jeg kunne, og at *alle* hadde gjort den jobben mer effektivt enn meg sjøl. Du veit når du blir konfrontert av ditt eget usikkerhetsmonster™, og plutselig står dere begge der som to idioter i egne liv.
 
-![[images/anerkjenn superkraften din-1685866029060.jpeg]]
+![[anerkjenn-superkraften-din-1685866029060.jpeg]]
 
 Så mens jeg satt på kontoret en dag, og følte at jeg stanga hodet gjentatte ganger i veggen uten å komme noe sted, så var jeg bare så lei at jeg tenkte "Nei, pokker heller, nå bare ringer jeg!". 
 
@@ -50,7 +50,7 @@ Og plutselig gikk prosessen mye fortere! I stedet for å prøve å **tenke** meg
 
 I all ydmykhet så veit jeg at jeg er god til å snakke med folk, og at det er noe jeg koser meg med. Det har jeg fått bekrefta både fra andre, men også meg sjøl, såpass mange ganger, at det er jeg trygg på. Samtidig hadde jeg ikke sett på det som et verktøy jeg kan bruke for å bearbeide noe jeg sliter med.
 
-![[images/anerkjenn din egen superkraft-1685867151883.jpeg]]
+![[anerkjenn-din-egen-superkraft-1685867151883.jpeg]]
 
 Jeg tror nettopp det kan være en av fordelene med å anerkjenne hva superkraften din er. Hva du er unikt god på, men som du kanskje tar som en selvfølge. Hvor du ikke tenker over at.. ikke alle hadde gjort det der like enkelt. Når du har et bevisst forhold til din egen superkraft vil du også kunne bruke den mer aktivt.
 

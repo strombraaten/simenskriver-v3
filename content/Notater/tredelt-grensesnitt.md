@@ -48,6 +48,8 @@ Både ChatGPT og Claude gir deg muligheten til å redigere teksten på den måte
 
 [NotebookLM, fra Google](https://notebooklm.google/), bruker den samme tredelingen, men bruker heller det venstre panelet til kilder, og det høyre panelet til lag-en-podkast-ut-av-hva-som-helst-funksjonen deres.
 
+![[notebookLM-default.png]]
+
 ![[images/notebooklm-eksempel.jpg]]
 
 Oversikten over trådene, eller i dette tilfellet "notatbøkene" finner du på en dedikert side ved å trykke på hjem-ikonet øverst til venstre ved tittelen.

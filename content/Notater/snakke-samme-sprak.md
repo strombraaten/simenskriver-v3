@@ -34,7 +34,7 @@ For om jeg lager et grensesnitt så forholder jeg meg til pixler. Og det har jeg
 
 Det er en fordel hvis du lager en plakat f. eks, hvor du veit at A2 er det eneste formatet som skal brukes. Med digitale greier derimot må du tilrettelegge for at én person har en liten iPhone SE, mens en annen skal se på samme greia på en 32-tommers skjerm på jobb. Og det du lager skal være like fint i alle størrelser.
 
-![[images/responsivt-design.png]]
+**![[images/responsivt-design.png]]
 
 Når du lager et *responsivt design* må det altså kunne skaleres vertikalt og horisontalt. Da egner det seg dårlig med en måleenhet som ikke tar hensyn til omstendighetene den befinner seg i.
 

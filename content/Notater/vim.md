@@ -35,7 +35,7 @@ Når du først får det inn i fingra så går det ganske kjapt å bevege seg run
 
 Det er nemlig her Vim kommer inn i bildet. Vim står for "Vi IMproved", siden det er en videreutvikla versjon av et program fra 1976, som het "Vi". Altså 48 år siden 🤯 Da så dataen sånn her ut:
 
-![[images/Pasted image 20240324221827.png|Lear Siegler's ADM-3A computer terminal]]
+![[pasted-image-20240324221827.png]]
 
 Det fantes altså ikke noen musepeker på den tida. Og det eneste du hadde var tekst på en skjerm og tastaturet foran deg. Det viser seg at Vim gir deg *betraktelig* flere muligheter for å redigere tekst i en fei, sammenligna med det vi gjør i dag. Ikke bare det, men også mer presist. Du kan nemlig:
 

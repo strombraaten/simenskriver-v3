@@ -108,11 +108,11 @@ Hvis du vil gjøre det lille eksta kan du også bruke en saks for å klippe opp 
 
 Hvorfor? Jo, for brødet hever videre i ovnen. Og fuktigheten i deigen prøver å slippe ut et sted. Hvis du ikke gjør noe som helst "revner det" sidene, som regel. Som du kan se på bildet nedenfor.
 
-![[Simens-skjermbilder-12-01-2026-kl20.31.jpg]]
+![[images/Simens-skjermbilder-12-01-2026-kl20.31.jpg]]
 
 Dersom du er proaktiv derimot, og klipper deigen på midten blir brødet mindre kompakt. Nettopp fordi fuktigheten slipper ut på midten (på toppen), og brødet som regel blir høyere, med flere luftlommer i deigen, i stedet for deigete klumper.
 
-![[Simens-skjermbilder-12-01-2026-kl20.35.jpg]]
+![[images/Simens-skjermbilder-12-01-2026-kl20.35.jpg]]
 
 I det siste har jeg også eksperimentert på å klippe det opp etter det har stekt i 10-15 minutter, bare for å se om det kommer et naturlig "strekkmerke" i deigen, hvor fuktigheten vil ut.
 
@@ -151,4 +151,4 @@ Det ække det at jeg angrer nødvendigvis, men det er mye vanskeligere å skjær
 
 Det tror jeg jammen meg er alt jeg har lært om brødbaking! Da er det bare å si lykke til. Og du? Det er ingenting som er så godt som en nybakt brødskive med smør altså. Jeg bare sier det.
 
-![[IMG_1836.JPG]]
+![[images/IMG_1836.JPG]]

@@ -19,7 +19,7 @@ I det siste har jeg tenkt mye på det å lage en podkast. Og nå er et godt tids
 
 Noen av dere veit kanskje at jeg har lagd en podkast tidligere – hvor jeg intervjua eldre folk om livene deres. Det er ganske nøyaktig 5 år siden jeg starta [sesong 2 av Folk om fortida](https://open.spotify.com/episode/6TDf550J9OM7QmXWqJTBmP?si=d645e30134f74b1e). Og i mars 2020 publiserte jeg episoden om Maria Gabrielsen, hvor hu forteller den tragiske historien om hvordan mora hennes var årsaken til at Maria – og resten av familien – blei sendt i konsentrasjonsleirer under andre verdenskrig.
 
-![[images/folk-om-fortida-sesong2.jpg]]
+![[images/folk-om-fortida-sesong2.jpg|full]]
 
 Da jeg publiserte den episoden i mars 2020 visste jeg ikke at det skulle bli den siste. Jeg hadde mange planer for en ny sesong, men med flere store endringer i livet på den tida, klarte jeg ikke å finne motivasjonen til å dra i gang en ny runde. Og siden den gang har det ikke føltes riktig å begynne på'n igjen.
 

@@ -16,7 +16,7 @@ description: Brukertesting er en av de tingene som du gjerne vil gjøre, men som
 ---
 > [!NOTE] Denne artikkelserien ble [først publisert på variantbloggen](https://blog.variant.no/del-1-fortl%C3%B8pende-brukertesting-og-verdien-av-det-fdabb3594bc3)
 
-![[images/Pasted image 20240428105010.png]]
+![[pasted-image-20240428105010.png]]
 
 Brukertesting er en av de tingene som du gjerne vil gjøre, men som er lett å nedprioritere fordi du kaaan jo fortsette uten. Spesielt om det er lite tid tilgjengelig i budsjettet, da er brukertestene ofte noe av det første som kuttes. For sånn teknisk sett er du ikke helt **avhengig** av inputen fra de som skal bruke tjenesten, for å kunne lage den. Men bare å skrive den setningen føles jo feil. For hvordan skal du kunne lage en tjeneste uten å forstå utgangspunktet til de som skal bruke den?
 
@@ -42,7 +42,7 @@ Tiltakene som kommer ut av hver brukertest vil også være målbare i form av �
 
 Empatien kommer ved at du får innblikk i en annen persons situasjon, og en større forståelse for hvilke utfordringer, og ønsker de kan ha. I tillegg blir produktutviklinga mer personlig, siden brukeren din plutselig har et navn og et ansikt, i stedet for å være en slags oppsummert persona. Det tror jeg også vil være en effekt som vi ikke skal ta for gitt, siden det kan lede til økt indre motivasjon hos hver enkelt som observerer brukertestene.
 
-![[images/Pasted image 20240428104430.png]]
+![[pasted-image-20240428104430.png]]
 
 # Del 2: Fortløpende brukertesting fra brukerens ståsted
 
@@ -120,7 +120,7 @@ Derimot er det ikke utenkelig å sende en samla e-post til alle som har deltatt 
 
 Trenger ikke å være noe mer enn som så.
 
-![[images/Pasted image 20240428104531.png]]
+![[pasted-image-20240428104531.png]]
 
 # Del 3: Fortløpende brukertesting som forankring i både team og organisasjon
 
@@ -130,7 +130,7 @@ Trenger ikke å være noe mer enn som så.
 
 Når brukertester gjennomføres av noen få utvalgte vil det også være deres ansvar å formidle følelsene til de som testa tjenesten. Hva var det som var spesielt viktig, og hvorfor var det så viktig for dem? I sånne tilfeller kan det være enkelte interaksjoner eller kommentarer som virkelig skiller seg ut, og det kan føles som et “Du måtte nesten vært der for å virkelig forstå det”-øyeblikk. Derfor er det viktig å inkludere flere enn bare de som jobber med frontend. For deg som sitter på backend, og er uttøvende koder, så får du en slags intern prioritering av hva som er viktig. I tillegg til en personlig tilknytning til at det blir gjennomført.
 
-![[images/Pasted image 20240428105248.png]]
+![[pasted-image-20240428105248.png]]
 
 Personlig er jeg jo designer, så for å få et bedre innblikk i hvordan brukertesting oppleves som utvikler så tok jeg en prat med Christian Brevik.
 
@@ -156,7 +156,7 @@ Men tilbake til der vi var — Om du kun opererer etter antagelser så kan det n
 
 Som vi har skrevet om på bloggen før så er det mye læreglede ute og går, og jeg merker fort at det her med tidlig brukertesting har vært en “eye-opener” for flere. En annen designer som har hatt gode erfaringer, er Stine Bechmann, som har jobbet hos Unit i det siste.
 
-![[images/Pasted image 20240428105311.png]]
+![[pasted-image-20240428105311.png]]
 
 Hun fortalte meg om hvor lett det er å glemme bort brukernes **forventninger** rundt uferdige ting. For i noen tilfeller holder det faktisk å vise kun noen tomme firkanter, og bare spørre “Hva forventer du egentlig å finne her?”. Så må du bare være tålmodig, tørre å sitte litt i den pinlige stillheten, og vente på at brukeren skal begynne å anta, gjette, og synse — “Ja, jeg vil jeg jo tro at det skal være sånn og sånn. Ville kanskje forventa å finne informasjon om det og det..”
 

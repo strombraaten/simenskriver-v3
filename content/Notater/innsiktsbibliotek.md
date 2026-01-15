@@ -113,10 +113,11 @@ For å senke terskelen har jeg lagd et par steg-for-steg-filmer til deg.
 #### Hvordan du kommer i gang
 
 <lite-youtube videoid="aO0mAaitUZ4" playlabel="Play: Hvordan du kommer i gang med innsiktsbiblioteket i Obsidian"></lite-youtube>
-
+![[demo-innsiktsbibliotek-Onboarding.mov]]
 #### Hvordan du deler endringene med andre
 
 <lite-youtube videoid="DMUQbV-RSRI" playlabel="Play: Hvordan du gjør endringer i innsiktsbiblioteket"></lite-youtube>
+![[demo-innsiktsbibliotek-making-changes.mov]]
 
 ### Bonus
 

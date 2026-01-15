@@ -15,4 +15,4 @@ Tilbakekoblinger er [[linker]] som viser hvilke notater som omtaler det notatet 
 
 For eksempel om du leser notatet mitt om [[gira-av-obsidian|Hvorfor jeg blir så gira av Obsidian]] vil du også se en tilbakekobling til notatet om [[obsidian]], siden de peker til hverandre. Det er en tilbakekobling.
 
-![[images/Simens-skjermbilder-07-05-2023-kl09.58 1.png]]
+![[simens-skjermbilder-07-05-2023-kl09.58-1.png]]

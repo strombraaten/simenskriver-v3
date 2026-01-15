@@ -16,7 +16,7 @@ slug: forskjellen-mellom-nyhetsbrev-og-sosiale-medier
 ---
 Spennende spørsmål, ikke sant? Det kom fra min gode venn, Kjartan, som forøvrig har som mål i livet og få en shoutout i nyhetsbrevet. Og jeg er da en mann av folket, så da gir man folket det folket vil ha.
 
-![[images/Kjartan_nyhetsbrev-og-sosialemedier 2.jpg]]
+![[kjartan_nyhetsbrev-og-sosialemedier-2.jpg]]
 
 Svaret mitt på det spørsmål derimot overraska egentlig meg sjøl og. For det jeg sa var at jeg syns det er langt mer personlig å både dele, men også å få et nyhetsbrev.
 

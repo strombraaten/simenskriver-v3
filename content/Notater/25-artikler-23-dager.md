@@ -50,7 +50,7 @@ En god indikator er når du arresterer deg sjøl i å begynne på samme setning 
 
 Å skrive ned tankene mine i punktlister har vist seg å være veldig hjelpsomt, bare for å få flest mulig ord "ned på arket". Da kan jeg fokusere mer på hvilke nøkkelpunkter jeg vil inkludere, og mindre på oppbygninga av det. Ved å lage et innrykk i punktene vil jeg da kunne lage et slags hieararki, og vise til meg sjøl hvilke tanker som hører til et overordna nøkkelpunkt. Det legger ofte grunnlaget for en seksjon i artikkelen, hvor det øverste punktet definerer hva det handler om.
 
-![[images/Simens skjermbilder 23-12-2022- kl 10.23.41@2x.png]]
+![[simens-skjermbilder-23-12-2022--kl-10.23.41@2x.png]]
 
 <figcaption>Punktliste over innholdet til denne artikkelen</figcaption>
 
@@ -62,13 +62,13 @@ Tett tilknytta til det siste punktet, men organisering burde alltid komme til sl
 
 I denne teksten skreiv jeg f. eks introduksjonen midt i dokumentet. Den hører jo ikke hjemme der, men tanken oppstod akkurat der og da, og hvem er jeg til å nekte en tanke å se dagens lys? 🧐
 
-![[images/Simens skjermbilder 23-12-2022- kl 09.46.36@2x.png]]
+![[simens-skjermbilder-23-12-2022--kl-09.46.36@2x.png]]
 
 Eksempel på at ideer må utdypes der de oppstår, uavhengig av struktur
 
 Ofte skriver jeg to-tre avsnitt som viste seg å passe bedre inn i en helt annen artikkel, men da er orda allerede til stedet, så det eneste jeg trenger å gjøre da er å flytte det dit det hører hjemme. Det blir en helt annen greie dersom du skal først tenke over "hvor hører disse tankene hjemme?".
 
-![[images/Simens skjermbilder 23-12-2022- kl 09.51.44@2x.png]]
+![[simens-skjermbilder-23-12-2022--kl-09.51.44@2x.png]]
 
 Lærdommen er altså å fokusere på skriving først, og ikke hvor de ulike avsnittene skal stå osv. Det kan du fikse seinere.
 

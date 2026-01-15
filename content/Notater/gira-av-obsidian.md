@@ -73,7 +73,7 @@ Yes, sir! For hver gang de oppdaterer appen får du en liste over endringene som
 
 Å jada! Riktignok litt avhengig av hvilket "theme" du velger, men om jeg tolker det riktig, så er det ca 115 stykker som tilbyr på lys og mørk modus. Om du syns det blei for mye å velge mellom så er jeg veldig enig i denne [oversikten over 5 minimale themes](https://elizabethbutlermd.com/5-of-the-best-custom-minimalist-digital-note-taking-themes-for-obsidian-in-2022/?ref=simen-skriver).
 
-![[images/Simens skjermbilder 20-12-2022- kl 07.19.29.gif]]
+![[simens-skjermbilder-20-12-2022--kl-07.19.29.gif]]
 
 Personlig har jeg brukt [Minimal](https://minimal.guide/Home?ref=simen-skriver) over en lengre periode, som er laget av [Stephan Ango](https://stephanango.com/?ref=simen-skriver), men jeg bytter nok utseendet på Obsidian annenhver måned, bare for moro skyld. Noen av favorittene mine så langt er AnuPpuccin, Border, Typewriter, Things.
 

@@ -43,12 +43,14 @@ Det skader jo ikke å prøve, så nå har jeg lagd et område (på Discord) hvor
 
 De eksemplene har jeg prøvd å gjenspeile i kanalen som er lagd:
 
-![[images/Å skape løsningen i fellesskap-1689538787293.jpeg]]
+![[å-skape-løsningen-i-fellesskap-1689538787293.jpeg]]
 
 - `Skravling` blir hovedkanalen, hvor det er bare fyre løs med tanker og innspill
 - `Behind the scenes` er kanalen hvor jeg tenker å dele mer av prosessen, som jeg også gjør i nyhetsbrevet i blant, men at jeg kan gjøre det mer fortløpende der
 - `Versjonslogg` ser jeg for meg blir en mer "passiv" kanal det deles link til nyhetsbrevene så fort det publiseres, i tillegg til nye notater på hjemmesida eller oppdateringer på eksisterende notater
 - `Tilbakemelding` skal være en enkel måte for deg å si i fra om noe ikke fungerer, samtidig som jeg kan dokumentere det jeg veit er feil, så du også ser hva jeg tenker å endre på
+
+![[tilbakemelding-discord.png]]
 
 ### Hvorfor jeg gjør det
 
@@ -96,13 +98,13 @@ Discord brukes mye av gamere blant annet, men de bruker vel lydkanalene i stor g
 
 Uavhengig av om du bruker Discord fra før av eller ikke så blir du bare møtt med skjermbildet under, hvor du blir spørt om å godta invitasjonen. Eneste forskjellen er at den enten åpnes i Discord-appen eller i nettleseren din.
 
-![[images/Å skape løsningen i fellesskap-1689538230064.jpeg]]
+![[å-skape-løsningen-i-fellesskap-1689538230064.jpeg]]
 
 Hvis det er første gangen din på Discord vil du deretter bli bedt om å laste ned appen, og lage deg en bruker. Her må du hoste opp et navn av noe slag, som enten kan være ditt eget, eller så har du også en gyllen mulighet til å kalle deg nøyaktig det du vil – som SirFrancisMcFuubleton. med to u'er, bare fordi du kan.
 
 Etter du har beseira den store IQ-testen for å nok en gang bevise at du er menneskelig så vil du endelig komme inn i varmen – til skravlehjørnet:
 
-![[Å skape løsningen i fellesskap-1689538462879.jpeg]]
+![[å-skape-løsningen-i-fellesskap-1689538462879.jpeg]]
 
 Om du er typen som liker å lese bruksanvisninga før så kan du [lese denne nybegynner-guiden til Discord](https://support.discord.com/hc/en-us/articles/360045138571-Beginner-s-Guide-to-Discord) – eller bare spør meg.
 

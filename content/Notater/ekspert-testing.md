@@ -59,7 +59,7 @@ Sånn sett syns jeg det er nyttig å anerkjenne at den handlingen har et begrep.
 
 Det å anse seg sjøl som en *ekspert*, som skal bidra i en "expert usability review", kan nok være vanskelig for mange. For det er garantert ikke bare jeg som har kjent på [[imposter-syndrome|bedragersyndromet]] før. Samtidig er det viktig å tenke over hvem vi sammenligner vårs med i det tilfellet. For hvis du har interesse av, eller erfaring med å designe grensesnitt, og du slenger rundt deg med begreper som *empty state*, *sekundærknapp*, og [alle størrelsene du bruker er delelig på 8](https://medium.com/swlh/the-comprehensive-8pt-grid-guide-aa16ff402179).. Ja, da vil jeg si du er en ekspert, sammenligna med mange andre.
 
-![[images/Pasted image 20240428102334.png]]
+![[pasted-image-20240428102334.png]]
 
 On the flip side, så er det en nydelig mulighet til å gi andre følelsen av å *være* en ekspert, bare ved å spørre om hjelp til å vurdere arbeidet ditt. For det er jo et skikkelig kompliment når noen er genuint interessert i din mening, for å forbedre designet de jobber med. Det å øke andres selvtillit kan altså være en undervurdert gevinst av å introdusere denne formen for ekspert-testing i designmiljøet ditt. 
 

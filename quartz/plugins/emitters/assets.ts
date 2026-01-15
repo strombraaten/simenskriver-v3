@@ -44,7 +44,12 @@ export const Assets: QuartzEmitterPlugin = () => {
         } else if (changeEvent.type === "delete") {
           const name = slugifyFilePath(changeEvent.path)
           const dest = joinSegments(ctx.argv.output, name) as FilePath
+        try {
           await fs.promises.unlink(dest)
+        } catch (err: any) {
+          // In watch mode, multiple rebuilds/clean steps can race; ignore missing output files
+          if (err?.code !== "ENOENT") throw err
+        }
         }
       }
     },

@@ -31,7 +31,7 @@ Eksempelet over er [fra en rapport](https://klimatsmartsemester.se/sites/default
 
 Utgangspunktet er altså en helt alminnelig pdf, og magien slår til med en gang. For nå trenger jeg ikke prøøøve og være presis med siktet mitt en gang. I det neste bildet ser du at jeg bare markerer det som er av interesse, selv om det da vil være mer hvitt på venstresida enn det er på høyresida.
 
-![[images/CleanShot 2022-12-13 at 08.19.16.gif]]
+![[cleanshot-2022-12-13-at-08.19.16.gif]]
 
 Kan kjapt nevne at hurtigtastene du er vant til på mac (som `cmd + shift + 4` som du ville brukt for å markere et begrensa område) er nøyaktig det samme i Cleanshot også. De erstatter hverandre. Hvorfor det vises en annen hurtigtast underveis i gifen over er jeg neimen ikke sikker på.
 
@@ -39,7 +39,7 @@ Kan kjapt nevne at hurtigtastene du er vant til på mac (som `cmd + shift + 4` s
 
 Deretter kommer vi til selve nøkkelfunksjonen, som tok kaka for min del – nemlig Auto-balance.
 
-![[images/CleanShot X-autobalance.mp4]]
+![[cleanshot-x-autobalance.mp4]]
 
 Den lar deg utvide bakgrunnen basert på fargen i bildet ditt 🤯 Og ikke bare det, men den jevner også ut mellomrommet på alle sidene rundt bildet ditt. Så det at jeg var litt kjapp i vendinga da jeg tok bildet til å starte med har ingen verdens ting å si lenger, fordi Cleanshot retter det opp i etterkant.
 

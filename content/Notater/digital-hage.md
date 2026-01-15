@@ -41,7 +41,7 @@ I tillegg til __Evergreen__ notater skiller hu også mellom "budding" og "seedli
 
 Det er jo bare fine måter å definere hashtags på, og det her er nok premiere på setning for min del, men jeg blei genuint overraska over hvor vakker metadataen var i sin helhet. Bare se hvordan hu formulerer vanlige faktorerer som "Date created" og "Date modified":
 
-![[images/CleanShot 2022-12-12 at 06.58.45@2x 1.png]]
+![[cleanshot-2022-12-12-at-06.58.45@2x-1.png]]
 
 For det er virkelig noe fint med tanken av at du planter et frø til noe du lærer deg, og som du vedlikeholder over tid.
 

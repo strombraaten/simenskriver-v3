@@ -221,7 +221,7 @@ Og voilá! Så har du blå tekst.
 
 ---
 
-![[images/IMG_6302.png|notes/images/IMG_6302.png]]
+![[img_6302.png]]
 ![[images/IMG_6301.png|notes/images/IMG_6301.png]]
 ![[images/IMG_6299.png|notes/images/IMG_6299.png]]
 ![[images/IMG_6298.png|notes/images/IMG_6298.png]]

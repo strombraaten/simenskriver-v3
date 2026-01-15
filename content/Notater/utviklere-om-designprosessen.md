@@ -145,7 +145,7 @@ Og det høres jo opplagt ut når jeg sier det nå, men der og da så hadde jeg i
 
 Jeg fikk riktignok rumpa i gir foråsirresånn og slang sammen noe den samma dagen (som ligner på eksempelet under), som viste seg å være til stor hjelp for vårs begge. For det fikk meg til å tenke mer systematisk på layouten og, som førte til færre "unntakstilfeller" i designet, og langt mer struktur.
 
-![[images/Pasted image 20231002111812.png]]
+![[pasted-image-20231002111812.png]]
 
 Det jeg lærte er altså at du kan ta noen *få* store avgjørelser som fjerner behovet for å svare på mange spørsmål underveis.
 

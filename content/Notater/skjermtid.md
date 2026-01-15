@@ -91,7 +91,7 @@ Jo, den ser sånn her ut:
 
 Det du ser her er en såkalt [Jelly Star, fra et selskap som heter Unihertz](https://www.unihertz.com/products/jelly-star?variant=44179567968495). Det er en fullt fungerende Android-telefon, bare at den er knøttliten. Hvor liten, lurer du på? Jo, den er 9,5 cm høy, 5 cm bred, 1,9 cm tjukk. Til sammenligning er bredden og høyden omtrent like stor som en vanlig datamus. Eller så kan du se den ved siden av en iphone 13 mini. Som jo ligger i navnet, at den er blant de desidert mindre telefonene du finner nå til dags, men ikke i nærheten så mini som Jelly Star.
 
-![[images/iphone13mini-vs-jellystar 5.jpg]]
+![[iphone13mini-vs-jellystar-5.jpg]]
 
 Denne lille rakkeren kosta meg 2500 kr, og etter litt knoting vil jeg si det er et av de bedre kjøpene jeg har gjort på lenge.
 

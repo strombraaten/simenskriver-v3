@@ -23,13 +23,13 @@ Som designer kan det være vanskelig å skille den utforskende konseptfasen fra 
 
 Når sant skal sies har jeg aldri helt skjønt hvorfor blyanten har vært inkludert i de designprogrammene jeg har brukt opp gjennom tidene. Penn og papir skjønner jeg godt, for da kan du rable ned noen kjappe tanker, men å bruke den digitale blyanten med en trackpad eller datamus har jeg ikke sett nytten for. Streken blir jo så hinsides shaky, og det blir stygt som bare det. Samtidig er det nøyaktig det som har vist seg å være grunen til at den er så bra. Den er så stygg at den senker terskelen betraktelig for å rable ned hva enn du tenker på.
 
-![[images/Blyanten senker terskelen.jpg]]
+![[blyanten-senker-terskelen.jpg]]
 
 Det innså jeg først da jeg begynte å jobbe på samme prosjekt som Aslak Høberg Liaaen og Petter Mustvedt. To designere som etterlot seg et spor av shaky blyantstreker i de fleste figmafiler de jobba i.
 
 Petter hadde ikke noe flott bilde å vise til, som Aslak hadde, men om jeg husker rett så ser han omtrent sånn her ut, bare uten det hakket på venstre kinn.
 
-![[images/Petter og Aslak-nyhetsbrev-30 2.png]]
+![[petter-og-aslak-nyhetsbrev-30-2.png]]
 
 ### Hva kan den brukes til?
 
@@ -41,7 +41,7 @@ Når er det blyanten virkelig får skinne, lurer du kanskje på. I hvilke situas
 
 For å utforske de områdene nærmere skal du få høre fra fire andre designere som også blir engasjert av blyantbruken, nemlig Petter og Aslak som jeg nevnte tidligere, men også to kollegaer av meg fra Variant, Jon Hofsli og Andreas Sætersdal Hartveit.
 
-![[images/Jon og Andreas_nyhetsbrev-30.jpeg]]
+![[jon-og-andreas_nyhetsbrev-30.jpeg]]
 
 Skal sies at Aslak var på vei fra India til Vietnam mens jeg skreiv det her, så hans bidrag kommer delvis gjennom Petter.
 
@@ -94,7 +94,7 @@ Spør du meg, så blir de beste ideene alltid skapt sammen med andre. For å få
 > **Jon:**
 > Spesielt i kommunikasjon med ikke-designere tenker jeg at blyanttegning kan gjøre terskelen lavere for utviklerne (og andre roller) å bli med, dele tanker, og tegne selv. At du unngår å fremstille en skisse som noe polert og “skummelt”.
 
-![[images/Screenshot 2023-11-24 at 08.36.20.jpg]]
+![[screenshot-2023-11-24-at-08.36.20.jpg]]
 
 Siden blyantstreken blir temmelig stygg så stiller alle mer eller mindre likt i diskusjonen. Både tegneglade designere og de folka som er mindre glade i å tegne. Du åpner opp for at "*det her kan hvem som helst få til*", for det handler bare om å lage en runding rundt noe, eller en strek fra ett sted til et annet.
 

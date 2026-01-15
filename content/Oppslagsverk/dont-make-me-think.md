@@ -4,8 +4,8 @@ why: keep
 date: 2024-04-28
 lastmod: 2024-04-28
 tags:
-  - bok
   - design
+  - bøker
 aliases:
   - Don't make me think
 title: Don't make me think

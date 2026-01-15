@@ -35,7 +35,7 @@ Det er akkurat det jeg gjør med skrivinga mi nå. Jeg fordeler min totale skriv
 
 Om jeg hadde brukt ordet _investering_, i den artikkelen, mens jeg skreiv det i [[obsidian|obsidian]], så ville jeg sett at det dukka opp som en link.
 
-![[images/CleanShot 2022-12-16 at 07.39.15@2x.png]]
+![[cleanshot-2022-12-16-at-07.39.15@2x.png]]
 
 *Bildet viser to av linkene som er tilknyttet dette notatet mens jeg skriver i [[obsidian|obsidian]].*
 

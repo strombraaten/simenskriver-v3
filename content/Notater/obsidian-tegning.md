@@ -103,7 +103,7 @@ Akkurat det å bruke ipad-blyanten til å tegne og skrive er helt fint, men det 
 
 For all del, det her er ikke noe du *trenger* å prøve deg på akkurat. For det er utvilsomt noe sannhet i den memen som illustrerer hvordan nybegynneren og "mesteren" begge forholder seg til Apple Notes, som det enkleste valget, for der kan du helt fint kombinere håndtegna skisser og notater i skjønn harmoni.
 
-![[images/Apple notes meme.png]]
+![[apple-notes-meme.png]]
 
 Mens folk som meg prøver desperat å vedlikeholde intrikate systemer. Som en krakk med tre bein, hvor ingen av beina egentlig er lagd for den krakken til å starte med, men som du har teipa til setet i et håp om å sitte stødig og godt.
 

@@ -76,7 +76,7 @@ Markdown kan jeg nok definitivt skrive mer om seinere, men for øyeblikket kan j
 
 Når det kommer til en sånn overskrift, eller mellomtittel som jeg refererte til istad, så skriver jeg tre `#-symboler` før selve ordene som utgjør overskriften. Det kalles en "Heading level 3", siden det er den tredje største overskriften. Hvordan tror du at du skriver den største overskriften i så fall?
 
-![[images/Pasted image 20230303171233.png]]
+![[pasted-image-20230303171233.png]]
 
 Jo, "Heading level 1" har kun ett `#-symbol`, og brukes til tittelen på hele artikkelen (eller nettsida/appen). Den nest største overskriften, som jeg gjerne bruker på mellomtitlene her har tre # -symboler. Og sånn kan du fortsette videre nedover i hierarkiet.
 

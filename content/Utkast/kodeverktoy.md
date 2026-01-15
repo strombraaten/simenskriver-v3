@@ -47,7 +47,7 @@ Før eller seinere må du uansett innom terminalen. Jeg har tidligere kalt den f
 
 ### Github desktop
 
-![[images/Pasted image 20240224180641.png]]
+![[pasted-image-20240224180641.png]]
 
 https://desktop.github.com/
 

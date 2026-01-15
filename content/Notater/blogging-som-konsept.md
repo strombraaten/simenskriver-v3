@@ -16,7 +16,7 @@ slug: blogging-som-konsept
 
 På den forrige versjonen av hjemmesida mi så ville den artikkelen her vært øverst, bare fordi det var det siste jeg skreiv i det øyeblikket. Og rett under kunne du finne den artikkelen jeg skreiv før det igjen (illustrert av skjermbildet under, selv om det er feil titler og artikler).
 
-![[images/Det er noe feil med blogging som konsept-1687680804650.jpeg]]
+![[det-er-noe-feil-med-blogging-som-konsept-1687680804650.jpeg]]
 
 Blogger er tradisjonelt bygd for å bevege vårs tilbake i tid, med de nyeste innleggene først og de eldste sist. Det er det som kalles en _reversert kronologisk_ rekkefølge. Sånn har det vært siden slutten av 1990-tallet og begynnelsen på 2000-tallet.
 

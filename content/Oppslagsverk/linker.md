@@ -22,7 +22,7 @@ Du linker ut til et annet notat ved å bruke såkalte [hakeparenteser](https://s
 
 I praksis trykker du bare to ganger på `alt+8` for å lage to hakeparenteser, deretter fullfører Obsidian automatisk med to stykker i andre enden, så du kan skrive den siden du vil linke til. om du har noen notater fra før av så vil de dukke opp som alternativer, som du ser på bildet under her.
 
-![[images/Simens-skjermbilder-02-05-2023-kl21.41 1.png]]
+![[simens-skjermbilder-02-05-2023-kl21.41-1.png]]
 
 Du kan også linke til et notat som ikke finnes ennå, dersom du tror at det kommer til å bli relevant seinere. Da gjør du bare nøyaktig det samme – skriver navnet notatet du potensielt sett vil lage en gang i framtida i hakeparenteser, som f. eks `80-20-regelen`. Om du da velger å skrive om 80-20-regelen seinere en gang vil den ikke-aktive linken nettopp bli aktiv, i det øyeblikket du lager et notat med det navnet. Alternativt kan du klikke på linken for å lage notatet.
 

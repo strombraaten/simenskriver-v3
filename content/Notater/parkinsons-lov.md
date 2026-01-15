@@ -57,7 +57,7 @@ Forøvrig syns jeg det var artig å lese hvordan han hauser opp denne banebryten
 
 Jeg skal ærlig innrømme at jeg ikke rakk å bli ferdig på 45 minutter, og måtte sende avgårde en melding i all hui og hast (beklager, Arnt!).
 
-![[images/Fyller virkelig arbeidet den tida du har tilgjengelig-1687676993925.jpeg]]
+![[fyller-virkelig-arbeidet-den-tida-du-har-tilgjengelig-1687676993925.jpeg]]
 
 Men! Gode, gamle Cyril var nok inne på noe altså. Jeg blei ferdig på 55 minutter, og det er ganske mye mindre enn jeg pleier å bruke. Selv om jeg blei litt seint ute, og føler meg nå som en dårlig venn.
 

@@ -33,7 +33,7 @@ Hu har nemlig tatt kurset til Tiago tidligere, om å lage en Second Brain. Siden
 
 Forøvrig så lager hu de [peneste notatene](https://maggieappleton.com/basb?ref=simen-skriver) noensinne, som du kan se et eksempel på fra da hu tok kurset til Tiago Forte om det å bygge en "Second brain":
 
-![](https://www.simenskriver.no/content/images/2022/12/image.png)
+![[building-a-second-brain-maggie-appleton.png]]
 
 Med det sagt så hopper vi tilbake til poenget.
 
