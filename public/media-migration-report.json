@@ -1,0 +1,238 @@
+{
+  "mode": "apply",
+  "scanned": {
+    "mdFiles": 152,
+    "tempFiles": 78
+  },
+  "plannedOpsCount": 4,
+  "plannedOpsByType": {
+    "Oppslagsverk": 2,
+    "Utkast": 2
+  },
+  "plannedOps": [
+    {
+      "op": "copy",
+      "from": "content/Notater/images/samtalekort.jpg",
+      "to": "content/Oppslagsverk/images/samtalekort.jpg",
+      "md": "Oppslagsverk/samtalekort.md",
+      "embedFp": "images/samtalekort.jpg",
+      "embedRewritten": false
+    },
+    {
+      "op": "copy",
+      "from": "content/Notater/images/vim-demo-we.gif",
+      "to": "content/Oppslagsverk/images/vim-demo-we.gif",
+      "md": "Oppslagsverk/vim-oppslagsverk.md",
+      "embedFp": "images/vim-demo-we.gif",
+      "embedRewritten": false
+    },
+    {
+      "op": "copy",
+      "from": "content/Notater/images/simens-skjermbilder-24-02-2024-kl16.37.jpg",
+      "to": "content/Utkast/images/simens-skjermbilder-24-02-2024-kl16.37.jpg",
+      "md": "Utkast/kodeverktoy.md",
+      "embedFp": "images/Simens-skjermbilder-24-02-2024-kl16.37.jpg",
+      "embedRewritten": false
+    },
+    {
+      "op": "copy",
+      "from": "content/Oppslagsverk/images/github-publisher-demo.mov",
+      "to": "content/Utkast/images/github-publisher-demo.mov",
+      "md": "Utkast/senke-terskelen-for-publisering.md",
+      "embedFp": "images/github-publisher-demo.mov",
+      "embedRewritten": false
+    }
+  ],
+  "mdEditsCount": 0,
+  "mdEdits": [],
+  "missingCount": 0,
+  "missing": [],
+  "collisionsCount": 0,
+  "collisions": [],
+  "destConflictsCount": 0,
+  "destConflicts": [],
+  "moveErrorsCount": 0,
+  "moveErrors": [],
+  "duplicateMediaKeysCount": 7,
+  "duplicateMediaKeys": [
+    {
+      "key": "dum-telefon1.jpg",
+      "count": 2,
+      "locations": [
+        {
+          "md": "Notater/dum-ned-smarttelefonen.md",
+          "to": "content/Notater/images/dum-telefon1.jpg"
+        },
+        {
+          "md": "Notater/dum-ned-smarttelefonen.md",
+          "to": "content/Notater/images/dum-telefon1.jpg"
+        }
+      ]
+    },
+    {
+      "key": "dum-smarttelefon.jpg",
+      "count": 2,
+      "locations": [
+        {
+          "md": "Notater/dum-ned-smarttelefonen.md",
+          "to": "content/Notater/images/dum-smarttelefon.jpg"
+        },
+        {
+          "md": "Notater/dum-ned-smarttelefonen.md",
+          "to": "content/Notater/images/dum-smarttelefon.jpg"
+        }
+      ]
+    },
+    {
+      "key": "simens-skjermbilder-24-02-2024-kl16.37.jpg",
+      "count": 2,
+      "locations": [
+        {
+          "md": "Notater/metaforiske-mentorer.md",
+          "to": "content/Notater/images/simens-skjermbilder-24-02-2024-kl16.37.jpg"
+        },
+        {
+          "md": "Utkast/kodeverktoy.md",
+          "to": "content/Utkast/images/simens-skjermbilder-24-02-2024-kl16.37.jpg"
+        }
+      ]
+    },
+    {
+      "key": "jelly-star.jpg",
+      "count": 2,
+      "locations": [
+        {
+          "md": "Notater/minste-telefonen.md",
+          "to": "content/Notater/images/jelly-star.jpg"
+        },
+        {
+          "md": "Notater/skjermtid.md",
+          "to": "content/Notater/images/jelly-star.jpg"
+        }
+      ]
+    },
+    {
+      "key": "samtalekort.jpg",
+      "count": 2,
+      "locations": [
+        {
+          "md": "Notater/samtalekort-som-app.md",
+          "to": "content/Notater/images/samtalekort.jpg"
+        },
+        {
+          "md": "Oppslagsverk/samtalekort.md",
+          "to": "content/Oppslagsverk/images/samtalekort.jpg"
+        }
+      ]
+    },
+    {
+      "key": "vim-demo-we.gif",
+      "count": 2,
+      "locations": [
+        {
+          "md": "Notater/vim.md",
+          "to": "content/Notater/images/vim-demo-we.gif"
+        },
+        {
+          "md": "Oppslagsverk/vim-oppslagsverk.md",
+          "to": "content/Oppslagsverk/images/vim-demo-we.gif"
+        }
+      ]
+    },
+    {
+      "key": "github-publisher-demo.mov",
+      "count": 2,
+      "locations": [
+        {
+          "md": "Oppslagsverk/github-publisher.md",
+          "to": "content/Oppslagsverk/images/github-publisher-demo.mov"
+        },
+        {
+          "md": "Utkast/senke-terskelen-for-publisering.md",
+          "to": "content/Utkast/images/github-publisher-demo.mov"
+        }
+      ]
+    }
+  ],
+  "unusedTempFilesCount": 78,
+  "unusedTempFiles": [
+    ".DS_Store",
+    "16 - Opprydding-1688325814554.jpeg",
+    "CleanShot 2022-12-12 at 06.58.45@2x.png",
+    "CleanShot 2022-12-13 at 08.21.02.gif",
+    "CleanShot 2022-12-13 at 08.29.14.gif",
+    "CleanShot 2022-12-19 at 21.38.17@2x 2.png",
+    "CleanShot 2022-12-19 at 21.38.17@2x.png",
+    "Discord onboarding 2.jpg",
+    "Discord onboarding.jpg",
+    "IMG_1377.jpg",
+    "Illustrasjon over bruk av rem som måleenhet i typografi.png",
+    "Illustrasjon over ulike skjermstørrelser for responsivt design.png",
+    "Kjartan_nyhetsbrev-og-sosialemedier.png",
+    "Pasted image 20230303171516.png",
+    "Pasted image 20230402114341.png",
+    "Pasted image 20240221202814.png",
+    "Pasted image 20240221210531.png",
+    "Pasted image 20240324203317.png",
+    "Pasted image 20240324203326.png",
+    "Pasted image 20240324204448.png",
+    "Pasted image 20240324211650.png",
+    "Pasted image 20240324211727.png",
+    "Pasted image 20240428102342.png",
+    "Pasted image 20240428133257.png",
+    "Pasted-image-20230305115553.png",
+    "Recording 20230911210746.webm",
+    "Simens skjermbilder 05-03-2023- kl 16.27.16@2x.png",
+    "Simens skjermbilder 19-12-2022- kl 23.36.15@2x.png",
+    "Simens skjermbilder 20-12-2022- kl 07.19.29 2.gif",
+    "Simens-skjermbilder-01-05-2024-kl06.56.png",
+    "Simens-skjermbilder-01-05-2024-kl07.08.png",
+    "Simens-skjermbilder-01-05-2024-kl07.34.png",
+    "Simens-skjermbilder-01-05-2024-kl07.40.jpg",
+    "Simens-skjermbilder-01-05-2024-kl08.05.png",
+    "Simens-skjermbilder-01-05-2024-kl08.08.png",
+    "Simens-skjermbilder-02-05-2023-kl21.41.png",
+    "Simens-skjermbilder-02-07-2023-kl21.15.gif",
+    "Simens-skjermbilder-05-11-2023-kl21.31.png",
+    "Simens-skjermbilder-06-03-2024-kl19 (1).40.png",
+    "Simens-skjermbilder-07-05-2023-kl09.58.png",
+    "Simens-skjermbilder-10-03-2024-kl23.23 1.png",
+    "Simens-skjermbilder-10-03-2024-kl23.23.png",
+    "Simens-skjermbilder-13-05-2024-kl21.00.jpg",
+    "Simens-skjermbilder-14-10-2023-kl23.40.png",
+    "Simens-skjermbilder-16-07-2023-kl22.23.png",
+    "Simens-skjermbilder-19-11-2023-kl20.35.png",
+    "Simens-skjermbilder-22-10-2023-kl07.06.png",
+    "Simens-skjermbilder-22-10-2023-kl07.38.jpg",
+    "Simens-skjermbilder-23-09-2024-kl08.51.jpg",
+    "Simens-skjermbilder-26-03-2023-kl19.19.png",
+    "Whatever floats your quote-1685285838270.jpeg",
+    "Whatever floats your quote-1685285899123.jpeg",
+    "about-fucking-time.webp",
+    "building-a-second-brain-maggie-appleton.png",
+    "chatgpt-apple-diktering.jpg",
+    "colemak-update.png",
+    "dum-telefon2.jpg",
+    "fork.png",
+    "github-actions.png",
+    "github-pages.png",
+    "google-domains.png",
+    "humblebrag-much.webp",
+    "jay-colbert-digital-garden.png",
+    "jelly-star.avif",
+    "notebookLM-default.png",
+    "nyhetsbrev-1-kodebilde.png",
+    "obsidian-community 2.png",
+    "obsidian-settings.png",
+    "return-of-kladdeboka.png",
+    "signature-marks.bin",
+    "simenskriver-gammel-versjon.png",
+    "simenskriver-ny-versjon.png",
+    "skjermstørrelser-responsivt-design.png",
+    "tilbakekoblinger-og-graf.png",
+    "typografi-spacing-regler.png",
+    "vim-demo.mp4",
+    "xcode-library.mp4",
+    "xcode-print.mp4"
+  ]
+}

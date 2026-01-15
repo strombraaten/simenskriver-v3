@@ -196,8 +196,11 @@ export const ClickableImages: QuartzTransformerPlugin = () => {
                   typeof cls === "string" && editorialClasses.some(ec => cls.includes(ec))
                 )
 
-                // Use HTML class if present, otherwise use parsed style
-                const finalStyle = htmlEditorialClass ? htmlEditorialClass.replace("image-", "") : editorialStyle
+                // Use HTML class if present, otherwise use parsed style.
+                // Project default: center images unless explicitly overridden.
+                const finalStyle = htmlEditorialClass
+                  ? htmlEditorialClass.replace("image-", "")
+                  : (editorialStyle ?? "center")
 
                 // Check if optimized version exists
                 const optimizedData = imageManifest && typeof originalSrc === "string" 

@@ -1,0 +1,1667 @@
+{
+  "mode": "apply",
+  "copiedToRootCount": 0,
+  "copiedToRoot": [],
+  "skippedSameCount": 235,
+  "skippedSame": [
+    {
+      "from": "content/Notater/images/ai-som-samtalepartner-720.mov",
+      "to": "content/images/ai-som-samtalepartner-720.mov"
+    },
+    {
+      "from": "content/Notater/images/ai-som-samtalepartner.jpg",
+      "to": "content/images/ai-som-samtalepartner.jpg"
+    },
+    {
+      "from": "content/Notater/images/alphasmart-neo.jpeg",
+      "to": "content/images/alphasmart-neo.jpeg"
+    },
+    {
+      "from": "content/Notater/images/analyse-av-kontraster.png",
+      "to": "content/images/analyse-av-kontraster.png"
+    },
+    {
+      "from": "content/Notater/images/anerkjenn-din-egen-superkraft-1685867151883.jpeg",
+      "to": "content/images/anerkjenn-din-egen-superkraft-1685867151883.jpeg"
+    },
+    {
+      "from": "content/Notater/images/anerkjenn-superkraften-din-1685866029060.jpeg",
+      "to": "content/images/anerkjenn-superkraften-din-1685866029060.jpeg"
+    },
+    {
+      "from": "content/Notater/images/animated.gif",
+      "to": "content/images/animated.gif"
+    },
+    {
+      "from": "content/Notater/images/apple-notes-meme.png",
+      "to": "content/images/apple-notes-meme.png"
+    },
+    {
+      "from": "content/Notater/images/apple-tale-til-tekst.mov",
+      "to": "content/images/apple-tale-til-tekst.mov"
+    },
+    {
+      "from": "content/Notater/images/apple-ultra.webp",
+      "to": "content/images/apple-ultra.webp"
+    },
+    {
+      "from": "content/Notater/images/beeper-eksempel.webp",
+      "to": "content/images/beeper-eksempel.webp"
+    },
+    {
+      "from": "content/Notater/images/blyanten-senker-terskelen-login.jpg",
+      "to": "content/images/blyanten-senker-terskelen-login.jpg"
+    },
+    {
+      "from": "content/Notater/images/blyanten-senker-terskelen-spisse-sammendrag.jpg",
+      "to": "content/images/blyanten-senker-terskelen-spisse-sammendrag.jpg"
+    },
+    {
+      "from": "content/Notater/images/blyanten-senker-terskelen.jpg",
+      "to": "content/images/blyanten-senker-terskelen.jpg"
+    },
+    {
+      "from": "content/Notater/images/buttondown-subscribe.png",
+      "to": "content/images/buttondown-subscribe.png"
+    },
+    {
+      "from": "content/Notater/images/bygger-båten-mens-man-ror.jpg",
+      "to": "content/images/bygger-båten-mens-man-ror.jpg"
+    },
+    {
+      "from": "content/Notater/images/bærekraftig-webutvikling-1685367041996.jpeg",
+      "to": "content/images/bærekraftig-webutvikling-1685367041996.jpeg"
+    },
+    {
+      "from": "content/Notater/images/cards-gestures.gif",
+      "to": "content/images/cards-gestures.gif"
+    },
+    {
+      "from": "content/Notater/images/cards.gif",
+      "to": "content/images/cards.gif"
+    },
+    {
+      "from": "content/Notater/images/chatgpt-eksempel-tredeltgrensesnitt.jpg",
+      "to": "content/images/chatgpt-eksempel-tredeltgrensesnitt.jpg"
+    },
+    {
+      "from": "content/Notater/images/chatgpt-inline-editing.jpg",
+      "to": "content/images/chatgpt-inline-editing.jpg"
+    },
+    {
+      "from": "content/Notater/images/chatgpt-mobil-desktop.jpg",
+      "to": "content/images/chatgpt-mobil-desktop.jpg"
+    },
+    {
+      "from": "content/Notater/images/chatgpt-muntlig-ui.jpg",
+      "to": "content/images/chatgpt-muntlig-ui.jpg"
+    },
+    {
+      "from": "content/Notater/images/chatgpt-tale-til-tekst.jpg",
+      "to": "content/images/chatgpt-tale-til-tekst.jpg"
+    },
+    {
+      "from": "content/Notater/images/claude-eksempel-tredeltgrensesnitt.jpg",
+      "to": "content/images/claude-eksempel-tredeltgrensesnitt.jpg"
+    },
+    {
+      "from": "content/Notater/images/cleanshot-2022-12-12-at-06.58.45@2x-1.png",
+      "to": "content/images/cleanshot-2022-12-12-at-06.58.45@2x-1.png"
+    },
+    {
+      "from": "content/Notater/images/cleanshot-2022-12-13-at-08.19.16.gif",
+      "to": "content/images/cleanshot-2022-12-13-at-08.19.16.gif"
+    },
+    {
+      "from": "content/Notater/images/cleanshot-2022-12-16-at-07.39.15@2x.png",
+      "to": "content/images/cleanshot-2022-12-16-at-07.39.15@2x.png"
+    },
+    {
+      "from": "content/Notater/images/cleanshot-x-autobalance.mp4",
+      "to": "content/images/cleanshot-x-autobalance.mp4"
+    },
+    {
+      "from": "content/Notater/images/cleanshotx-background.mp4",
+      "to": "content/images/cleanshotx-background.mp4"
+    },
+    {
+      "from": "content/Notater/images/convenience.jpg",
+      "to": "content/images/convenience.jpg"
+    },
+    {
+      "from": "content/Notater/images/craft-note.png",
+      "to": "content/images/craft-note.png"
+    },
+    {
+      "from": "content/Notater/images/cursor-inline-editing.jpg",
+      "to": "content/images/cursor-inline-editing.jpg"
+    },
+    {
+      "from": "content/Notater/images/det-er-noe-feil-med-blogging-som-konsept-1687680804650.jpeg",
+      "to": "content/images/det-er-noe-feil-med-blogging-som-konsept-1687680804650.jpeg"
+    },
+    {
+      "from": "content/Notater/images/dum-smarttelefon.jpg",
+      "to": "content/images/dum-smarttelefon.jpg"
+    },
+    {
+      "from": "content/Notater/images/dum-telefon1.jpg",
+      "to": "content/images/dum-telefon1.jpg"
+    },
+    {
+      "from": "content/Notater/images/dumb-phone-installation-step-1.mp4",
+      "to": "content/images/dumb-phone-installation-step-1.mp4"
+    },
+    {
+      "from": "content/Notater/images/dumbphone_device_combo.png",
+      "to": "content/images/dumbphone_device_combo.png"
+    },
+    {
+      "from": "content/Notater/images/flexbox.png",
+      "to": "content/images/flexbox.png"
+    },
+    {
+      "from": "content/Notater/images/folk-om-fortida-sesong2.jpg",
+      "to": "content/images/folk-om-fortida-sesong2.jpg"
+    },
+    {
+      "from": "content/Notater/images/freewrite-alpha.jpg",
+      "to": "content/images/freewrite-alpha.jpg"
+    },
+    {
+      "from": "content/Notater/images/freewrite-lemon.jpg",
+      "to": "content/images/freewrite-lemon.jpg"
+    },
+    {
+      "from": "content/Notater/images/freewrite-smart-typewriter.jpg",
+      "to": "content/images/freewrite-smart-typewriter.jpg"
+    },
+    {
+      "from": "content/Notater/images/freewrite-traveller.jpeg",
+      "to": "content/images/freewrite-traveller.jpeg"
+    },
+    {
+      "from": "content/Notater/images/fyller-virkelig-arbeidet-den-tida-du-har-tilgjengelig-1687676993925.jpeg",
+      "to": "content/images/fyller-virkelig-arbeidet-den-tida-du-har-tilgjengelig-1687676993925.jpeg"
+    },
+    {
+      "from": "content/Notater/images/her-eksempel.jpg",
+      "to": "content/images/her-eksempel.jpg"
+    },
+    {
+      "from": "content/Notater/images/hvordan-jeg-bruker-readwise.jpg",
+      "to": "content/images/hvordan-jeg-bruker-readwise.jpg"
+    },
+    {
+      "from": "content/Notater/images/ia-writer-note.png",
+      "to": "content/images/ia-writer-note.png"
+    },
+    {
+      "from": "content/Notater/images/icloud-on-android.webp",
+      "to": "content/images/icloud-on-android.webp"
+    },
+    {
+      "from": "content/Notater/images/imessage-innlogging.png",
+      "to": "content/images/imessage-innlogging.png"
+    },
+    {
+      "from": "content/Notater/images/img_1327.jpg",
+      "to": "content/images/img_1327.jpg"
+    },
+    {
+      "from": "content/Notater/images/img_1328.jpg",
+      "to": "content/images/img_1328.jpg"
+    },
+    {
+      "from": "content/Notater/images/img_1329.jpg",
+      "to": "content/images/img_1329.jpg"
+    },
+    {
+      "from": "content/Notater/images/img_1330.jpg",
+      "to": "content/images/img_1330.jpg"
+    },
+    {
+      "from": "content/Notater/images/img_1331.jpg",
+      "to": "content/images/img_1331.jpg"
+    },
+    {
+      "from": "content/Notater/images/img_1333.jpg",
+      "to": "content/images/img_1333.jpg"
+    },
+    {
+      "from": "content/Notater/images/img_1346.jpg",
+      "to": "content/images/img_1346.jpg"
+    },
+    {
+      "from": "content/Notater/images/img_1347.jpg",
+      "to": "content/images/img_1347.jpg"
+    },
+    {
+      "from": "content/Notater/images/img_1348.jpg",
+      "to": "content/images/img_1348.jpg"
+    },
+    {
+      "from": "content/Notater/images/imposter-syndrome-1685863336554.jpeg",
+      "to": "content/images/imposter-syndrome-1685863336554.jpeg"
+    },
+    {
+      "from": "content/Notater/images/india-slack.jpg",
+      "to": "content/images/india-slack.jpg"
+    },
+    {
+      "from": "content/Notater/images/iphone13mini-vs-jellystar-5.jpg",
+      "to": "content/images/iphone13mini-vs-jellystar-5.jpg"
+    },
+    {
+      "from": "content/Notater/images/ipod.jpg",
+      "to": "content/images/ipod.jpg"
+    },
+    {
+      "from": "content/Notater/images/ixda_simen-1.jpg",
+      "to": "content/images/ixda_simen-1.jpg"
+    },
+    {
+      "from": "content/Notater/images/ixda_simen-2.jpg",
+      "to": "content/images/ixda_simen-2.jpg"
+    },
+    {
+      "from": "content/Notater/images/ixda_simen-3.jpg",
+      "to": "content/images/ixda_simen-3.jpg"
+    },
+    {
+      "from": "content/Notater/images/ixda_simen-4.jpg",
+      "to": "content/images/ixda_simen-4.jpg"
+    },
+    {
+      "from": "content/Notater/images/jelly-star-android.JPG",
+      "to": "content/images/jelly-star-android.JPG"
+    },
+    {
+      "from": "content/Notater/images/jelly-star-before-after.webp",
+      "to": "content/images/jelly-star-before-after.webp"
+    },
+    {
+      "from": "content/Notater/images/jelly-star-eksempler.jpg",
+      "to": "content/images/jelly-star-eksempler.jpg"
+    },
+    {
+      "from": "content/Notater/images/jelly-star-unboxing.jpg",
+      "to": "content/images/jelly-star-unboxing.jpg"
+    },
+    {
+      "from": "content/Notater/images/jelly-star.jpg",
+      "to": "content/images/jelly-star.jpg"
+    },
+    {
+      "from": "content/Notater/images/jon-og-andreas_nyhetsbrev-30.jpeg",
+      "to": "content/images/jon-og-andreas_nyhetsbrev-30.jpeg"
+    },
+    {
+      "from": "content/Notater/images/kindle-highlight-compressed.jpg",
+      "to": "content/images/kindle-highlight-compressed.jpg"
+    },
+    {
+      "from": "content/Notater/images/kindle-highlight.jpg",
+      "to": "content/images/kindle-highlight.jpg"
+    },
+    {
+      "from": "content/Notater/images/kjartan_nyhetsbrev-og-sosialemedier-2.jpg",
+      "to": "content/images/kjartan_nyhetsbrev-og-sosialemedier-2.jpg"
+    },
+    {
+      "from": "content/Notater/images/medium-tk-triks.gif",
+      "to": "content/images/medium-tk-triks.gif"
+    },
+    {
+      "from": "content/Notater/images/melding-til-truls.png",
+      "to": "content/images/melding-til-truls.png"
+    },
+    {
+      "from": "content/Notater/images/notebook-responsivitet.jpg",
+      "to": "content/images/notebook-responsivitet.jpg"
+    },
+    {
+      "from": "content/Notater/images/notebook-skjule-paneler.mp4",
+      "to": "content/images/notebook-skjule-paneler.mp4"
+    },
+    {
+      "from": "content/Notater/images/notebooklm-eksempel.jpg",
+      "to": "content/images/notebooklm-eksempel.jpg"
+    },
+    {
+      "from": "content/Notater/images/notebooklm-oversikt.png",
+      "to": "content/images/notebooklm-oversikt.png"
+    },
+    {
+      "from": "content/Notater/images/notecards.jpg",
+      "to": "content/images/notecards.jpg"
+    },
+    {
+      "from": "content/Notater/images/obsidian-community.png",
+      "to": "content/images/obsidian-community.png"
+    },
+    {
+      "from": "content/Notater/images/obsidian-hurtigtaster.png",
+      "to": "content/images/obsidian-hurtigtaster.png"
+    },
+    {
+      "from": "content/Notater/images/obsidian-release-notes-canvas.png",
+      "to": "content/images/obsidian-release-notes-canvas.png"
+    },
+    {
+      "from": "content/Notater/images/obsidian-release-notes.png",
+      "to": "content/images/obsidian-release-notes.png"
+    },
+    {
+      "from": "content/Notater/images/obsidian-skrive-notater.jpg",
+      "to": "content/images/obsidian-skrive-notater.jpg"
+    },
+    {
+      "from": "content/Notater/images/optimalisere-fornøydifisere.jpg",
+      "to": "content/images/optimalisere-fornøydifisere.jpg"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20230303171233.png",
+      "to": "content/images/pasted-image-20230303171233.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20230305115553-1.png",
+      "to": "content/images/pasted-image-20230305115553-1.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20231002111812.png",
+      "to": "content/images/pasted-image-20231002111812.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20231014235918.png",
+      "to": "content/images/pasted-image-20231014235918.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20231015000029.png",
+      "to": "content/images/pasted-image-20231015000029.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20231015000345.png",
+      "to": "content/images/pasted-image-20231015000345.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20231015000536.png",
+      "to": "content/images/pasted-image-20231015000536.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20240324221827.png",
+      "to": "content/images/pasted-image-20240324221827.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20240428102334.png",
+      "to": "content/images/pasted-image-20240428102334.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20240428104430.png",
+      "to": "content/images/pasted-image-20240428104430.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20240428104531.png",
+      "to": "content/images/pasted-image-20240428104531.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20240428105010.png",
+      "to": "content/images/pasted-image-20240428105010.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20240428105248.png",
+      "to": "content/images/pasted-image-20240428105248.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20240428105311.png",
+      "to": "content/images/pasted-image-20240428105311.png"
+    },
+    {
+      "from": "content/Notater/images/petter-og-aslak-nyhetsbrev-30-2.png",
+      "to": "content/images/petter-og-aslak-nyhetsbrev-30-2.png"
+    },
+    {
+      "from": "content/Notater/images/podkast-studio.jpg",
+      "to": "content/images/podkast-studio.jpg"
+    },
+    {
+      "from": "content/Notater/images/primary-button.jpg",
+      "to": "content/images/primary-button.jpg"
+    },
+    {
+      "from": "content/Notater/images/redigering-kladd-research-hultertilbulter.png",
+      "to": "content/images/redigering-kladd-research-hultertilbulter.png"
+    },
+    {
+      "from": "content/Notater/images/redigering-kladd-research-linear.png",
+      "to": "content/images/redigering-kladd-research-linear.png"
+    },
+    {
+      "from": "content/Notater/images/remarkable-finn.jpeg",
+      "to": "content/images/remarkable-finn.jpeg"
+    },
+    {
+      "from": "content/Notater/images/resirkulering-747-for-scale.jpg",
+      "to": "content/images/resirkulering-747-for-scale.jpg"
+    },
+    {
+      "from": "content/Notater/images/resirkulering-747.jpg",
+      "to": "content/images/resirkulering-747.jpg"
+    },
+    {
+      "from": "content/Notater/images/resirkulering-fail.jpg",
+      "to": "content/images/resirkulering-fail.jpg"
+    },
+    {
+      "from": "content/Notater/images/responsivt-design.png",
+      "to": "content/images/responsivt-design.png"
+    },
+    {
+      "from": "content/Notater/images/samtalekort-prototype-ios.jpg",
+      "to": "content/images/samtalekort-prototype-ios.jpg"
+    },
+    {
+      "from": "content/Notater/images/samtalekort-prototype.jpg",
+      "to": "content/images/samtalekort-prototype.jpg"
+    },
+    {
+      "from": "content/Notater/images/samtalekort.jpg",
+      "to": "content/images/samtalekort.jpg"
+    },
+    {
+      "from": "content/Notater/images/samtalepartner-desktop.jpg",
+      "to": "content/images/samtalepartner-desktop.jpg"
+    },
+    {
+      "from": "content/Notater/images/samtalepartner-gpt.png",
+      "to": "content/images/samtalepartner-gpt.png"
+    },
+    {
+      "from": "content/Notater/images/schibsted-cui.jpg",
+      "to": "content/images/schibsted-cui.jpg"
+    },
+    {
+      "from": "content/Notater/images/screenshot-2023-11-24-at-08.36.20.jpg",
+      "to": "content/images/screenshot-2023-11-24-at-08.36.20.jpg"
+    },
+    {
+      "from": "content/Notater/images/shades-of-color.png",
+      "to": "content/images/shades-of-color.png"
+    },
+    {
+      "from": "content/Notater/images/shades-of-grey.png",
+      "to": "content/images/shades-of-grey.png"
+    },
+    {
+      "from": "content/Notater/images/simen-skriver-profilfarge.png",
+      "to": "content/images/simen-skriver-profilfarge.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-01-05-2024-kl07.40.png",
+      "to": "content/images/simens-skjermbilder-01-05-2024-kl07.40.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-01-10-2023-kl17.40.jpg",
+      "to": "content/images/simens-skjermbilder-01-10-2023-kl17.40.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-05-03-2023--kl-16.27.16@2x-squashed.jpg",
+      "to": "content/images/simens-skjermbilder-05-03-2023--kl-16.27.16@2x-squashed.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-05-11-2023-kl07.59.png",
+      "to": "content/images/simens-skjermbilder-05-11-2023-kl07.59.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-05-11-2023-kl08.01.png",
+      "to": "content/images/simens-skjermbilder-05-11-2023-kl08.01.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-05-11-2023-kl21.54.png",
+      "to": "content/images/simens-skjermbilder-05-11-2023-kl21.54.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-06-03-2024-kl19.35.png",
+      "to": "content/images/simens-skjermbilder-06-03-2024-kl19.35.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-06-03-2024-kl19.40.png",
+      "to": "content/images/simens-skjermbilder-06-03-2024-kl19.40.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-06-03-2024-kl19.41.png",
+      "to": "content/images/simens-skjermbilder-06-03-2024-kl19.41.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-12-03-2023.png",
+      "to": "content/images/simens-skjermbilder-12-03-2023.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-16-09-2023-kl08.34.png",
+      "to": "content/images/simens-skjermbilder-16-09-2023-kl08.34.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-16-09-2023-kl08.41.gif",
+      "to": "content/images/simens-skjermbilder-16-09-2023-kl08.41.gif"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-20-12-2022--kl-07.19.29.gif",
+      "to": "content/images/simens-skjermbilder-20-12-2022--kl-07.19.29.gif"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl07.06-1.png",
+      "to": "content/images/simens-skjermbilder-22-10-2023-kl07.06-1.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl07.08.png",
+      "to": "content/images/simens-skjermbilder-22-10-2023-kl07.08.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl07.37.jpg",
+      "to": "content/images/simens-skjermbilder-22-10-2023-kl07.37.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl07.38-1.jpg",
+      "to": "content/images/simens-skjermbilder-22-10-2023-kl07.38-1.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl15.37.jpg",
+      "to": "content/images/simens-skjermbilder-22-10-2023-kl15.37.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl15.53.jpg",
+      "to": "content/images/simens-skjermbilder-22-10-2023-kl15.53.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl19.16.png",
+      "to": "content/images/simens-skjermbilder-22-10-2023-kl19.16.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl19.26-1.jpg",
+      "to": "content/images/simens-skjermbilder-22-10-2023-kl19.26-1.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl19.26.jpg",
+      "to": "content/images/simens-skjermbilder-22-10-2023-kl19.26.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl19.27-1.jpg",
+      "to": "content/images/simens-skjermbilder-22-10-2023-kl19.27-1.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl19.27.jpg",
+      "to": "content/images/simens-skjermbilder-22-10-2023-kl19.27.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl19.28-1.jpg",
+      "to": "content/images/simens-skjermbilder-22-10-2023-kl19.28-1.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl19.28.jpg",
+      "to": "content/images/simens-skjermbilder-22-10-2023-kl19.28.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-23-09-2024-kl09.08.jpg",
+      "to": "content/images/simens-skjermbilder-23-09-2024-kl09.08.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-23-12-2022--kl-09.46.36@2x.png",
+      "to": "content/images/simens-skjermbilder-23-12-2022--kl-09.46.36@2x.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-23-12-2022--kl-09.51.44@2x.png",
+      "to": "content/images/simens-skjermbilder-23-12-2022--kl-09.51.44@2x.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-23-12-2022--kl-10.23.41@2x.png",
+      "to": "content/images/simens-skjermbilder-23-12-2022--kl-10.23.41@2x.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-24-02-2024-kl16.37.jpg",
+      "to": "content/images/simens-skjermbilder-24-02-2024-kl16.37.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-27-11-2023-kl07.56.jpg",
+      "to": "content/images/simens-skjermbilder-27-11-2023-kl07.56.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-28-01-2024-kl19.17.png",
+      "to": "content/images/simens-skjermbilder-28-01-2024-kl19.17.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-28-01-2024-kl22.12.png",
+      "to": "content/images/simens-skjermbilder-28-01-2024-kl22.12.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-28-01-2024-kl22.19.png",
+      "to": "content/images/simens-skjermbilder-28-01-2024-kl22.19.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-28-01-2024-kl22.31.png",
+      "to": "content/images/simens-skjermbilder-28-01-2024-kl22.31.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-28-01-2024-kl22.38.png",
+      "to": "content/images/simens-skjermbilder-28-01-2024-kl22.38.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-28-01-2024-kl23.01.png",
+      "to": "content/images/simens-skjermbilder-28-01-2024-kl23.01.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-28-01-2024-kl23.10.png",
+      "to": "content/images/simens-skjermbilder-28-01-2024-kl23.10.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-28-11-2023-kl10.27.jpg",
+      "to": "content/images/simens-skjermbilder-28-11-2023-kl10.27.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-29-04-2023-kl08.08.png",
+      "to": "content/images/simens-skjermbilder-29-04-2023-kl08.08.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-29-11-2023-kl07.30.png",
+      "to": "content/images/simens-skjermbilder-29-11-2023-kl07.30.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-29-11-2023-kl08.21.jpg",
+      "to": "content/images/simens-skjermbilder-29-11-2023-kl08.21.jpg"
+    },
+    {
+      "from": "content/Notater/images/skap-en-felles-forståelse-ved-å-visualisere-1688324453006.jpeg",
+      "to": "content/images/skap-en-felles-forståelse-ved-å-visualisere-1688324453006.jpeg"
+    },
+    {
+      "from": "content/Notater/images/skap-en-felles-forståelse-ved-å-visualisere-1688324470735.jpeg",
+      "to": "content/images/skap-en-felles-forståelse-ved-å-visualisere-1688324470735.jpeg"
+    },
+    {
+      "from": "content/Notater/images/skjermtid-passord.jpg",
+      "to": "content/images/skjermtid-passord.jpg"
+    },
+    {
+      "from": "content/Notater/images/skru-av-internett.gif",
+      "to": "content/images/skru-av-internett.gif"
+    },
+    {
+      "from": "content/Notater/images/sonja-and-india.jpg",
+      "to": "content/images/sonja-and-india.jpg"
+    },
+    {
+      "from": "content/Notater/images/squashedimg_8614.jpg",
+      "to": "content/images/squashedimg_8614.jpg"
+    },
+    {
+      "from": "content/Notater/images/storrelsesforhold-ui.png",
+      "to": "content/images/storrelsesforhold-ui.png"
+    },
+    {
+      "from": "content/Notater/images/søkeforslag.jpg",
+      "to": "content/images/søkeforslag.jpg"
+    },
+    {
+      "from": "content/Notater/images/tana-blockbased-linking.png",
+      "to": "content/images/tana-blockbased-linking.png"
+    },
+    {
+      "from": "content/Notater/images/tana-query.png",
+      "to": "content/images/tana-query.png"
+    },
+    {
+      "from": "content/Notater/images/tana-slogan.png",
+      "to": "content/images/tana-slogan.png"
+    },
+    {
+      "from": "content/Notater/images/tana-supertags.png",
+      "to": "content/images/tana-supertags.png"
+    },
+    {
+      "from": "content/Notater/images/telefon-daglig-bruk.webp",
+      "to": "content/images/telefon-daglig-bruk.webp"
+    },
+    {
+      "from": "content/Notater/images/timferris-ai-result-links.jpg",
+      "to": "content/images/timferris-ai-result-links.jpg"
+    },
+    {
+      "from": "content/Notater/images/timferriss-ai-result.jpg",
+      "to": "content/images/timferriss-ai-result.jpg"
+    },
+    {
+      "from": "content/Notater/images/truls-rubberduck.jpg",
+      "to": "content/images/truls-rubberduck.jpg"
+    },
+    {
+      "from": "content/Notater/images/vim-adventures.mp4",
+      "to": "content/images/vim-adventures.mp4"
+    },
+    {
+      "from": "content/Notater/images/vim-demo-we.gif",
+      "to": "content/images/vim-demo-we.gif"
+    },
+    {
+      "from": "content/Notater/images/vim-demo.gif",
+      "to": "content/images/vim-demo.gif"
+    },
+    {
+      "from": "content/Notater/images/vimtutor.mp4",
+      "to": "content/images/vimtutor.mp4"
+    },
+    {
+      "from": "content/Notater/images/work-from-hype-boox-palma.png",
+      "to": "content/images/work-from-hype-boox-palma.png"
+    },
+    {
+      "from": "content/Notater/images/zerowriter.jpeg",
+      "to": "content/images/zerowriter.jpeg"
+    },
+    {
+      "from": "content/Notater/images/å-skape-løsningen-i-fellesskap-1689538230064.jpeg",
+      "to": "content/images/å-skape-løsningen-i-fellesskap-1689538230064.jpeg"
+    },
+    {
+      "from": "content/Notater/images/å-skape-løsningen-i-fellesskap-1689538462879.jpeg",
+      "to": "content/images/å-skape-løsningen-i-fellesskap-1689538462879.jpeg"
+    },
+    {
+      "from": "content/Notater/images/å-skape-løsningen-i-fellesskap-1689538787293.jpeg",
+      "to": "content/images/å-skape-løsningen-i-fellesskap-1689538787293.jpeg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/domain-directory-slug.png",
+      "to": "content/images/domain-directory-slug.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/eagle-organisering.png",
+      "to": "content/images/eagle-organisering.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/eagle-tagging.png",
+      "to": "content/images/eagle-tagging.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/figma-variabler-simenskriver.gif",
+      "to": "content/images/figma-variabler-simenskriver.gif"
+    },
+    {
+      "from": "content/Oppslagsverk/images/github-publisher-demo.mov",
+      "to": "content/images/github-publisher-demo.mov"
+    },
+    {
+      "from": "content/Oppslagsverk/images/hvordan-jeg-bruker-kunstig-intelligens-1686472243288.jpeg",
+      "to": "content/images/hvordan-jeg-bruker-kunstig-intelligens-1686472243288.jpeg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/hvordan-jeg-bruker-kunstig-intelligens-for-å-oversette-1686473402913.jpeg",
+      "to": "content/images/hvordan-jeg-bruker-kunstig-intelligens-for-å-oversette-1686473402913.jpeg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/img_1836.JPG",
+      "to": "content/images/img_1836.JPG"
+    },
+    {
+      "from": "content/Oppslagsverk/images/img_6297.png",
+      "to": "content/images/img_6297.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/img_6298.png",
+      "to": "content/images/img_6298.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/img_6299.png",
+      "to": "content/images/img_6299.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/img_6301.png",
+      "to": "content/images/img_6301.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/img_6302.png",
+      "to": "content/images/img_6302.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/inspirasjon-linker.png",
+      "to": "content/images/inspirasjon-linker.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/jake-knapp-sprintbook.png",
+      "to": "content/images/jake-knapp-sprintbook.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/landingsside-etter.png",
+      "to": "content/images/landingsside-etter.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/landingsside-før.png",
+      "to": "content/images/landingsside-før.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/rocket-demo.gif",
+      "to": "content/images/rocket-demo.gif"
+    },
+    {
+      "from": "content/Oppslagsverk/images/samtalekort.jpg",
+      "to": "content/images/samtalekort.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-02-05-2023-kl21.41-1.png",
+      "to": "content/images/simens-skjermbilder-02-05-2023-kl21.41-1.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-07-05-2023-kl09.58-1.png",
+      "to": "content/images/simens-skjermbilder-07-05-2023-kl09.58-1.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-12-01-2026-kl20.31.jpg",
+      "to": "content/images/simens-skjermbilder-12-01-2026-kl20.31.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-12-01-2026-kl20.35.jpg",
+      "to": "content/images/simens-skjermbilder-12-01-2026-kl20.35.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-19-11-2023-kl20.01.jpg",
+      "to": "content/images/simens-skjermbilder-19-11-2023-kl20.01.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-19-11-2023-kl20.15.jpg",
+      "to": "content/images/simens-skjermbilder-19-11-2023-kl20.15.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-19-11-2023-kl20.35.jpg",
+      "to": "content/images/simens-skjermbilder-19-11-2023-kl20.35.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-19-11-2023-kl21.00.jpg",
+      "to": "content/images/simens-skjermbilder-19-11-2023-kl21.00.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-25-08-2024-kl17.00.png",
+      "to": "content/images/simens-skjermbilder-25-08-2024-kl17.00.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-29-10-2023-kl12.15.jpg",
+      "to": "content/images/simens-skjermbilder-29-10-2023-kl12.15.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-29-10-2023-kl12.20.png",
+      "to": "content/images/simens-skjermbilder-29-10-2023-kl12.20.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-29-10-2023-kl20.56.jpg",
+      "to": "content/images/simens-skjermbilder-29-10-2023-kl20.56.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simenskriver-linker-test.png",
+      "to": "content/images/simenskriver-linker-test.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/surdeig-bobler.jpg",
+      "to": "content/images/surdeig-bobler.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/surdeig.jpg",
+      "to": "content/images/surdeig.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/tinylytics-dashboard.png",
+      "to": "content/images/tinylytics-dashboard.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/variabler-figma.jpeg",
+      "to": "content/images/variabler-figma.jpeg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/video-avspiller.png",
+      "to": "content/images/video-avspiller.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/vim-demo-we.gif",
+      "to": "content/images/vim-demo-we.gif"
+    },
+    {
+      "from": "content/Oppslagsverk/images/vim-marks.gif",
+      "to": "content/images/vim-marks.gif"
+    },
+    {
+      "from": "content/Tanker/images/lg-samarbeid.png",
+      "to": "content/images/lg-samarbeid.png"
+    },
+    {
+      "from": "content/Utkast/images/github-publisher-demo.mov",
+      "to": "content/images/github-publisher-demo.mov"
+    },
+    {
+      "from": "content/Utkast/images/pasted-image-20240224180641.png",
+      "to": "content/images/pasted-image-20240224180641.png"
+    },
+    {
+      "from": "content/Utkast/images/simens-skjermbilder-24-02-2024-kl16.37.jpg",
+      "to": "content/images/simens-skjermbilder-24-02-2024-kl16.37.jpg"
+    },
+    {
+      "from": "content/Utkast/images/tastatur-kyria.png",
+      "to": "content/images/tastatur-kyria.png"
+    }
+  ],
+  "deletedFromTypeCount": 235,
+  "deletedFromType": [
+    {
+      "from": "content/Notater/images/ai-som-samtalepartner-720.mov"
+    },
+    {
+      "from": "content/Notater/images/ai-som-samtalepartner.jpg"
+    },
+    {
+      "from": "content/Notater/images/alphasmart-neo.jpeg"
+    },
+    {
+      "from": "content/Notater/images/analyse-av-kontraster.png"
+    },
+    {
+      "from": "content/Notater/images/anerkjenn-din-egen-superkraft-1685867151883.jpeg"
+    },
+    {
+      "from": "content/Notater/images/anerkjenn-superkraften-din-1685866029060.jpeg"
+    },
+    {
+      "from": "content/Notater/images/animated.gif"
+    },
+    {
+      "from": "content/Notater/images/apple-notes-meme.png"
+    },
+    {
+      "from": "content/Notater/images/apple-tale-til-tekst.mov"
+    },
+    {
+      "from": "content/Notater/images/apple-ultra.webp"
+    },
+    {
+      "from": "content/Notater/images/beeper-eksempel.webp"
+    },
+    {
+      "from": "content/Notater/images/blyanten-senker-terskelen-login.jpg"
+    },
+    {
+      "from": "content/Notater/images/blyanten-senker-terskelen-spisse-sammendrag.jpg"
+    },
+    {
+      "from": "content/Notater/images/blyanten-senker-terskelen.jpg"
+    },
+    {
+      "from": "content/Notater/images/buttondown-subscribe.png"
+    },
+    {
+      "from": "content/Notater/images/bygger-båten-mens-man-ror.jpg"
+    },
+    {
+      "from": "content/Notater/images/bærekraftig-webutvikling-1685367041996.jpeg"
+    },
+    {
+      "from": "content/Notater/images/cards-gestures.gif"
+    },
+    {
+      "from": "content/Notater/images/cards.gif"
+    },
+    {
+      "from": "content/Notater/images/chatgpt-eksempel-tredeltgrensesnitt.jpg"
+    },
+    {
+      "from": "content/Notater/images/chatgpt-inline-editing.jpg"
+    },
+    {
+      "from": "content/Notater/images/chatgpt-mobil-desktop.jpg"
+    },
+    {
+      "from": "content/Notater/images/chatgpt-muntlig-ui.jpg"
+    },
+    {
+      "from": "content/Notater/images/chatgpt-tale-til-tekst.jpg"
+    },
+    {
+      "from": "content/Notater/images/claude-eksempel-tredeltgrensesnitt.jpg"
+    },
+    {
+      "from": "content/Notater/images/cleanshot-2022-12-12-at-06.58.45@2x-1.png"
+    },
+    {
+      "from": "content/Notater/images/cleanshot-2022-12-13-at-08.19.16.gif"
+    },
+    {
+      "from": "content/Notater/images/cleanshot-2022-12-16-at-07.39.15@2x.png"
+    },
+    {
+      "from": "content/Notater/images/cleanshot-x-autobalance.mp4"
+    },
+    {
+      "from": "content/Notater/images/cleanshotx-background.mp4"
+    },
+    {
+      "from": "content/Notater/images/convenience.jpg"
+    },
+    {
+      "from": "content/Notater/images/craft-note.png"
+    },
+    {
+      "from": "content/Notater/images/cursor-inline-editing.jpg"
+    },
+    {
+      "from": "content/Notater/images/det-er-noe-feil-med-blogging-som-konsept-1687680804650.jpeg"
+    },
+    {
+      "from": "content/Notater/images/dum-smarttelefon.jpg"
+    },
+    {
+      "from": "content/Notater/images/dum-telefon1.jpg"
+    },
+    {
+      "from": "content/Notater/images/dumb-phone-installation-step-1.mp4"
+    },
+    {
+      "from": "content/Notater/images/dumbphone_device_combo.png"
+    },
+    {
+      "from": "content/Notater/images/flexbox.png"
+    },
+    {
+      "from": "content/Notater/images/folk-om-fortida-sesong2.jpg"
+    },
+    {
+      "from": "content/Notater/images/freewrite-alpha.jpg"
+    },
+    {
+      "from": "content/Notater/images/freewrite-lemon.jpg"
+    },
+    {
+      "from": "content/Notater/images/freewrite-smart-typewriter.jpg"
+    },
+    {
+      "from": "content/Notater/images/freewrite-traveller.jpeg"
+    },
+    {
+      "from": "content/Notater/images/fyller-virkelig-arbeidet-den-tida-du-har-tilgjengelig-1687676993925.jpeg"
+    },
+    {
+      "from": "content/Notater/images/her-eksempel.jpg"
+    },
+    {
+      "from": "content/Notater/images/hvordan-jeg-bruker-readwise.jpg"
+    },
+    {
+      "from": "content/Notater/images/ia-writer-note.png"
+    },
+    {
+      "from": "content/Notater/images/icloud-on-android.webp"
+    },
+    {
+      "from": "content/Notater/images/imessage-innlogging.png"
+    },
+    {
+      "from": "content/Notater/images/img_1327.jpg"
+    },
+    {
+      "from": "content/Notater/images/img_1328.jpg"
+    },
+    {
+      "from": "content/Notater/images/img_1329.jpg"
+    },
+    {
+      "from": "content/Notater/images/img_1330.jpg"
+    },
+    {
+      "from": "content/Notater/images/img_1331.jpg"
+    },
+    {
+      "from": "content/Notater/images/img_1333.jpg"
+    },
+    {
+      "from": "content/Notater/images/img_1346.jpg"
+    },
+    {
+      "from": "content/Notater/images/img_1347.jpg"
+    },
+    {
+      "from": "content/Notater/images/img_1348.jpg"
+    },
+    {
+      "from": "content/Notater/images/imposter-syndrome-1685863336554.jpeg"
+    },
+    {
+      "from": "content/Notater/images/india-slack.jpg"
+    },
+    {
+      "from": "content/Notater/images/iphone13mini-vs-jellystar-5.jpg"
+    },
+    {
+      "from": "content/Notater/images/ipod.jpg"
+    },
+    {
+      "from": "content/Notater/images/ixda_simen-1.jpg"
+    },
+    {
+      "from": "content/Notater/images/ixda_simen-2.jpg"
+    },
+    {
+      "from": "content/Notater/images/ixda_simen-3.jpg"
+    },
+    {
+      "from": "content/Notater/images/ixda_simen-4.jpg"
+    },
+    {
+      "from": "content/Notater/images/jelly-star-android.JPG"
+    },
+    {
+      "from": "content/Notater/images/jelly-star-before-after.webp"
+    },
+    {
+      "from": "content/Notater/images/jelly-star-eksempler.jpg"
+    },
+    {
+      "from": "content/Notater/images/jelly-star-unboxing.jpg"
+    },
+    {
+      "from": "content/Notater/images/jelly-star.jpg"
+    },
+    {
+      "from": "content/Notater/images/jon-og-andreas_nyhetsbrev-30.jpeg"
+    },
+    {
+      "from": "content/Notater/images/kindle-highlight-compressed.jpg"
+    },
+    {
+      "from": "content/Notater/images/kindle-highlight.jpg"
+    },
+    {
+      "from": "content/Notater/images/kjartan_nyhetsbrev-og-sosialemedier-2.jpg"
+    },
+    {
+      "from": "content/Notater/images/medium-tk-triks.gif"
+    },
+    {
+      "from": "content/Notater/images/melding-til-truls.png"
+    },
+    {
+      "from": "content/Notater/images/notebook-responsivitet.jpg"
+    },
+    {
+      "from": "content/Notater/images/notebook-skjule-paneler.mp4"
+    },
+    {
+      "from": "content/Notater/images/notebooklm-eksempel.jpg"
+    },
+    {
+      "from": "content/Notater/images/notebooklm-oversikt.png"
+    },
+    {
+      "from": "content/Notater/images/notecards.jpg"
+    },
+    {
+      "from": "content/Notater/images/obsidian-community.png"
+    },
+    {
+      "from": "content/Notater/images/obsidian-hurtigtaster.png"
+    },
+    {
+      "from": "content/Notater/images/obsidian-release-notes-canvas.png"
+    },
+    {
+      "from": "content/Notater/images/obsidian-release-notes.png"
+    },
+    {
+      "from": "content/Notater/images/obsidian-skrive-notater.jpg"
+    },
+    {
+      "from": "content/Notater/images/optimalisere-fornøydifisere.jpg"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20230303171233.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20230305115553-1.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20231002111812.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20231014235918.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20231015000029.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20231015000345.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20231015000536.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20240324221827.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20240428102334.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20240428104430.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20240428104531.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20240428105010.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20240428105248.png"
+    },
+    {
+      "from": "content/Notater/images/pasted-image-20240428105311.png"
+    },
+    {
+      "from": "content/Notater/images/petter-og-aslak-nyhetsbrev-30-2.png"
+    },
+    {
+      "from": "content/Notater/images/podkast-studio.jpg"
+    },
+    {
+      "from": "content/Notater/images/primary-button.jpg"
+    },
+    {
+      "from": "content/Notater/images/redigering-kladd-research-hultertilbulter.png"
+    },
+    {
+      "from": "content/Notater/images/redigering-kladd-research-linear.png"
+    },
+    {
+      "from": "content/Notater/images/remarkable-finn.jpeg"
+    },
+    {
+      "from": "content/Notater/images/resirkulering-747-for-scale.jpg"
+    },
+    {
+      "from": "content/Notater/images/resirkulering-747.jpg"
+    },
+    {
+      "from": "content/Notater/images/resirkulering-fail.jpg"
+    },
+    {
+      "from": "content/Notater/images/responsivt-design.png"
+    },
+    {
+      "from": "content/Notater/images/samtalekort-prototype-ios.jpg"
+    },
+    {
+      "from": "content/Notater/images/samtalekort-prototype.jpg"
+    },
+    {
+      "from": "content/Notater/images/samtalekort.jpg"
+    },
+    {
+      "from": "content/Notater/images/samtalepartner-desktop.jpg"
+    },
+    {
+      "from": "content/Notater/images/samtalepartner-gpt.png"
+    },
+    {
+      "from": "content/Notater/images/schibsted-cui.jpg"
+    },
+    {
+      "from": "content/Notater/images/screenshot-2023-11-24-at-08.36.20.jpg"
+    },
+    {
+      "from": "content/Notater/images/shades-of-color.png"
+    },
+    {
+      "from": "content/Notater/images/shades-of-grey.png"
+    },
+    {
+      "from": "content/Notater/images/simen-skriver-profilfarge.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-01-05-2024-kl07.40.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-01-10-2023-kl17.40.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-05-03-2023--kl-16.27.16@2x-squashed.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-05-11-2023-kl07.59.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-05-11-2023-kl08.01.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-05-11-2023-kl21.54.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-06-03-2024-kl19.35.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-06-03-2024-kl19.40.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-06-03-2024-kl19.41.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-12-03-2023.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-16-09-2023-kl08.34.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-16-09-2023-kl08.41.gif"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-20-12-2022--kl-07.19.29.gif"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl07.06-1.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl07.08.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl07.37.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl07.38-1.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl15.37.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl15.53.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl19.16.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl19.26-1.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl19.26.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl19.27-1.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl19.27.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl19.28-1.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-22-10-2023-kl19.28.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-23-09-2024-kl09.08.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-23-12-2022--kl-09.46.36@2x.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-23-12-2022--kl-09.51.44@2x.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-23-12-2022--kl-10.23.41@2x.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-24-02-2024-kl16.37.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-27-11-2023-kl07.56.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-28-01-2024-kl19.17.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-28-01-2024-kl22.12.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-28-01-2024-kl22.19.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-28-01-2024-kl22.31.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-28-01-2024-kl22.38.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-28-01-2024-kl23.01.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-28-01-2024-kl23.10.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-28-11-2023-kl10.27.jpg"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-29-04-2023-kl08.08.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-29-11-2023-kl07.30.png"
+    },
+    {
+      "from": "content/Notater/images/simens-skjermbilder-29-11-2023-kl08.21.jpg"
+    },
+    {
+      "from": "content/Notater/images/skap-en-felles-forståelse-ved-å-visualisere-1688324453006.jpeg"
+    },
+    {
+      "from": "content/Notater/images/skap-en-felles-forståelse-ved-å-visualisere-1688324470735.jpeg"
+    },
+    {
+      "from": "content/Notater/images/skjermtid-passord.jpg"
+    },
+    {
+      "from": "content/Notater/images/skru-av-internett.gif"
+    },
+    {
+      "from": "content/Notater/images/sonja-and-india.jpg"
+    },
+    {
+      "from": "content/Notater/images/squashedimg_8614.jpg"
+    },
+    {
+      "from": "content/Notater/images/storrelsesforhold-ui.png"
+    },
+    {
+      "from": "content/Notater/images/søkeforslag.jpg"
+    },
+    {
+      "from": "content/Notater/images/tana-blockbased-linking.png"
+    },
+    {
+      "from": "content/Notater/images/tana-query.png"
+    },
+    {
+      "from": "content/Notater/images/tana-slogan.png"
+    },
+    {
+      "from": "content/Notater/images/tana-supertags.png"
+    },
+    {
+      "from": "content/Notater/images/telefon-daglig-bruk.webp"
+    },
+    {
+      "from": "content/Notater/images/timferris-ai-result-links.jpg"
+    },
+    {
+      "from": "content/Notater/images/timferriss-ai-result.jpg"
+    },
+    {
+      "from": "content/Notater/images/truls-rubberduck.jpg"
+    },
+    {
+      "from": "content/Notater/images/vim-adventures.mp4"
+    },
+    {
+      "from": "content/Notater/images/vim-demo-we.gif"
+    },
+    {
+      "from": "content/Notater/images/vim-demo.gif"
+    },
+    {
+      "from": "content/Notater/images/vimtutor.mp4"
+    },
+    {
+      "from": "content/Notater/images/work-from-hype-boox-palma.png"
+    },
+    {
+      "from": "content/Notater/images/zerowriter.jpeg"
+    },
+    {
+      "from": "content/Notater/images/å-skape-løsningen-i-fellesskap-1689538230064.jpeg"
+    },
+    {
+      "from": "content/Notater/images/å-skape-løsningen-i-fellesskap-1689538462879.jpeg"
+    },
+    {
+      "from": "content/Notater/images/å-skape-løsningen-i-fellesskap-1689538787293.jpeg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/domain-directory-slug.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/eagle-organisering.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/eagle-tagging.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/figma-variabler-simenskriver.gif"
+    },
+    {
+      "from": "content/Oppslagsverk/images/github-publisher-demo.mov"
+    },
+    {
+      "from": "content/Oppslagsverk/images/hvordan-jeg-bruker-kunstig-intelligens-1686472243288.jpeg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/hvordan-jeg-bruker-kunstig-intelligens-for-å-oversette-1686473402913.jpeg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/img_1836.JPG"
+    },
+    {
+      "from": "content/Oppslagsverk/images/img_6297.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/img_6298.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/img_6299.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/img_6301.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/img_6302.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/inspirasjon-linker.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/jake-knapp-sprintbook.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/landingsside-etter.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/landingsside-før.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/rocket-demo.gif"
+    },
+    {
+      "from": "content/Oppslagsverk/images/samtalekort.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-02-05-2023-kl21.41-1.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-07-05-2023-kl09.58-1.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-12-01-2026-kl20.31.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-12-01-2026-kl20.35.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-19-11-2023-kl20.01.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-19-11-2023-kl20.15.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-19-11-2023-kl20.35.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-19-11-2023-kl21.00.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-25-08-2024-kl17.00.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-29-10-2023-kl12.15.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-29-10-2023-kl12.20.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simens-skjermbilder-29-10-2023-kl20.56.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/simenskriver-linker-test.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/surdeig-bobler.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/surdeig.jpg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/tinylytics-dashboard.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/variabler-figma.jpeg"
+    },
+    {
+      "from": "content/Oppslagsverk/images/video-avspiller.png"
+    },
+    {
+      "from": "content/Oppslagsverk/images/vim-demo-we.gif"
+    },
+    {
+      "from": "content/Oppslagsverk/images/vim-marks.gif"
+    },
+    {
+      "from": "content/Tanker/images/lg-samarbeid.png"
+    },
+    {
+      "from": "content/Utkast/images/github-publisher-demo.mov"
+    },
+    {
+      "from": "content/Utkast/images/pasted-image-20240224180641.png"
+    },
+    {
+      "from": "content/Utkast/images/simens-skjermbilder-24-02-2024-kl16.37.jpg"
+    },
+    {
+      "from": "content/Utkast/images/tastatur-kyria.png"
+    }
+  ],
+  "conflictsCount": 0,
+  "conflicts": [],
+  "deleteErrorsCount": 0,
+  "deleteErrors": [],
+  "removedDirsCount": 4,
+  "removedDirs": [
+    "content/Notater/images/",
+    "content/Oppslagsverk/images/",
+    "content/Tanker/images/",
+    "content/Utkast/images/"
+  ]
+}
