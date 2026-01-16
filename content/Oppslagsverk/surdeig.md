@@ -50,6 +50,7 @@ Det som gjenstår av surdeigsstarteren din kan du bruke til bakst med en gang, g
 ## Selve bakinga
 
 Surdeigen skal gjerne boble når du tar den i bruk. Sånn som det her:
+
 ![[images/surdeig-bobler.jpg]]
 
 
