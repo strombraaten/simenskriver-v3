@@ -12,9 +12,13 @@ const config: QuartzConfig = {
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
-    // analytics: { provider: "plausible" },
+    speedInsights: true,
+    analytics: {
+      provider: "tinylytics",
+      siteId: "yeW5HoX3FJHdsswz69gg",
+    },
+    baseUrl: "https://simenskriver.no",
     locale: "nb-NO",
-    baseUrl: "localhost:8080", // GitHub Pages URL - endre hvis du bruker custom domene
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
