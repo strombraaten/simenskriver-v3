@@ -1,7 +1,6 @@
 node_modules
 content/templates/
 content/.obsidian/
-content/temp-images/
 .DS_Store
 content/Utkast/private/
 quartz/.quartz-cache/
