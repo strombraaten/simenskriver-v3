@@ -477,7 +477,7 @@ Or using standard Markdown:
 
 ### Image Layouts & Editorial Control
 
-By default, images float alongside text (alternating left/right) for an editorial layout. You can control individual image layouts using a simple syntax in the alt text:
+By default, images are **centered** for a calmer reading experience. You can control individual image layouts using a simple syntax in the alt text:
 
 #### Wide Image (Full Width, Centered, Height Limited)
 Perfect for landscape/wide images that deserve prominence:

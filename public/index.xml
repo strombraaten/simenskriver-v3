@@ -2,69 +2,69 @@
 <rss version="2.0">
     <channel>
       <title>Simen skriver</title>
-      <link>https://localhost:8080</link>
+      <link>https://https://simenskriver.no</link>
       <description>Siste 10 notat on Simen skriver</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
     <title>Surdeig for nybegynnere</title>
-    <link>https://localhost:8080/oppslagsverk/surdeig</link>
-    <guid>https://localhost:8080/oppslagsverk/surdeig</guid>
+    <link>https://https://simenskriver.no/oppslagsverk/surdeig</link>
+    <guid>https://https://simenskriver.no/oppslagsverk/surdeig</guid>
     <description><![CDATA[ Etter også de ulike bruksområdene for tale til tekst, er det bare å sette ord på noen kjappe tanker. ]]></description>
     <pubDate>Sat, 12 Dec 2026 23:00:00 GMT</pubDate>
   </item><item>
+    <title>Hva jeg har lært om å lage en iPhone app</title>
+    <link>https://https://simenskriver.no/utkast/hva-jeg-har-l%C3%A6rt-om-%C3%A5-lage-en-iphone-app</link>
+    <guid>https://https://simenskriver.no/utkast/hva-jeg-har-l%C3%A6rt-om-%C3%A5-lage-en-iphone-app</guid>
+    <description><![CDATA[ Kjedelige, men nødvendige greier Xcode Selve programmet du bruker for å lage appen din Swift Språket du bruker for å bygge appen din. ]]></description>
+    <pubDate>Thu, 15 Jan 2026 20:50:16 GMT</pubDate>
+  </item><item>
+    <title>Hvordan lager jeg en app?</title>
+    <link>https://https://simenskriver.no/utkast/hvordan-lager-jeg-en-app</link>
+    <guid>https://https://simenskriver.no/utkast/hvordan-lager-jeg-en-app</guid>
+    <description><![CDATA[ To native or not to native? Når du skal lage en mobil-app havner du først på spørsmålet – native eller ikke-native? For iOS har sitt “native”-språk som heter Swift. ]]></description>
+    <pubDate>Thu, 15 Jan 2026 20:50:16 GMT</pubDate>
+  </item><item>
+    <title>Smarttelefon uten nettleser</title>
+    <link>https://https://simenskriver.no/utkast/smarttelefon-uten-nettleser</link>
+    <guid>https://https://simenskriver.no/utkast/smarttelefon-uten-nettleser</guid>
+    <description><![CDATA[ Det siste året har jeg levd med en “dum smarttelefon”. Og det har i grunn vært fint det altså. ]]></description>
+    <pubDate>Thu, 15 Jan 2026 20:50:16 GMT</pubDate>
+  </item><item>
+    <title>Utkast</title>
+    <link>https://https://simenskriver.no/utkast/</link>
+    <guid>https://https://simenskriver.no/utkast/</guid>
+    <description><![CDATA[ Ideas in progress, exploratory thinking, and writing-as-thinking. These may evolve into something more, or they may not. ]]></description>
+    <pubDate>Thu, 15 Jan 2026 20:50:16 GMT</pubDate>
+  </item><item>
+    <title>Whatever floats your quote</title>
+    <link>https://https://simenskriver.no/utkast/whatever-floats-your-quote</link>
+    <guid>https://https://simenskriver.no/utkast/whatever-floats-your-quote</guid>
+    <description><![CDATA[  . ]]></description>
+    <pubDate>Wed, 14 Jan 2026 23:00:00 GMT</pubDate>
+  </item><item>
     <title>Simen skriver</title>
-    <link>https://localhost:8080/</link>
-    <guid>https://localhost:8080/</guid>
+    <link>https://https://simenskriver.no/</link>
+    <guid>https://https://simenskriver.no/</guid>
     <description><![CDATA[ Heisann 👋 Simen heter jeg, og jeg lager digitale greier som skal føles bra, være lett å forstå, og gjerne se fint ut i samme slengen. ]]></description>
     <pubDate>Tue, 13 Jan 2026 21:03:15 GMT</pubDate>
   </item><item>
     <title>Notater</title>
-    <link>https://localhost:8080/notater/</link>
-    <guid>https://localhost:8080/notater/</guid>
+    <link>https://https://simenskriver.no/notater/</link>
+    <guid>https://https://simenskriver.no/notater/</guid>
     <description><![CDATA[ Complete, coherent long-form pieces: essays, guides, reflections, and arguments intended to be shared. ]]></description>
     <pubDate>Tue, 13 Jan 2026 20:00:00 GMT</pubDate>
   </item><item>
     <title>Oppslagsverk</title>
-    <link>https://localhost:8080/oppslagsverk/</link>
-    <guid>https://localhost:8080/oppslagsverk/</guid>
+    <link>https://https://simenskriver.no/oppslagsverk/</link>
+    <guid>https://https://simenskriver.no/oppslagsverk/</guid>
     <description><![CDATA[ A personal library of reference material, building blocks, and notes worth keeping. ]]></description>
     <pubDate>Tue, 13 Jan 2026 20:00:00 GMT</pubDate>
   </item><item>
     <title>Tanker</title>
-    <link>https://localhost:8080/tanker/</link>
-    <guid>https://localhost:8080/tanker/</guid>
+    <link>https://https://simenskriver.no/tanker/</link>
+    <guid>https://https://simenskriver.no/tanker/</guid>
     <description><![CDATA[ A stream of quick thoughts, observations, and fleeting moments. ]]></description>
     <pubDate>Tue, 13 Jan 2026 20:00:00 GMT</pubDate>
-  </item><item>
-    <title>Utkast</title>
-    <link>https://localhost:8080/utkast/</link>
-    <guid>https://localhost:8080/utkast/</guid>
-    <description><![CDATA[ Ideas in progress, exploratory thinking, and writing-as-thinking. These may evolve into something more, or they may not. ]]></description>
-    <pubDate>Tue, 13 Jan 2026 20:00:00 GMT</pubDate>
-  </item><item>
-    <title>Ta ansvar for egen skjermtid</title>
-    <link>https://localhost:8080/notater/skjermtid</link>
-    <guid>https://localhost:8080/notater/skjermtid</guid>
-    <description><![CDATA[ Siden sønnen min blei født for åtte måneder siden har jeg tenkt mye på dette med “skjermtid”, og hvor mye jeg bruker mobilen spesielt. ]]></description>
-    <pubDate>Thu, 20 Nov 2025 23:00:00 GMT</pubDate>
-  </item><item>
-    <title>Den minste telefonen</title>
-    <link>https://localhost:8080/notater/minste-telefonen</link>
-    <guid>https://localhost:8080/notater/minste-telefonen</guid>
-    <description><![CDATA[ Det er noe spennende med å prøve noe nytt. Samtidig er det ikke alltid like lett. I det siste har jeg gått over til en kjedelig smarttelefon-løsning. ]]></description>
-    <pubDate>Fri, 24 Oct 2025 22:00:00 GMT</pubDate>
-  </item><item>
-    <title>Hvorfor 3D-printing plutselig er så spennende</title>
-    <link>https://localhost:8080/oppslagsverk/3d-print</link>
-    <guid>https://localhost:8080/oppslagsverk/3d-print</guid>
-    <description><![CDATA[ Jeg liker å forbedre ting. Forbedre arbeidsflyter og prosesser. ]]></description>
-    <pubDate>Mon, 07 Jul 2025 22:00:00 GMT</pubDate>
-  </item><item>
-    <title>Skriv til en, del med alle</title>
-    <link>https://localhost:8080/notater/del-med-alle</link>
-    <guid>https://localhost:8080/notater/del-med-alle</guid>
-    <description><![CDATA[ Når nysgjerrigheten overlapper Å nerde ut om det ene og andre temaet er jo i stor grad det jeg gjør her. ]]></description>
-    <pubDate>Tue, 20 May 2025 22:00:00 GMT</pubDate>
   </item>
     </channel>
   </rss>

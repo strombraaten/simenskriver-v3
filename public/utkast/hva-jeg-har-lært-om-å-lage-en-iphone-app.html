@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr"><head><title>Hva jeg har lært om å lage en iPhone app</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&amp;family=Lora:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Simen skriver"/><meta property="og:title" content="Hva jeg har lært om å lage en iPhone app"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Hva jeg har lært om å lage en iPhone app"/><meta name="twitter:description" content="Kjedelige, men nødvendige greier Xcode Selve programmet du bruker for å lage appen din Swift Språket du bruker for å bygge appen din."/><meta property="og:description" content="Kjedelige, men nødvendige greier Xcode Selve programmet du bruker for å lage appen din Swift Språket du bruker for å bygge appen din."/><meta property="og:image:alt" content="Kjedelige, men nødvendige greier Xcode Selve programmet du bruker for å lage appen din Swift Språket du bruker for å bygge appen din."/><meta property="twitter:domain" content="https://simenskriver.no"/><meta property="og:url" content="https://https//simenskriver.no/utkast/hva-jeg-har-lært-om-å-lage-en-iphone-app"/><meta property="twitter:url" content="https://https//simenskriver.no/utkast/hva-jeg-har-lært-om-å-lage-en-iphone-app"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Kjedelige, men nødvendige greier Xcode Selve programmet du bruker for å lage appen din Swift Språket du bruker for å bygge appen din."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL1VzZXJzL3NpbWVuc3Ryb21icmFhdGVuL2Rldi9ibG9nL3NpbWVuc2tyaXZlci12My9xdWFydHovY29tcG9uZW50cy9zdHlsZXMiLCJzb3VyY2VzIjpbIm1lcm1haWQuaW5saW5lLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUdGO0VBQ0U7OztBQUtGO0VBQ0U7RUFDQTs7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7O0FBSUY7RUFDRTtFQUNBO0VBQ0EiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhwYW5kLWJ1dHRvbiB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxvYXQ6IHJpZ2h0O1xuICBwYWRkaW5nOiAwLjRyZW07XG4gIG1hcmdpbjogMC4zcmVtO1xuICByaWdodDogMDsgLy8gTk9URTogcmlnaHQgd2lsbCBiZSBzZXQgaW4gbWVybWFpZC5pbmxpbmUudHNcbiAgY29sb3I6IHZhcigtLWdyYXkpO1xuICBib3JkZXItY29sb3I6IHZhcigtLWRhcmspO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gIGJvcmRlcjogMXB4IHNvbGlkO1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG4gIG9wYWNpdHk6IDA7XG4gIHRyYW5zaXRpb246IDAuMnM7XG5cbiAgJiA+IHN2ZyB7XG4gICAgZmlsbDogdmFyKC0tbGlnaHQpO1xuICAgIGZpbHRlcjogY29udHJhc3QoMC4zKTtcbiAgfVxuXG4gICY6aG92ZXIge1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBib3JkZXItY29sb3I6IHZhcigtLXNlY29uZGFyeSk7XG4gIH1cblxuICAmOmZvY3VzIHtcbiAgICBvdXRsaW5lOiAwO1xuICB9XG59XG5cbnByZSB7XG4gICY6aG92ZXIgPiAuZXhwYW5kLWJ1dHRvbiB7XG4gICAgb3BhY2l0eTogMTtcbiAgICB0cmFuc2l0aW9uOiAwLjJzO1xuICB9XG59XG5cbiNtZXJtYWlkLWNvbnRhaW5lciB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgY29udGFpbjogbGF5b3V0O1xuICB6LWluZGV4OiA5OTk7XG4gIGxlZnQ6IDA7XG4gIHRvcDogMDtcbiAgd2lkdGg6IDEwMHZ3O1xuICBoZWlnaHQ6IDEwMHZoO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBkaXNwbGF5OiBub25lO1xuICBiYWNrZHJvcC1maWx0ZXI6IGJsdXIoNHB4KTtcbiAgYmFja2dyb3VuZDogcmdiYSgwLCAwLCAwLCAwLjUpO1xuXG4gICYuYWN0aXZlIHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIH1cblxuICAmID4gI21lcm1haWQtc3BhY2Uge1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgdG9wOiA1MCU7XG4gICAgbGVmdDogNTAlO1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xuICAgIGhlaWdodDogODB2aDtcbiAgICB3aWR0aDogODB2dztcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRlbnQge1xuICAgICAgcGFkZGluZzogMnJlbTtcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDAgMDtcbiAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjFzIGVhc2U7XG4gICAgICBvdmVyZmxvdzogdmlzaWJsZTtcbiAgICAgIG1pbi1oZWlnaHQ6IDIwMHB4O1xuICAgICAgbWluLXdpZHRoOiAyMDBweDtcblxuICAgICAgcHJlIHtcbiAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICB9XG5cbiAgICAgIHN2ZyB7XG4gICAgICAgIG1heC13aWR0aDogbm9uZTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgfVxuICAgIH1cblxuICAgICYgPiAubWVybWFpZC1jb250cm9scyB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICBib3R0b206IDIwcHg7XG4gICAgICByaWdodDogMjBweDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBnYXA6IDhweDtcbiAgICAgIHBhZGRpbmc6IDhweDtcbiAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgICBib3gtc2hhZG93OiAwIDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgICAgei1pbmRleDogMjtcblxuICAgICAgLm1lcm1haWQtY29udHJvbC1idXR0b24ge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgd2lkdGg6IDMycHg7XG4gICAgICAgIGhlaWdodDogMzJweDtcbiAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgICBjb2xvcjogdmFyKC0tZGFyayk7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIGZvbnQtZmFtaWx5OiB2YXIoLS1ib2R5Rm9udCk7XG4gICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjJzIGVhc2U7XG5cbiAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTtcbiAgICAgICAgfVxuXG4gICAgICAgIC8vIFN0eWxlIHRoZSByZXNldCBidXR0b24gZGlmZmVyZW50bHlcbiAgICAgICAgJjpudGgtY2hpbGQoMikge1xuICAgICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTJweDtcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdfQ== */</style><style>
+/* Lightbox Image Styles */
+.lightbox-wrapper {
+  display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin: 0;
+  /* Prevent layout shift by reserving space */
+  min-height: 200px;
+  position: relative;
+}
+
+.lightbox-wrapper:hover {
+  transform: scale(1.02);
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 70vh;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+  /* Preserve aspect ratio to prevent layout shift */
+  display: block;
+  /* Ensure crisp image rendering during scroll */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  /* Fallback to high quality for photos */
+  image-rendering: auto;
+  /* Prevent blur placeholder from showing through */
+  background: transparent;
+}
+
+/* If image has width/height attributes, use them to prevent layout shift */
+.lightbox-image[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* Fallback: use inline style aspect-ratio if set */
+.lightbox-image[style*=&quot;aspect-ratio&quot;] {
+  /* Inline style takes precedence */
+}
+
+/* Exclude gallery images from max-height constraint (they're handled by grid) */
+.image-gallery .lightbox-image {
+  max-height: none;
+}
+
+.lightbox-image:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal/Lightbox Overlay */
+.lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-modal img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.lightbox-modal.active img {
+  transform: scale(1);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Prevent body scroll when modal is open */
+body.lightbox-open {
+  overflow: hidden;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .lightbox-modal img {
+    max-width: 95%;
+    max-height: 95%;
+  }
+
+  .lightbox-close {
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    width: 35px;
+    height: 35px;
+  }
+}
+            </style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://https://simenskriver.no/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://https://simenskriver.no/utkast/hva-jeg-har-lært-om-å-lage-en-iphone-app-og-image.webp"/><meta property="og:image:url" content="https://https://simenskriver.no/utkast/hva-jeg-har-lært-om-å-lage-en-iphone-app-og-image.webp"/><meta name="twitter:image" content="https://https://simenskriver.no/utkast/hva-jeg-har-lært-om-å-lage-en-iphone-app-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="utkast/hva-jeg-har-lært-om-å-lage-en-iphone-app"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">Simen skriver</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Søk</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Søk etter noe" placeholder="Søk etter noe"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Mørk modus"><title>Mørk modus</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Lys modus"><title>Lys modus</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Læsemodus"><title>Læsemodus</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="category-list"><h2>Explorer</h2><ul class="category-ul"><li><a href="../all-posts" class="internal category-link" data-no-popover="true">All Posts</a></li><li><a href="../tanker/" class="internal category-link" data-no-popover="true">Tanker</a></li><li><a href="../utkast/" class="internal category-link" data-no-popover="true">Utkast</a></li><li><a href="../notater/" class="internal category-link" data-no-popover="true">Notater</a></li><li><a href="../oppslagsverk/" class="internal category-link" data-no-popover="true">Oppslagsverk</a></li></ul></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-111" aria-expanded="true"><h3>Oversikt</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-1"><a href="#kjedelige-men-nødvendige-greier" data-for="kjedelige-men-nødvendige-greier">Kjedelige, men nødvendige greier</a></li><li class="depth-2"><a href="#xcode" data-for="xcode">Xcode</a></li><li class="depth-2"><a href="#swift" data-for="swift">Swift</a></li><li class="depth-2"><a href="#app-store" data-for="app-store">App store</a></li><li class="depth-2"><a href="#testflight" data-for="testflight">Testflight</a></li><li class="depth-1"><a href="#xcode-grensesnittet" data-for="xcode-grensesnittet">Xcode-grensesnittet</a></li><li class="depth-2"><a href="#navigator" data-for="navigator">Navigator</a></li><li class="depth-2"><a href="#editor-area" data-for="editor-area">Editor area</a></li><li class="depth-2"><a href="#inspector" data-for="inspector">Inspector</a></li><li class="depth-2"><a href="#simulator" data-for="simulator">Simulator</a></li><li class="depth-2"><a href="#status-bar" data-for="status-bar">Status bar</a></li><li class="depth-2"><a href="#library" data-for="library">Library</a></li><li class="depth-2"><a href="#hva-de-ulike-filene-gjør" data-for="hva-de-ulike-filene-gjør">Hva de ulike filene gjør</a></li><li class="depth-2"><a href="#canvas" data-for="canvas">Canvas</a></li><li class="depth-2"><a href="#split-pane" data-for="split-pane">Split pane</a></li><li class="depth-2"><a href="#kommentarer" data-for="kommentarer">Kommentarer</a></li><li class="depth-0"><a href="#grunnleggende-kodegreier" data-for="grunnleggende-kodegreier">Grunnleggende kodegreier</a></li><li class="depth-2"><a href="#modifiers" data-for="modifiers">Modifiers</a></li><li class="depth-2"><a href="#hvordan-du-kan-unngå-å-skrive-kode" data-for="hvordan-du-kan-unngå-å-skrive-kode">Hvordan du kan unngå å skrive kode</a></li><li class="depth-2"><a href="#proff-tips" data-for="proff-tips">Proff-tips</a></li><li class="depth-1"><a href="#mer-kodegreier" data-for="mer-kodegreier">Mer kodegreier</a></li><li class="depth-1"><a href="#oversikt-over-informasjonsflyt" data-for="oversikt-over-informasjonsflyt">Oversikt over informasjonsflyt</a></li><li class="depth-1"><a href="#hva-er-egentlig-data-i-denne-sammenhengen" data-for="hva-er-egentlig-data-i-denne-sammenhengen">Hva er egentlig data i denne sammenhengen?</a></li><li class="depth-1"><a href="#ulike-typer" data-for="ulike-typer">Ulike typer</a></li><li class="depth-2"><a href="#hvordan-du-introduserer-en-verdi-til-systemet" data-for="hvordan-du-introduserer-en-verdi-til-systemet">Hvordan du introduserer en verdi til systemet</a></li><li class="overflow-end"></li></ul></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../utkast/">Utkast</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Hva jeg har lært om å lage en iPhone app</a></div></nav><header class="article-header"><h1 class="article-title">Hva jeg har lært om å lage en iPhone app</h1><div class="article-meta"><time datetime="2026-01-21T09:52:33.113Z" class="meta-item">21. jan. 2026</time><span class="meta-item">10 min lesning</span><span class="meta-item updated">Updated 15. jan. 2026</span></div></header></div></div><article class="popover-hint"><h2 id="kjedelige-men-nødvendige-greier">Kjedelige, men nødvendige greier<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#kjedelige-men-nødvendige-greier" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="xcode">Xcode<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#xcode" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Selve programmet du bruker for å lage appen din</p>
+<h3 id="swift">Swift<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#swift" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Språket du bruker for å bygge appen din.</p>
+<h4 id="kjekt-å-vite">Kjekt å vite<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#kjekt-å-vite" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Swift er språket som brukes for å bygge apper til alle operativsystemene til Apple. Så om du lærer deg Swift betyr det at du kan lage apper til klokka, telefonen, dataen, ipaden, og TVen. Og i noen tilfeller trenger du faktisk ikke gjøre store tilpasninger i det hele tatt, for å overføre appen din fra én flate til en annen.</p>
+<h3 id="app-store">App store<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#app-store" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<blockquote class="callout tip" data-callout="tip">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Uten å være med i Apple Developer Program kan du <em>ikke</em> publisere appen din</p></div>
+                  
+                </div>
+</blockquote>
+<p>For å publisere en app i app store må du tydeligvis betale en årlig utgift for å Apples Developer Program, som gir deg tilgang til App Store Connect, Test flight (hvor du kan prøvekjøre appen din).</p>
+<p>På en årlig basis koster det $ 99 (1102 kr).</p>
+<p>Om du vil tilrettelegge for kjøp inne i appen din (bonusgreier) så konfigureres det i app store.</p>
+<p>Appen må godkjennes av “the certificate team” for å vurdere om det tilfredsstiller Apple sin retningslinjer.</p>
+<h3 id="testflight">Testflight<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#testflight" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Her kan du teste appen din før lansering. Det betyr også at du kan sende en tidlig versjon av appen din til andre for å få tilbakemeldinger.</p>
+<h2 id="xcode-grensesnittet">Xcode-grensesnittet<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#xcode-grensesnittet" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="navigator">Navigator<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#navigator" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Der du velger den fila du vil jobbe med.</p>
+<h3 id="editor-area">Editor area<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#editor-area" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Der du tilpasser fila du velger fra navigasjonen.</p>
+<h3 id="inspector">Inspector<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#inspector" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Også kjent som “utilities area”.</p>
+<p>Her finner du ting som:</p>
+<ol>
+<li>Feilmeldinger</li>
+<li>Fylle inn utdypende info</li>
+</ol>
+<p>Funksjonen til det panelet endrer seg altså ut i fra hva du har valgt i redigeringsområdet.</p>
+<p>Det er også fire ulike faner:</p>
+<ol>
+<li>Identity and type</li>
+<li>?</li>
+<li>Quick help</li>
+<li>Window group (?)</li>
+</ol>
+<p>Om du f. eks er i “Quick help”-fanen så vil du få info om noe av koden du har valgt.</p>
+<p>Når du bygger grensesnittet ditt er det også der du justerer padding f. eks, altså hvor mye luft du vil ha rundt noe. Eller hva slags tekst den skal inneholde.</p>
+<h3 id="simulator">Simulator<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#simulator" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Kan velge hvilken telefon du vil se grensesnittet ditt i.</p>
+<p>Om du derimot vil se det på en fysisk telefon kan du koble den i med en USB-ledning, og velge den fra den samme menyen.</p>
+<p>Måten du setter det i gang på er ved å trykke på Play-knappen øverst til venstre i grensesnittet. Det er der du “kjører” appen din.</p>
+<h3 id="status-bar">Status bar<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#status-bar" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Viser deg om du har feilmeldinger, eller hva Xcode jobber med.</p>
+<h3 id="library">Library<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#library" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>En oversikt over:</p>
+<ol>
+<li>Views
+<ol>
+<li>Ulike elementer du kan bruke i grensesnittet dit</li>
+</ol>
+</li>
+<li>Modifiers
+<ol>
+<li>Hvordan du kan modifisere de samme elementene</li>
+</ol>
+</li>
+<li>Snippets
+<ol>
+<li>Kodesnutter</li>
+</ol>
+</li>
+<li>Media
+<ol>
+<li>Om du har lagt inn “assets” i prosjektet (som bilder, video osv., men også farger du har spesifisert for prosjektet)</li>
+</ol>
+</li>
+</ol>
+<p>I biblioteket kan du også søke opp ting, på samme måte som du kunne gjort i en command palette.</p>
+<h3 id="hva-de-ulike-filene-gjør">Hva de ulike filene gjør<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hva-de-ulike-filene-gjør" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p class="has-image"><div class="lightbox-wrapper image-center" data-lightbox="true"><img src="../images/simens-skjermbilder-01-05-2024-kl06.56.png" alt class="lightbox-image" loading="eager" fetchpriority="high" decoding="sync" data-src="/simens-skjermbilder-01-05-2024-kl06.56.png" data-alt data-first-image="true"/></div></p>
+<p>Om du trykker på fila øverst i hierarkiet (root node) kommer du til innstillingene dine for prosjektet du har gående.</p>
+<p>Om du går ned til mappa som heter “test” finner du alle kodefilene dine for prosjektet ditt.</p>
+<p>Under mappa som heter Products så finner du den fila som du faktisk laster opp til app store.</p>
+<h4 id="dittprosjektswift-fila">dittProsjekt.swift-fila<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#dittprosjektswift-fila" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Selve inngangen til appen din. Det viser det brukeren ser til å starte med, nemlig ContentView.</p>
+<h4 id="contentview">ContentView<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#contentview" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>ContentView har også sin egen fil. Den representerer hva brukeren ser. Og du kan lage flere visninger, men til å starte med vil det være den fila brukeren ser.</p>
+<p>For å forhåndsvise koden din kan du bruke simulatoren.</p>
+<h4 id="assets">Assets<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#assets" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Der du finner farger, ikoner, og alle slags bilder osv. som du vil bruke i prosjektet ditt.</p>
+<h4 id="preview-content">Preview Content<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#preview-content" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Innenfor Preview Content finner du også en mappe som heter <code>Preview Assets.xcassets</code>, som er enda et “asset library”, men kun ting du holder på å teste. Om det er noe du skal bruke i produksjon flytter du det til</p>
+<p><code>Assets.xcassets</code> i prosjektmappa di.</p>
+<h3 id="canvas">Canvas<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#canvas" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Du kan forhåndsvise innholdet ditt i canvas-området. I utgangspunktet kan du ikke interagere med grensesnittet der (trykke eller dra deg rundt), men du kan gjøre det dersom du trykker på play-knappen som aktiverer en “live preview”.</p>
+<p>Du kan også velge ulike enheter, veksle mellom lys og mørk modus.</p>
+<h3 id="split-pane">Split pane<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#split-pane" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Overraskende ofte syns jeg det er nyttig å ha to dokumenter åpne ved siden av hverandre. Måten du gjør det i Xcode er ved å velge <code>Add editor to the right</code>. Da kan det hende du vil skjule <code>Canvas</code>- delen for å kun fokusere på koden. Canvas er altså forhåndsvisninga av det du lager.</p>
+<p class="has-image"><div class="lightbox-wrapper image-center" data-lightbox="true"><img src="../images/simens-skjermbilder-01-05-2024-kl07.08.png" alt class="lightbox-image" loading="eager" fetchpriority="auto" decoding="sync" data-src="/simens-skjermbilder-01-05-2024-kl07.08.png" data-alt/></div></p>
+<p>Om du holder nede option-knappen når du trykker på <code>add editor</code> så kan du legge den horisontalt under fila di.</p>
+<p>Om du vil kjapt åpne en fil, men du vil plassere den ved siden av den fila du allerede har åpen, kan du holde inn option-knappen og trykke på den fila du vil åpne fra navigasjonen på venstresida.</p>
+<h3 id="kommentarer">Kommentarer<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#kommentarer" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>For å legge igjen en kommentar i fila di bruker du <code>//</code>, som f. eks <code>// Dette ville vært en kommentar</code>.</p>
+<h1 id="grunnleggende-kodegreier">Grunnleggende kodegreier<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#grunnleggende-kodegreier" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Okei, men nå må vi fokusere på hva vi faktisk skal gjøre. Nemlig å skrive kode for å få noe til å skje.</p>
+<p>Om jeg åpner opp den fila som heter <code>ContentView.swift</code>, siden det er den man vil se i appen, så kan vi starte med denne kodesnutten her (som da er et utdrag):</p>
+<pre><code>var Body: some view {
+
+Text(&quot;Hello world!&quot;).padding()
+
+}
+</code></pre>
+<p>Først av alt så må koden din befinne seg innenfor krølleparenteser – <code>{}</code>.</p>
+<p>Deretter velger vi hva vi vil lage, i dette tilfellet er det et tekst-element. Det vil alltid følge med parenteser hvor innholdet ditt plasseres inni – <code>Text()</code>. Siden jeg har valgt et tekstelement her må jeg legge til to anførselstegn for å definere hva som skal stå der – `Text(“Hello world!”).</p>
+<p>Den delen som sier <code>.padding</code> i kalles en “modifier”.</p>
+<h3 id="modifiers">Modifiers<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#modifiers" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>“Modifiers” er et tillegg til noe annet. Den endrer hvordan noe ser ut eller oppfører seg. Padding f. eks legger til luft/mellomrom rundt et element.</p>
+<p>Padding er derimot bare én av mange ulike modifiers du kan bruke. Om vi hadde lagt til f. eks <code>.background(Color.blue)</code> ville teksten vår fått en blå bakgrunn. Og plutselig har vi en knapp.</p>
+<p class="has-image"><div class="lightbox-wrapper image-center" data-lightbox="true"><img src="../images/simens-skjermbilder-01-05-2024-kl07.34.png" alt class="lightbox-image" loading="eager" fetchpriority="auto" decoding="sync" data-src="/simens-skjermbilder-01-05-2024-kl07.34.png" data-alt/></div></p>
+<h3 id="hvordan-du-kan-unngå-å-skrive-kode">Hvordan du kan unngå å skrive kode<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hvordan-du-kan-unngå-å-skrive-kode" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>For å jobbe mer visuelt kan du også bruke biblioteket som jeg nevnte tidligere. Der kan du søke opp alt mulig rart, f. eks <code>.background()</code> som vi brukte istad, og bare dra det inn i koden din, for så å redigere det i inspect-panelet på høyresida.</p>
+<p>Det kan være spesielt kjekt hvis du ikke er helt sikker på hva som er riktig. Med andre ord, at du ikke er helt kjent med <a href="../notater/syntaks" data-slug="notater/syntaks" class="internal alias">syntaksen</a>, eller grammatikken, for Swift.</p>
+<h3 id="proff-tips">Proff-tips<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#proff-tips" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>For å åpne opp biblioteket kan du bruke hurtigtasten <code>cmd + shift + L</code>. Når jeg da søker opp “background” vil du se noe lignende det bildet her:</p>
+<p class="has-image"><div class="lightbox-wrapper image-center" data-lightbox="true"><img src="../_optimized/images/simens-skjermbilder-01-05-2024-kl07.40-1200w.webp" srcset="/_optimized/images/simens-skjermbilder-01-05-2024-kl07.40-800w.webp 800w, /_optimized/images/simens-skjermbilder-01-05-2024-kl07.40-1200w.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 1200px) 800px, 900px" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/images/simens-skjermbilder-01-05-2024-kl07.40.png" data-alt width="1200" height="752" style="aspect-ratio:1200 / 752;"/></div></p>
+<p>En ting som er verdt å merke seg er at du ikke kan søke på tvers av de ulike fanene i biblioteket. For som jeg nevnte tidligere så er det fire ulike faner:</p>
+<ol>
+<li>Views
+<ol>
+<li>Ulike elementer du kan bruke i grensesnittet dit</li>
+</ol>
+</li>
+<li>Modifiers
+<ol>
+<li>Hvordan du kan modifisere de samme elementene</li>
+</ol>
+</li>
+<li>Snippets
+<ol>
+<li>Kodesnutter</li>
+</ol>
+</li>
+<li>Media
+<ol>
+<li>Om du har lagt inn “assets” i prosjektet (som bilder, video osv., men også farger du har spesifisert for prosjektet)</li>
+</ol>
+</li>
+</ol>
+<p>Det vil si at du background-modifieren ikke dukker opp om du er i Views-fanen f. eks. Så du må vite det i forkant, “Er det en modifier eller en view jeg er på utkikk etter nå?“.</p>
+<p><video src="../images/xcode-library.mp4" controls></video></p>
+<h2 id="mer-kodegreier">Mer kodegreier<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#mer-kodegreier" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p class="has-image">Om du holder inne command-knappen og trykker på et element i forhåndsvisninga di får du opp flere muligheter. Her kan du blant annet trykke på “Show SwiftUI Inspector” som da lar deg redigere et element i inspect-panelet på høyresida, i stedet for å endre det i selve koden.
+<div class="lightbox-wrapper image-center" data-lightbox="true"><img src="../images/simens-skjermbilder-01-05-2024-kl08.05.png" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/simens-skjermbilder-01-05-2024-kl08.05.png" data-alt/></div>
+Der kan du også legge til modifiers direkte på elementet fra dialogboksen som dukker opp.</p>
+<p>Det trikset med å holde inne command-knappen fungerer også i koden, bare så du veit det. Og du kan også legge til modifiers derfra, på en mer visuell måte.</p>
+<p class="has-image"><div class="lightbox-wrapper image-center" data-lightbox="true"><img src="../images/simens-skjermbilder-01-05-2024-kl08.08.png" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/simens-skjermbilder-01-05-2024-kl08.08.png" data-alt/></div></p>
+<h2 id="oversikt-over-informasjonsflyt">Oversikt over informasjonsflyt<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#oversikt-over-informasjonsflyt" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>I denne illustrasjonen ser du at View Code er koden som utgjør selve grensesnittet ditt (User Interface). Når brukeren trykker på noe for eksempel så kaller vi det en hendelse, eller et “event”, på engelsk. I appen må vi spesifisere at vi vil plukke opp en hendelse som deretter skal føre til at innholdet endrer seg på en eller annen måte.</p>
+<p class="has-image"><div class="lightbox-wrapper image-center" data-lightbox="true"><img src="../images/simens-skjermbilder-13-05-2024-kl21.00.jpg" alt class="lightbox-image" loading="lazy" fetchpriority="low" decoding="async" data-src="/simens-skjermbilder-13-05-2024-kl21.00.jpg" data-alt/></div>
+Denne syklusen gjentar seg på nytt, og på nytt, ettersom interaksjoner du har med en app alltid skal føre til et svar fra grensesnittet. Noe som indikerer at appen har forstått at du prøver å gjøre noe, og må derfor gi deg en respons i retur.</p>
+<h2 id="hva-er-egentlig-data-i-denne-sammenhengen">Hva er egentlig data i denne sammenhengen?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hva-er-egentlig-data-i-denne-sammenhengen" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h2 id="ulike-typer">Ulike typer<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ulike-typer" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>Om du skal skrive tekst så må du plassere det mellom to anførselstegn – “som dette”.</li>
+<li><code>// kommentarer skrives ved å starte en setning med to skråstreker</code></li>
+</ul>
+<h4 id="oversikt">Oversikt<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#oversikt" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Hva det er</th><th>Hvordan du skriver det</th></tr></thead><tbody><tr><td>String</td><td><code>&quot;hallo&quot;</code></td></tr><tr><td>Int (integer)</td><td><code>12</code>, <code>10</code></td></tr><tr><td>Double</td><td><code>0.4</code>, <code>1.2</code></td></tr><tr><td>Bool (boolean)</td><td><code>true</code>, <code>false</code></td></tr></tbody></table></div>
+<p>Alle disse typene oppsummeres som “data types” i Swift, og er de mest vanlige typene man snubler over. Det betyr at det finnes flere, men at det er et godt utgangspunkt for å komme i gang.</p>
+<h3 id="hvordan-du-introduserer-en-verdi-til-systemet">Hvordan du introduserer en verdi til systemet<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hvordan-du-introduserer-en-verdi-til-systemet" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>For å bruke en verdi må du erklære (?) – på engelsk heter det “to declare a new variable” – variabelen din. Du må erklære at du vil lage en ny variabel. Måten du gjør det på er ved å skrive <code>var</code> etterfulgt av hva du vil at den skal hete – <code>var myVar</code>, siden det er min variant.</p>
+<p>Etter det må du spesifisere hva variabelen skal inneholde, altså hva slags type data den skal brukes til. I dette tilfelle vil jeg at den skal inneholde tekst, og at det skal stå hallo. For å gjøre det må jeg først definere hva slag variabel det er, og det gjør du ved å legge til et kolon etter navnet du har valgt på variabelen – <code>var myVar:String</code>.</p>
+<p>Deretter vil jeg definere hva slags tekst det skal være. For å gjøre det legger vi til et erlik-tegn, som kalles en “assignment operator”, på engelsk. Da blir det seende sånn her ut – <code>var myVar:String = &quot;hallo&quot;</code>.</p>
+<p>Om jeg da vil bruke dette i tilfellet med <a href="../utkast/samtalekort-appen" data-slug="utkast/samtalekort-appen" class="internal alias">samtalekort-appen</a> kan jeg skrive noe sånt som – <code>var questionEnthusiastic:String = &quot;Hva er det som gjør deg gira eller engasjert nå om dagen?&quot;</code>.</p>
+<p>Om jeg da vil hente fram det spørsmålet til seinere, f. eks hvis jeg lager en liste med spørsmål, så kan jeg si at <code>questionEnthusiastic</code> skal inkluderes. Så vil hele spørsmålet inkluderes. Det kan vi faktisk teste ved å kjøre en kommando som heter <code>print()</code>. For å få det til å funke må du da bare legge til navnet på variabelen din mellom parentesene – <code>print(questionEnthusiastic)</code>.</p>
+<p><video src="../images/xcode-print.mp4" controls></video></p>
+<p>Men hva om du vil introdusere en verdi som ikke er tekst, altså noe annet enn en “string”-type? Da må du bare huske å definere det når du introduserer verdien. Om du vil</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graf-visning</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div></div><footer class><p>Laget med <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://github.com/strombraaten/simenskriver-v3">GitHub</a></li><li><a href="https://discord.gg/f2ZrnPVbYC">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script type="application/javascript" data-persist="true">
+              // Lightbox functionality
+              function initLightbox() {
+                // Remove existing modal if it exists
+                const existingModal = document.querySelector('.lightbox-modal');
+                if (existingModal) {
+                  existingModal.remove();
+                }
+
+                // Create modal elements
+                const modal = document.createElement('div');
+                modal.className = 'lightbox-modal';
+                
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'lightbox-close';
+                closeBtn.innerHTML = '×';
+                closeBtn.setAttribute('aria-label', 'Close lightbox');
+                
+                const img = document.createElement('img');
+                img.style.display = 'none';
+                
+                modal.appendChild(closeBtn);
+                modal.appendChild(img);
+                document.body.appendChild(modal);
+
+                // Function to open lightbox
+                function openLightbox(imageSrc, imageAlt, originalImg) {
+                  img.src = imageSrc;
+                  img.alt = imageAlt || '';
+                  img.style.display = 'block';
+                  modal.classList.add('active');
+                  document.body.classList.add('lightbox-open');
+                  
+                  // Preload the image and set appropriate size
+                  const preloadImg = new Image();
+                  preloadImg.onload = () => {
+                    img.src = imageSrc;
+                    
+                    // Get original image size on page
+                    const originalRect = originalImg ? originalImg.getBoundingClientRect() : null;
+                    const originalDisplayWidth = originalRect ? originalRect.width : 0;
+                    const originalDisplayHeight = originalRect ? originalRect.height : 0;
+                    
+                    // Smart scaling based on image size
+                    const viewportWidth = window.innerWidth;
+                    const viewportHeight = window.innerHeight;
+                    const imageWidth = preloadImg.naturalWidth;
+                    const imageHeight = preloadImg.naturalHeight;
+                    
+                    // Calculate appropriate display size
+                    let targetWidth, targetHeight;
+                    
+                    // Ensure lightbox image is at least 1.5x the size it appears on page
+                    const minDisplayWidth = Math.max(
+                      originalDisplayWidth * 1.5,
+                      Math.min(500, viewportWidth * 0.7)
+                    );
+                    const minDisplayHeight = Math.max(
+                      originalDisplayHeight * 1.5,
+                      Math.min(400, viewportHeight * 0.7)
+                    );
+                    
+                    // Calculate scale to meet minimum size requirements
+                    const scaleForWidth = minDisplayWidth / imageWidth;
+                    const scaleForHeight = minDisplayHeight / imageHeight;
+                    const minScale = Math.max(scaleForWidth, scaleForHeight, 1); // At least 1x (never smaller than original)
+                    
+                    // Limit maximum scale to prevent pixelation
+                    const maxScale = Math.min(3, viewportWidth * 0.9 / imageWidth, viewportHeight * 0.9 / imageHeight);
+                    const finalScale = Math.min(minScale, maxScale);
+                    
+                    targetWidth = Math.min(imageWidth * finalScale, viewportWidth * 0.9);
+                    targetHeight = Math.min(imageHeight * finalScale, viewportHeight * 0.9);
+                    img.style.width = targetWidth + 'px';
+                    img.style.height = 'auto';
+                  };
+                  preloadImg.src = imageSrc;
+                }
+
+                // Function to close lightbox
+                function closeLightbox() {
+                  modal.classList.remove('active');
+                  document.body.classList.remove('lightbox-open');
+                  setTimeout(() => {
+                    img.style.display = 'none';
+                    img.src = '';
+                  }, 300);
+                }
+
+                // Event listeners
+                closeBtn.addEventListener('click', closeLightbox);
+                
+                modal.addEventListener('click', (e) => {
+                  if (e.target === modal) {
+                    closeLightbox();
+                  }
+                });
+
+                // Keyboard support
+                document.addEventListener('keydown', (e) => {
+                  if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeLightbox();
+                  }
+                });
+
+                // Add click handlers to all lightbox images
+                const lightboxWrappers = document.querySelectorAll('.lightbox-wrapper');
+                lightboxWrappers.forEach(wrapper => {
+                  wrapper.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const img = wrapper.querySelector('.lightbox-image');
+                    if (img) {
+                      // Use img.src (browser-resolved URL) instead of data-src
+                      // img.src is already normalized by CrawlLinks and works correctly
+                      // data-src may have wrong case/path from original markdown
+                      const src = img.src || img.getAttribute('data-src');
+                      const alt = img.getAttribute('data-alt') || img.alt;
+                      openLightbox(src, alt, img);
+                    }
+                  });
+                });
+
+                // Clean up function
+                if (window.addCleanup) {
+                  window.addCleanup(() => {
+                    if (modal && modal.parentNode) {
+                      modal.parentNode.removeChild(modal);
+                    }
+                    document.body.classList.remove('lightbox-open');
+                  });
+                }
+              }
+
+              // Initialize on page load and navigation
+              document.addEventListener('nav', initLightbox);
+              
+              // Initialize immediately if DOM is already ready
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initLightbox);
+              } else {
+                initLightbox();
+              }
+            </script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript.js" type="module" data-persist="true"></script></html>

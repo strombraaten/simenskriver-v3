@@ -12,7 +12,6 @@ const config: QuartzConfig = {
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
-    speedInsights: true,
     analytics: {
       provider: "tinylytics",
       siteId: "yeW5HoX3FJHdsswz69gg",
