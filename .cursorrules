@@ -1,5 +1,26 @@
 # Cursor Rules for Wayward Digital Garden
 
+## What We’re Building (Intent)
+
+This repository is based on **Quartz 4** and uses a **barebones template** of a theme called **Wayward**, made by the GitHub user **Afroviking**. It is also part of a broader effort: rebuilding an existing Quartz blog into a new, improved version with a slightly different architecture.
+
+Key implications:
+- There is **existing content and many historical links**. Preserve link integrity where possible and be explicit about migrations when not.
+- This is a **fork of Quartz** (and also contains project-specific customizations). Prefer upstream Quartz patterns when practical, but don’t fight the architecture.
+- Optimize for **simple, maintainable output**: prefer HTML and CSS over JavaScript when it achieves the same user-visible result.
+- The long-term direction is **sustainable, low-footprint web**. When making choices that increase footprint (JS, heavy dependencies, client runtime, large assets), you must surface the **cost** (performance, bundle size, runtime work, complexity).
+- Future-facing goal: enable **per-page carbon/footprint measurement**. You don’t need to implement it unless asked, but today’s choices should keep that path open (small, measurable, predictable output).
+
+## Decision Principles (How to Choose)
+
+When you have multiple implementation options, default to:
+- **Quartz-aligned**: fits Quartz’ plugin/component pipeline and configuration model.
+- **Minimal client-side JS**: prefer static rendering, CSS, progressive enhancement, and build-time transforms.
+- **Low footprint**: fewer dependencies, smaller output, less runtime work.
+- **Maintainable**: clear code, small components/plugins, predictable data flow.
+
+If a proposed change likely increases footprint or performance cost, call it out explicitly (e.g., “this adds a client-side script to every page”, “this increases image payload”, “this adds N dependencies”, “this may slow down build time”).
+
 ## Project Overview
 
 This is a Quartz-based digital garden called "Wayward" that organizes content into four distinct types:
@@ -22,7 +43,7 @@ Not all `why` values make sense for every `type`:
 ### Content Structure
 - `content/` - All markdown content organized by type
   - `Tanker/` - Quick, fleeting thoughts (stream-like, chronological)
-  - `<Oppslagsverk/` - Reference material and building blocks
+  - `Oppslagsverk/` - Reference material and building blocks
   - `Utkast/` - Ideas in progress, exploratory thinking
   - `Notater/` - Complete, coherent long-form pieces
   - `index.md` - Homepage
@@ -165,6 +186,10 @@ Custom explorer showing content folders with:
 
 ## Important Notes
 
+- Treat **URLs and internal links** as a stability surface:
+  - Avoid unnecessary slug/path changes.
+  - Prefer `aliases` / stable `permalink` (especially for `notater`) when moving/renaming content.
+  - When changing link behavior, consider the impact on historical content and cross-note references.
 - Content folder names are case-sensitive in the file system but slugified to lowercase in URLs
 - Wikilinks use shortest path resolution: `[[example-post]]` instead of full paths when unique
 - Permalinks are recommended for notater to maintain stable URLs
