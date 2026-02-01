@@ -22,7 +22,6 @@ export const defaultContentPageLayout: PageLayout = {
       condition: (page) => page.fileData.slug !== "index",
     }),
     Component.ArticleHeader(),
-    Component.HeroImage(),
   ],
   left: [
     Component.PageTitle(),
