@@ -7,7 +7,7 @@ import { FullSlug, resolveRelative } from "../util/path"
 import { JSX } from "preact"
 import style from "./styles/articleHeader.scss"
 
-export default ((): QuartzComponentConstructor => {
+export default (() => {
   function ArticleHeader({ cfg, fileData, displayClass }: QuartzComponentProps) {
     // Don't show on index page
     if (fileData.slug === "index") {
