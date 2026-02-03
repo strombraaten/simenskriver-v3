@@ -23,7 +23,7 @@ export interface Options {
 }
 
 const defaultOptions: Options = {
-  folderDefaultState: "collapsed",
+  folderDefaultState: "open",
   folderClickBehavior: "link",
   useSavedState: true,
   mapFn: (node) => {
