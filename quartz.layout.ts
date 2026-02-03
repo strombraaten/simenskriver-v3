@@ -36,13 +36,8 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.CategoryList({ 
-      title: "Explorer",
-      excludeFolders: ["Travel", "Writing"], // Hide old folders after migration
-      alwaysShowFolders: ["Tanker", "Utkast", "oppslagsverk", "Notater"], // Always show these even if empty
-      folderOrder: ["Tanker", " Oppslagsverk", "Utkast", "Notater"], // Custom order for folders
-    }),
-    Component.DesktopOnly(Component.TableOfContents()),
+    Component.Explorer({ title: "Oversikt" }),
+    Component.DesktopOnly(Component.TableOfContents({ title: "Innholdsfortegnelse" })),
   ],
   right: [
     // Graph View - show on individual posts (not index, not all-posts, not tag pages, not folder pages)
@@ -57,14 +52,6 @@ export const defaultContentPageLayout: PageLayout = {
       },
     }),
     Component.Backlinks(),
-    // Why field - show purpose of the piece
-    Component.ConditionalRender({
-      component: Component.WhyField(),
-      condition: (page) => {
-        const slug = page.fileData.slug ?? ""
-        return slug !== "index" && slug !== "all-posts" && page.fileData.frontmatter?.why
-      },
-    }),
     // Tags - with spacing above to separate from Backlinks
     Component.ConditionalRender({
       component: Component.TagList(),
@@ -92,20 +79,15 @@ export const indexPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.CategoryList({ 
-      title: "Explorer",
-      excludeFolders: ["Travel", "Writing"], // Hide old folders after migration
-      alwaysShowFolders: ["Tanker", "Utkast", "oppslagsverk", "Notater"], // Always show these even if empty
-      folderOrder: ["Tanker", " Oppslagsverk", "Utkast", "Notater"], // Custom order for folders
-    }),
-    Component.Pinned({
+    Component.Explorer({ title: "Oversikt" }),
+    Component.DesktopOnly(Component.Pinned({
       title: "Pinned",
       limit: 5,
       showTags: false,
       showDate: false, // Hide dates for pinned items
-    }),
-    Component.RecentNotes({
-      title: "Nylige notater",
+    })),
+    Component.DesktopOnly(Component.RecentNotes({
+      title: "Siste skriverier",
       limit: 5,
       showTags: false,
       showDate: false, // Hide dates for writings
@@ -134,9 +116,9 @@ export const indexPageLayout: PageLayout = {
         const t2 = f2.frontmatter?.title?.toLowerCase() ?? ""
         return t1.localeCompare(t2)
       },
-    }),
-    Component.RecentNotes({
-      title: "Nylige notater",
+    })),
+    Component.DesktopOnly(Component.RecentNotes({
+      title: "Sist oppdatert",
       limit: 10,
       showTags: false,
       showUpdatedPrefix: true,
@@ -153,7 +135,7 @@ export const indexPageLayout: PageLayout = {
         // Include stash and notions (slugs are now lowercase)
         return slug.startsWith("oppslagsverk/") || slug.startsWith("utkast/")
       },
-    }),
+    })),
   ],
   right: [
     Component.Backlinks(),
@@ -176,12 +158,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.CategoryList({ 
-      title: "Explorer",
-      excludeFolders: ["Travel", "Writing"], // Hide old folders after migration
-      alwaysShowFolders: ["Tanker", "Utkast", "Oppslagsverk", "Notater"], // Always show these even if empty
-      folderOrder: ["Tanker", "Oppslagsverk", "Utkast", "Notater"], // Custom order for folders
-    }),
+    Component.Explorer({ title: "Oversikt" }),
   ],
   right: [],
 }
