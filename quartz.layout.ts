@@ -80,62 +80,6 @@ export const indexPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer({ title: "Oversikt" }),
-    Component.DesktopOnly(Component.Pinned({
-      title: "Pinned",
-      limit: 5,
-      showTags: false,
-      showDate: false, // Hide dates for pinned items
-    })),
-    Component.DesktopOnly(Component.RecentNotes({
-      title: "Siste skriverier",
-      limit: 5,
-      showTags: false,
-      showDate: false, // Hide dates for writings
-      filter: (f) => {
-        const slug = f.slug ?? ""
-        // Exclude files marked with excludeFromLists
-        if (f.frontmatter?.excludeFromLists === true) {
-          return false
-        }
-        // Only show writings (slugs are now lowercase)
-        return slug.startsWith("notater/")
-      },
-      // Sort by published date (not modified) for writings
-      sort: (f1, f2) => {
-        const d1 = f1.dates?.published || f1.dates?.created
-        const d2 = f2.dates?.published || f2.dates?.created
-        if (d1 && d2) {
-          return d2.getTime() - d1.getTime() // Most recent first
-        } else if (d1 && !d2) {
-          return -1
-        } else if (!d1 && d2) {
-          return 1
-        }
-        // Fallback to alphabetical
-        const t1 = f1.frontmatter?.title?.toLowerCase() ?? ""
-        const t2 = f2.frontmatter?.title?.toLowerCase() ?? ""
-        return t1.localeCompare(t2)
-      },
-    })),
-    Component.DesktopOnly(Component.RecentNotes({
-      title: "Sist oppdatert",
-      limit: 10,
-      showTags: false,
-      showUpdatedPrefix: true,
-      filter: (f) => {
-        const slug = f.slug ?? ""
-        // Exclude Things (they're stream-only, never in lists)
-        if (f.frontmatter?.type === "tanke") {
-          return false
-        }
-        // Exclude files marked with excludeFromLists
-        if (f.frontmatter?.excludeFromLists === true) {
-          return false
-        }
-        // Include stash and notions (slugs are now lowercase)
-        return slug.startsWith("oppslagsverk/") || slug.startsWith("utkast/")
-      },
-    })),
   ],
   right: [
     Component.Backlinks(),
