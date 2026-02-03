@@ -54,7 +54,7 @@ export default {
       searchBarPlaceholder: "Søk etter noe",
     },
     tableOfContents: {
-      title: "Oversikt",
+      title: "Innholdsfortegnelse",
     },
     contentMeta: {
       readingTime: ({ minutes }) => `${minutes} min lesning`,

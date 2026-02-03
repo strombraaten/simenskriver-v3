@@ -37,7 +37,7 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer({ title: "Oversikt" }),
-    Component.DesktopOnly(Component.TableOfContents({ title: "Innholdsfortegnelse" })),
+    Component.DesktopOnly(Component.TableOfContents()),
   ],
   right: [
     // Graph View - show on individual posts (not index, not all-posts, not tag pages, not folder pages)
