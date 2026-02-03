@@ -1,7 +1,5 @@
 ---
 type: notat
-stage: done
-why: share
 date: 2023-12-03
 lastmod: 2023-12-03
 tags:

@@ -1,6 +1,5 @@
 ---
 type: utkast
-why: work-out
 date: 2024-07-11
 lastmod: 2024-07-11
 title: Samtalekort-appen

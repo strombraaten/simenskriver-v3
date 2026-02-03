@@ -1,6 +1,5 @@
 ---
 type: oppslagsverk
-why: share
 date: 2023-04-09
 lastmod: 2026-12-13
 tags:

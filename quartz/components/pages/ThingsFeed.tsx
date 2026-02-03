@@ -29,24 +29,17 @@ export default (() => {
       return (db?.getTime() ?? 0) - (da?.getTime() ?? 0)
     })
 
-  // Collect all unique tags and why values for filtering
+  // Collect all unique tags for filtering
   const allTags = new Set<string>()
-  const allWhyValues = new Set<string>()
   
   things.forEach((file) => {
     const fm = file.frontmatter ?? {}
     const tags = (fm.tags as string[] | undefined) ?? []
     tags.forEach((tag) => allTags.add(tag))
-    
-    const why = Array.isArray(fm.why) ? fm.why : (fm.why ? [fm.why] : [])
-    why.forEach((w) => {
-      if (typeof w === "string") allWhyValues.add(w)
-    })
   })
 
   // Filter out "Tanker" tag since we're already on the Tanker page - it's redundant
   const sortedTags = Array.from(allTags).filter(tag => tag !== "Tanker").sort()
-  const sortedWhy = Array.from(allWhyValues).sort()
 
   // Get rendered content from index.md (the subline)
   const content: ComponentChildren =
@@ -63,27 +56,6 @@ export default (() => {
             <nav class="things-filter" aria-label="Filter things">
             <select class="things-filter__select" id="things-filter-select">
               <option value="all">All</option>
-              {sortedWhy.length > 0 && (
-                <optgroup label="Why">
-                  {sortedWhy.map((why) => {
-                    const whyText: Record<string, string> = {
-                      keep: "keep",
-                      remember: "remember",
-                      think: "think",
-                      "work-out": "work out",
-                      share: "share",
-                    }
-                    return (
-                      <option
-                        value={`why:${why}`}
-                        key={why}
-                      >
-                        {whyText[why] || why}
-                      </option>
-                    )
-                  })}
-                </optgroup>
-              )}
               {sortedTags.length > 0 && (
                 <optgroup label="Tags">
                   {sortedTags.map((tag) => (
@@ -104,7 +76,6 @@ export default (() => {
         <section class="things-feed" aria-label="Things feed">
         {things.map((file) => {
           const fm = file.frontmatter ?? {}
-          const why = Array.isArray(fm.why) ? fm.why : (fm.why ? [fm.why] : [])
           const tags = (fm.tags as string[] | undefined) ?? []
 
           const date = file.dates?.published ?? file.dates?.created
@@ -126,7 +97,6 @@ export default (() => {
           return (
             <article
               class={classNames("thing-card")}
-              data-why={why.map((w: string) => String(w)).join(",")}
               data-tags={tags.join(",")}
               key={file.slug}
             >
@@ -142,22 +112,6 @@ export default (() => {
                   )}
                 </div>
                 <div class="thing-card__meta-right">
-                  {why.length > 0 && (
-                    <span class="thing-card__why">
-                      This is to: <span class="thing-card__why-value">
-                        {why.map((w: string) => {
-                          const whyText: Record<string, string> = {
-                            keep: "keep",
-                            remember: "remember",
-                            think: "think",
-                            "work-out": "work out",
-                            share: "share",
-                          }
-                          return whyText[w] || w
-                        }).join(", ")}
-                      </span>
-                    </span>
-                  )}
                   {/* Hide tags section for Things - they're all tagged with "Things" which doesn't need to be displayed */}
                 </div>
               </header>
@@ -183,16 +137,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const value = e.target.value
 
     cards.forEach((card) => {
-      const cardWhy = (card.dataset.why || "").split(",").filter(Boolean)
       const cardTags = (card.dataset.tags || "").split(",").filter(Boolean)
 
       let shouldShow = false
 
       if (value === "all") {
         shouldShow = true
-      } else if (value.startsWith("why:")) {
-        const whyValue = value.replace("why:", "")
-        shouldShow = cardWhy.includes(whyValue)
       } else if (value.startsWith("tag:")) {
         const tagValue = value.replace("tag:", "")
         shouldShow = cardTags.includes(tagValue)

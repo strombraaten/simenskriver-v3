@@ -31,7 +31,6 @@ import Pinned from "./Pinned"
 import ArticleHeader from "./ArticleHeader"
 import ConditionalGraph from "./ConditionalGraph"
 import CategoryList from "./CategoryList"
-import WhyField from "./WhyField"
 import HeroImage from "./HeroImage"
 import Scrollbar from "./Scrollbar"
 
@@ -69,7 +68,6 @@ export {
   ArticleHeader,
   ConditionalGraph,
   CategoryList,
-  WhyField,
   HeroImage,
   Scrollbar,
 }

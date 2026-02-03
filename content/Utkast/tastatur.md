@@ -1,6 +1,5 @@
 ---
 type: utkast
-why: think
 date: 2023-03-26
 lastmod: 2023-03-26
 tags:

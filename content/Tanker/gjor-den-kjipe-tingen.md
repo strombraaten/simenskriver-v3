@@ -1,6 +1,5 @@
 ---
 type: tanke
-why: think
 date: 2023-06-18
 lastmod: 2023-06-18
 tags:

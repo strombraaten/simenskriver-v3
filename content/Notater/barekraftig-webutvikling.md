@@ -1,7 +1,5 @@
 ---
 type: notat
-stage: done
-why: share
 date: 2023-05-29
 lastmod: 2023-05-29
 title: Bærekraftig webutvikling

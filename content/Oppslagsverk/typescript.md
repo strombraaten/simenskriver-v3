@@ -1,6 +1,5 @@
 ---
 type: oppslagsverk
-why: keep
 date: 2023-09-09
 lastmod: 2024-03-07
 tags:

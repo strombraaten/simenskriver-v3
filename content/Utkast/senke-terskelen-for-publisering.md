@@ -1,6 +1,5 @@
 ---
 type: utkast
-why: work-out
 date: 2024-02-01
 lastmod: 2024-03-07
 tags:
