@@ -190,13 +190,13 @@ Custom explorer showing content folders with:
   - Avoid unnecessary slug/path changes.
   - Prefer `aliases` / stable `permalink` (especially for `notater`) when moving/renaming content.
   - When changing link behavior, consider the impact on historical content and cross-note references.
+- Git commit messages should be written in **English** (even if the working language in chat/content is Norwegian).
 - Content folder names are case-sensitive in the file system but slugified to lowercase in URLs
 - Wikilinks use shortest path resolution: `[[example-post]]` instead of full paths when unique
 - Permalinks are recommended for notater to maintain stable URLs
 - Draft posts (`draft: true`) are filtered out during build
 - The `CategoryList` component uses folder index pages for titles (e.g., `Tanker/index.md`)
 - Images in `public/` are served as-is; images in `content/` are optimized during build
-- Always use co-author attribution when committing: `Co-Authored-By: Warp <agent@warp.dev>`
 
 ## Testing
 
