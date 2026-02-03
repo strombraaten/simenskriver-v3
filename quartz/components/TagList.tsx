@@ -12,7 +12,7 @@ const TagList: QuartzComponent = ({ fileData, displayClass }: QuartzComponentPro
   if (displayTags.length > 0) {
     return (
       <div class={classNames(displayClass, "tag-list-wrapper")}>
-        <p class="tag-intro">This relates to:</p>
+        <p class="tag-intro">Dette handler om:</p>
         <ul class="tags">
           {displayTags.map((tag) => {
             // Display original tag name, but slugify for URL
