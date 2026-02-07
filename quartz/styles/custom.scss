@@ -1747,6 +1747,11 @@ article:hover::-webkit-scrollbar-thumb:hover {
     z-index: 10000;
   }
 
+  // Explorer list padding inside the mobile overlay
+  .explorer .explorer-content ul {
+    padding-left: 1.5rem;
+  }
+
   // Ensure the hamburger stays visible above the fixed overlay when open.
   // (`z-index` doesn't apply to `position: static`, so we position it.)
   .explorer:not(.collapsed) .mobile-explorer {
