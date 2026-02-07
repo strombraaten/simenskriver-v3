@@ -191,6 +191,8 @@ Custom explorer showing content folders with:
   - Prefer `aliases` / stable `permalink` (especially for `notater`) when moving/renaming content.
   - When changing link behavior, consider the impact on historical content and cross-note references.
 - Git commit messages should be written in **English** (even if the working language in chat/content is Norwegian).
+- Suggest committing and pushing changes **regularly** (at logical milestones) to avoid large, hard-to-audit diffs.
+  - Each commit should represent **one category of change** (e.g., “mobile CSS fix”, “layout tweak”, “content migration”, “refactor”, “docs”), not a mix of unrelated work.
 - Content folder names are case-sensitive in the file system but slugified to lowercase in URLs
 - Wikilinks use shortest path resolution: `[[example-post]]` instead of full paths when unique
 - Permalinks are recommended for notater to maintain stable URLs
