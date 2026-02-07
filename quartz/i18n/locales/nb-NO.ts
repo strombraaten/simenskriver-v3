@@ -57,7 +57,7 @@ export default {
       title: "Innholdsfortegnelse",
     },
     contentMeta: {
-      readingTime: ({ minutes }) => `${minutes} min lesning`,
+      readingTime: ({ minutes }) => `${minutes} minutter lesetid`,
     },
   },
   pages: {
