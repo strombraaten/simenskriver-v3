@@ -1687,6 +1687,27 @@ article:hover::-webkit-scrollbar-thumb:hover {
 }
 */
 
+// ============================================
+// MOBILE: Explorer overlay should escape sidebar clipping
+// Fixes cases where `.explorer-content` is visible/translated in,
+// but gets clipped by the 34px-tall `.explorer` container on mobile.
+// ============================================
+@media (max-width: 800px) {
+  .explorer .explorer-content {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+  }
+
+  // Ensure the hamburger stays visible above the fixed overlay when open.
+  // (`z-index` doesn't apply to `position: static`, so we position it.)
+  .explorer:not(.collapsed) .mobile-explorer {
+    position: fixed;
+    top: calc(env(safe-area-inset-top, 0px) + 0.75rem);
+    left: 0.75rem;
+    z-index: 10001;
+  }
+}
 /*
 // Option 2: Thin, styled scrollbars (always visible)
 // Firefox
