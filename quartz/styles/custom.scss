@@ -999,7 +999,6 @@
   
   .article-title {
     font-size: 2.5rem; // Proportionally scaled
-    padding: 0 1.5rem;
   }
   
   .content-meta,
@@ -1693,6 +1692,55 @@ article:hover::-webkit-scrollbar-thumb:hover {
 // but gets clipped by the 34px-tall `.explorer` container on mobile.
 // ============================================
 @media (max-width: 800px) {
+  // Make left sidebar form two rows on mobile:
+  // row 1: hamburger (Explorer) + site title
+  // row 2: search + toggles
+  .page > #quartz-body > .sidebar.left {
+    // Keep these in sync so row 2 aligns with the PageTitle text start.
+    // (34px is the Explorer/hamburger slot width in explorer.scss)
+    --mobile-left-sidebar-leading: calc(34px + var(--space-sm));
+
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  // Explorer (hamburger container) first on row 1
+  .page > #quartz-body > .sidebar.left > .explorer {
+    order: 0;
+    margin: 0; // override explorer.scss mobile auto-margins that can misalign the row
+    align-self: center;
+  }
+
+  // Site title next to hamburger on row 1
+  .page > #quartz-body > .sidebar.left > .page-title {
+    order: 1;
+    flex: 1 1 auto;
+    margin: 0; // override sidebar.scss spacing on mobile header row
+    padding-left: var(--space-sm); // breathing room after hamburger
+    line-height: 1.2; // tighter header row, better vertical alignment with hamburger icon
+    align-self: center;
+  }
+
+  // Spacer was used for the single-row mobile header; hide it for the 2-row layout
+  .page > #quartz-body > .sidebar.left > .mobile-only.spacer {
+    display: none;
+  }
+
+  // Search + toggles as full-width row 2
+  .page > #quartz-body > .sidebar.left > .flex-component {
+    order: 2;
+    flex: 1 0 100%;
+    width: 100%;
+    padding-right: 2.5rem; // align right-side icons with content
+    box-sizing: border-box;
+  }
+
+  // Align the search field with the PageTitle text start without shifting the toggle icons.
+  // (Search is the first child in the Flex config in `quartz.layout.ts`.)
+  .page > #quartz-body > .sidebar.left > .flex-component > div:first-child {
+    margin-left: var(--mobile-left-sidebar-leading);
+  }
+
   .explorer .explorer-content {
     position: fixed;
     inset: 0;
