@@ -946,7 +946,7 @@
 .popover-hint {
   max-width: 900px; // Matches expanded content width
   margin: 0 auto;
-  padding: 0 2.5rem; // Matches content padding
+  padding: 0; // Matches content padding
   
   // Override any conflicting styles
   width: 100%;
@@ -1745,6 +1745,10 @@ article:hover::-webkit-scrollbar-thumb:hover {
     position: fixed;
     inset: 0;
     z-index: 10000;
+    // Allow scrolling anywhere in the overlay (not just on the <ul>)
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
   }
 
   // Explorer list padding inside the mobile overlay
