@@ -1748,6 +1748,11 @@ article:hover::-webkit-scrollbar-thumb:hover {
     // Allow scrolling anywhere in the overlay (not just on the <ul>)
     overflow-y: auto;
     overflow-x: hidden;
+    // Browser-agnostic guard rails for consistent overlay scrolling
+    height: 100vh;
+    max-height: 100vh;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
     -webkit-overflow-scrolling: touch;
   }
 

@@ -577,9 +577,9 @@ video {
   flex: 2 1 auto;
 }
 
-// Global overflow wrapper behavior for list components that use OverflowList.
-// Exclude Explorer overlay content, which needs to stay scrollable on mobile.
-div:has(> .overflow):not(.explorer-content) {
+// Default wrapper behavior for OverflowList containers.
+// Exclude Explorer's list wrapper so mobile explorer overlay remains scrollable.
+div:has(> .overflow):not(:has(> .explorer-ul)) {
   max-height: 100%;
   overflow-y: hidden;
 }
